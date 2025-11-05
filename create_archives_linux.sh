@@ -6,47 +6,51 @@
 
 cd defaultArchiveContent
 
-sudo apt install tar gzip bzip2 xz-utils zstd lz4 lzip lzop ncompress brotli
+sudo apt install tar gzip bzip2 xz-utils zstd lz4 lzip lzop ncompress brotli arj
 
 # raw
-tar -cf ../defaultArchives/defaultArchive.tar .
+tar -cf ../defaultArchives/defaultArchive.tar *
 
 # gzip
-tar -czf ../defaultArchives/defaultArchive.tgz .
-tar -czf ../defaultArchives/defaultArchive.tar.gz .
+tar -czf ../defaultArchives/defaultArchive.tgz *
+tar -czf ../defaultArchives/defaultArchive.tar.gz *
 
 # bzip2
-tar -cjf ../defaultArchives/defaultArchive.tbz2 .
-tar -cjf ../defaultArchives/defaultArchive.tbz .
-tar -cjf ../defaultArchives/defaultArchive.tar.bz2 .
+tar -cjf ../defaultArchives/defaultArchive.tbz2 *
+tar -cjf ../defaultArchives/defaultArchive.tbz *
+tar -cjf ../defaultArchives/defaultArchive.tar.bz2 *
 
 # xz
-tar -cJf ../defaultArchives/defaultArchive.txz .
-tar -cJf ../defaultArchives/defaultArchive.tar.xz .
+tar -cJf ../defaultArchives/defaultArchive.txz *
+tar -cJf ../defaultArchives/defaultArchive.tar.xz *
 
 # zst
-tar --zstd -cf ../defaultArchives/defaultArchive.tar.zst .
-tar --zstd -cf ../defaultArchives/defaultArchive.tzst .
+tar --zstd -cf ../defaultArchives/defaultArchive.tar.zst *
+tar --zstd -cf ../defaultArchives/defaultArchive.tzst *
 
 # lz4
-tar --use-compress-program=lz4 -cf ../defaultArchives/defaultArchive.tar.lz4 .
-tar --use-compress-program=lz4 -cf ../defaultArchives/defaultArchive.tlz4 .
+tar --use-compress-program=lz4 -cf ../defaultArchives/defaultArchive.tar.lz4 *
+tar --use-compress-program=lz4 -cf ../defaultArchives/defaultArchive.tlz4 *
 
 # lzip
-tar --lzip -cf ../defaultArchives/defaultArchive.tar.lz .
-tar --lzip -cf ../defaultArchives/defaultArchive.tlz .
+tar --lzip -cf ../defaultArchives/defaultArchive.tar.lz *
+tar --lzip -cf ../defaultArchives/defaultArchive.tlz *
 
 # lzma
-tar --lzma -cf ../defaultArchives/defaultArchive.tlzma .
-tar --lzma -cf ../defaultArchives/defaultArchive.tar.lzma .
+tar --lzma -cf ../defaultArchives/defaultArchive.tlzma *
+tar --lzma -cf ../defaultArchives/defaultArchive.tar.lzma *
 
 # lzop
-tar --lzop -cf ../defaultArchives/defaultArchive.tlzo .
-tar --lzop -cf ../defaultArchives/defaultArchive.tar.lzo .
+tar --lzop -cf ../defaultArchives/defaultArchive.tlzo *
+tar --lzop -cf ../defaultArchives/defaultArchive.tar.lzo *
 
 # brotli
-tar --use-compress-program=brotli -cf ../defaultArchives/defaultArchive.tbr .
-tar --use-compress-program=brotli -cf ../defaultArchives/defaultArchive.tar.br .
+tar --use-compress-program=brotli -cf ../defaultArchives/defaultArchive.tbr *
+tar --use-compress-program=brotli -cf ../defaultArchives/defaultArchive.tar.br *
+
+# arj
+rm ../defaultArchives/defaultArchive.arj
+arj a -r ../defaultArchives/defaultArchive.arj **/*.* *.*
 
 cd ..
 
