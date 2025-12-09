@@ -1,12 +1,17 @@
 # 
 # This script on Ubuntu Linux to create all sorts of (default) archives
 # 
-# Run this script from the root of the repo
+# 1. Run this script from the root of the repo
+#
+# Note: This script installs a few packages first. If you don't want to do that
+#       just comment out the lines. But those packages are required to run the
+#       script.
 #
 
 cd defaultArchiveContent
 
-sudo apt install tar gzip bzip2 xz-utils zstd lz4 lzip lzop ncompress brotli arj
+sudo apt install tar gzip bzip2 xz-utils zstd lz4 lzip lzop ncompress brotli arj ruby-full rpm
+sudo gem install fpm
 
 # raw
 tar -cf ../defaultArchives/defaultArchive.tar *
@@ -51,6 +56,10 @@ tar --use-compress-program=brotli -cf ../defaultArchives/defaultArchive.tar.br *
 # arj
 rm ../defaultArchives/defaultArchive.arj
 arj a -r ../defaultArchives/defaultArchive.arj **/*.* *.*
+
+# rpm & deb (debian file is in lowercase for compatibility reasons)
+fpm -s dir -t rpm -n defaultArchive -v 1.0 ./
+fpm -s dir -t deb -n defaultarchive -v 1.0 ./
 
 cd ..
 
