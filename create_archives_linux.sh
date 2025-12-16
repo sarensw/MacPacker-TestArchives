@@ -61,5 +61,8 @@ arj a -r ../defaultArchives/defaultArchive.arj **/*.* *.*
 fpm -s dir -t rpm -n defaultArchive -v 1.0 ./
 fpm -s dir -t deb -n defaultarchive -v 1.0 ./
 
+# squashfs
+mksquashfs folder "hello world.txt" ../defaultArchives/defaultArchive.squashfs -noappend -comp xz -all-root
+
 cd ..
 
