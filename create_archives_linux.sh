@@ -1,5 +1,5 @@
 # 
-# This script on Ubuntu Linux to create all sorts of (default) archives
+# This script is to run on Ubuntu Linux to create all sorts of (default) archives
 # 
 # 1. Run this script from the root of the repo
 #
