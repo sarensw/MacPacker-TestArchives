@@ -15,6 +15,8 @@ These archives are used to:
 
 All archives / files that are named `defaultArchive` contain the contents of the `defaultArchive` folder. Those are at the root of the repo. In case there is any special case, or archives cannot be created anymore (e.g. due to missing tools) then there is a corresponding folder that contains those special cases.
 
+`zip/minimalApp.zip` holds a real, launchable, ad-hoc-signed macOS app bundle (`MinimalApp.app`) compressed exactly the way Finder's "Compress" does it (`ditto -c -k --sequesterRsrc --keepParent`), so it carries the `__MACOSX/` sidecar tree, framework version symlinks, an exec-bit Mach-O and a `_CodeSignature`. Leaf names repeat across depths on purpose (`Resources`, `Info.plist`, `_CodeSignature`, `Mini`) so an extractor that flattens the subtree collides instead of failing silently — see MacPacker issue #175. Rebuild it with `zip/make_minimal_app.sh`.
+
 `password/` holds the encrypted archives (ZipCrypto, WinZip AES, 7z AES, encrypted headers, awkward passwords). Unlike the rest, those are reproducible: `password/make_fixtures.sh` rebuilds them, and `password/make_rar_fixtures.sh` builds the RAR ones on a machine that has `rar`. See `password/README.md` for the matrix and the password of each file.
 
 ## 🧰 Included Formats
