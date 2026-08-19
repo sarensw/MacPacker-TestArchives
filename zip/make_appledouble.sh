@@ -2,12 +2,15 @@
 #
 # Rebuilds `appledouble.zip` — the fixture for AppleDouble sidecar handling.
 #
-# A macOS zip can carry a file's extended attributes and resource fork in a
-# sibling file named `._name`, in AppleDouble format. Archive Utility unpacks
-# such a sidecar into the real file and removes it; an extractor that writes it
-# out as an ordinary file adds a file to the tree. Inside a signed `.app` that
-# breaks the code-signature seal and macOS calls the app damaged — MacPacker
-# issue #189, where the 7-Zip engine left `._wd-logo120.png` behind.
+# When macOS has to keep a file's extended attributes and resource fork
+# somewhere that cannot hold them — a FAT stick, an SMB share — it splits them
+# out into a sibling file named `._name`, in AppleDouble format. From that point
+# the sidecar is an ordinary file on disk, so any archiver that walks the folder
+# stores it; zip is where it shows up most, but tar and 7z carry it too. Archive
+# Utility unpacks such a sidecar into the real entry and removes it; an extractor
+# that writes it out as an ordinary file adds a file to the tree. Inside a signed
+# `.app` that breaks the code-signature seal and macOS calls the app damaged —
+# MacPacker issue #189, where the 7-Zip engine left `._wd-logo120.png` behind.
 #
 # The trap is that `._` is a naming convention, not a reservation: a file may
 # legitimately be named that way and hold anything. So the fixture pairs the
@@ -36,6 +39,13 @@
 #       *does* exist — so the only thing separating it from the cases above is
 #       its content. A name-based extractor deletes it. Expect: still there,
 #       byte-identical.
+#
+#   payload/Contents/._Resources
+#       A sidecar for a *directory*. Directories carry extended attributes too,
+#       and macOS emits `._Resources` beside a bundle's `Resources/` just as
+#       readily as it does for a file. Inside a bundle it breaks the seal the
+#       same way, so it has to be unpacked and removed the same way. Expect:
+#       sidecar gone, `Resources/` still a directory, `com.macpacker.dir` on it.
 #
 #   payload/._orphan.bin
 #       A genuine AppleDouble with no sibling at all. `copyfile(3)` with
@@ -94,6 +104,17 @@ cp "$SIDECAR" "$STAGE/Contents/Resources/._icon.png"
 printf 'not a real Mach-O, just a target for its sidecar\n' > "$STAGE/Contents/MacOS/helper"
 cp "$SIDECAR" "$STAGE/Contents/MacOS/._helper"
 
+# A sidecar for a directory rather than a file. Same AppleDouble format, and
+# `Resources/` needs no entry of its own — the extractor creates parents.
+mkdir -p "$BUILD/dirseed/Resources"
+xattr -w com.macpacker.dir appledouble-fixture "$BUILD/dirseed/Resources"
+xattr -d com.apple.provenance "$BUILD/dirseed/Resources" 2>/dev/null || true
+ditto -c -k --sequesterRsrc --keepParent "$BUILD/dirseed" "$BUILD/dirseq.zip"
+unzip -q "$BUILD/dirseq.zip" -d "$BUILD/dirunseq"
+DIR_SIDECAR="$BUILD/dirunseq/__MACOSX/dirseed/._Resources"
+[ -s "$DIR_SIDECAR" ] || { echo "ditto produced no directory AppleDouble" >&2; exit 1; }
+cp "$DIR_SIDECAR" "$STAGE/Contents/._Resources"
+
 # Decoy 1: not AppleDouble, but its sibling exists.
 printf 'A real file that merely starts with dot-underscore.\n' > "$STAGE/._notadouble.txt"
 printf 'The sibling that makes the decoy tempting.\n' > "$STAGE/notadouble.txt"
@@ -112,6 +133,7 @@ rm -f "$OUT"
 # metadata into a __MACOSX/ tree of its own and the fixture would test that
 # instead.
 (cd "$BUILD/stage" && zip -q -X "$OLDPWD/$OUT" \
+    payload/Contents/._Resources \
     payload/Contents/Resources/._icon.png \
     payload/Contents/Resources/icon.png \
     payload/Contents/MacOS/helper \
