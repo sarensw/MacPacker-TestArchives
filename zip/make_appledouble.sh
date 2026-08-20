@@ -47,6 +47,17 @@
 #       same way, so it has to be unpacked and removed the same way. Expect:
 #       sidecar gone, `Resources/` still a directory, `com.macpacker.dir` on it.
 #
+#   __MACOSX/payload/Contents/._Info.plist   (describes payload/Contents/Info.plist)
+#       The sequestered arrangement. `ditto -c -k --sequesterRsrc` — which is what
+#       Finder's "Compress" runs — does not put sidecars beside their files at
+#       all; it puts them in a `__MACOSX/` mirror of the whole tree. That is the
+#       common shape rather than the exotic one, so an extractor that only folds
+#       in the inline form does nothing for most macOS-made zips. The sidecar
+#       carries `com.macpacker.sequestered`, an attribute nothing else in the
+#       archive supplies, so the assertion can only pass if it was folded onto
+#       the real file rather than onto the mirror. Expect: the whole `__MACOSX`
+#       tree gone, and that attribute on `payload/Contents/Info.plist`.
+#
 #   payload/._orphan.bin
 #       A genuine AppleDouble with no sibling at all. `copyfile(3)` with
 #       COPYFILE_UNPACK does not mind a missing destination: it creates it,
@@ -115,6 +126,23 @@ DIR_SIDECAR="$BUILD/dirunseq/__MACOSX/dirseed/._Resources"
 [ -s "$DIR_SIDECAR" ] || { echo "ditto produced no directory AppleDouble" >&2; exit 1; }
 cp "$DIR_SIDECAR" "$STAGE/Contents/._Resources"
 
+# A sequestered sidecar: same format, but living in a `__MACOSX/` mirror of the
+# tree instead of beside its file. Its attribute appears nowhere else, so folding
+# it onto the mirror path instead of the real one is detectable.
+mkdir -p "$BUILD/seqseed"
+printf '<plist/>\n' > "$BUILD/seqseed/Info.plist"
+xattr -w com.macpacker.sequestered appledouble-fixture "$BUILD/seqseed/Info.plist"
+xattr -d com.apple.provenance "$BUILD/seqseed/Info.plist" 2>/dev/null || true
+ditto -c -k --sequesterRsrc --keepParent "$BUILD/seqseed" "$BUILD/seqseq.zip"
+unzip -q "$BUILD/seqseq.zip" -d "$BUILD/sequnseq"
+SEQ_SIDECAR="$BUILD/sequnseq/__MACOSX/seqseed/._Info.plist"
+[ -s "$SEQ_SIDECAR" ] || { echo "ditto produced no sequestered AppleDouble" >&2; exit 1; }
+
+mkdir -p "$BUILD/stage/__MACOSX/payload/Contents"
+cp "$SEQ_SIDECAR" "$BUILD/stage/__MACOSX/payload/Contents/._Info.plist"
+cp "$BUILD/seqseed/Info.plist" "$STAGE/Contents/Info.plist"
+xattr -c "$STAGE/Contents/Info.plist"
+
 # Decoy 1: not AppleDouble, but its sibling exists.
 printf 'A real file that merely starts with dot-underscore.\n' > "$STAGE/._notadouble.txt"
 printf 'The sibling that makes the decoy tempting.\n' > "$STAGE/notadouble.txt"
@@ -133,6 +161,8 @@ rm -f "$OUT"
 # metadata into a __MACOSX/ tree of its own and the fixture would test that
 # instead.
 (cd "$BUILD/stage" && zip -q -X "$OLDPWD/$OUT" \
+    payload/Contents/Info.plist \
+    __MACOSX/payload/Contents/._Info.plist \
     payload/Contents/._Resources \
     payload/Contents/Resources/._icon.png \
     payload/Contents/Resources/icon.png \
