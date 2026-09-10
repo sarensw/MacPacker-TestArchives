@@ -21,18 +21,30 @@
 #
 # None of it survives a plain zip: extended attributes and resource forks have
 # no place in the format, so they travel as AppleDouble sidecars, the same way
-# `appledouble.zip` describes. What earns this case a fixture of its own is that
-# Finder's "Compress" does not carry all three. `ditto -c -k --sequesterRsrc
-# --keepParent` writes a sidecar for `Icon\r` but none for the folder it was
-# pointed at, so a round trip through Finder brings the icon file back — hidden,
-# with its resource fork — and still shows a generic folder. Measured on macOS
-# 26.6 by comparing `NSWorkspace.icon(forFile:)` before and after: identical to
-# a plain folder's icon, and restoring kHasCustomIcon by hand brings the picture
-# back byte-for-byte. Matching Finder is therefore not enough to close #216.
+# `appledouble.zip` describes. The folder's own sidecar is the half that is easy
+# to miss, and the reason this case earns a fixture: restoring the icon file
+# alone leaves the folder generic, which is what issue #216 looks like.
 #
-# So this archive holds the complete form, which is what an archiver has to
-# write for the icon to actually come back:
+# The shape below is Finder's. Compressing a folder with a custom icon through
+# Finder's "Compress" produces exactly this — the folder's entry, its sidecar at
+# the root of the `__MACOSX/` mirror, and a sidecar for each file that has
+# metadata of its own. (`ditto -c -k --sequesterRsrc --keepParent` is often said
+# to be the same thing and is not: pointed at a folder it writes no sidecar for
+# that folder, so do not use it to reason about what Finder stores.)
 #
+# The entries:
+#
+#   CustomFolder/                       the directory entry, and not a formality:
+#                                       XADMaster (so The Unarchiver, and our own
+#                                       XAD engine) refuses an archive whose
+#                                       folder sidecar describes a directory the
+#                                       archive never declares. It tries to write
+#                                       the metadata to a file that is not there
+#                                       and gives up on the whole extraction with
+#                                       `xadError(11, "Opening file failed")`.
+#                                       Finder always writes this entry; so does
+#                                       MacPacker. Measured with two archives
+#                                       differing in nothing else.
 #   CustomFolder/note.txt               ordinary content, so the folder is not
 #                                       nothing but metadata
 #   CustomFolder/Icon\r                 stored bare: zero bytes, no attributes.
@@ -165,6 +177,7 @@ rm -f "$OUT"
 # -X: no uid/gid, no extended attributes. Without it macOS zip would sequester
 # metadata into a __MACOSX/ tree of its own, on top of the one staged here.
 (cd "$STAGE" && zip -q -X "$OLDPWD/$OUT" \
+    "CustomFolder/" \
     "CustomFolder/note.txt" \
     "CustomFolder/$ICON" \
     "__MACOSX/._CustomFolder" \
