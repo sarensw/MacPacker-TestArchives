@@ -19,10 +19,10 @@
 #
 # The second set adds a zip comment of the greatest length a zip allows,
 # 65,535 bytes. The comment comes last in the file, right after the end of
-# central directory record, and the Zip64 records sit right before that one:
-# 76 bytes further from the end than a reader looks that reaches back just far
-# enough for the end record and the longest comment. Such a reader finds the
-# 0xFFFF and nothing to settle it.
+# central directory record, and the Zip64 records sit right before that one —
+# first the 20-byte locator, which says how many pieces there are: beyond a
+# reader that reaches back just far enough for the end record and the longest
+# comment. Such a reader finds the 0xFFFF and nothing to settle it.
 #
 # One stored text file in each. The first set splits 100 lines into pieces of
 # 2 KiB. The comment cannot be split, so the second set has pieces of 66 KiB,
