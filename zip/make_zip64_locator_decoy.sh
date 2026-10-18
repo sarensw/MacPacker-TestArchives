@@ -10,8 +10,10 @@
 # #348). Compressed data holds the four signature bytes by chance now and then;
 # taken for the archive's locator, they would make it a spanned set and the
 # open would go looking for a `.z01`. Only a locator with the end record right
-# after it is the archive's own. A file that holds a whole Zip64 archive is a
-# different case: its locator does have its end record after it.
+# after it is the archive's own. A file that holds a whole Zip64 ending is a
+# different case: its locator does have its end record after it, and only the
+# end record that ends the file tells the two apart — see
+# `../nested/spannedZip64InZip.zip`.
 #
 # Written by Python's `zipfile` with a fixed entry date, so a rebuild is
 # byte-identical.

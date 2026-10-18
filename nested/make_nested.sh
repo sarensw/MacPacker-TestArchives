@@ -8,11 +8,21 @@
 #   rarInZip.zip  readme.txt, notes.txt, inner.rar (../defaultArchives/defaultArchive.rar)
 #   cabInZip.zip  readme.txt, notes.txt, inner.cab (../defaultArchives/defaultArchive.cab)
 #   7zInTar.tar   readme.txt, notes.txt, inner.7z
+#   spannedZip64InZip.zip  readme.txt, notes.txt, split_zipjs64.zip (../zip/)
 #
 # 7-Zip's handlers for 7z, rar and cab look for their signature anywhere in the
 # first 4 MB of a file. Asked before the outer archive's own handler, they took
 # these for the inner archive: the zip listed what the 7z holds, and saving it
 # wrote the 7z over it — MacPacker issue #336.
+#
+# `spannedZip64InZip.zip` stores the last piece of a spanned Zip64 set, and
+# stores it last, so the piece's own end records — a Zip64 locator that says
+# "3 disks", the end of central directory record after it — sit in the outer
+# zip's last few kilobytes, where the end records of the outer zip are looked
+# for. The outer zip is a plain one, with no locator of its own, so a reader
+# that takes the last locator in the tail took it for a spanned set and went
+# looking for a `.z01` — MacPacker issue #348. Only the end record that ends
+# the file belongs to the outer zip.
 #
 # The zips are 7-Zip's, as MacPacker's are. `-mx=0` stores every entry;
 # MacPacker's writer stores whatever does not shrink, which an archive seldom
@@ -39,6 +49,7 @@ printf 'in a\n' > "$BUILD/in-a.txt"
 printf 'in b\n' > "$BUILD/in-b.txt"
 cp ../defaultArchives/defaultArchive.rar "$BUILD/inner.rar"
 cp ../defaultArchives/defaultArchive.cab "$BUILD/inner.cab"
+cp ../zip/split_zipjs64.zip "$BUILD/split_zipjs64.zip"
 chmod 644 "$BUILD"/*
 touch -t "$STAMP" "$BUILD"/*
 
@@ -50,6 +61,8 @@ for inner in 7z rar cab; do
   rm -f "$OUT/${inner}InZip.zip"
   7zz a -tzip -mx=0 -mtc=off -mta=off "$OUT/${inner}InZip.zip" readme.txt notes.txt "inner.$inner" > /dev/null
 done
+rm -f "$OUT/spannedZip64InZip.zip"
+7zz a -tzip -mx=0 -mtc=off -mta=off "$OUT/spannedZip64InZip.zip" readme.txt notes.txt split_zipjs64.zip > /dev/null
 rm -f "$OUT/7zInTar.tar"
 7zz a -ttar "$OUT/7zInTar.tar" readme.txt notes.txt inner.7z > /dev/null
 
