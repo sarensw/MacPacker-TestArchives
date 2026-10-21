@@ -41,9 +41,9 @@ tar --use-compress-program=lz4 -cf ../defaultArchives/defaultArchive.tlz4 *
 tar --lzip -cf ../defaultArchives/defaultArchive.tar.lz *
 tar --lzip -cf ../defaultArchives/defaultArchive.tlz *
 
-# lzma
-tar --lzma -cf ../defaultArchives/defaultArchive.tlzma *
-tar --lzma -cf ../defaultArchives/defaultArchive.tar.lzma *
+# lzma (piped: GNU tar's --lzma writes xz on Debian and Ubuntu)
+tar -cf - * | lzma -c > ../defaultArchives/defaultArchive.tlzma
+tar -cf - * | lzma -c > ../defaultArchives/defaultArchive.tar.lzma
 
 # lzop
 tar --lzop -cf ../defaultArchives/defaultArchive.tlzo *
@@ -60,6 +60,14 @@ arj a -r ../defaultArchives/defaultArchive.arj **/*.* *.*
 # rpm & deb (debian file is in lowercase for compatibility reasons)
 fpm -s dir -t rpm -n defaultArchive -v 1.0 ./
 fpm -s dir -t deb -n defaultarchive -v 1.0 ./
+
+# deb as dpkg-deb writes it. fpm above names the members GNU-style
+# ("debian-binary/"), and 7-Zip opens that as a plain ar, not as a deb
+mkdir -p ../dpkg-root/DEBIAN
+cp -a folder "hello world.txt" ../dpkg-root/
+printf 'Package: defaultarchive\nVersion: 1.0\nArchitecture: all\nMaintainer: MacPacker Test Archives <test@example.invalid>\nDescription: MacPacker test archive\n' > ../dpkg-root/DEBIAN/control
+dpkg-deb --root-owner-group --build ../dpkg-root ../defaultArchives/defaultarchive-dpkg.deb
+rm -rf ../dpkg-root
 
 # squashfs
 mksquashfs folder "hello world.txt" ../defaultArchives/defaultArchive.squashfs -noappend -comp xz -all-root
