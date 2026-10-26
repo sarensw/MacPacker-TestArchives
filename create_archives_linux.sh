@@ -16,6 +16,10 @@ sudo gem install fpm
 # raw
 tar -cf ../defaultArchives/defaultArchive.tar *
 
+# raw, of "." (tar -C dir .): every entry under "./", "./" itself included,
+# the way dpkg-deb writes a deb's data.tar
+tar --sort=name --owner=root --group=root -cf ../defaultArchives/defaultArchive-dotslash.tar .
+
 # gzip
 tar -czf ../defaultArchives/defaultArchive.tgz *
 tar -czf ../defaultArchives/defaultArchive.tar.gz *
