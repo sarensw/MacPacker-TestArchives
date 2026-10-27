@@ -76,5 +76,13 @@ rm -rf ../dpkg-root
 # squashfs
 mksquashfs folder "hello world.txt" ../defaultArchives/defaultArchive.squashfs -noappend -comp xz -all-root
 
+# compressed/: one file through each compressor, without a tar. None of them
+# stores the file's name: gzip only optionally, and -n leaves it out
+gzip -nc "hello world.txt" > "../compressed/hello world.txt.gz"
+bzip2 -c "hello world.txt" > "../compressed/hello world.txt.bz2"
+xz -c "hello world.txt" > "../compressed/hello world.txt.xz"
+lzma -c "hello world.txt" > "../compressed/hello world.txt.lzma"
+compress -c "hello world.txt" > "../compressed/hello world.txt.Z"
+
 cd ..
 
