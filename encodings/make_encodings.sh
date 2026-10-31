@@ -31,14 +31,20 @@
 #                   characters in, so every name also decodes as Chinese.
 #   cp850.zip       Western Europe. Its ü, ö and é sit where CP437, the code page
 #                   the zip format itself names, has them; ã and ø only here.
-#   cp866.zip       Russian. No detection claims this one; it is what picking an
-#                   encoding by hand is for.
+#   cp866.zip       Russian, as a Russian Windows writes it. Its last letters are
+#                   lead bytes in Shift-JIS, which then swallow the `/` behind
+#                   them: read as a whole, a path fails where its folder does not.
+#   cp1251.zip      The same names in the ANSI code page, which some tools use.
+#                   Every byte above 0xBF is a letter there, so nothing tells it
+#                   from East Asian text: picking an encoding by hand is for this.
 #   gbk_mixed.zip   GBK beside a name flagged as UTF-8: a GBK zip after a tool
 #                   that writes UTF-8 added a file to it. The UTF-8 name takes an
 #                   even number of bytes, so GBK decodes it too, to something else.
 #   gbk_traversal.zip
 #                   A GBK name that climbs out of the destination: a name read in
-#                   a code page is as untrusted as any other.
+#                   a code page is as untrusted as any other. Its `..` must not
+#                   turn into a folder in the list either: hidden like any name
+#                   that starts with a dot, it would leave the list empty.
 #   gbk_password.zip
 #                   GBK under ZipCrypto, password `secret`. Python's zipfile
 #                   cannot encrypt, so `zip` writes it under an ASCII name of the
@@ -100,6 +106,7 @@ build("shiftjis.zip", "cp932", ["表示/", "表示/ソフト能力.txt", "日本
 build("cp949.zip", "cp949", ["문서/", "문서/보고서.txt", "사진/풍경.txt", "설명서.txt"])
 build("cp850.zip", "cp850", ["Müller/", "Müller/Größe.txt", "Übersicht.txt", "résumé.txt", "São Paulo.txt", "Søren.txt"])
 build("cp866.zip", "cp866", ["Документы/", "Документы/Отчёт.txt", "Новая папка/Договор.txt"])
+build("cp1251.zip", "cp1251", ["Документы/", "Документы/Отчёт.txt", "Новая папка/Договор.txt"])
 
 build("gbk_traversal.zip", "gbk", ["../../中文.txt"])
 build("gbk.zip", "gbk", ["中文目录/", "中文目录/你好世界.txt", "中文目录/说明文档.txt", "图片/", "图片/风景.txt", "一些.txt", "readme.txt"])
