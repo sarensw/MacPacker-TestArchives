@@ -40,11 +40,23 @@
 #   gbk_mixed.zip   GBK beside a name flagged as UTF-8: a GBK zip after a tool
 #                   that writes UTF-8 added a file to it. The UTF-8 name takes an
 #                   even number of bytes, so GBK decodes it too, to something else.
+#   gbk_flagged.zip GBK beside names flagged as UTF-8 that are not East Asian, so
+#                   nothing about them looks like UTF-8 to anyone who ignores the
+#                   flag: Отчёт.txt in GBK is 袨褌褔褢褌.txt, Señor.txt is Se帽or.txt.
+#   cp866_lookalike.zip
+#                   Russian names whose bytes happen to be valid UTF-8 as well,
+#                   beside one that is not and one flagged as UTF-8. сон in CP866
+#                   is E1 AE AD, one Sundanese letter in UTF-8. Nothing tells which
+#                   reading is meant, which is what picking an encoding is for,
+#                   and the pick must not touch the flagged name.
 #   gbk_traversal.zip
 #                   A GBK name that climbs out of the destination: a name read in
 #                   a code page is as untrusted as any other. Its `..` must not
 #                   turn into a folder in the list either: hidden like any name
 #                   that starts with a dot, it would leave the list empty.
+#   gbk_twins.zip   Three files that land on one path, each with its own content:
+#                   `../中文.txt`, `./中文.txt` and `中文.txt`. Rewriting the archive
+#                   extracts them first, and must not let one replace the others.
 #   gbk_password.zip
 #                   GBK under ZipCrypto, password `secret`. Python's zipfile
 #                   cannot encrypt, so `zip` writes it under an ASCII name of the
@@ -97,6 +109,13 @@ def build(out, encoding, names):
             add(archive, CodePageName(name, encoding), b"" if name.endswith("/") else name.encode())
 
 
+def flagged(name):
+    """A zip entry named in UTF-8, with the flag: `zipfile` sets it for a name that is not ASCII."""
+    entry = zipfile.ZipInfo(name, date_time=DATE)
+    entry.create_system = FAT
+    return entry
+
+
 # The sidecar of `helper` in zip/appledouble.zip, a genuine AppleDouble file.
 with zipfile.ZipFile("../zip/appledouble.zip") as source:
     sidecar = source.read("payload/Contents/MacOS/._helper")
@@ -119,10 +138,23 @@ with zipfile.ZipFile("gbk_sidecar.zip", "w") as archive:
 
 with zipfile.ZipFile("gbk_mixed.zip", "w") as archive:
     add(archive, CodePageName("中文目录/你好世界.txt", "gbk"), b"GBK name")
-    # A plain ZipInfo: `zipfile` flags a name that is not ASCII as UTF-8.
-    plain = zipfile.ZipInfo("新建文档.txt", date_time=DATE)
-    plain.create_system = FAT
-    add(archive, plain, b"UTF-8 name")
+    add(archive, flagged("新建文档.txt"), b"UTF-8 name")
+
+with zipfile.ZipFile("gbk_flagged.zip", "w") as archive:
+    add(archive, CodePageName("中文目录/你好世界.txt", "gbk"), b"GBK name")
+    for name in ["Отчёт.txt", "Señor.txt", "Café.txt"]:
+        add(archive, flagged(name), b"UTF-8 name")
+
+with zipfile.ZipFile("cp866_lookalike.zip", "w") as archive:
+    add(archive, CodePageName("Документы/Отчёт.txt", "cp866"), b"Not valid UTF-8")
+    add(archive, CodePageName("сон.txt", "cp866"), b"Valid UTF-8 by accident")
+    add(archive, CodePageName("сад/том.txt", "cp866"), b"Valid UTF-8 by accident, folder and all")
+    add(archive, flagged("Café.txt"), b"UTF-8 name")
+
+with zipfile.ZipFile("gbk_twins.zip", "w") as archive:
+    add(archive, CodePageName("../中文.txt", "gbk"), b"from above")
+    add(archive, CodePageName("./中文.txt", "gbk"), b"from here")
+    add(archive, CodePageName("中文.txt", "gbk"), b"plain")
 
 with tarfile.open("gbk.tar", "w", format=tarfile.GNU_FORMAT, encoding="gbk") as archive:
     for name in ["中文目录/", "中文目录/你好世界.txt", "图片/", "图片/风景.txt", "一些.txt"]:
