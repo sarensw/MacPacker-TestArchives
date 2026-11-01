@@ -40,6 +40,9 @@
 #   gbk_mixed.zip   GBK beside a name flagged as UTF-8: a GBK zip after a tool
 #                   that writes UTF-8 added a file to it. The UTF-8 name takes an
 #                   even number of bytes, so GBK decodes it too, to something else.
+#   gbk_unflagged.zip
+#                   GBK beside a real UTF-8 name with no flag, which is what a tool
+#                   writes that takes UTF-8 for granted. Only the bytes can tell.
 #   gbk_flagged.zip GBK beside names flagged as UTF-8 that are not East Asian, so
 #                   nothing about them looks like UTF-8 to anyone who ignores the
 #                   flag: Отчёт.txt in GBK is 袨褌褔褢褌.txt, Señor.txt is Se帽or.txt.
@@ -139,6 +142,10 @@ with zipfile.ZipFile("gbk_sidecar.zip", "w") as archive:
 with zipfile.ZipFile("gbk_mixed.zip", "w") as archive:
     add(archive, CodePageName("中文目录/你好世界.txt", "gbk"), b"GBK name")
     add(archive, flagged("新建文档.txt"), b"UTF-8 name")
+
+with zipfile.ZipFile("gbk_unflagged.zip", "w") as archive:
+    add(archive, CodePageName("中文目录/你好世界.txt", "gbk"), b"GBK name")
+    add(archive, CodePageName("新建文档.txt", "utf-8"), b"UTF-8 name, no flag")
 
 with zipfile.ZipFile("gbk_flagged.zip", "w") as archive:
     add(archive, CodePageName("中文目录/你好世界.txt", "gbk"), b"GBK name")
