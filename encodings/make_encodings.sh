@@ -105,11 +105,20 @@
 #   macroman.sit, macjapanese.sit
 #                   Classic StuffIt, stored, as a Mac wrote it. Mac Roman puts `é`
 #                   at 0x8E, where CP850 has `Ä`, so only the format tells them apart.
+#   gbk_accident.zip, gbk_accident.tar
+#                   Nothing but Chinese whose GBK bytes happen to be valid UTF-8, so
+#                   not one byte gives it away: 图片 reads ͼƬ and 一些 reads һЩ. Only
+#                   someone who sees the names can tell, which is what a pick is for.
+#   utf8_unflagged.zip
+#                   Real UTF-8 with no flag. Nothing tells it from the two above, so
+#                   it reads as it is and takes a pick all the same.
+#   unicode.7z      A 7z stores UTF-16, so its names are never in a code page and
+#                   there is nothing to pick.
 #
 # Entry dates are fixed, so a rebuild produces byte-identical archives, except
 # for gbk_password.zip, whose encryption header is random.
 #
-# Requires: python3 and zip (both stock with the Command Line Tools).
+# Requires: python3 and zip (both stock with the Command Line Tools), and 7zz.
 #
 set -euo pipefail
 
@@ -310,6 +319,8 @@ build("gbk_forms.zip", "gbk", ["简历模板.doc", "报名表.xls"])
 build("cp866_symbols.zip", "cp866", ["Документы/Отчёт.txt", "Приказ №15.doc", "Новая папка/Договор.txt", "Письмо.txt", "Акт.doc", "Счёт.xls"])
 build("cp850_symbols.zip", "cp850", ["Übersicht.txt", "§ 34 Änderung.pdf", "Müller.doc"])
 build("dotdot_entry.zip", "ascii", ["sub/x.txt", "sub/y.txt", "sub/../"])
+build("gbk_accident.zip", "gbk", ["图片.txt", "一些.txt"])
+build("utf8_unflagged.zip", "utf-8", ["Größe.txt", "日本語.txt"])
 
 with zipfile.ZipFile("gbk_unicode_path.zip", "w") as archive:
     add(archive, CodePageName("中文目录/你好世界.txt", "gbk"), b"GBK name")
@@ -359,6 +370,10 @@ with tarfile.open("gbk.tar", "w", format=tarfile.GNU_FORMAT, encoding="gbk") as 
     for name in ["中文目录/", "中文目录/你好世界.txt", "图片/", "图片/风景.txt", "一些.txt"]:
         tar_add(archive, name)
 
+with tarfile.open("gbk_accident.tar", "w", format=tarfile.GNU_FORMAT, encoding="gbk") as archive:
+    for name in ["图片.txt", "一些.txt"]:
+        tar_add(archive, name)
+
 with tarfile.open("gbk_pax.tar", "w", format=tarfile.GNU_FORMAT, encoding="gbk") as archive:
     tar_add(archive, "中文目录/你好世界.txt")
     tar_add(archive, "新建文档.txt")
@@ -390,4 +405,11 @@ with open("gbk_password.zip", "wb") as out:
     out.write(archive.replace(b"abcdefgh.txt", "你好世界.txt".encode("gbk")))
 PYTHON
 
-ls -l ./*.zip ./*.tar ./*.lzh ./*.rar ./*.cab ./*.sit
+mkdir -p "$BUILD/unicode/中文目录"
+printf 'UTF-16 in the header.\n' > "$BUILD/unicode/中文目录/你好世界.txt"
+printf 'UTF-16 in the header.\n' > "$BUILD/unicode/Größe.txt"
+rm -f unicode.7z
+(cd "$BUILD/unicode" && 7zz a -bso0 -bsp0 -mx=0 -mtm=off -mtc=off -mta=off -mtr=off -- unicode.7z 中文目录 Größe.txt)
+mv "$BUILD/unicode/unicode.7z" unicode.7z
+
+ls -l ./*.zip ./*.tar ./*.lzh ./*.rar ./*.cab ./*.sit ./*.7z
