@@ -71,6 +71,8 @@ mkdir -p ../dpkg-root/DEBIAN
 cp -a folder "hello world.txt" ../dpkg-root/
 printf 'Package: defaultarchive\nVersion: 1.0\nArchitecture: all\nMaintainer: MacPacker Test Archives <test@example.invalid>\nDescription: MacPacker test archive\n' > ../dpkg-root/DEBIAN/control
 dpkg-deb --root-owner-group --build ../dpkg-root ../defaultArchives/defaultarchive-dpkg.deb
+# the same with zstd, as Ubuntu builds its debs since 21.10
+dpkg-deb -Zzstd --root-owner-group --build ../dpkg-root ../defaultArchives/defaultarchive-dpkg-zstd.deb
 rm -rf ../dpkg-root
 
 # squashfs
@@ -83,6 +85,7 @@ bzip2 -c "hello world.txt" > "../compressed/hello world.txt.bz2"
 xz -c "hello world.txt" > "../compressed/hello world.txt.xz"
 lzma -c "hello world.txt" > "../compressed/hello world.txt.lzma"
 compress -c "hello world.txt" > "../compressed/hello world.txt.Z"
+zstd -qc "hello world.txt" > "../compressed/hello world.txt.zst"
 
 cd ..
 
