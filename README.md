@@ -53,6 +53,8 @@ All archives / files that are named `defaultArchive` contain the contents of the
 
 `password/` holds the encrypted archives (ZipCrypto, WinZip AES, 7z AES, encrypted headers, awkward passwords). Unlike the rest, those are reproducible: `password/make_fixtures.sh` rebuilds them, and `password/make_rar_fixtures.sh` builds the RAR ones on a machine that has `rar`. See `password/README.md` for the matrix and the password of each file.
 
+`damaged/` holds `defaultArchiveContent` packed and then damaged the ways a file gets damaged on its way to someone: a byte that changed, a download cut short. Each of them still opens, so what is wrong only shows once what they hold is decoded, which is what testing an archive does — see MacPacker issue #232. In `crc.zip`, `folder/README.md` is stored and one byte of it changed: it reads, and its CRC no longer matches. `crc.7z` is a solid 7z with one byte of its packed data changed, which only `folder/NestedArchive.zip` fails on. `crc.tar.gz` decompresses whole, and the CRC in the gzip trailer no longer matches. `truncated.zip` is cut off inside `folder/NestedArchive.zip`, its central directory gone with it: 7-Zip finds the entries by their local headers and reports the archive cut short. `noCentralDirectory.zip` is cut off right where the central directory starts, so every entry is there and reads, and only the archive itself can say it is incomplete — a test that looks at the entries alone calls it whole. Rebuild them with `damaged/make_damaged.sh`; the entry dates are fixed and the damage sits at offsets the script works out from the archive, so a rebuild is byte-identical.
+
 ## 🧰 Included Formats
 
 > Not all formats may be extractable by macOS or 7-Zip — some are included purely for identification testing.
