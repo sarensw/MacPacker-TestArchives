@@ -16,9 +16,24 @@
 #   noCentralDirectory.zip  cut off where the central directory starts: every
 #                           entry is there and reads, and only the archive itself
 #                           can say it is incomplete.
+#   crcEncrypted.7z         ../password/7z_aes256.7z, one byte near the end of its
+#                           packed data changed: `folder/NestedArchive.zip`
+#                           decrypts first and matches, so the password
+#                           (`password`) is right, and the two files after it
+#                           fail on the damage.
+#   crc.dmg                 ../defaultArchives/defaultArchive.dmg, one byte of
+#                           `folder/README.md` changed: APFS reads it as it is,
+#                           and only the image's own CRC no longer matches.
+#   tocChecksum.xar         ../defaultArchives/defaultArchive.xar, one byte of the
+#                           SHA-1 of its table of contents changed: every file
+#                           reads and matches its own checksum, and the table of
+#                           contents no longer matches its one.
 #
 # Entry dates are fixed, entries are added by explicit argument, and the damage
-# is at offsets worked out from the archive, so a rebuild is byte-identical.
+# is at offsets worked out from the archive, so a rebuild is byte-identical. The
+# last three are copies of archives in the other folders, which no tool rebuilds
+# the same: 7-Zip encrypts with a random IV, and a dmg and a xar hold the time
+# they were made.
 #
 # Requires: zip, tar, gzip, xxd (stock macOS), 7zz (`brew install sevenzip`).
 #
@@ -47,7 +62,7 @@ offset_of() {
     LC_ALL=C grep -obUa -- "$2" "$1" | head -1 | cut -d: -f1
 }
 
-rm -f crc.zip crc.7z crc.tar.gz truncated.zip noCentralDirectory.zip
+rm -f crc.zip crc.7z crc.tar.gz truncated.zip noCentralDirectory.zip crcEncrypted.7z crc.dmg tocChecksum.xar
 
 # -0 stores the entries, so a changed byte decodes as it is and only the CRC can
 # tell. -X: no uid/gid, no extended attributes, no extra timestamps.
@@ -79,6 +94,22 @@ gzip -n -c "$BUILD/crc.tar" > crc.tar.gz
 # The trailer is the CRC-32 of the data, then its size.
 flip crc.tar.gz $(($(wc -c < crc.tar.gz) - 8)) 0x01
 
-for f in crc.zip crc.7z crc.tar.gz truncated.zip noCentralDirectory.zip; do
+# One solid block of 52496 bytes (`7zz l -slt`) right after the 32-byte signature
+# header; 100 bytes before its end is past `folder/NestedArchive.zip`, which
+# comes first.
+cp ../password/7z_aes256.7z crcEncrypted.7z
+flip crcEncrypted.7z $((32 + 52496 - 100)) 0x01
+
+# The image is stored uncompressed, so the text of README.md is in it as it is.
+cp ../defaultArchives/defaultArchive.dmg crc.dmg
+flip crc.dmg "$(offset_of crc.dmg 'Lorem ipsum')" 0x20
+
+# The checksum of the table of contents is the first thing on the heap, which
+# starts after the header (its size at offset 4) and the compressed table of
+# contents (its size at offset 8).
+cp ../defaultArchives/defaultArchive.xar tocChecksum.xar
+flip tocChecksum.xar $((0x$(xxd -s 4 -l 2 -p tocChecksum.xar) + 0x$(xxd -s 8 -l 8 -p tocChecksum.xar))) 0x01
+
+for f in crc.zip crc.7z crc.tar.gz truncated.zip noCentralDirectory.zip crcEncrypted.7z crc.dmg tocChecksum.xar; do
     echo "wrote $f ($(wc -c < "$f" | tr -d ' ') bytes)"
 done
