@@ -295,6 +295,50 @@ CUSTOM_EXPECTED = {
 # Existing fixtures that serve their own purpose (documented in their directory README or the repo README).
 SPECIAL_PURPOSE = ["encodings/*", "archivers/*", "damaged/*", "nested/*", "lzx/*", "stuffit/*", "sevenzip/appbundle.7z",
                    "password/zip_nested_outer.zip", "zip/[a-z]*[A-Z]*.zip", "zip/split_*", "zip/utf_*", "zip/папка.zip", "zip/zipVariant*",
-                   "zip/empty.zip", "zip/zipslip.zip", "zip/macextras.zip", "zip/appledouble.zip", "zip/customicon.zip", "zip/markdown-kit.zip",
+                   "zip/empty.zip", "zip/appbundle.zip", "zip/zipslip.zip", "zip/macextras.zip", "zip/appledouble.zip", "zip/customicon.zip", "zip/markdown-kit.zip",
                    "zip/zipstreamer64.zip", "lha_lzh/abspath.lzh", "lha_lzh/badterm.lzh", "lha_lzh/dir.lzh", "lha_lzh/dotdot.lzh", "lha_lzh/multiple.lzh",
                    "lha_lzh/symlink*.lzh", "lha_lzh/truncated.lzh", "lha_lzh/unixsep.lzh", "defaultArchives/defaultArchive.dvd"]
+
+# ---- 2026-11-16 run 2: Windows tools and regenerated baselines (overrides the entries above) ----
+_UPD = {
+ "7z": dict(notes="defaultArchive.7z regenerated 2026-11-16 with 7-Zip 23.01 (Ubuntu), LZMA2 solid, current content."),
+ "ar-deb": dict(notes="ar is flat: it holds `hello world.txt`, `README.md`, `NestedArchive.zip` without the folder. The debs were regenerated 2026-11-16 (fpm 1.15, dpkg-deb); fpm adds usr/share/doc/defaultarchive/changelog.gz."),
+ "bzip2": dict(notes="tar inside regenerated 2026-11-16 (current content)."),
+ "cab": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.cab", "cab/*.cab", "encodings/sjis_backslash.cab"],
+   covered="LZX:21 baseline (WinAce 2.69, regenerated 2026-11-16); makecab 5.1 (Windows XP): MSZIP, LZX:15, LZX:21, none, spanned set of 3 cabinets; gcab: none, MSZIP",
+   outstanding="Quantum: makecab 5.1 refuses CompressionType=QUANTUM (needs an older Microsoft cabinet tool); InstallShield cabs have their own row", notes=""),
+ "lha": dict(covered="baseline .lzh regenerated with WinAce 2.69 (header level 0, `\\` separators, -lh5-); .lha (jLHA, level 2); -lh0- -lh5- -lh6- -lh7-; header levels 0, 1, 2; the lhasa test set"),
+ "rar": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.rar", "rar/*", "password/rar*.rar", "encodings/sjis_backslash.rar", "nested/rarInZip.zip"],
+   covered="RAR5 baseline (WinRAR 6.02, regenerated 2026-11-16); rar/: RAR5 solid, store, recovery record, volumes (.part1-3.rar), SFX; RAR4 (-ma4) default, solid, volumes (.rar/.r00/.r01); RAR 1.5-format archives with RAR 2.0 compression by WinRAR 2.71 (default, best, store, solid, password, recovery record, volumes, SFX); RAR4/RAR5 AES in password/",
+   outstanding="RAR 1.5 compression (WinRAR 1.5x), RAR5 encrypted volumes, RAR 7 large dictionary (-md>4g)",
+   notes="Ubuntu 7-Zip and Homebrew 7-Zip have no RAR decoder (entries come out empty or partial); unrar 7.00 and unar check them. unrar reports the 2.71 archives as `Details: RAR 4` with method `RAR 1.5(v20)`: the RAR 1.5-4.x container with the RAR 2.0 algorithm."),
+ "stuffit": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.sit", "stuffit/*.sit", "encodings/*.sit"],
+   covered="baseline defaultArchive.sit: StuffIt 5 format (`StuffIt (c)1997-2001 Aladdin Systems`), StuffIt Standard 7.5 for Windows in 30-day demo mode, max compression; stuffit/stuffit5_password.sit (password `password`); the third-party StuffIt 5 test file; classic SIT! (encodings/)",
+   outstanding="classic (pre-5) SIT! made by a classic StuffIt; StuffIt 5 with Mac resource forks",
+   notes="StuffIt Standard 7.5 (Stuff75L.exe from archive.org item stuff-75-l, md5 90f3312b59c0cd3a60c9cf41f95b6dd3) was installed with an EMPTY serial field (the bundled installer pre-fills one; it was removed), so it ran as the 30-day trial. The Windows version creates only .sit and .zip."),
+ "sea": dict(status="PARTIAL", fixtures=["stuffit/*.sea", "stuffit/stuffit5_password.exe"],
+   covered="third-party Mac .sea; stuffit/stuffit5_password.exe: Windows self-extractor (StuffIt 7.5) of the password-protected archive, unverified (no reader opened it; running it is not allowed here)",
+   outstanding="baseline Mac .sea (needs StuffIt for Mac)"),
+ "sitx": dict(status="BLOCKED", blocked="StuffIt X (.sitx) is written only by StuffIt Deluxe. The archive.org Deluxe copies (9.0, 2009, 2010) come with a serial or pre-registered, which this task does not use; no official trial download was found."),
+ "tar": dict(notes="defaultArchive.tar, -dotslash.tar and .gtar regenerated 2026-11-16 with GNU tar 1.35 (current content)."),
+ "wim": dict(notes="defaultArchive.wim regenerated 2026-11-16 (wimlib, uncompressed as before)."),
+ "exe-7zsfx": dict(covered="7-Zip 19.00 SFX (7z.sfx, LZMA2 solid), regenerated 2026-11-16 on Windows XP", outstanding="WinZip SFX, cab SFX (WinRAR 2.71/6.02 and StuffIt SFX are in rar/ and stuffit/)", notes=""),
+ "zipx": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.zipx", "zipx/*.zipx"], magic="`PK\\x03\\x04` at 0",
+   covered="WinZip 14.5 (evaluation) with the Command Line Support Add-On 3.2 (wzzip): best method (-ez, per-file choice: LZMA, Deflate64, store), LZMA (-eL), PPMd (-ep), bzip2 (-eb), enhanced deflate (-ee), AES-256 (-ycAES256, password `password`)",
+   outstanding="WinZip 12+ JPEG (method 96), WavPack (97), xz (95) and zstd (93) entries: need matching input files or a newer WinZip",
+   notes="Installed from https://download.winzip.com/winzip145.exe (sha256 eeb058d3…) and wzcline32.exe (sha256 a497defc…). The MSI's disk costing hung on Bob's transfer drives, so WINZIP145.MSI was installed with msiexec /qn. Each wzzip call shows an evaluation notice that waits for a key."),
+ "ace": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.ace", "ace/*.ace"],
+   covered="ACE 2.0 solid baseline (WinAce 2.69, regenerated); ace/: ACE 1.0 solid and non-solid, ACE 2.0 non-solid, store (-m0), password (-ppassword)",
+   outstanding="multi-volume ACE (no CLI switch found), recovery record, SFX",
+   notes="WinAce 2.69 (archive.org winace_winace_2.65_anglais_9748, md5 49fe093f…) shareware trial. Its command line (`winace a -r [-m0] [-p<pw>] archive files`) uses the GUI defaults; ACE 1.0 vs 2.0 and solid were switched with the registry values HKCU\\Software\\e-merge\\WinAce\\2.0 Ace2 and Solid. acefile reports `for extraction with 1.0+` and comptype 1 (LZ77) for ACE 1.0, `2.0+` and comptype 2 (blocked) for ACE 2.0."),
+ "inno": dict(status="DONE", magic="`MZ`; Inno Setup loader", fixtures=["defaultArchives/defaultArchive-inno.exe", "inno/*.exe"],
+   covered="Inno Setup 5.6.1 (ISCC on Windows XP): lzma2/max (baseline), lzma solid, zip, bzip, none", outstanding="Inno Setup 6, encrypted installers",
+   notes="innoextract 1.9 extracts the three files to app/ ({app} = Program Files\\defaultArchive)."),
+ "iso": dict(notes="defaultArchive.iso/.bin/.img regenerated 2026-11-16 with xorriso (Joliet, volume id MACPACKER; they were WinIso images with CRLF content). level1_plain.iso maps names to 8.3 upper case."),
+ "nrg": dict(status="PARTIAL", covered="existing (WinIso), legacy CRLF content", outstanding="regenerate with current content (needs WinIso or Nero on Windows)"),
+ "mds": dict(outstanding="a reader that verifies the mdf content; regenerate with current content (WinIso)"),
+}
+for _f in FORMATS:
+    if _f["id"] in _UPD:
+        _f.update(_UPD[_f["id"]])
+FORMATS.append(dict(id="rar-sfx", name="RAR self-extractor", v12=False, ext="exe", status="DONE", fixtures=["rar/*.exe"], covered="WinRAR 2.71 and 6.02 SFX modules", magic="`MZ` + RAR signature"))

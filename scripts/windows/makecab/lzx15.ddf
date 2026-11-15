@@ -1,0 +1,13 @@
+.Set CabinetNameTemplate=makecab_lzx15.cab
+.Set DiskDirectoryTemplate=C:\OUT
+.Set Cabinet=on
+.Set Compress=on
+.Set CompressionType=LZX
+.Set CompressionMemory=15
+.Set MaxDiskSize=0
+.Set RptFileName=C:\OUT\lzx15.rpt
+.Set InfFileName=C:\OUT\lzx15.inf
+"C:\C\hello world.txt" "hello world.txt"
+.Set DestinationDir=folder
+"C:\C\folder\README.md" "README.md"
+"C:\C\folder\NestedArchive.zip" "NestedArchive.zip"

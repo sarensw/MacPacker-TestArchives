@@ -1,0 +1,145 @@
+== defaultArchives/defaultArchive.ace
+  acefile 0.6.14: archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 2.0+;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== ace/ace10_nonsolid.ace
+  acefile 0.6.14: processing archive ace/ace10_nonsolid.ace;archive is not locked, not multi-volume, not solid;created on Win32 with ACE 2.0 for extraction with 1.0+;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== ace/ace10_solid.ace
+  acefile 0.6.14: processing archive ace/ace10_solid.ace;archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 1.0+;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== ace/ace20_nonsolid.ace
+  acefile 0.6.14: processing archive ace/ace20_nonsolid.ace;archive is not locked, not multi-volume, not solid;created on Win32 with ACE 2.0 for extraction with 2.0+;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== ace/ace20_password.ace
+  acefile 0.6.14: archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 2.0+;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== ace/ace20_store.ace
+  acefile 0.6.14: archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 2.0+;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive-inno.exe
+  innoextract 1.9: 
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== inno/inno_bzip.exe
+  innoextract 1.9: 
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== inno/inno_lzma2_default.exe
+  innoextract 1.9: 
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== inno/inno_lzma_solid.exe
+  innoextract 1.9: 
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== inno/inno_none.exe
+  innoextract 1.9: 
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== inno/inno_zip.exe
+  innoextract 1.9: 
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.rar
+  unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m0 -md=128k; Compression: RAR 5.0(v50) -m3 -md=128k;Details: RAR 5;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar2_best.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=1m; Compression: RAR 1.5(v20) -m5; Compression: RAR 1.5(v20) -m5 -md=1m;Details: RAR 4;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar2_default.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=1m; Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar2_password.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar2_recovery.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=1m; Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4, recovery record;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar2_solid.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4, solid;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar2_store.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0; Compression: RAR 1.5(v20) -m0 -md=1m;Details: RAR 4;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar2_volumes.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0; Compression: RAR 1.5(v20) -m0 -md=1m;Details: RAR 4, volume;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar4_default.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0; Compression: RAR 1.5(v29) -m0 -md=128k; Compression: RAR 1.5(v29) -m3 -md=128k;Details: RAR 4;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar4_solid.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0; Compression: RAR 1.5(v29) -m3 -md=1m;Details: RAR 4, solid;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar4_volumes.rar
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=128k;Details: RAR 4, volume;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar5_recovery.rar
+  unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m0 -md=128k; Compression: RAR 5.0(v50) -m3 -md=128k;Details: RAR 5, recovery record;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar5_solid.rar
+  unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m3 -md=1m;Details: RAR 5, solid;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar5_store.rar
+  unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m0 -md=128k;Details: RAR 5;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar5_volumes.part1.rar
+  unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0 -md=128k;Details: RAR 5, volume 1;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar2_sfx.exe
+  unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=1m; Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4, SFX;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== rar/rar5_sfx.exe
+  unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m0 -md=128k; Compression: RAR 5.0(v50) -m3 -md=128k;Details: RAR 5, SFX;
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt

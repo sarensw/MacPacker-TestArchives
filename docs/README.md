@@ -85,6 +85,8 @@ the macOS tools are part of the OS. No tool needed registration.
 | `scripts/ubuntu_v12.sh <content> <out>` | `ubuntu` VM, needs sudo for the NTFS loop mount | CHM, MSI, NTFS, LHA baselines; variants in `sevenzip/ zip/ tar/ cpio/ arj/ cab/ squashfs/ iso/ lha_lzh/` |
 | `scripts/ubuntu_next.sh <repo> <out>` | `ubuntu` VM, sudo | ext2/3/4, HFS+/HFSX/HFS, UDF, WIM/ESD/SWM, NSIS, CHD, TOC, CSO, ADF, WARC, C64, Atari ST, Parallels, Android sparse, MBR/GPT raw, LZFSE |
 | `scripts/macos_fixtures.sh <content> <out>` | `lb_27` VM | pkg, aar, aea, pbzx, AppleSingle/MacBinary/BinHex, DMG variants, sparse images, APFS, APM/GPT raw, xar variants |
+| `scripts/regenerate_linux_baselines.sh <content> <out>` | `ubuntu` VM | the regenerated legacy baselines (2026-11-16) |
+| `scripts/windows/` (README there) | `win98`, `winxp` VMs | RAR 2.x/4/5, CAB (makecab), Inno Setup, ZIPX (WinZip), ACE (WinAce), StuffIt 5 .sit, 7-Zip SFX |
 | `<dir>/make_*.sh` | see each | the special-purpose fixtures |
 
 The scripts copy the content to a temp dir, strip `.DS_Store`/`._*`, and fix timestamps where the tool allows

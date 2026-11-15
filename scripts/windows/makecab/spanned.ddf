@@ -1,0 +1,12 @@
+.Set CabinetNameTemplate=makecab_spanned*.cab
+.Set DiskDirectoryTemplate=C:\OUT
+.Set Cabinet=on
+.Set Compress=on
+.Set CompressionType=MSZIP
+.Set MaxDiskSize=25600
+.Set RptFileName=C:\OUT\spanned.rpt
+.Set InfFileName=C:\OUT\spanned.inf
+"C:\C\hello world.txt" "hello world.txt"
+.Set DestinationDir=folder
+"C:\C\folder\README.md" "README.md"
+"C:\C\folder\NestedArchive.zip" "NestedArchive.zip"

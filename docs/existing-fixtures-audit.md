@@ -1,5 +1,11 @@
 # Audit of the fixtures that existed before 2026-11-15
 
+**Update 2026-11-16:** on Stephan's decision the legacy-content baselines were regenerated with current content, same
+paths: the tar family, rpm, debs, arj, gtar, 7z, jar, wim, iso/bin/img (Linux, `scripts/regenerate_linux_baselines.sh`),
+CHD/CSO derived from the iso, ace/cab/lzh (WinAce 2.69), exe (7-Zip 19.00 SFX), rar (WinRAR 6.02)
+(`scripts/windows/`). Still legacy: `defaultArchive.nrg`, `.mdf`/`.mds` (need WinIso or Nero) and `defaultArchive.tar.hqx`
+(macOS `binhex`, next macOS VM run). The findings below describe the state before the regeneration.
+
 All fixtures in `defaultArchives/`, `password/`, `compressed/`, `lha_lzh/`, `lzx/`, `stuffit/` and `sevenzip/` were
 extracted on 2026-11-15 and their files compared by sha256 with today's `defaultArchiveContent/`.
 Raw output: `docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl`, `host_7zz.txt`, `ubuntu_unrar.txt`,

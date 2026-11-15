@@ -1,0 +1,3 @@
+== zipx/zipx_aes256.zipx
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = ; 3 Characteristics = WzAES : Encrypt; 3 Encrypted = +; 1 Encrypted = -; 1 Method = AES-256 Deflate64:v1; 1 Method = AES-256 LZMA; 1 Method = AES-256 Store; 1 Method = Store; 1 Type = zip;
+  content: MATCH (3 files, sha256)

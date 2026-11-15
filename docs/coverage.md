@@ -11,7 +11,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Apple Disk Image (UDIF)](formats/dmg.md) | 1.2 | dmg, smi, img | `defaultArchive-encrypted.dmg`, `defaultArchive.dmg` | 14/14 | UDCO (ADC, cannot be created on macOS 27), UDxx/legacy NDIF images, multi-partition and hybrid images, SLA (license) resources |
 | DONE | [ARJ](formats/arj.md) | 1.2 | arj | `defaultArchive.arj` | 4/4 | methods 2, 3; multi-volume; ARJ-encrypted (garble/GOST) |
 | DONE | [Bzip2](formats/bzip2.md) | 1.2 | bz2, bz, tbz2, tbz, tar.bz2 | `defaultArchive.tar.bz2`, `defaultArchive.tbz`, `defaultArchive.tbz2` | 4/4 | multi-stream (pbzip2) files |
-| PARTIAL | [Microsoft Cabinet](formats/cab.md) | 1.2 | cab | `defaultArchive.cab` | 3/4 | Quantum; multi-cabinet sets; LZX made by makecab on Windows XP (planned) |
+| DONE | [Microsoft Cabinet](formats/cab.md) | 1.2 | cab | `defaultArchive.cab` | 8/11 | Quantum: makecab 5.1 refuses CompressionType=QUANTUM (needs an older Microsoft cabinet tool); InstallShield cabs have their own row |
 | DONE | [Microsoft Compiled HTML Help](formats/chm.md) | 1.2 | chm | `defaultArchive.chm` | 1/1 | a CHM compiled by Microsoft HTML Help Workshop (Windows) |
 | DONE | [cpio](formats/cpio.md) | 1.2 | cpio | `defaultArchive.cpio` | 5/5 | big-endian binary |
 | DONE | [FAT image](formats/fat.md) | 1.2 | fat, img | `defaultArchive.fat` | 2/2 | FAT32, exFAT raw images (exFAT exists inside dmg/fs_exfat.dmg) |
@@ -24,14 +24,14 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Windows Installer (MSI)](formats/msi.md) | 1.2 | msi | `defaultArchive.msi` | 1/1 | MSI made by Windows Installer tooling (WiX on Windows), external cabinets, merge modules (.msm), patches (.msp) |
 | DONE | [NTFS image](formats/ntfs.md) | 1.2 | ntfs, img | `defaultArchive.ntfs` | 1/1 | compressed files, alternate data streams, sparse files, Windows-formatted volume |
 | DONE | [QCOW2](formats/qcow2.md) | 1.2 | qcow2 | `defaultArchive.qcow2` | 1/1 | compressed clusters, qcow (v1), backing files |
-| PARTIAL | [RAR](formats/rar.md) | 1.2 | rar, cbr | `defaultArchive.rar` | 5/7 | RAR 1.5-2.x archive made by WinRAR 2.71 (win98 VM), RAR4 non-encrypted baseline, solid, multi-volume (.part1.rar and .r00), recovery record |
+| DONE | [RAR](formats/rar.md) | 1.2 | rar, cbr | `defaultArchive.rar` | 21/29 | RAR 1.5 compression (WinRAR 1.5x), RAR5 encrypted volumes, RAR 7 large dictionary (-md>4g) |
 | DONE | [RPM](formats/rpm.md) | 1.2 | rpm | `defaultArchive.rpm` | 1/1 | xz and zstd payloads, source RPM |
 | DONE | [macOS installer package](formats/pkg.md) | 1.2 | pkg | `defaultArchive.pkg` | 3/3 | signed packages; bundle-style (pre-10.5) packages; Scripts archives |
 | DONE | [Split and spanned volumes](formats/split.md) | 1.2 | zip.001, 7z.001, z01, swm | `defaultArchive.swm` | 3/21 | RAR multi-volume, ARJ multi-volume |
 | DONE | [SquashFS](formats/squashfs.md) | 1.2 | squashfs, sfs, snap | `defaultArchive.squashfs` | 7/7 | squashfs 3.x and older; big-endian |
-| TODO | [StuffIt (classic, 5)](formats/stuffit.md) | 1.2 | sit |  | 0/3 | baseline defaultArchive.sit (not yet attempted). Known constraints: StuffIt Deluxe/Standard for Mac is discontinued (Smith Micro); the free  |
-| TODO | [StuffIt SEA](formats/sea.md) | 1.2 | sea |  | 0/1 | baseline (with StuffIt) |
-| TODO | [StuffIt X](formats/sitx.md) | 1.2 | sitx |  | 0/1 | baseline (with StuffIt) |
+| PARTIAL | [StuffIt (classic, 5)](formats/stuffit.md) | 1.2 | sit | `defaultArchive.sit` | 2/5 | classic (pre-5) SIT! made by a classic StuffIt; StuffIt 5 with Mac resource forks |
+| PARTIAL | [StuffIt SEA](formats/sea.md) | 1.2 | sea |  | 0/2 | baseline Mac .sea (needs StuffIt for Mac) |
+| BLOCKED | [StuffIt X](formats/sitx.md) | 1.2 | sitx |  | 0/1 | baseline (with StuffIt) |
 | DONE | [Tar](formats/tar.md) | 1.2 | tar, gtar | `defaultArchive-dotslash.tar`, `defaultArchive.gtar`, `defaultArchive.tar` | 8/8 | star/xstar, sparse files, multi-volume GNU tar, long-name variants |
 | DONE | [Unix compress](formats/compress.md) | 1.2 | Z, taz, tar.Z | `defaultArchive.tar.Z`, `defaultArchive.taz` | 3/3 |  |
 | DONE | [VirtualBox VDI](formats/vdi.md) | 1.2 | vdi | `defaultArchive.vdi` | 1/1 | fixed VDI, differencing |
@@ -39,12 +39,12 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [VHDX](formats/vhdx.md) | 1.2 | vhdx | `defaultArchive.vhdx` | 1/1 | fixed VHDX |
 | DONE | [VMDK](formats/vmdk.md) | 1.2 | vmdk | `defaultArchive.vmdk` | 1/1 | streamOptimized, split (twoGbMaxExtent), descriptor + flat |
 | DONE | [WIM / ESD / SWM](formats/wim.md) | 1.2 | wim, esd, swm | `defaultArchive.esd`, `defaultArchive.swm`, `defaultArchive.wim` | 8/12 | WIM made by DISM on Windows; encrypted ESD (not possible to make) |
-| DONE | [Windows executable (7-Zip SFX)](formats/exe-7zsfx.md) | 1.2 | exe | `defaultArchive.exe` | 1/1 | WinRAR SFX, WinZip SFX, cab SFX |
+| DONE | [Windows executable (7-Zip SFX)](formats/exe-7zsfx.md) | 1.2 | exe | `defaultArchive.exe` | 1/1 | WinZip SFX, cab SFX (WinRAR 2.71/6.02 and StuffIt SFX are in rar/ and stuffit/) |
 | DONE | [XAR](formats/xar.md) | 1.2 | xar | `defaultArchive.xar` | 5/5 | lzma/xz (macOS xar 1.8dev has no lzma), signed xar |
 | DONE | [XZ](formats/xz.md) | 1.2 | xz, txz, tar.xz | `defaultArchive.tar.xz`, `defaultArchive.txz` | 3/3 | multi-block / BCJ filter xz |
 | DONE | [ZIP](formats/zip.md) | 1.2 | zip, jar, aar, apk, cbz | `defaultArchive.jar`, `defaultArchive.zip` | 15/52 | method 93 zstd and 95 xz written by a real tool; PKWARE strong encryption (needs SecureZIP); central-directory encryption |
-| TODO | [ZIPX (WinZip)](formats/zipx.md) | 1.2 | zipx |  | 0/0 | baseline defaultArchive.zipx (not yet attempted). Needs WinZip (12.1 or later) on a Windows VM. Not yet attempted: WinZip trial installer mu |
-| PARTIAL | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 1/2 | a reader that verifies the mdf content; MDS v2 |
+| DONE | [ZIPX (WinZip)](formats/zipx.md) | 1.2 | zipx | `defaultArchive.zipx` | 7/7 | WinZip 12+ JPEG (method 96), WavPack (97), xz (95) and zstd (93) entries: need matching input files or a newer WinZip |
+| PARTIAL | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 1/2 | a reader that verifies the mdf content; regenerate with current content (WinIso) |
 | DONE | [Apple Archive](formats/aar.md) |  | aar | `defaultArchive-raw.aar`, `defaultArchive.aar` | 6/6 | library.aar named by MacPacker's tests (meaning unknown); compressible content so that chunks are actually compressed |
 | PARTIAL | [Apple Encrypted Archive](formats/aea.md) |  | aea | `defaultArchive.aea` | 3/3 | defaultArchive-expired.aea and signing/testRoot.pem expected by MacPacker's tests; profiles 2-4 (ECDHE/signed) |
 | TODO | BlindWrite |  | b5t, b6t |  | 0/0 | baseline |
@@ -55,7 +55,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | TODO | Easy CD Creator |  | cif |  | 0/0 | hard to make |
 | TODO | ECM |  | ecm |  | 0/0 | baseline: ecm not packaged for Ubuntu 24.04; build Neill Corlett's ecm from source |
 | DONE | [MAME CHD](formats/chd.md) |  | chd | `defaultArchive.chd` | 3/3 | CHD v3/v4; DVD (createdvd); GD-ROM |
-| DONE | [Nero](formats/nrg.md) |  | nrg | `defaultArchive.nrg` | 1/1 | NER0 (v1) footer |
+| PARTIAL | [Nero](formats/nrg.md) |  | nrg | `defaultArchive.nrg` | 1/1 | regenerate with current content (needs WinIso or Nero on Windows) |
 | TODO | PowerISO / gBurner |  | daa, gbi |  | 0/0 | baseline (PowerISO trial on Windows) |
 | DONE | [PSP compressed ISO](formats/cso.md) |  | cso, ciso | `defaultArchive.cso` | 1/1 | ZSO, DAX, CSO v2 (maxcso) |
 | DONE | [Raw CD image](formats/rawcd.md) |  | bin | `defaultArchive.bin` | 1/1 | 2352-byte raw sectors |
@@ -80,7 +80,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [UDF](formats/udf.md) |  | udf, iso | `defaultArchive.udf` | 3/3 | UDF 2.50/2.60 (metadata partition; mkudffs refuses for hd media), UDF bridge ISO, DVD/BD media layouts |
 | DONE | [Raw disk image (MBR, GPT, APM)](formats/rawdisk.md) |  | img, raw | `defaultArchive.raw` | 5/5 | hybrid MBR, multiple partitions |
 | DONE | [NSIS installer](formats/nsis.md) |  | exe | `defaultArchive-nsis.exe` | 5/5 |  |
-| PARTIAL | [ACE](formats/ace.md) |  | ace, cba | `defaultArchive.ace` | 1/1 | ACE 1.0 (non-solid, ACE 1 methods), multi-volume, encrypted |
+| DONE | [ACE](formats/ace.md) |  | ace, cba | `defaultArchive.ace` | 6/6 | multi-volume ACE (no CLI switch found), recovery record, SFX |
 | DONE | [Brotli](formats/brotli.md) |  | br, tbr, tar.br | `defaultArchive.tar.br`, `defaultArchive.tbr` | 2/2 |  |
 | DONE | [lzip](formats/lzip.md) |  | lz, tlz, tar.lz | `defaultArchive.tar.lz`, `defaultArchive.tlz` | 2/2 |  |
 | DONE | [lzop](formats/lzop.md) |  | lzo, tlzo, tar.lzo | `defaultArchive.tar.lzo`, `defaultArchive.tlzo` | 2/2 |  |
@@ -107,7 +107,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | TODO | CP/M archives |  | lbr |  | 0/0 |  |
 | TODO | NScripter archives |  | nsa, sar |  | 0/0 |  |
 | TODO | EGG |  | egg |  | 0/0 | ALZip (Windows) |
-| TODO | Inno Setup |  | exe |  | 0/0 | Inno Setup compiler on winxp (Inno Setup 5.x supports XP) |
+| DONE | [Inno Setup](formats/inno.md) |  | exe | `defaultArchive-inno.exe` | 6/6 | Inno Setup 6, encrypted installers |
 | BLOCKED | [InstallShield cabinet](formats/installshield.md) |  | cab, hdr |  | 0/0 | InstallShield is commercial; no free trial without registration known |
 | DONE | [Encrypted DMG](formats/encdmg.md) |  | dmg | `defaultArchive-encrypted.dmg` | 3/3 |  |
 | TODO | GameCube disc |  | gcm, iso, gcz, rvz |  | 0/0 | needs a homebrew disc |
@@ -121,3 +121,4 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | WONTDO | Nintendo 3DS |  | 3ds, cia |  | 0/0 |  |
 | WONTDO | Wii, Wii U |  | wbfs, wud |  | 0/0 |  |
 | WONTDO | PlayStation 3+, Xbox One+ |  | pkg, xvc |  | 0/0 |  |
+| DONE | [RAR self-extractor](formats/rar-sfx.md) |  | exe |  | 2/2 |  |

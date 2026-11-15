@@ -1,0 +1,16 @@
+[Setup]
+AppName=defaultArchive
+AppVersion=1.0
+AppPublisher=MacPacker Test Archives
+DefaultDirName={pf}\defaultArchive
+DisableProgramGroupPage=yes
+OutputDir=C:\OUT
+OutputBaseFilename=inno_lzma2_default
+Compression=lzma2/max
+SolidCompression=no
+PrivilegesRequired=lowest
+
+[Files]
+Source: "C:\C\hello world.txt"; DestDir: "{app}"
+Source: "C:\C\folder\README.md"; DestDir: "{app}\folder"
+Source: "C:\C\folder\NestedArchive.zip"; DestDir: "{app}\folder"

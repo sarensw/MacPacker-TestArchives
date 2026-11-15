@@ -1,0 +1,13 @@
+.Set CabinetNameTemplate=makecab_quantum.cab
+.Set DiskDirectoryTemplate=C:\OUT
+.Set Cabinet=on
+.Set Compress=on
+.Set CompressionType=QUANTUM
+.Set CompressionMemory=7
+.Set MaxDiskSize=0
+.Set RptFileName=C:\OUT\quantum.rpt
+.Set InfFileName=C:\OUT\quantum.inf
+"C:\C\hello world.txt" "hello world.txt"
+.Set DestinationDir=folder
+"C:\C\folder\README.md" "README.md"
+"C:\C\folder\NestedArchive.zip" "NestedArchive.zip"

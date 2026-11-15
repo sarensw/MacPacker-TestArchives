@@ -94,6 +94,171 @@
    }
   },
   {
+   "path": "ace/ace10_nonsolid.ace",
+   "formats": [
+    "ace"
+   ],
+   "role": "variant",
+   "size": 52755,
+   "sha256": "89e26fb6f07ba4c13090b7885154c648bd36936579b71c0eafd645d117641e04",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic a3e231000000102a; lsar format=Ace; file: ACE archive data version 20, from Win/32, version 10 to extract, contains AV-String (unreg; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: acefile 0.6.14: processing archive ace/ace10_nonsolid.ace;archive is not locked, not multi-volume, not solid;created on Win32 with ACE 2.0 for extraction with 1.0+; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "ace/ace10_solid.ace",
+   "formats": [
+    "ace"
+   ],
+   "role": "variant",
+   "size": 52755,
+   "sha256": "d516a61dd926bbd32bbc1059c446c651857c85c6d24416750575ba7e54a1585e",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 778a31000000902a; lsar format=Ace; file: ACE archive data version 20, from Win/32, version 10 to extract, contains AV-String (unreg; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: acefile 0.6.14: processing archive ace/ace10_solid.ace;archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 1.0+; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "ace/ace20_nonsolid.ace",
+   "formats": [
+    "ace"
+   ],
+   "role": "variant",
+   "size": 52755,
+   "sha256": "a2d459befd5896d40dcd286d9fe930b1d3bd5340087b2ca8e81b5039b1b0c6de",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic b26f31000000102a; lsar format=Ace; file: ACE archive data version 20, from Win/32, version 20 to extract, contains AV-String (unreg; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: acefile 0.6.14: processing archive ace/ace20_nonsolid.ace;archive is not locked, not multi-volume, not solid;created on Win32 with ACE 2.0 for extraction with 2.0+; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "ace/ace20_password.ace",
+   "formats": [
+    "ace"
+   ],
+   "role": "variant",
+   "size": 52758,
+   "sha256": "5812cc83d5323aaf7c746d2a5a489e4d3a195223e4c402833e247397dcebda2f",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 18cf31000000902a; lsar format=Ace; file: ACE archive data version 20, from Win/32, version 20 to extract, contains AV-String (unreg; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: acefile 0.6.14: archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 2.0+; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "ace/ace20_store.ace",
+   "formats": [
+    "ace"
+   ],
+   "role": "variant",
+   "size": 53038,
+   "sha256": "c7a5e8881248325d379c47b56437717ed49f45d6f5961cbaf2b4533a6f1a0c9d",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 1ea331000000902a; 7z Type=zip Methods=Deflate; lsar format=Ace; file: ACE archive data version 20, from Win/32, version 20 to extract, contains AV-String (unreg; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: acefile 0.6.14: archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 2.0+; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
    "path": "adf/dos_ffs.adf",
    "formats": [
     "adf"
@@ -444,6 +609,116 @@
    }
   },
   {
+   "path": "cab/makecab_lzx15.cab",
+   "formats": [
+    "cab"
+   ],
+   "role": "variant",
+   "size": 52672,
+   "sha256": "39d399006e78a9a9f76253ee6a759215c87c4eaf213540706116e675dbd6a7bc",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d53434600000000; 7z Type=Cab Methods=LZX:15; lsar format=CAB; file: Microsoft Cabinet archive data, many, 52672 bytes, 3 files, at 0x2c last modified Sun, Nov; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "cab/makecab_lzx21.cab",
+   "formats": [
+    "cab"
+   ],
+   "role": "variant",
+   "size": 52630,
+   "sha256": "52ba64faa3e1c5eb5c7beac99dedb67168bc346a6c3baf3bf461fe449603ef15",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d53434600000000; 7z Type=Cab Methods=LZX:21; lsar format=CAB; file: Microsoft Cabinet archive data, many, 52630 bytes, 3 files, at 0x2c last modified Sun, Nov; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "cab/makecab_mszip.cab",
+   "formats": [
+    "cab"
+   ],
+   "role": "variant",
+   "size": 52587,
+   "sha256": "0b5979e194d4846552484b225e3e8ceedc1f4104a2f1efa2b91f95fa81147578",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d53434600000000; 7z Type=Cab Methods=MSZip; lsar format=CAB; file: Microsoft Cabinet archive data, many, 52587 bytes, 3 files, at 0x2c last modified Sun, Nov; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "cab/makecab_none.cab",
+   "formats": [
+    "cab"
+   ],
+   "role": "variant",
+   "size": 52950,
+   "sha256": "9769138d9e8ca9bdac8748c317c030deeb96bb127eac863a626add4695cf38a2",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d53434600000000; 7z Type=Cab Methods=None; lsar format=CAB; file: Microsoft Cabinet archive data, many, 52950 bytes, 3 files, at 0x2c last modified Sun, Nov; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "cab/makecab_spanned1.cab",
+   "formats": [
+    "cab"
+   ],
+   "role": "variant",
+   "size": 25600,
+   "sha256": "462cf927e9710b0c6760ae88fe12d6d72e73c234b545b5f33b09e58f737d8077",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d53434600000000; 7z Type=Cab Methods=MSZip; lsar format=CAB; file: Microsoft Cabinet archive data, many, 25600 bytes, 3 files, at 0x48, iFolder 0xfffe last m; readers matching standard content: 7z, unar"
+    ]
+   }
+  },
+  {
+   "path": "cab/makecab_spanned2.cab",
+   "formats": [
+    "cab"
+   ],
+   "role": "part",
+   "size": 25600,
+   "sha256": "0a5601354bc820ed3e9fb281ad9b73d2d85300d286f833a5b65fcb487a8b89f3",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
+   "path": "cab/makecab_spanned3.cab",
+   "formats": [
+    "cab"
+   ],
+   "role": "part",
+   "size": 1750,
+   "sha256": "987ac4990cafbbe4f86eff49f30efcbe20903c340e46d86e1a90f684310f2453",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
    "path": "chd/harddisk_fat.chd",
    "formats": [
     "chd"
@@ -788,6 +1063,39 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive-inno.exe",
+   "formats": [
+    "inno"
+   ],
+   "role": "baseline",
+   "size": 359337,
+   "sha256": "72f609cb4fbcc3a2678fe557f91d65c27a253ff7fb3737691ed3f7fdd568417d",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a500002000000; 7z Type=zip Methods=Deflate; lsar format=Self-extracting Zip; file: PE32 executable (GUI) Intel 80386, for MS Windows, 8 sections; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: innoextract 1.9: | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive-nsis.exe",
    "formats": [
     "nsis"
@@ -861,30 +1169,30 @@
     "ace"
    ],
    "role": "baseline",
-   "size": 53096,
-   "sha256": "758650129f51cc40a3f4d45a5f6f9a34fffa4f2e490b76d98a0504ccded39f7a",
+   "size": 52755,
+   "sha256": "a00d58291fa7773030d4556b61efbbdc0569152991e7282c7c299ea6418b2484",
    "expected": [
     {
      "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
     },
     {
      "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
     },
     {
      "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
     }
    ],
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 6b5131000000902a; lsar format=Ace; file: ACE archive data version 20, from Win/32, version 20 to extract, contains AV-String (unreg; readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: acefile 0.6.14 (pipx): processing archive defaultArchive.ace;archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 2.0+; | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 11397df50c2d6834  ./folder/README.md | cfce4e2952591e79  ./hello world.txt"
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 238531000000902a; lsar format=Ace; file: ACE archive data version 20, from Win/32, version 20 to extract, contains AV-String (unreg; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: acefile 0.6.14: archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 2.0+; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },
@@ -994,29 +1302,13 @@
     "cab"
    ],
    "role": "baseline",
-   "size": 52972,
-   "sha256": "2a84507ca6370dc217564011a8e543bc4249eb43303d04aacac9556681fcc881",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 52632,
+   "sha256": "b2f90f41098ce7fb2eaaa6cd73ef95d124a28e522bf9766a29f7fcc3a54858c0",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4d53434600000000; 7z Type=Cab Methods=LZX:21; lsar format=CAB; file: Microsoft Cabinet archive data, many, 52972 bytes, 3 files, at 0x2c last modified Sun, Nov; readers matching standard content: none"
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d53434600000000; 7z Type=Cab Methods=LZX:21; lsar format=CAB; file: Microsoft Cabinet archive data, many, 52632 bytes, 3 files, at 0x2c last modified Sun, Nov; readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -1170,29 +1462,13 @@
     "exe-7zsfx"
    ],
    "role": "baseline",
-   "size": 267785,
-   "sha256": "dc1b7b7caff5601bf7637bc0ca21fade7af8a85ae52626213568e0c81ec9ae2a",
-   "expected": [
-    {
-     "path": "folder/Archive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 258562,
+   "sha256": "3a9714b20ecfc4c68a7b050e4876e1b9e82e3365db27a4cc451f359aeb11a36a",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4d5a900003000000; 7z Type=7z Methods=LZMA2:16; lsar format=Self-extracting Zip; file: PE32 executable (GUI) Intel 80386, for MS Windows, 5 sections; readers matching standard content: none"
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a900003000000; 7z Type=7z Methods=LZMA2:16; lsar format=Self-extracting Zip; file: PE32 executable (GUI) Intel 80386, for MS Windows, 5 sections; readers matching standard content: 7z, bsdtar"
     ]
    }
   },
@@ -1382,30 +1658,13 @@
     "lha"
    ],
    "role": "baseline",
-   "size": 53637,
-   "sha256": "95361a49181c91aacf8d67e6991fbe1294c20fcdd73480cc4a184c05654c854b",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 52726,
+   "sha256": "7a341f720f9e67688a62b9f5c4d6eac06c7d0f3f0a88820f373bf504b60f8e7e",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 2eb12d6c68302df4; 7z Type=Lzh Methods=-lh0-,-lh5-; lsar format=LZH; file: LHarc 1.x/ARX archive data  [lh0], with \"folder\\NestedArchive.zip\"; readers matching standard content: none",
-     "docs/verification/2026-11-15/manual_checks.txt: lhasa 0.4.0 v / t / x (ubuntu VM): -lh0- NestedArchive.zip 53236, -lh5- README.md 455, -lh0- hello world.txt 14; all CRCs tested OK. (bsdtar 3.7.2 wrote README.md empty, a bsdtar issue.) | 11397df50c2d6834  ./folder/README.md | fa52ae6c8424ff23  ./folder/NestedArchive.zip | cfce4e2952591e79  ./hello world.txt"
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 2e912d6c68302d6e; 7z Type=Lzh Methods=-lh0-,-lh5-; lsar format=LZH; file: LHarc 1.x/ARX archive data  [lh0], with \"folder\\NestedArchive.zip\"; readers matching standard content: 7z"
     ]
    }
   },
@@ -1578,8 +1837,8 @@
     "rar"
    ],
    "role": "baseline",
-   "size": 52945,
-   "sha256": "d7f9a994577ec4e4f6d5595d409150f06cdd56027345ff0c115760c394c945c5",
+   "size": 52741,
+   "sha256": "8bf7b48d2867aa21ca692c67b16162b8cdbcd56174577d72991a4eed513961f9",
    "expected": [
     {
      "path": "folder/NestedArchive.zip",
@@ -1588,20 +1847,20 @@
     },
     {
      "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
     },
     {
      "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
     }
    ],
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 526172211a070100; 7z Type=Rar5 Methods=m0,m0:17,m3:17; lsar format=RAR 5; file: RAR archive data, v5; readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_unrar.txt: unrar 7.00 (RARLAB, Ubuntu multiverse) lt: Details: RAR 5; Name: folder/NestedArchive.zip; Compression: RAR 5.0(v50) -m0 -md=128k; Name: folder/README.md; Compression: RAR 5.0(v50) -m3 -md=128k; Name: hello world.txt; Compression: RAR 5.0(v50) -m0 -md=128k; Name: folder; Compression: RAR 5.0(v50) -m0 | 466ab31d0374b763  ./folder/NestedArchive.zip | 11397df50c2d6834  ./folder/README.md | cfce4e2952"
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a070100; 7z Type=Rar5 Methods=m0,m0:17,m3:17; lsar format=RAR 5; file: RAR archive data, v5; readers matching standard content: unar, bsdtar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m0 -md=128k; Compression: RAR 5.0(v50) -m3 -md=128k;Details: RAR 5; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },
@@ -1634,6 +1893,22 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic edabeedb03000000; 7z Type=Rpm; lsar format=RPM; file: RPM v3.0 bin; readers matching standard content: bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.sit",
+   "formats": [
+    "stuffit"
+   ],
+   "role": "baseline",
+   "size": 53481,
+   "sha256": "88b0f18784271ad4ffb3b7a046ccac352815d8f0e8ee56cf81779504ac1bdb1a",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 5374756666497420; lsar format=StuffIt 5; file: StuffIt Archive; readers matching standard content: unar"
     ]
    }
   },
@@ -2447,6 +2722,22 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.zipx",
+   "formats": [
+    "zipx"
+   ],
+   "role": "baseline",
+   "size": 52763,
+   "sha256": "800716e59d15860f58a6d8d215542743ef2b83862aad253b00f4a3966780c0e7",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 504b03040a000000; 7z Type=zip Methods=Deflate64:v1,LZMA,Store; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: 7z, unar"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive2.swm",
    "formats": [
     "split",
@@ -3251,6 +3542,171 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 0000000000000000; 7z Type=HFS Methods=HFSX; file: Apple HFS Plus Extended version 5 data (mounted) last mounted by: 'H+Lx', created: Sun Nov; readers matching standard content: 7z",
      "docs/verification/2026-11-15/ubuntu_special.txt: ** The volume defaultArchive appears to be OK. | 00000400: 4858 0005                                HX.."
+    ]
+   }
+  },
+  {
+   "path": "inno/inno_bzip.exe",
+   "formats": [
+    "inno"
+   ],
+   "role": "variant",
+   "size": 374720,
+   "sha256": "f6066d9f1d1f7fe57d1ff9411d884ad08edcade899b1b8472ecfa75ffc59f178",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a500002000000; 7z Type=bzip2; file: PE32 executable (GUI) Intel 80386, for MS Windows, 8 sections; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: innoextract 1.9: | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "inno/inno_lzma2_default.exe",
+   "formats": [
+    "inno"
+   ],
+   "role": "variant",
+   "size": 359337,
+   "sha256": "72f609cb4fbcc3a2678fe557f91d65c27a253ff7fb3737691ed3f7fdd568417d",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a500002000000; 7z Type=zip Methods=Deflate; lsar format=Self-extracting Zip; file: PE32 executable (GUI) Intel 80386, for MS Windows, 8 sections; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: innoextract 1.9: | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "inno/inno_lzma_solid.exe",
+   "formats": [
+    "inno"
+   ],
+   "role": "variant",
+   "size": 359501,
+   "sha256": "849e69a2c3ca9ce1924ffbcf5670f92c0fe49fa6adcb5ee94830571f78d6207d",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a500002000000; file: PE32 executable (GUI) Intel 80386, for MS Windows, 8 sections; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: innoextract 1.9: | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "inno/inno_none.exe",
+   "formats": [
+    "inno"
+   ],
+   "role": "variant",
+   "size": 359448,
+   "sha256": "93ad2e7c95e7785ff3d0a6f40ce23b5e369a563ce3b066279753598d7a148c48",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a500002000000; 7z Type=zip Methods=Deflate; lsar format=Self-extracting Zip; file: PE32 executable (GUI) Intel 80386, for MS Windows, 8 sections; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: innoextract 1.9: | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "inno/inno_zip.exe",
+   "formats": [
+    "inno"
+   ],
+   "role": "variant",
+   "size": 371532,
+   "sha256": "6503a36564e1a1ae9cc314ffc7da140275cf2b5afbb4ddc3369e9693d00b524c",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a500002000000; 7z Type=zip Methods=Deflate; lsar format=Self-extracting Zip; file: PE32 executable (GUI) Intel 80386, for MS Windows, 8 sections; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: innoextract 1.9: | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },
@@ -4098,6 +4554,626 @@
    }
   },
   {
+   "path": "rar/rar2_best.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 52669,
+   "sha256": "8221b61964b6ce0487a46b51ecab88ac7b0cc7ac0862532aeb17e130e8efbd65",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a0700cf; 7z Type=Rar Methods=m0:20,m5,m5:20; lsar format=RAR; file: RAR archive data, v2.0, os: Win32; readers matching standard content: unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=1m; Compression: RAR 1.5(v20) -m5; Compression: RAR 1.5(v20) -m5 -md=1m;Details: RAR 4; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_default.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 52669,
+   "sha256": "f3147986eab5de0f9cfa2ec696b75167fe0099ffb452b5a629839a52e5a57a0e",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a0700cf; 7z Type=Rar Methods=m0:20,m3,m3:20; lsar format=RAR; file: RAR archive data, v2.0, os: Win32; readers matching standard content: unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=1m; Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_password.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 52705,
+   "sha256": "bea7f28095c2cedf4983ec4ad657bf6f29eb21d521bda7eba3223ef06d73c892",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a0700cf; 7z Type=Rar Methods=m3,m3:20; lsar format=RAR; file: RAR archive data, v2.0, os: Win32; readers matching standard content: unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_recovery.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 53925,
+   "sha256": "52f3bc4a339c1491d1fe2341a90bb680e41efc804a54dcfae0da20ccd090c32f",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a07006f; 7z Type=Rar Methods=m0:20,m3,m3:20; lsar format=RAR; file: RAR archive data, v2.0, os: Win32, flags: RecoveryRecordPresent; readers matching standard content: unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=1m; Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4, recovery record; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_sfx.exe",
+   "formats": [
+    "rar",
+    "rar-sfx"
+   ],
+   "role": "variant",
+   "size": 70621,
+   "sha256": "3a80a0c4bf0be2d6ada40029303d56438ee8b2456db60bdfa4bdf0dc740b96c2",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a500002000000; 7z Type=Rar Methods=m0:20,m3,m3:20; lsar format=Embedded RAR; file: PE32 executable (GUI) Intel 80386, for MS Windows, UPX compressed, 3 sections; readers matching standard content: unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=1m; Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4, SFX; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_solid.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 52667,
+   "sha256": "d6e88c8e39870e3000d0c57e59b9dd145d350d5e001ecc77c1be0d21f7bfa745",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a07003b; 7z Type=Rar Methods=m3,m3:20; lsar format=RAR; file: RAR archive data, v2.0, os: Win32, flags: Solid; readers matching standard content: unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m3; Compression: RAR 1.5(v20) -m3 -md=1m;Details: RAR 4, solid; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_store.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 52993,
+   "sha256": "fd0e82971ca376d89cd8053a12148d37c52fede286831676f8a8ea05829aa169",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a0700cf; 7z Type=Rar Methods=m0,m0:20; lsar format=RAR; file: RAR archive data, v2.0, os: Win32; readers matching standard content: 7z, unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0; Compression: RAR 1.5(v20) -m0 -md=1m;Details: RAR 4; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_volumes.r00",
+   "formats": [
+    "rar"
+   ],
+   "role": "part",
+   "size": 20480,
+   "sha256": "430c52b95d6f9a7dd01699c0840a6b151f92f6c2e785bf7a607aca88efcbc9d2",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_volumes.r01",
+   "formats": [
+    "rar"
+   ],
+   "role": "part",
+   "size": 12185,
+   "sha256": "be91367bc64ba0489b64cd5041c990edca6dfc18cc3dd199cb79a9b2435c6f68",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar2_volumes.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 20480,
+   "sha256": "dd47ea8479e721d128ec3ecec9dd1ce18b3b6fb65cd82f82d2b5673ea1c38ad8",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a0700f1; 7z Type=Rar Methods=m0,m0:20; lsar format=RAR; file: RAR archive data, v2.0, os: Win32, flags: ArchiveVolume; readers matching standard content: 7z, unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0; Compression: RAR 1.5(v20) -m0 -md=1m;Details: RAR 4, volume; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar4_default.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 52653,
+   "sha256": "eaa78d68b3ccca6cdbb0359421d6f2bf9898e055cde93fb484b11d090404523d",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a0700cf; 7z Type=Rar Methods=m0,m0:17,m3:17; lsar format=RAR; file: RAR archive data, v4, os: Win32; readers matching standard content: unar, bsdtar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0; Compression: RAR 1.5(v29) -m0 -md=128k; Compression: RAR 1.5(v29) -m3 -md=128k;Details: RAR 4; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar4_solid.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 52651,
+   "sha256": "3e51d0e35a9e8a6dc15f567c2c2e431ebce36ddaf910296962653dedf0d5038b",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a07003b; 7z Type=Rar Methods=m0,m3:20; lsar format=RAR; file: RAR archive data, v4, os: Win32, flags: Solid; readers matching standard content: unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0; Compression: RAR 1.5(v29) -m3 -md=1m;Details: RAR 4, solid; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar4_volumes.r00",
+   "formats": [
+    "rar"
+   ],
+   "role": "part",
+   "size": 20480,
+   "sha256": "4c26dd40d529731673c5dd6aa41b6bbd1d785eaa71870e642e1d705a27d4fefe",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar4_volumes.r01",
+   "formats": [
+    "rar"
+   ],
+   "role": "part",
+   "size": 12250,
+   "sha256": "5e2fbc421cc5ce164a00880efda3736e1157e649341008bbb54b305e3dd0c0ea",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar4_volumes.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 20480,
+   "sha256": "44eb6001e9da14f97e37e47d911e2d6882da27c585eb679d6673342667c21b2b",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a0700b2; 7z Type=Rar Methods=m0,m0:17; lsar format=RAR; file: RAR archive data, v2.0, os: Win32, flags: ArchiveVolume FirstVolume; readers matching standard content: 7z, unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 1.5(v20) -m0 -md=128k;Details: RAR 4, volume; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar5_recovery.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 55776,
+   "sha256": "c6ec0a202937a71ed7c05f52a5e4b32c612ce6ec24bb103dfae839eb7f69d34b",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a070100; 7z Type=Rar5 Methods=m0,m0:17,m3:17; lsar format=RAR 5; file: RAR archive data, v5; readers matching standard content: bsdtar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m0 -md=128k; Compression: RAR 5.0(v50) -m3 -md=128k;Details: RAR 5, recovery record; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar5_sfx.exe",
+   "formats": [
+    "rar",
+    "rar-sfx"
+   ],
+   "role": "variant",
+   "size": 369669,
+   "sha256": "7995ab0a53dcf9e1845495130e18b96f7a0dba7f67a2fb793f995bd774a15adb",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a900003000000; 7z Type=Rar5 Methods=m0,m0:17,m3:17; file: PE32 executable (GUI) Intel 80386, for MS Windows, 6 sections; readers matching standard content: bsdtar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m0 -md=128k; Compression: RAR 5.0(v50) -m3 -md=128k;Details: RAR 5, SFX; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar5_solid.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 52742,
+   "sha256": "c656069119f97998b340d3b4c712ca85620d99fad64fb4540723c6096c6d45b4",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a070100; 7z Type=Rar5 Methods=m0,m3:20; lsar format=RAR 5; file: RAR archive data, v5; readers matching standard content: bsdtar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m3 -md=1m;Details: RAR 5, solid; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar5_store.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 53097,
+   "sha256": "5fd795ebe38f80fdc6dd8078d34dcf846d980c9ee3a26e660657eeb5c8f59952",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a070100; 7z Type=Rar5 Methods=m0,m0:17; lsar format=RAR 5; file: RAR archive data, v5; readers matching standard content: 7z",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0; Compression: RAR 5.0(v50) -m0 -md=128k;Details: RAR 5; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar5_volumes.part1.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "variant",
+   "size": 20480,
+   "sha256": "4356d54599f76b16eb98269aeb192d3ee62b7796942f6f347ae8c1a3c533d711",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 526172211a070100; 7z Type=Rar5 Methods=m0,m0:17; lsar format=RAR 5; file: RAR archive data, v5; readers matching standard content: 7z, unar",
+     "docs/verification/2026-11-16-windows/ubuntu_format_tools.txt: unrar 7.00 lt:  Compression: RAR 5.0(v50) -m0 -md=128k;Details: RAR 5, volume 1; | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar5_volumes.part2.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "part",
+   "size": 20480,
+   "sha256": "831633e1755d459d91d683818c967e5b8eba9d6a585cd569e83fcc74615a76a9",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
+   "path": "rar/rar5_volumes.part3.rar",
+   "formats": [
+    "rar"
+   ],
+   "role": "part",
+   "size": 12512,
+   "sha256": "51dbe1e4c0170cf2e7d001f3467b5dd97257a9df97168ebc1ef29665611a4d9a",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
    "path": "rawdisk/apm_hfsplus.raw",
    "formats": [
     "rawdisk"
@@ -4476,6 +5552,37 @@
    }
   },
   {
+   "path": "stuffit/stuffit5_password.exe",
+   "formats": [
+    "sea"
+   ],
+   "role": "special-purpose",
+   "size": 136478,
+   "sha256": "a61bed267345ea6ada5cf854875c9231199fdd8bfdaa09a1d8c2590e5c21fc82",
+   "verification": {
+    "status": "not-checked",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 4d5a900003000000; file: PE32 executable (GUI) Intel 80386, for MS Windows, UPX compressed, 3 sections; readers matching standard content: none"
+    ]
+   }
+  },
+  {
+   "path": "stuffit/stuffit5_password.sit",
+   "formats": [
+    "stuffit"
+   ],
+   "role": "special-purpose",
+   "size": 53502,
+   "sha256": "59891eee8046ffeaf6121febc45a8ceeed541cd3017dd0bdf69bfc3ff7092e96",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 5374756666497420; lsar format=StuffIt 5; file: StuffIt Archive; readers matching standard content: unar"
+    ]
+   }
+  },
+  {
    "path": "stuffit/testfile.stuffit7_dlx.macx1.sea",
    "formats": [
     "sea"
@@ -4843,7 +5950,7 @@
     "zip",
     "zip-packages"
    ],
-   "role": "variant",
+   "role": "special-purpose",
    "size": 884,
    "sha256": "854069e9757cd6be1056c319f94fba8ed071061ec1231419526f558b3a81583a",
    "verification": {
@@ -5399,6 +6506,103 @@
    "verification": {
     "status": "not-checked",
     "evidence": []
+   }
+  },
+  {
+   "path": "zipx/zipx_aes256.zipx",
+   "formats": [
+    "zipx"
+   ],
+   "role": "variant",
+   "size": 52913,
+   "sha256": "b86b174bdcc3ab33c873fb3a0fc78e74ceeebc793a59be61ccf4af0337ba7106",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 504b03040a000000; 7z Type=zip Methods=AES-256 Deflate64:v1,AES-256 LZMA,AES-256 Store,Store; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: none",
+     "docs/verification/2026-11-16-windows/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = ; 3 Characteristics = WzAES : Encrypt; 3 Encrypted = +; 1 Encrypted = -; 1 Method = AES-256 Deflate64:v1; 1 Method = AES-256 LZMA; 1 Method = AES-256 Store; 1 Method = Store; 1 Type = zip; | content: MATCH (3 files, sha256)"
+    ]
+   }
+  },
+  {
+   "path": "zipx/zipx_best.zipx",
+   "formats": [
+    "zipx"
+   ],
+   "role": "variant",
+   "size": 52763,
+   "sha256": "800716e59d15860f58a6d8d215542743ef2b83862aad253b00f4a3966780c0e7",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 504b03040a000000; 7z Type=zip Methods=Deflate64:v1,LZMA,Store; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: 7z, unar"
+    ]
+   }
+  },
+  {
+   "path": "zipx/zipx_bzip2.zipx",
+   "formats": [
+    "zipx"
+   ],
+   "role": "variant",
+   "size": 53464,
+   "sha256": "7535271335a10e34d8b3cd7abc94a79ddbe40e8f4a426a27d77e96338b354288",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 504b03040a000000; 7z Type=zip Methods=BZip2,Store; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "zipx/zipx_enhanced_deflate.zipx",
+   "formats": [
+    "zipx"
+   ],
+   "role": "variant",
+   "size": 52702,
+   "sha256": "891940ba4c2bd19a9d4f4b3fe7c91e5502e2fa1878ca6d9323ff8db88a24aa25",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 504b03040a000000; 7z Type=zip Methods=Deflate64:v1,Store,Store:v1; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: 7z, unar"
+    ]
+   }
+  },
+  {
+   "path": "zipx/zipx_lzma.zipx",
+   "formats": [
+    "zipx"
+   ],
+   "role": "variant",
+   "size": 53295,
+   "sha256": "1cde4594e399905bbc0b902aad219d344252e1bd827b0af21edd33e6c34660e6",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 504b03040a000000; 7z Type=zip Methods=LZMA,Store; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "zipx/zipx_ppmd.zipx",
+   "formats": [
+    "zipx"
+   ],
+   "role": "variant",
+   "size": 53875,
+   "sha256": "6a545cf7dca90780c5dd1e256335e54885c84dedcf1db1ae33e29c03a1998b98",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 504b03040a000000; 7z Type=zip Methods=PPMd,Store; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: 7z, unar, bsdtar"
+    ]
    }
   }
  ]
