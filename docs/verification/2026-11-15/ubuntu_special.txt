@@ -1,0 +1,339 @@
+== squashfs/comp_gzip.squashfs
+Filesystem size 52765 bytes (51.53 Kbytes / 0.05 Mbytes)
+Compression gzip
+  content: MATCH (3 files, sha256)
+== squashfs/comp_lz4.squashfs
+Filesystem size 53070 bytes (51.83 Kbytes / 0.05 Mbytes)
+Compression lz4
+  content: MATCH (3 files, sha256)
+== squashfs/comp_lzma.squashfs
+Filesystem size 53144 bytes (51.90 Kbytes / 0.05 Mbytes)
+Compression lzma
+  content: MATCH (3 files, sha256)
+== squashfs/comp_lzo.squashfs
+Filesystem size 52852 bytes (51.61 Kbytes / 0.05 Mbytes)
+Compression lzo
+  content: MATCH (3 files, sha256)
+== squashfs/comp_xz.squashfs
+Filesystem size 53205 bytes (51.96 Kbytes / 0.05 Mbytes)
+Compression xz
+  content: MATCH (3 files, sha256)
+== squashfs/comp_zstd.squashfs
+Filesystem size 53141 bytes (51.90 Kbytes / 0.05 Mbytes)
+Compression zstd
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.ext2
+Filesystem revision #:    1 (dynamic)
+Filesystem features:      ext_attr resize_inode dir_index filetype sparse_super large_file
+  e2fsck: clean
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.ext3
+Filesystem revision #:    1 (dynamic)
+Filesystem features:      has_journal ext_attr resize_inode dir_index filetype sparse_super large_file
+Journal features:         (none)
+  e2fsck: clean
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.ext4
+Filesystem revision #:    1 (dynamic)
+Filesystem features:      has_journal ext_attr resize_inode dir_index filetype extent 64bit flex_bg sparse_super large_file huge_file dir_nlink extra_isize metadata_csum
+Journal features:         (none)
+  e2fsck: clean
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.hfs
+** The volume defaultArchive appears to be OK.
+00000400: 482b 0004                                H+..
+== hfs/hfsx_casesensitive.hfsx
+** The volume defaultArchive appears to be OK.
+00000400: 4858 0005                                HX..
+== hfs/classic_hfs.hfs
+00000400: 4244                                     BD
+d          2 items               Nov 15 21:54 folder
+f  ????/UNIX         0        13 Nov 15 21:54 hello world.txt
+
+:folder:
+f  ????/UNIX         0     52334 Nov 15 21:54 NestedArchive.zip
+f  ????/UNIX         0       437 Nov 15 21:54 README.md
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.udf
+label=defaultArchive
+blocksize=2048
+udfrev=2.01
+== udf/udf_rev0102.udf
+label=defaultArchive
+blocksize=2048
+udfrev=1.02
+== udf/udf_rev0150.udf
+label=defaultArchive
+blocksize=2048
+udfrev=1.50
+== defaultArchives/defaultArchive.esd
+Version:        3584
+Image Count:    1
+Compression:    LZMS
+Part Number:    1/1
+  wimlib verify: OK
+== wim/compress_lzms.wim
+Version:        3584
+Image Count:    1
+Compression:    LZMS
+Part Number:    1/1
+  wimlib verify: OK
+== wim/compress_lzx.wim
+Version:        68864
+Image Count:    1
+Compression:    LZX
+Part Number:    1/1
+  wimlib verify: OK
+== wim/compress_none.wim
+Version:        68864
+Image Count:    1
+Compression:    None
+Part Number:    1/1
+  wimlib verify: OK
+== wim/compress_xpress.wim
+Version:        68864
+Image Count:    1
+Compression:    XPRESS
+Part Number:    1/1
+  wimlib verify: OK
+== defaultArchives/defaultArchive.swm
+Part Number:    1/3
+  content: MATCH (3 files, sha256)
+== wim/split.swm
+Part Number:    1/3
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.chd
+File Version: 5
+Logical size: 166,464 bytes
+Compression:  cdlz (CD LZMA), cdzl (CD Deflate), cdfl (CD FLAC)
+Metadata:     Tag='CHT2'  Index=0  Length=85 bytes
+Overall SHA1 verification successful!
+== chd/harddisk_fat.chd
+File Version: 5
+Logical size: 16,777,216 bytes
+Compression:  lzma (LZMA), zlib (Deflate), huff (Huffman), flac (FLAC)
+Metadata:     Tag='GDDD'  Index=0  Length=33 bytes
+Overall SHA1 verification successful!
+== chd/raw_iso.chd
+File Version: 5
+Logical size: 139,264 bytes
+Compression:  lzma (LZMA), zlib (Deflate), huff (Huffman), flac (FLAC)
+Overall SHA1 verification successful!
+  extractcd bin sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f
+  extracthd sha256: 71277c34db5b49b2fe29249f7ffd40b75c1c2a6650ebeeb9d3862dcc85592f62
+  extractraw sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f
+== defaultArchives/defaultArchive.toc
+ERROR: Cannot open data file "defaultArchive.bin": No such file or directory
+ERROR: defaultArchive.toc:5: Cannot determine length of track data specification.
+== defaultArchives/defaultArchive.cso
+00000000: 4349 534f 0000 0000 0020 0200 0000 0000  CISO..... ......
+00000010: 0008 0000 0100 0000                      ........
+  decompressed sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f
+== defaultArchives/defaultArchive.adf
+00000000: 444f 5300                                DOS.
+defaultArchive                                   VOLUME  --------  15.11.2026 21:54:49.00  DOS0:ofs #512
+  folder                                            DIR  ----rwed  15.11.2026 21:54:49.00  
+    NestedArchive.zip                             52334  ----rwed  15.11.2026 21:54:49.00  
+    README.md                                       437  ----rwed  15.11.2026 21:54:49.00  
+  hello world.txt                                    13  ----rwed  15.11.2026 21:54:49.00  
+sum:           116   58Ki         59392
+data:          110   55Ki         56320  94.83%
+fs:              6  3.0Ki          3072   5.17%
+  content: DIFF
+c84255eace7d90d09e22c57b332f014739c1e759a932a3886f27ed4d86fa85da  /tmp/tmp.vmemuwGuRm/a/defaultArchive.blkdev
+a31727917889ab31321c8c960082fd07e3f4d88b13925a4c4722492b2167b12c  /tmp/tmp.vmemuwGuRm/a/defaultArchive.xdfmeta
+30322444506aed4dd156964c5926a66eb545990301bdc41a83a2c49c66091eb3  /tmp/tmp.vmemuwGuRm/a/defaultArchive/folder/README.md
+466ab31d0374b763d3cc3b8cfe790e16314da006128071ad60982bdab256ae85  /tmp/tmp.vmemuwGuRm/a/defaultArchive/folder/NestedArchive.zip
+03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340  /tmp/tmp.vmemuwGuRm/a/defaultArchive/hello world.txt
+== adf/dos_ffs.adf
+00000000: 444f 5301                                DOS.
+defaultArchive                                   VOLUME  --------  15.11.2026 21:54:49.00  DOS1:ffs #512
+  folder                                            DIR  ----rwed  15.11.2026 21:54:49.00  
+    NestedArchive.zip                             52334  ----rwed  15.11.2026 21:54:49.00  
+    README.md                                       437  ----rwed  15.11.2026 21:54:49.00  
+  hello world.txt                                    13  ----rwed  15.11.2026 21:54:49.00  
+sum:           111   55Ki         56832
+data:          105   52Ki         53760  94.59%
+fs:              6  3.0Ki          3072   5.41%
+  content: DIFF
+c84255eace7d90d09e22c57b332f014739c1e759a932a3886f27ed4d86fa85da  /tmp/tmp.vmemuwGuRm/a/defaultArchive.blkdev
+ef00b4a32f026fa49f3d39c94546b4790e0d92f810a391137bfaf86dad38936c  /tmp/tmp.vmemuwGuRm/a/defaultArchive.xdfmeta
+30322444506aed4dd156964c5926a66eb545990301bdc41a83a2c49c66091eb3  /tmp/tmp.vmemuwGuRm/a/defaultArchive/folder/README.md
+466ab31d0374b763d3cc3b8cfe790e16314da006128071ad60982bdab256ae85  /tmp/tmp.vmemuwGuRm/a/defaultArchive/folder/NestedArchive.zip
+03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340  /tmp/tmp.vmemuwGuRm/a/defaultArchive/hello world.txt
+== adf/dos_ofs.adf
+00000000: 444f 5300                                DOS.
+defaultArchive                                   VOLUME  --------  15.11.2026 21:54:49.00  DOS0:ofs #512
+  folder                                            DIR  ----rwed  15.11.2026 21:54:49.00  
+    NestedArchive.zip                             52334  ----rwed  15.11.2026 21:54:49.00  
+    README.md                                       437  ----rwed  15.11.2026 21:54:49.00  
+  hello world.txt                                    13  ----rwed  15.11.2026 21:54:49.00  
+sum:           116   58Ki         59392
+data:          110   55Ki         56320  94.83%
+fs:              6  3.0Ki          3072   5.17%
+  content: DIFF
+c84255eace7d90d09e22c57b332f014739c1e759a932a3886f27ed4d86fa85da  /tmp/tmp.vmemuwGuRm/a/defaultArchive.blkdev
+a31727917889ab31321c8c960082fd07e3f4d88b13925a4c4722492b2167b12c  /tmp/tmp.vmemuwGuRm/a/defaultArchive.xdfmeta
+30322444506aed4dd156964c5926a66eb545990301bdc41a83a2c49c66091eb3  /tmp/tmp.vmemuwGuRm/a/defaultArchive/folder/README.md
+466ab31d0374b763d3cc3b8cfe790e16314da006128071ad60982bdab256ae85  /tmp/tmp.vmemuwGuRm/a/defaultArchive/folder/NestedArchive.zip
+03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340  /tmp/tmp.vmemuwGuRm/a/defaultArchive/hello world.txt
+== c64/defaultArchive.d64
+0 "defaultarchive  " 01 2a
+1    "hello world.txt"  prg 
+2    "readme.md"        prg 
+207  "nestedarch.zip"   prg 
+454 blocks free.
+  content: MATCH (3 files, sha256)
+== c64/defaultArchive.d71
+0 "defaultarchive  " 01 2a
+1    "hello world.txt"  prg 
+2    "readme.md"        prg 
+207  "nestedarch.zip"   prg 
+1118 blocks free.
+  content: MATCH (3 files, sha256)
+== c64/defaultArchive.d81
+0 "defaultarchive  " 01 3d
+1    "hello world.txt"  prg 
+2    "readme.md"        prg 
+207  "nestedarch.zip"   prg 
+2950 blocks free.
+  content: MATCH (3 files, sha256)
+== c64/defaultArchive.g64
+0 "defaultarchive  " 01 2a
+1    "hello world.txt"  prg 
+2    "readme.md"        prg 
+207  "nestedarch.zip"   prg 
+454 blocks free.
+  content: MATCH (3 files, sha256)
+== atari_st/defaultArchive.st
+ Volume in drive : is DEFAULT    
+ Volume Serial Number is 0C6E-6508
+Directory for ::/
+
+FOLDER       <DIR>     2023-11-14  22:13 
+HELLO    TXT        13 2023-11-14  22:13 
+        2 files                  13 bytes
+
+Directory for ::/FOLDER
+
+.            <DIR>     2023-11-14  22:13 
+..           <DIR>     2023-11-14  22:13 
+README   MD        437 2023-11-14  22:13 
+NESTED   ZIP     52334 2023-11-14  22:13 
+        4 files              52 771 bytes
+
+Total files listed:
+        6 files              52 784 bytes
+                            673 792 bytes free
+
+  content: MATCH (3 files, sha256)
+== atari_st/defaultArchive.msa
+00000000: 0e0f 0009 0001 0000 004f                 .........O
+  msa->st sha256: d19928a3759d65dd042d60739eaca818c74ca9977d050b9daab4c9ac2120a89d  st: d19928a3759d65dd042d60739eaca818c74ca9977d050b9daab4c9ac2120a89d
+== defaultArchives/defaultArchive.hds
+file format: parallels
+virtual size: 16 MiB (16777216 bytes)
+Images are identical.
+== defaultArchives/defaultArchive-android-sparse.img
+00000000: 3aff 26ed 0100 0000                      :.&.....
+  simg2img == defaultArchive.ext4
+== rawdisk/gpt_fat.raw
+label: gpt
+label-id: 11111111-2222-3333-4444-555555555555
+rawdisk/gpt_fat.raw1 : start=        2048, size=        4096, type=EBD0A0A2-B9E5-4433-87C0-68B6B72699C7, uuid=11111111-2222-3333-4444-000000000001
+  content: MATCH (3 files, sha256)
+== rawdisk/mbr_fat.raw
+label: dos
+label-id: 0x11223344
+rawdisk/mbr_fat.raw1 : start=        2048, size=        4096, type=1
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.tar.lzfse
+00000000: 6276 7832                                bvx2
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.warc
+      2 WARC-Target-URI: <http://127.0.0.1:8765/folder/NestedArchive.zip>
+      2 WARC-Target-URI: <http://127.0.0.1:8765/folder/README.md>
+      2 WARC-Target-URI: <http://127.0.0.1:8765/hello%20world.txt>
+      1 WARC-Target-URI: <metadata://gnu.org/software/wget/warc/MANIFEST.txt>
+      1 WARC-Target-URI: <metadata://gnu.org/software/wget/warc/wget_arguments.txt>
+      1 WARC-Type: metadata
+      3 WARC-Type: request
+      1 WARC-Type: resource
+      3 WARC-Type: response
+      1 WARC-Type: warcinfo
+      9 WARC/1.0
+== warc/gzip_per_record.warc.gz
+      2 WARC-Target-URI: <http://127.0.0.1:8765/folder/NestedArchive.zip>
+      2 WARC-Target-URI: <http://127.0.0.1:8765/folder/README.md>
+      2 WARC-Target-URI: <http://127.0.0.1:8765/hello%20world.txt>
+      1 WARC-Target-URI: <metadata://gnu.org/software/wget/warc/MANIFEST.txt>
+      1 WARC-Target-URI: <metadata://gnu.org/software/wget/warc/wget_arguments.txt>
+      1 WARC-Type: metadata
+      3 WARC-Type: request
+      1 WARC-Type: resource
+      3 WARC-Type: response
+      1 WARC-Type: warcinfo
+      9 WARC/1.0
+== defaultArchives/defaultArchive.chm
+00000000: 4954 5346 0300 0000                      ITSF....
+== defaultArchives/defaultArchive.msi
+_SummaryInformation _ForceCodepage AdminUISequence Media Error ServiceInstall AppSearch Property Upgrade Shortcut InstallExecuteSequence Registry AdvtExecuteSequence ActionText FeatureComponents File Directory IniFile RemoveFile RemoveIniFile LaunchCondition Signature InstallUISequence Component ServiceControl Feature Binary CustomAction RegLocator MsiFileHash Icon AdminExecuteSequence CreateFolder 
+File	Component_	FileName	FileSize	Version	Language	Attributes	Sequence
+s72	s72	l255	i4	S72	S20	I2	i4
+File	File
+hello_world.txt	C1	hello world.txt	13			512	1
+README.md	C2	README.md	437			512	2
+NestedArchive.zip	C3	NestedArchive.zip	52334			512	3
+Directory	Directory_Parent	DefaultDir
+s72	S72	l255
+Directory	Directory
+FOLDER	INSTALLDIR	folder
+INSTALLDIR	ProgramFilesFolder	defaultArchive
+ProgramFilesFolder	TARGETDIR	.
+TARGETDIR		SourceDir
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.ntfs
+	Volume Name: defaultArchive
+	Volume Version: 3.1
+	Cluster Size: 4096
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive-nsis.exe
+Type = Nsis
+Physical Size = 151924
+Method = Deflate
+Solid = -
+2023-11-14 22:13:20 .....           13           13  hello world.txt
+2023-11-14 22:13:20 .....                       256  folder/README.md
+2023-11-14 22:13:20 .....                     52029  folder/NestedArchive.zip
+== nsis/nsis_bzip2.exe
+Type = Nsis
+Physical Size = 151229
+Method = BZip2
+Solid = -
+2023-11-14 22:13:20 .....           13           13  hello world.txt
+2023-11-14 22:13:20 .....                       289  folder/README.md
+2023-11-14 22:13:20 .....        52334        52334  folder/NestedArchive.zip
+== nsis/nsis_lzma.exe
+Type = Nsis
+Physical Size = 151690
+Method = LZMA:23
+Solid = -
+2023-11-14 22:13:20 .....           13           13  hello world.txt
+2023-11-14 22:13:20 .....                       309  folder/README.md
+2023-11-14 22:13:20 .....        52334        52334  folder/NestedArchive.zip
+== nsis/nsis_solid_lzma.exe
+Type = Nsis
+Physical Size = 152876
+Method = LZMA:23
+Solid = +
+2023-11-14 22:13:20 .....           13        53544  hello world.txt
+2023-11-14 22:13:20 .....          437               folder/README.md
+2023-11-14 22:13:20 .....                            folder/NestedArchive.zip
+== nsis/nsis_zlib.exe
+Type = Nsis
+Physical Size = 151924
+Method = Deflate
+Solid = -
+2023-11-14 22:13:20 .....           13           13  hello world.txt
+2023-11-14 22:13:20 .....                       256  folder/README.md
+2023-11-14 22:13:20 .....                     52029  folder/NestedArchive.zip

@@ -1,0 +1,155 @@
+== defaultArchives/defaultArchive.pkg
+Bom Payload PackageInfo 
+  content: MATCH (3 files, sha256)
+  Payload magic: 1f8b0800
+== pkg/component_compression_latest.pkg
+Bom Payload PackageInfo 
+  content: MATCH (3 files, sha256)
+  Payload magic: 70627a78
+== pkg/product_archive.pkg
+defaultArchive.pkg defaultArchive.pkg/Bom defaultArchive.pkg/Payload defaultArchive.pkg/PackageInfo Distribution 
+  content: MATCH (3 files, sha256)
+  Payload magic: 1f8b0800
+== defaultArchives/defaultArchive.aar
+  magic: 7062 7a65 
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive-raw.aar
+  magic: 4141 3031 
+  content: MATCH (3 files, sha256)
+== aar/compression_lz4.aar
+  magic: 7062 7a34 
+  content: MATCH (3 files, sha256)
+== aar/compression_lzbitmap.aar
+  magic: 7062 7a62 
+  content: MATCH (3 files, sha256)
+== aar/compression_lzma.aar
+  magic: 7062 7a78 
+  content: MATCH (3 files, sha256)
+== aar/compression_zlib.aar
+  magic: 7062 7a7a 
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.aea
+  content: MATCH (3 files, sha256)
+== aea/profile1_symmetric.aea
+  content: MATCH (3 files, sha256)
+== aea/profile0_signed.aea
+  content: MATCH (3 files, sha256)
+  defaultArchives/defaultArchive.aea id: 8ea7be896c733315e17b82cabc5884fa6c2c8b70e6e449ad32a1fb3feab9226d
+4145 4131 0500 0000 
+  aea/profile0_signed.aea id: d13b4095d32477c6dec9b53b6f5fe6fc4d8161f561e63eb5e56adc044f2e2e21
+4145 4131 0000 0000 
+  aea/profile1_symmetric.aea id: efa1698ab23d942db02f984253efa1fdbb44a056cdb2e06237740c6c97e19373
+4145 4131 0100 0000 
+== defaultArchives/defaultArchive.tar.pbzx
+7062 7a78 
+  content: MATCH (3 files, sha256)
+== pbzx/block_lzfse.tar.pbzx
+7062 7a65 
+  content: MATCH (3 files, sha256)
+== pbzx/apple_compression_tool.tar.lzfse
+6276 7832 
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.tar.as
+0005 1600 0002 0000 
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.tar.bin
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.tar.hqx
+== applesingle/forked.txt.as
+  data: 68656c6c6f20776f726c640a0a  rsrc: resource fork of forked.txt  FinderInfo: 5445585474747874
+== macbinary/forked.txt.bin
+  data: 68656c6c6f20776f726c640a0a  rsrc: resource fork of forked.txt  FinderInfo: 5445585474747874
+== binhex/forked.txt.hqx
+  data: 68656c6c6f20776f726c640a0a  rsrc: resource fork of forked.txt  FinderInfo: 5445585474747874
+== dmg/encrypted_aes128.dmg
+
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== dmg/encrypted_aes256.dmg
+
+  fs: APFS
+  content: MATCH (3 files, sha256)
+== dmg/format_UDBZ.dmg
+Format Description: UDIF read-only compressed (bzip2) Format: UDBZ 	partition-scheme: GUID 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== dmg/format_UDRO.dmg
+Format Description: UDIF read-only Format: UDRO 	partition-scheme: GUID 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== dmg/format_UDRW.dmg
+Format: UDRW 	partition-scheme: GUID Format Description: raw read/write 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== dmg/format_UDZO.dmg
+Format Description: UDIF read-only compressed (zlib) Format: UDZO 	partition-scheme: GUID 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== dmg/format_ULFO.dmg
+Format Description: UDIF read-only compressed (lzfse) Format: ULFO 	partition-scheme: GUID 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== dmg/format_ULMO.dmg
+Format Description: UDIF read-only compressed (lzma) Format: ULMO 	partition-scheme: GUID 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== dmg/fs_apfs.dmg
+Format Description: UDIF read-only compressed (zlib) Format: UDZO 	partition-scheme: GUID 	Encrypted: false 
+  fs: APFS
+  content: MATCH (3 files, sha256)
+== dmg/fs_exfat.dmg
+Format Description: UDIF read-only compressed (zlib) Format: UDZO 	partition-scheme: fdisk 	Encrypted: false 
+  fs: ExFAT
+  content: MATCH (3 files, sha256)
+== dmg/fs_msdos_fat16.dmg
+Format Description: UDIF read-only compressed (zlib) Format: UDZO 	partition-scheme: fdisk 	Encrypted: false 
+  fs: MS-DOS FAT16
+  content: MATCH (3 files, sha256)
+== dmg/fs_hfsplus.dmg
+Format Description: UDIF read-only compressed (zlib) Format: UDZO 	partition-scheme: GUID 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive-encrypted.dmg
+
+  fs: APFS
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.sparseimage
+Format: SPRS 	partition-scheme: GUID Format Description: sparse 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.sparsebundle
+Format: UDSB 	partition-scheme: GUID Format Description: sparse 	Encrypted: false 
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.apfs
+
+  fs: APFS
+  content: MATCH (3 files, sha256)
+== rawdisk/apm_hfsplus.raw
+
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== rawdisk/gpt_hfsplus.raw
+
+  fs: HFS+
+  content: MATCH (3 files, sha256)
+== xar/compression_bzip2.xar
+size:                   28
+Checksum algorithm:     1 (SHA1)
+   3 encoding style="application/x-bzip2"
+  content: MATCH (3 files, sha256)
+== xar/compression_gzip.xar
+size:                   28
+Checksum algorithm:     1 (SHA1)
+   3 encoding style="application/x-gzip"
+  content: MATCH (3 files, sha256)
+== xar/compression_none.xar
+size:                   28
+Checksum algorithm:     1 (SHA1)
+   3 encoding style="application/octet-stream"
+  content: MATCH (3 files, sha256)
+== xar/toc_sha256.xar
+size:                   28
+Checksum algorithm:     3 (SHA256)
+   3 encoding style="application/x-gzip"
+  content: MATCH (3 files, sha256)

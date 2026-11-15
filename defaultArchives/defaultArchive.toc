@@ -1,0 +1,5 @@
+CD_ROM
+
+// MacPacker test archive: one MODE1 data track, 2048-byte sectors
+TRACK MODE1
+DATAFILE "defaultArchive.bin"

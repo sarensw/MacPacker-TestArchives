@@ -1,0 +1,81 @@
+# 7-Zip 26.03 from Homebrew on the Mac host. This build has no RAR decoder (compressed RAR entries come out empty), so RAR is checked with unrar in ubuntu_unrar.txt.
+== defaultArchives/defaultarchive.deb
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Ar;
+  content: files:
+229dd124547722aa  ./data.tar.gz.x/data.tar.x/usr/share/doc/defaultarchive/changelog.gz
+30322444506aed4d  ./data.tar.gz.x/data.tar.x/folder/README.md
+fa52ae6c8424ff23  ./data.tar.gz.x/data.tar.x/folder/NestedArchive.zip
+03ba204e50d126e4  ./data.tar.gz.x/data.tar.x/hello world.txt
+== defaultArchives/defaultarchive-dpkg.deb
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = BlockPackSize BlockUnpackSize; 2 Method = LZMA2:23 CRC64; 1 Type = Ar; 1 Type = xz;
+  content: files:
+30322444506aed4d  ./data.tar.x/folder/README.md
+fa52ae6c8424ff23  ./data.tar.x/folder/NestedArchive.zip
+03ba204e50d126e4  ./data.tar.x/hello world.txt
+== defaultArchives/defaultarchive-dpkg-zstd.deb
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Method = header-open-only: XXH64 single-segments wnd-MAX:60KiB content-size-frame-max:61440 content-size-total:61440; 1 Type = Ar; 1 Type = zstd;
+  content: MATCH (3 files, sha256)
+== defaultArchives/defaultArchive.tar.br
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy; 
+find: /tmp/v7.gKaX/a: No such file or directory
+  content: files:
+scripts/verify_host_7zz.sh: line 15: cd: /tmp/v7.gKaX/a: No such file or directory
+== defaultArchives/defaultArchive.tbr
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy; 
+find: /tmp/v7.MtxD/a: No such file or directory
+  content: files:
+scripts/verify_host_7zz.sh: line 15: cd: /tmp/v7.MtxD/a: No such file or directory
+== defaultArchives/defaultArchive.tar.lzo
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = Local; 1 Characteristics = Local : Descriptor Descriptor_ERROR; 1 Encrypted = -; 1 Method = Deflate; 1 Type = zip;
+  content: files:
+== defaultArchives/defaultArchive.tlzo
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = Local; 1 Characteristics = Local : Descriptor Descriptor_ERROR; 1 Encrypted = -; 1 Method = Deflate; 1 Type = zip;
+  content: files:
+== defaultArchives/defaultArchive.tar.zst
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Method = header-open-only: XXH64 wnd-desc-log-MAX:21 wnd-MAX:2MiB unknown-content-size; 1 Type = zstd;
+  content: files:
+30322444506aed4d  ./defaultArchive.tar.x/folder/README.md
+fa52ae6c8424ff23  ./defaultArchive.tar.x/folder/NestedArchive.zip
+03ba204e50d126e4  ./defaultArchive.tar.x/hello world.txt
+== defaultArchives/defaultArchive.tar.gz
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = gzip;
+  content: files:
+30322444506aed4d  ./defaultArchive.tar.x/folder/README.md
+fa52ae6c8424ff23  ./defaultArchive.tar.x/folder/NestedArchive.zip
+03ba204e50d126e4  ./defaultArchive.tar.x/hello world.txt
+== defaultArchives/defaultArchive.rpm
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Rpm; 1 Type = gzip;
+  content: files:
+30322444506aed4d  ./defaultArchive-1.0-1.aarch64.cpio.x/folder/README.md
+fa52ae6c8424ff23  ./defaultArchive-1.0-1.aarch64.cpio.x/folder/NestedArchive.zip
+03ba204e50d126e4  ./defaultArchive-1.0-1.aarch64.cpio.x/hello world.txt
+== defaultArchives/defaultArchive.img
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Iso;
+  content: files:
+11397df50c2d6834  ./folder/README.md
+fa52ae6c8424ff23  ./folder/NestedArchive.zip
+cfce4e2952591e79  ./hello world.txt
+== password/7z_symbol_pw.7z
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  3 Encrypted = +; 1 Encrypted = -; 1 Method = ; 1 Method = LZMA2:16 7zAES; 3 Method = LZMA2:16 7zAES:19; 1 Solid = +; 1 Type = 7z;
+  content: MATCH (3 files, sha256)
+== password/zip_symbol_pw.zip
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = NTFS; 3 Characteristics = NTFS WzAES : Encrypt; 3 Encrypted = +; 1 Encrypted = -; 2 Method = AES-256 Deflate; 1 Method = AES-256 Store; 1 Method = Store; 1 Type = zip;
+  content: MATCH (3 files, sha256)
+== password/zip_unicode_pw.zip
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = ; 3 Characteristics = Encrypt Descriptor; 3 Encrypted = +; 1 Encrypted = -; 1 Method = Store; 1 Method = ZipCrypto Deflate; 2 Method = ZipCrypto Store; 1 Type = zip;
+  content: MATCH (3 files, sha256)
+== password/zip_long_pw.zip
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = ; 3 Characteristics = Encrypt Descriptor; 3 Encrypted = +; 1 Encrypted = -; 1 Method = Store; 1 Method = ZipCrypto Deflate; 2 Method = ZipCrypto Store; 1 Type = zip;
+  content: MATCH (3 files, sha256)
+== compressed/hello world.txt.Z
+  7zz -so sha256: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340 (hello world.txt: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340)
+== compressed/hello world.txt.bz2
+  7zz -so sha256: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340 (hello world.txt: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340)
+== compressed/hello world.txt.gz
+  7zz -so sha256: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340 (hello world.txt: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340)
+== compressed/hello world.txt.lzma
+  7zz -so sha256: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340 (hello world.txt: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340)
+== compressed/hello world.txt.xz
+  7zz -so sha256: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340 (hello world.txt: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340)
+== compressed/hello world.txt.zst
+  7zz -so sha256: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340 (hello world.txt: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340)

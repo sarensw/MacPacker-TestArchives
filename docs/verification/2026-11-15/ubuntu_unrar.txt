@@ -1,0 +1,17 @@
+== defaultArchives/defaultArchive.rar
+  unrar 7.00 (RARLAB, Ubuntu multiverse) lt: Details: RAR 5; Name: folder/NestedArchive.zip; Compression: RAR 5.0(v50) -m0 -md=128k; Name: folder/README.md; Compression: RAR 5.0(v50) -m3 -md=128k; Name: hello world.txt; Compression: RAR 5.0(v50) -m0 -md=128k; Name: folder; Compression: RAR 5.0(v50) -m0
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  11397df50c2d6834  ./folder/README.md
+  cfce4e2952591e79  ./hello world.txt
+== password/rar4_aes.rar
+  unrar 7.00 (RARLAB, Ubuntu multiverse) lt: Details: RAR 4; Name: hello world.txt; Compression: RAR 1.5(v29) -m3 -md=128k; Flags: encrypted ; Name: folder/NestedArchive.zip; Compression: RAR 1.5(v29) -m3 -md=128k; Flags: encrypted ; Name: folder/README.md; Compression: RAR 1.5(v29) -m3 -md=128k; Flags: encrypted ; Name: folder; Compression: R
+  content: MATCH (3 files, sha256)
+== password/rar4_encrypted_header.rar
+  unrar 7.00 (RARLAB, Ubuntu multiverse) lt: Details: RAR 4, encrypted headers; Name: hello world.txt; Compression: RAR 1.5(v29) -m3 -md=128k; Flags: encrypted ; Name: folder/NestedArchive.zip; Compression: RAR 1.5(v29) -m3 -md=128k; Flags: encrypted ; Name: folder/README.md; Compression: RAR 1.5(v29) -m3 -md=128k; Flags: encrypted ; Name: fol
+  content: MATCH (3 files, sha256)
+== password/rar5_aes.rar
+  unrar 7.00 (RARLAB, Ubuntu multiverse) lt: Details: RAR 5; Name: hello world.txt; Compression: RAR 5.0(v50) -m3 -md=128k; Flags: encrypted ; Name: folder/NestedArchive.zip; Compression: RAR 5.0(v50) -m3 -md=128k; Flags: encrypted ; Name: folder/README.md; Compression: RAR 5.0(v50) -m3 -md=128k; Flags: encrypted ; Name: folder; Compression: R
+  content: MATCH (3 files, sha256)
+== password/rar5_encrypted_header.rar
+  unrar 7.00 (RARLAB, Ubuntu multiverse) lt: Details: RAR 5, encrypted headers; Name: hello world.txt; Compression: RAR 5.0(v50) -m3 -md=128k; Flags: encrypted ; Name: folder/NestedArchive.zip; Compression: RAR 5.0(v50) -m3 -md=128k; Flags: encrypted ; Name: folder/README.md; Compression: RAR 5.0(v50) -m3 -md=128k; Flags: encrypted ; Name: fol
+  content: MATCH (3 files, sha256)

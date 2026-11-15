@@ -11,6 +11,12 @@ These archives are used to:
 - Test **nested archive handling**
 - Verify **preview and extraction** capabilities across supported formats
 
+## 📚 Fixture documentation
+
+Every fixture, what it should contain and how it was verified: [`docs/README.md`](docs/README.md),
+[`docs/coverage.md`](docs/coverage.md) (one row per format) and [`manifest.json`](manifest.json).
+What the older baselines actually hold: [`docs/existing-fixtures-audit.md`](docs/existing-fixtures-audit.md).
+
 ## 🧪 Structure
 
 All archives / files that are named `defaultArchive` contain the contents of the `defaultArchive` folder. Those are at the root of the repo. In case there is any special case, or archives cannot be created anymore (e.g. due to missing tools) then there is a corresponding folder that contains those special cases.

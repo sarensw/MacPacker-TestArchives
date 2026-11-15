@@ -1,0 +1,55 @@
+== defaultArchives/defaultArchive.ace
+  acefile 0.6.14 (pipx): processing archive defaultArchive.ace;archive is not locked, not multi-volume, solid;created on Win32 with ACE 2.0 for extraction with 2.0+;
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  11397df50c2d6834  ./folder/README.md
+  cfce4e2952591e79  ./hello world.txt
+== defaultArchives/defaultArchive.tar.br
+  brotli -dc | tar -x (brotli 1.1.0)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tbr
+  brotli -dc | tar -x (brotli 1.1.0)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tar.lzo
+  lzop -dc | tar -x (lzop 1.04)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tlzo
+  lzop -dc | tar -x (lzop 1.04)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tar.lz
+  lzip -dc | tar -x (lzip 1.24.1)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tlz
+  lzip -dc | tar -x (lzip 1.24.1)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tar.lz4
+  lz4 -dc | tar -x (*** LZ4 command line interface 64-bits v)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tlz4
+  lz4 -dc | tar -x (*** LZ4 command line interface 64-bits v)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tar.zst
+  zstd -dc | tar -x (*** Zstandard CLI (64-bit) v1.5.5, by Ya)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tzst
+  zstd -dc | tar -x (*** Zstandard CLI (64-bit) v1.5.5, by Ya)
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt

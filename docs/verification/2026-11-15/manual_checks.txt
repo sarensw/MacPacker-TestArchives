@@ -1,0 +1,21 @@
+# Checks run by hand during the 2026-11-15 run (commands in docs/formats/*.md); output copied verbatim where quoted.
+== defaultArchives/defaultArchive.toc
+  cdrdao 1.2.4 show-toc defaultArchive.toc (run in defaultArchives/ next to defaultArchive.bin, ubuntu VM):
+  WARNING: Track 1: Length is shorter than 4 seconds. / TOC TYPE: CD_ROM / TRACK 1 Mode MODE1: COPY NOT PERMITTED START 00:00:00(0) END 00:00:68(68)
+== defaultArchives/defaultArchive.cue
+  text, CRLF line ends: FILE "DEFAULTARCHIVE.BIN" BINARY / TRACK 01 MODE1/2048 / INDEX 01 00:00:00. The referenced name is upper case; the file in the repo is defaultArchive.bin.
+  defaultArchive.bin is byte-identical to defaultArchive.iso and defaultArchive.img (cmp), sha256 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f
+== defaultArchives/defaultArchive.mds
+  file(1): "MED_Song" (misidentified); starts with "MEDIA DESCRIPTOR". Pairs with defaultArchive.mdf. lsar 1.10 identifies the .mdf as "ISO 9660" but neither unar nor 7-Zip extracted it here: UNVERIFIED.
+== defaultArchives/defaultArchive.dvd
+  ASCII text "DEFAULTARCHIVE.IMG" without line end: a DVD layer-break/descriptor text file naming the image (not a disc image itself).
+== defaultArchives/defaultArchive.tar.hqx
+  binhex decode (macOS 27.2, lb_27 VM), then tar -x: an older layout under defaultContent/, with folder/Archive.zip instead of folder/NestedArchive.zip
+  30322444506aed4dd156964c5926a66eb545990301bdc41a83a2c49c66091eb3  ./defaultContent/folder/README.md
+  fa52ae6c8424ff23873ce3001c7257cdf6174263502e4d4fecf106a6b45090b1  ./defaultContent/folder/Archive.zip
+  03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340  ./defaultContent/hello world.txt
+== defaultArchives/defaultArchive.lzh
+  lhasa 0.4.0 v / t / x (ubuntu VM): -lh0- NestedArchive.zip 53236, -lh5- README.md 455, -lh0- hello world.txt 14; all CRCs tested OK. (bsdtar 3.7.2 wrote README.md empty, a bsdtar issue.)
+  11397df50c2d6834  ./folder/README.md
+  fa52ae6c8424ff23  ./folder/NestedArchive.zip
+  cfce4e2952591e79  ./hello world.txt
