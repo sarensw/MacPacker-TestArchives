@@ -29,9 +29,9 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [macOS installer package](formats/pkg.md) | 1.2 | pkg | `defaultArchive.pkg` | 3/3 | signed packages; bundle-style (pre-10.5) packages; Scripts archives |
 | DONE | [Split and spanned volumes](formats/split.md) | 1.2 | zip.001, 7z.001, z01, swm | `defaultArchive.swm` | 3/21 | RAR multi-volume, ARJ multi-volume |
 | DONE | [SquashFS](formats/squashfs.md) | 1.2 | squashfs, sfs, snap | `defaultArchive.squashfs` | 7/7 | squashfs 3.x and older; big-endian |
-| BLOCKED | [StuffIt (classic, 5)](formats/stuffit.md) | 1.2 | sit |  | 0/3 | baseline defaultArchive.sit |
-| BLOCKED | [StuffIt SEA](formats/sea.md) | 1.2 | sea |  | 0/1 | baseline |
-| BLOCKED | [StuffIt X](formats/sitx.md) | 1.2 | sitx |  | 0/1 | baseline |
+| TODO | [StuffIt (classic, 5)](formats/stuffit.md) | 1.2 | sit |  | 0/3 | baseline defaultArchive.sit (not yet attempted). Known constraints: StuffIt Deluxe/Standard for Mac is discontinued (Smith Micro); the free  |
+| TODO | [StuffIt SEA](formats/sea.md) | 1.2 | sea |  | 0/1 | baseline (with StuffIt) |
+| TODO | [StuffIt X](formats/sitx.md) | 1.2 | sitx |  | 0/1 | baseline (with StuffIt) |
 | DONE | [Tar](formats/tar.md) | 1.2 | tar, gtar | `defaultArchive-dotslash.tar`, `defaultArchive.gtar`, `defaultArchive.tar` | 8/8 | star/xstar, sparse files, multi-volume GNU tar, long-name variants |
 | DONE | [Unix compress](formats/compress.md) | 1.2 | Z, taz, tar.Z | `defaultArchive.tar.Z`, `defaultArchive.taz` | 3/3 |  |
 | DONE | [VirtualBox VDI](formats/vdi.md) | 1.2 | vdi | `defaultArchive.vdi` | 1/1 | fixed VDI, differencing |
@@ -43,8 +43,8 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [XAR](formats/xar.md) | 1.2 | xar | `defaultArchive.xar` | 5/5 | lzma/xz (macOS xar 1.8dev has no lzma), signed xar |
 | DONE | [XZ](formats/xz.md) | 1.2 | xz, txz, tar.xz | `defaultArchive.tar.xz`, `defaultArchive.txz` | 3/3 | multi-block / BCJ filter xz |
 | DONE | [ZIP](formats/zip.md) | 1.2 | zip, jar, aar, apk, cbz | `defaultArchive.jar`, `defaultArchive.zip` | 15/52 | method 93 zstd and 95 xz written by a real tool; PKWARE strong encryption (needs SecureZIP); central-directory encryption |
-| BLOCKED | [ZIPX (WinZip)](formats/zipx.md) | 1.2 | zipx |  | 0/0 | baseline defaultArchive.zipx |
-| DONE | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 1/2 | MDS v2 (.mdx is DAEMON Tools) |
+| TODO | [ZIPX (WinZip)](formats/zipx.md) | 1.2 | zipx |  | 0/0 | baseline defaultArchive.zipx (not yet attempted). Needs WinZip (12.1 or later) on a Windows VM. Not yet attempted: WinZip trial installer mu |
+| PARTIAL | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 1/2 | a reader that verifies the mdf content; MDS v2 |
 | DONE | [Apple Archive](formats/aar.md) |  | aar | `defaultArchive-raw.aar`, `defaultArchive.aar` | 6/6 | library.aar named by MacPacker's tests (meaning unknown); compressible content so that chunks are actually compressed |
 | PARTIAL | [Apple Encrypted Archive](formats/aea.md) |  | aea | `defaultArchive.aea` | 3/3 | defaultArchive-expired.aea and signing/testRoot.pem expected by MacPacker's tests; profiles 2-4 (ECDHE/signed) |
 | TODO | BlindWrite |  | b5t, b6t |  | 0/0 | baseline |
@@ -94,7 +94,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | TODO | PSP ZSO/DAX/CSO v2 |  | zso, dax |  | 0/0 | maxcso (build from source) |
 | TODO | Apple II disks |  | dsk, do, po, 2mg, woz |  | 0/0 | CiderPress II cp2 |
 | TODO | ShrinkIt / Binary II |  | shk, sdk, bxy, bny |  | 0/0 | CiderPress II cp2 |
-| TODO | Classic Mac disks |  | image, dc42, img |  | 0/0 | cp2 / hfsutils; classic HFS volume exists as hfs/classic_hfs.hfs |
+| PARTIAL | Classic Mac disks |  | image, dc42, img |  | 0/0 | cp2 / hfsutils; classic HFS volume exists as hfs/classic_hfs.hfs |
 | TODO | Classic Mac archivers |  | cpt, pit, dd |  | 0/0 | Mini vMac + Compact Pro etc. |
 | DONE | [Sparse disk images](formats/sparse.md) |  | sparseimage, sparsebundle | `defaultArchive.sparseimage` | 1/7 | encrypted sparse bundle |
 | PARTIAL | [Parallels disk](formats/parallels.md) |  | hdd, hds | `defaultArchive.hds` | 1/1 | .hdd bundle (folder with DiskDescriptor.xml); image made by Parallels Desktop |
