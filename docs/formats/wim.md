@@ -24,7 +24,7 @@ defaultArchive.wim (existing) holds legacy CRLF content.
 |---|---|---|---|---|
 | `defaultArchives/defaultArchive.esd` | baseline | 54278 | verified | standard content |
 | `defaultArchives/defaultArchive.swm` | baseline | 1714 | verified | standard content |
-| `defaultArchives/defaultArchive.wim` | baseline | 55479 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (README.md with CRLF line ends, 455 bytes); hello world.txt (hello world.txt with CRLF line end, 14 bytes) |
+| `defaultArchives/defaultArchive.wim` | baseline | 54648 | verified | standard content |
 | `defaultArchives/defaultArchive2.swm` | part | 53384 | part | - |
 | `defaultArchives/defaultArchive3.swm` | part | 1550 | part | - |
 | `wim/compress_lzms.wim` | variant | 54117 | verified | standard content |
@@ -44,7 +44,7 @@ defaultArchive.wim (existing) holds legacy CRLF content.
   - docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4d5357494d000000; 7z Type=wim Methods=Copy,Copy:15; file: Windows imaging (SWM 1 of 3) image v1.13, reparse point fixup; readers matching standard content: 7z
   - docs/verification/2026-11-15/ubuntu_special.txt: Part Number:    1/3 / content: MATCH (3 files, sha256)
 - `defaultArchives/defaultArchive.wim`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4d5357494d000000; 7z Type=wim Methods=Copy,Copy:15; file: Windows imaging (WIM) image v1.13, reparse point fixup; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 4d5357494d000000; 7z Type=wim Methods=Copy,Copy:15; file: Windows imaging (WIM) image v1.13, reparse point fixup; readers matching standard content: 7z
 - `defaultArchives/defaultArchive2.swm`
   - part of a multi-file fixture; verified through its first part
 - `defaultArchives/defaultArchive3.swm`

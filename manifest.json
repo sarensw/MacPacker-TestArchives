@@ -466,14 +466,13 @@
     "chd"
    ],
    "role": "variant",
-   "size": 54073,
-   "sha256": "2e48b8d39c82ef542992543ac73acec7e886527587f93ebba7a5f540101ef398",
+   "size": 53964,
+   "sha256": "954a7e42f7352d9ffb49e7c11535a5c66aacd66c68ae3eeccce12323b45e913d",
    "expected": "raw: defaultArchive.iso (sha256 18eb071a…)",
    "verification": {
     "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4d436f6d70724844; 7z Type=zip Methods=Deflate; file: MAME CHD compressed hard disk image, version 5; readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_special.txt: File Version: 5 | Logical size: 139,264 bytes | Compression:  lzma (LZMA), zlib (Deflate), huff (Huffman), flac (FLAC) | Overall SHA1 verification successful! | extractcd bin sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f | extracthd sha256: 71277c34db5b49b2fe29249f7ffd40b75c1c2a6650ebeeb9d3862dcc85592f62 | extractraw sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8"
+     "docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: extractraw sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18"
     ]
    }
   },
@@ -761,28 +760,12 @@
    ],
    "role": "baseline",
    "size": 61440,
-   "sha256": "5520a78750b1072b90ac6d1736aecb27d0d95952e6c57f7431d7ca3b6da62b59",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "sha256": "ab5be1c40a40a6cb6e9abc133295bee4e82962ddcb6723f97db81922920ef945",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 2e2f000000000000; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 2e2f000000000000; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -845,29 +828,13 @@
     "comic"
    ],
    "role": "baseline",
-   "size": 53257,
-   "sha256": "549b55bd319b349e6cb3d869309f20e50c89f902d1d4a8126805720824506914",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 52736,
+   "sha256": "c822efe9157209fcf4ae498d51ef935308d1aaa95000e56ea8b491f33520680a",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 377abcaf271c0004; 7z Type=7z Methods=LZMA2:16; lsar format=7-Zip; file: 7-zip archive data, version 0.4; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 377abcaf271c0004; 7z Type=7z Methods=LZMA2:16; lsar format=7-Zip; file: 7-zip archive data, version 0.4; readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -994,29 +961,13 @@
     "arj"
    ],
    "role": "baseline",
-   "size": 53082,
-   "sha256": "aae5f65111cb119ed647ca1cbe7eca0343468453b9eb1d22aa0123d3f9476d3d",
-   "expected": [
-    {
-     "path": "folder_NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder_README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 52735,
+   "sha256": "6bee92f40fdea21e6ec8b0a275f1a07c62077ec02563ffcfc1cc8c4be165c661",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 60ea3600220b0102; 7z Type=Arj Methods=0,1; lsar format=ARJ; file: ARJ archive data, v11, slash-switched, created 11 aug 1980+52, original name: defaultArchi; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 60ea3600220b0102; 7z Type=Arj Methods=0,1; lsar format=ARJ; file: ARJ archive data, v11, slash-switched, created 26 jul 1980+53, original name: defaultArchi; readers matching standard content: 7z, unar"
     ]
    }
   },
@@ -1027,29 +978,13 @@
     "rawcd"
    ],
    "role": "baseline",
-   "size": 139264,
-   "sha256": "18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 432128,
+   "sha256": "2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKERTESTVOLUME'; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKER'; readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -1091,14 +1026,13 @@
     "chd"
    ],
    "role": "baseline",
-   "size": 54088,
-   "sha256": "5ea4b0bf5d24a18fffc784ca18d5345519f5a3cacf5fa59bb5e49e7218b788d3",
+   "size": 54087,
+   "sha256": "3f6de8add12e45eb7e67e2a351e9adac406bce120f193d316340459fd7485ec3",
    "expected": "CD: one MODE1 track, data = defaultArchive.bin (sha256 18eb071a…)",
    "verification": {
     "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4d436f6d70724844; file: MAME CHD compressed hard disk image, version 5; readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_special.txt: File Version: 5 | Logical size: 166,464 bytes | Compression:  cdlz (CD LZMA), cdzl (CD Deflate), cdfl (CD FLAC) | Metadata:     Tag='CHT2'  Index=0  Length=85 bytes | Overall SHA1 verification successful!"
+     "docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: Overall SHA1 verification successful! | extractcd bin sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 iso: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18"
     ]
    }
   },
@@ -1141,14 +1075,13 @@
     "cso"
    ],
    "role": "baseline",
-   "size": 55076,
-   "sha256": "d1cbc35895ad61d90bc102e9bf628cf486846a9ac44a1ef82adbe1dfc4674785",
+   "size": 58436,
+   "sha256": "9ac40f6324f322e6d89e05740d7a3e812f62431a8dd8f437a31e17a7a4030005",
    "expected": "decompresses to defaultArchive.iso (sha256 18eb071a…)",
    "verification": {
     "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4349534f00000000; 7z Type=zip Methods=Deflate; file: CSO v1 disk image, original size 139264 bytes, datablock size 2048 bytes; readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_special.txt: 00000000: 4349 534f 0000 0000 0020 0200 0000 0000  CISO..... ...... | 00000010: 0008 0000 0100 0000                      ........ | decompressed sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f"
+     "docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: decompressed sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18"
     ]
    }
   },
@@ -1337,28 +1270,12 @@
    ],
    "role": "baseline",
    "size": 61440,
-   "sha256": "55f6bd22e9e3da8f96325719ad7759743ab69b55739074106ea939121fd5c176",
-   "expected": [
-    {
-     "path": "folder/Archive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "sha256": "ab5be1c40a40a6cb6e9abc133295bee4e82962ddcb6723f97db81922920ef945",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 2e2f000000000000; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 2e2f000000000000; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -1400,30 +1317,13 @@
    "path": "defaultArchives/defaultArchive.img",
    "formats": [],
    "role": "baseline",
-   "size": 139264,
-   "sha256": "18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 432128,
+   "sha256": "2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKERTESTVOLUME'; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Iso; | content: files: | 11397df50c2d6834  ./folder/README.md | fa52ae6c8424ff23  ./folder/NestedArchive.zip | cfce4e2952591e79  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKER'; readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -1433,29 +1333,13 @@
     "iso"
    ],
    "role": "baseline",
-   "size": 139264,
-   "sha256": "18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 432128,
+   "sha256": "2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKERTESTVOLUME'; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKER'; readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -1466,29 +1350,13 @@
     "zip-packages"
    ],
    "role": "baseline",
-   "size": 53874,
-   "sha256": "843823249b399de0c41557f23daaeaabb009eb4b592dbd371657b99f02d5296c",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 53053,
+   "sha256": "a4308df069c51b85aad1143afc6dd1834ada6ba93ba229fb9c5d1bea840783ed",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 504b030414000000; 7z Type=zip Methods=Deflate,Store; lsar format=Zip; file: Zip archive data, at least v2.0 to extract, compression method=store; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 504b03040a000000; 7z Type=zip Methods=Deflate,Store; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -1759,30 +1627,13 @@
     "rpm"
    ],
    "role": "baseline",
-   "size": 59441,
-   "sha256": "2362150c7ba541820c0bdcbf51772bf57a52699642cf488d9e317ed55d1726f9",
-   "expected": [
-    {
-     "path": "defaultArchive-1.0-1.aarch64.cpio.x/folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "defaultArchive-1.0-1.aarch64.cpio.x/folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "defaultArchive-1.0-1.aarch64.cpio.x/hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 59151,
+   "sha256": "f6c04dbed14c1356614f009ab77923bcea646e101c6704d7c7d17d5617ae112d",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic edabeedb03000000; 7z Type=Rpm; lsar format=RPM; file: RPM v3.0 bin; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Rpm; 1 Type = gzip; | content: files: | 30322444506aed4d  ./defaultArchive-1.0-1.aarch64.cpio.x/folder/README.md | fa52ae6c8424ff23  ./defaultArchive-1.0-1.aarch64.cpio.x/folder/NestedArchive.zip | 03ba204e50d126e4  ./defaultArchive-1.0-1.aarch64.cpio.x/hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic edabeedb03000000; 7z Type=Rpm; lsar format=RPM; file: RPM v3.0 bin; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -1951,28 +1802,12 @@
    ],
    "role": "baseline",
    "size": 61440,
-   "sha256": "3b426f4e8e75dfb3f362c60017275e11547eef246322538d94502928bd36fcf7",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "sha256": "94a495738884b163d15c364e66112b4995ee145596465e4521d34d9424c7e231",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 666f6c6465722f00; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 666f6c6465722f00; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: 7z, unar, bsdtar"
     ]
    }
   },
@@ -1982,29 +1817,13 @@
     "compress"
    ],
    "role": "baseline",
-   "size": 76587,
-   "sha256": "39557788eecdf3d4c3424d07359413e4a0d3bf36f3ecc1ba299a18f7e512d1a6",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 75817,
+   "sha256": "384402e9e2b845fe1808efffc5d2ab03adefb6c7b1b57ed4803f2fca9013754d",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 1f9d9066deb02153; 7z Type=Z; lsar format=Compress; file: compress'd data 16 bits; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 1f9d9066deb02153; 7z Type=Z; lsar format=Compress; file: compress'd data 16 bits; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2048,13 +1867,13 @@
     "brotli"
    ],
    "role": "baseline",
-   "size": 52640,
-   "sha256": "fb623147f753207320a9a75269a378e2b5f23c8bca9bc95bd988e3ba462a7821",
+   "size": 52337,
+   "sha256": "2ef4de39ab527e06c5edbc7f130d0778ac0c78bda8b756e19fd096f09bdc00dc",
    "expected": [
     {
      "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
     },
     {
      "path": "folder/README.md",
@@ -2068,11 +1887,10 @@
     }
    ],
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 1fffef1155cb28c0; file: data; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy; | find: /tmp/v7.gKaX/a: No such file or directory | content: files: | scripts/verify_host_7zz.sh: line 15: cd: /tmp/v7.gKaX/a: No such file or directory",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: brotli -dc | tar -x (brotli 1.1.0) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 1fffef51948a650e; file: data; readers matching standard content: none",
+     "docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: brotli -dc | tar -x (brotli brotli 1.1.0) | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },
@@ -2082,29 +1900,13 @@
     "bzip2"
    ],
    "role": "baseline",
-   "size": 53825,
-   "sha256": "4337e9ebb27a9802b3075b93053ad132cebbdf246761604a9b42fff855de071e",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53322,
+   "sha256": "70733135b0fe5910691399707b9cd96d47d042e3dc31f38833004467fe468ac1",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2114,30 +1916,13 @@
     "gzip"
    ],
    "role": "baseline",
-   "size": 53121,
-   "sha256": "222ed632f1d45ff5f9908804f3db4a069b365de7bddb5353e516b56d7953a710",
-   "expected": [
-    {
-     "path": "defaultArchive.tar.x/folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "defaultArchive.tar.x/folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "defaultArchive.tar.x/hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 52735,
+   "sha256": "e3dedb6be5fcd08a34ce760d517dcf63d3f0ec48f709f762cdbac6f0780dbcc6",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 1f8b080000000000; 7z Type=gzip; lsar format=Gzip; file: gzip compressed data, from Unix, original size modulo 2^32 61440; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = gzip; | content: files: | 30322444506aed4d  ./defaultArchive.tar.x/folder/README.md | fa52ae6c8424ff23  ./defaultArchive.tar.x/folder/NestedArchive.zip | 03ba204e50d126e4  ./defaultArchive.tar.x/hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 1f8b080000000000; 7z Type=gzip; lsar format=Gzip; file: gzip compressed data, from Unix, original size modulo 2^32 61440; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2181,30 +1966,13 @@
     "lzip"
    ],
    "role": "baseline",
-   "size": 53348,
-   "sha256": "5ab239b96afbe6adc7c8b2f4bf1d0b280a2f4cd7da5afad11f36b740039dc191",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53027,
+   "sha256": "0d23d6aef4eaa5c6357e37bb03bace33976c22b361d0cabfb75ba3ec2768ecc3",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4c5a495001300033; file: lzip compressed data, version: 1; readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: lzip -dc | tar -x (lzip 1.24.1) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 4c5a495001300033; file: lzip compressed data, version: 1; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2214,30 +1982,13 @@
     "lz4"
    ],
    "role": "baseline",
-   "size": 53357,
-   "sha256": "be4da50c0b2b1d6d0dda465b081015f66f43b2ef4317616fdda978f5094477e4",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 52981,
+   "sha256": "38bffa2c8acf98d4127d427d6fd8bb2848fa1b60779cdbad828444955a3346db",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 04224d186440a75a; 7z Type=zip Methods=Deflate; file: LZ4 compressed data (v1.4+); readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: lz4 -dc | tar -x (*** LZ4 command line interface 64-bits v) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 04224d186440a7e2; 7z Type=zip Methods=Deflate; file: LZ4 compressed data (v1.4+); readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2264,29 +2015,13 @@
     "lzma"
    ],
    "role": "baseline",
-   "size": 53329,
-   "sha256": "e8fa9a81976c8616a5993073d845f965631af0904d29b10d1122b3a6bfe87a68",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53006,
+   "sha256": "ee3139e2c2eb8727c69ecb36a678438c3d81de2b656eb9ef2105620ae8a9b589",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 5d00008000ffffff; 7z Type=lzma Methods=LZMA:23; lsar format=LZMA_Alone; file: LZMA compressed data, streamed; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 5d00008000ffffff; 7z Type=lzma Methods=LZMA:23; lsar format=LZMA_Alone; file: LZMA compressed data, streamed; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2296,31 +2031,13 @@
     "lzop"
    ],
    "role": "baseline",
-   "size": 54457,
-   "sha256": "179b7f84127c8f7e399ead1c9dcd11b0bc4a1bcf3eefd915e99bae4912548860",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53533,
+   "sha256": "f88091b91cf0d5d2bd649dffb19f13c916a58cee57c0abec8a0e6627bc898529",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 894c5a4f000d0a1a; 7z Type=zip Methods=Deflate; file: lzop compressed data - version 1.040, LZO1X-1, os: Unix; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = Local; 1 Characteristics = Local : Descriptor Descriptor_ERROR; 1 Encrypted = -; 1 Method = Deflate; 1 Type = zip; | content: files:",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: lzop -dc | tar -x (lzop 1.04) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 894c5a4f000d0a1a; 7z Type=zip Methods=Deflate; file: lzop compressed data - version 1.040, LZO1X-1, os: Unix; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2347,29 +2064,13 @@
     "xz"
    ],
    "role": "baseline",
-   "size": 53384,
-   "sha256": "7d0f0fe27ecd1b9d19df4969ea55ec3d51f15dcaeb8135ad2b975c7b337b6e0a",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53052,
+   "sha256": "68c2e2d199eac1150c93f6bac690ec8d1e63ac0e73c8e50309c3f1601acc5f47",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic fd377a585a000004; 7z Type=xz Methods=LZMA2:23 CRC64; lsar format=XZ; file: XZ compressed data, checksum CRC64; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic fd377a585a000004; 7z Type=xz Methods=LZMA2:23 CRC64; lsar format=XZ; file: XZ compressed data, checksum CRC64; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2379,31 +2080,13 @@
     "zstd"
    ],
    "role": "baseline",
-   "size": 53469,
-   "sha256": "391df548bd4c0e88cd0256f4822148064d574d488e5d44429a92faad65341a69",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 52904,
+   "sha256": "b471967677af01beb9c7c5bd0f00a1bbdd56ac96bdae290368ef452d06755dbc",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 28b52ffd04588586; 7z Type=zip Methods=Deflate; file: Zstandard compressed data (v0.8+), Dictionary ID: None; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Method = header-open-only: XXH64 wnd-desc-log-MAX:21 wnd-MAX:2MiB unknown-content-size; 1 Type = zstd; | content: files: | 30322444506aed4d  ./defaultArchive.tar.x/folder/README.md | fa52ae6c8424ff23  ./defaultArchive.tar.x/folder/NestedArchive.zip | 03ba204e50d126e4  ./defaultArchive.tar.x/hello world.txt",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: zstd -dc | tar -x (*** Zstandard CLI (64-bit) v1.5.5, by Ya) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 28b52ffd0458dd74; file: Zstandard compressed data (v0.8+), Dictionary ID: None; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2413,29 +2096,13 @@
     "compress"
    ],
    "role": "baseline",
-   "size": 76587,
-   "sha256": "39557788eecdf3d4c3424d07359413e4a0d3bf36f3ecc1ba299a18f7e512d1a6",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 75817,
+   "sha256": "384402e9e2b845fe1808efffc5d2ab03adefb6c7b1b57ed4803f2fca9013754d",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 1f9d9066deb02153; 7z Type=Z; lsar format=Compress; file: compress'd data 16 bits; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 1f9d9066deb02153; 7z Type=Z; lsar format=Compress; file: compress'd data 16 bits; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2445,13 +2112,13 @@
     "brotli"
    ],
    "role": "baseline",
-   "size": 52640,
-   "sha256": "fb623147f753207320a9a75269a378e2b5f23c8bca9bc95bd988e3ba462a7821",
+   "size": 52337,
+   "sha256": "2ef4de39ab527e06c5edbc7f130d0778ac0c78bda8b756e19fd096f09bdc00dc",
    "expected": [
     {
      "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
     },
     {
      "path": "folder/README.md",
@@ -2465,11 +2132,10 @@
     }
    ],
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 1fffef1155cb28c0; file: data; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy; | find: /tmp/v7.MtxD/a: No such file or directory | content: files: | scripts/verify_host_7zz.sh: line 15: cd: /tmp/v7.MtxD/a: No such file or directory",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: brotli -dc | tar -x (brotli 1.1.0) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 1fffef51948a650e; file: data; readers matching standard content: none",
+     "docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: brotli -dc | tar -x (brotli brotli 1.1.0) | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },
@@ -2479,29 +2145,13 @@
     "bzip2"
    ],
    "role": "baseline",
-   "size": 53825,
-   "sha256": "4337e9ebb27a9802b3075b93053ad132cebbdf246761604a9b42fff855de071e",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53322,
+   "sha256": "70733135b0fe5910691399707b9cd96d47d042e3dc31f38833004467fe468ac1",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2511,29 +2161,13 @@
     "bzip2"
    ],
    "role": "baseline",
-   "size": 53825,
-   "sha256": "4337e9ebb27a9802b3075b93053ad132cebbdf246761604a9b42fff855de071e",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53322,
+   "sha256": "70733135b0fe5910691399707b9cd96d47d042e3dc31f38833004467fe468ac1",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2543,29 +2177,13 @@
     "gzip"
    ],
    "role": "baseline",
-   "size": 53121,
-   "sha256": "222ed632f1d45ff5f9908804f3db4a069b365de7bddb5353e516b56d7953a710",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 52735,
+   "sha256": "e3dedb6be5fcd08a34ce760d517dcf63d3f0ec48f709f762cdbac6f0780dbcc6",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 1f8b080000000000; 7z Type=gzip; lsar format=Gzip; file: gzip compressed data, from Unix, original size modulo 2^32 61440; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 1f8b080000000000; 7z Type=gzip; lsar format=Gzip; file: gzip compressed data, from Unix, original size modulo 2^32 61440; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2575,30 +2193,13 @@
     "lzip"
    ],
    "role": "baseline",
-   "size": 53348,
-   "sha256": "5ab239b96afbe6adc7c8b2f4bf1d0b280a2f4cd7da5afad11f36b740039dc191",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53027,
+   "sha256": "0d23d6aef4eaa5c6357e37bb03bace33976c22b361d0cabfb75ba3ec2768ecc3",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4c5a495001300033; file: lzip compressed data, version: 1; readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: lzip -dc | tar -x (lzip 1.24.1) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 4c5a495001300033; file: lzip compressed data, version: 1; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2608,30 +2209,13 @@
     "lz4"
    ],
    "role": "baseline",
-   "size": 53357,
-   "sha256": "be4da50c0b2b1d6d0dda465b081015f66f43b2ef4317616fdda978f5094477e4",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 52981,
+   "sha256": "38bffa2c8acf98d4127d427d6fd8bb2848fa1b60779cdbad828444955a3346db",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 04224d186440a75a; 7z Type=zip Methods=Deflate; file: LZ4 compressed data (v1.4+); readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: lz4 -dc | tar -x (*** LZ4 command line interface 64-bits v) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 04224d186440a7e2; 7z Type=zip Methods=Deflate; file: LZ4 compressed data (v1.4+); readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2641,29 +2225,13 @@
     "lzma"
    ],
    "role": "baseline",
-   "size": 53329,
-   "sha256": "e8fa9a81976c8616a5993073d845f965631af0904d29b10d1122b3a6bfe87a68",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53006,
+   "sha256": "ee3139e2c2eb8727c69ecb36a678438c3d81de2b656eb9ef2105620ae8a9b589",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 5d00008000ffffff; 7z Type=lzma Methods=LZMA:23; lsar format=LZMA_Alone; file: LZMA compressed data, streamed; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 5d00008000ffffff; 7z Type=lzma Methods=LZMA:23; lsar format=LZMA_Alone; file: LZMA compressed data, streamed; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2673,31 +2241,13 @@
     "lzop"
    ],
    "role": "baseline",
-   "size": 54457,
-   "sha256": "179b7f84127c8f7e399ead1c9dcd11b0bc4a1bcf3eefd915e99bae4912548860",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53533,
+   "sha256": "f88091b91cf0d5d2bd649dffb19f13c916a58cee57c0abec8a0e6627bc898529",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 894c5a4f000d0a1a; 7z Type=zip Methods=Deflate; file: lzop compressed data - version 1.040, LZO1X-1, os: Unix; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = Local; 1 Characteristics = Local : Descriptor Descriptor_ERROR; 1 Encrypted = -; 1 Method = Deflate; 1 Type = zip; | content: files:",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: lzop -dc | tar -x (lzop 1.04) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 894c5a4f000d0a1a; 7z Type=zip Methods=Deflate; file: lzop compressed data - version 1.040, LZO1X-1, os: Unix; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2724,29 +2274,13 @@
     "xz"
    ],
    "role": "baseline",
-   "size": 53384,
-   "sha256": "7d0f0fe27ecd1b9d19df4969ea55ec3d51f15dcaeb8135ad2b975c7b337b6e0a",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 53052,
+   "sha256": "68c2e2d199eac1150c93f6bac690ec8d1e63ac0e73c8e50309c3f1601acc5f47",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic fd377a585a000004; 7z Type=xz Methods=LZMA2:23 CRC64; lsar format=XZ; file: XZ compressed data, checksum CRC64; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic fd377a585a000004; 7z Type=xz Methods=LZMA2:23 CRC64; lsar format=XZ; file: XZ compressed data, checksum CRC64; readers matching standard content: unar, bsdtar"
     ]
    }
   },
@@ -2756,30 +2290,13 @@
     "zstd"
    ],
    "role": "baseline",
-   "size": 53469,
-   "sha256": "391df548bd4c0e88cd0256f4822148064d574d488e5d44429a92faad65341a69",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "size": 52904,
+   "sha256": "b471967677af01beb9c7c5bd0f00a1bbdd56ac96bdae290368ef452d06755dbc",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 28b52ffd04588586; 7z Type=zip Methods=Deflate; file: Zstandard compressed data (v0.8+), Dictionary ID: None; readers matching standard content: none",
-     "docs/verification/2026-11-15/ubuntu_native_tools.txt: zstd -dc | tar -x (*** Zstandard CLI (64-bit) v1.5.5, by Ya) | fa52ae6c8424ff23  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 28b52ffd0458dd74; file: Zstandard compressed data (v0.8+), Dictionary ID: None; readers matching standard content: bsdtar"
     ]
    }
   },
@@ -2887,29 +2404,13 @@
     "wim"
    ],
    "role": "baseline",
-   "size": 55479,
-   "sha256": "4007159cd80574f4cd72d454e05169da08b39ddd695dd143ced66d2761c9ce64",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 54648,
+   "sha256": "9833ef4817b092ff16304928858eadf1586fa037328894f88877a678d5a1eef9",
+   "expected": "standard",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4d5357494d000000; 7z Type=wim Methods=Copy,Copy:15; file: Windows imaging (WIM) image v1.13, reparse point fixup; readers matching standard content: none"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 4d5357494d000000; 7z Type=wim Methods=Copy,Copy:15; file: Windows imaging (WIM) image v1.13, reparse point fixup; readers matching standard content: 7z"
     ]
    }
   },
@@ -3000,30 +2501,30 @@
     "ar-deb"
    ],
    "role": "baseline",
-   "size": 53892,
-   "sha256": "e9b7abaf77a28a3c39b7dcc3199f090a4ed0a4f7bd2ce3691d5ae22c33644176",
+   "size": 52912,
+   "sha256": "2fa4673c71fbbabfaf762aa79d492e30a2e5a77c7143185b9cfb21e76b9ebb6d",
    "expected": [
     {
-     "path": "data.tar.x/folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
     },
     {
-     "path": "data.tar.x/folder/README.md",
+     "path": "folder/README.md",
      "sha256_prefix": "30322444506aed4d",
      "note": "current"
     },
     {
-     "path": "data.tar.x/hello world.txt",
+     "path": "hello world.txt",
      "sha256_prefix": "03ba204e50d126e4",
      "note": "current"
     }
    ],
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 213c617263683e0a; 7z Type=Ar Methods=LZMA2:23 CRC64; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.xz , data compression xz; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = BlockPackSize BlockUnpackSize; 2 Method = LZMA2:23 CRC64; 1 Type = Ar; 1 Type = xz; | content: files: | 30322444506aed4d  ./data.tar.x/folder/README.md | fa52ae6c8424ff23  ./data.tar.x/folder/NestedArchive.zip | 03ba204e50d126e4  ./data.tar.x/hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 213c617263683e0a; 7z Type=Ar; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.zst, data compression zst; readers matching standard content: none",
+     "docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: dpkg-deb -x (Debian 'dpkg-deb' package archive backend version ); usr/share/doc (fpm changelog) not listed | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },
@@ -3033,35 +2534,30 @@
     "ar-deb"
    ],
    "role": "baseline",
-   "size": 53972,
-   "sha256": "ec89f5f6e4474fc57f661831992b049d7e01b229d925e6bdce369371bcbda4b6",
+   "size": 53656,
+   "sha256": "99d58e649649a95c51eb31f7d3aaaa9d145297f4e27e5e9804106e32e68be816",
    "expected": [
     {
-     "path": "data.tar.gz.x/data.tar.x/folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
     },
     {
-     "path": "data.tar.gz.x/data.tar.x/folder/README.md",
+     "path": "folder/README.md",
      "sha256_prefix": "30322444506aed4d",
      "note": "current"
     },
     {
-     "path": "data.tar.gz.x/data.tar.x/hello world.txt",
+     "path": "hello world.txt",
      "sha256_prefix": "03ba204e50d126e4",
      "note": "current"
-    },
-    {
-     "path": "data.tar.gz.x/data.tar.x/usr/share/doc/defaultarchive/changelog.gz",
-     "sha256_prefix": "229dd124547722aa",
-     "note": "not part of defaultArchiveContent"
     }
    ],
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 213c617263683e0a; 7z Type=Ar; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.gz/, data compression gz; readers matching standard content: none",
-     "docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Ar; | content: files: | 229dd124547722aa  ./data.tar.gz.x/data.tar.x/usr/share/doc/defaultarchive/changelog.gz | 30322444506aed4d  ./data.tar.gz.x/data.tar.x/folder/README.md | fa52ae6c8424ff23  ./data.tar.gz.x/data.tar.x/folder/NestedArchive.zip | 03ba204e50d126e4  ./data.tar.gz.x/data.tar.x/hello world.txt"
+     "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 213c617263683e0a; 7z Type=Ar; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.gz/, data compression gz; readers matching standard content: none",
+     "docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: dpkg-deb -x (Debian 'dpkg-deb' package archive backend version ); usr/share/doc (fpm changelog) not listed | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },

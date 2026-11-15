@@ -22,9 +22,9 @@ defaultArchive.tar holds legacy-2025-11 content; defaultArchive.gtar holds folde
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `defaultArchives/defaultArchive-dotslash.tar` | baseline | 61440 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
-| `defaultArchives/defaultArchive.gtar` | baseline | 61440 | verified-other-content | folder/Archive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
-| `defaultArchives/defaultArchive.tar` | baseline | 61440 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
+| `defaultArchives/defaultArchive-dotslash.tar` | baseline | 61440 | verified | standard content |
+| `defaultArchives/defaultArchive.gtar` | baseline | 61440 | verified | standard content |
+| `defaultArchives/defaultArchive.tar` | baseline | 61440 | verified | standard content |
 | `tar/format_gnu.tar` | variant | 61440 | verified | standard content |
 | `tar/format_oldgnu.tar` | variant | 61440 | verified | standard content |
 | `tar/format_posix.tar` | variant | 61440 | verified | standard content |
@@ -34,11 +34,11 @@ defaultArchive.tar holds legacy-2025-11 content; defaultArchive.gtar holds folde
 ## Verification evidence
 
 - `defaultArchives/defaultArchive-dotslash.tar`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 2e2f000000000000; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 2e2f000000000000; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: 7z, unar, bsdtar
 - `defaultArchives/defaultArchive.gtar`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 2e2f000000000000; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 2e2f000000000000; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: 7z, unar, bsdtar
 - `defaultArchives/defaultArchive.tar`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 666f6c6465722f00; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 666f6c6465722f00; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: 7z, unar, bsdtar
 - `tar/format_gnu.tar`
   - docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 68656c6c6f20776f; 7z Type=tar; lsar format=Tar; file: POSIX tar archive (GNU); readers matching standard content: 7z, unar, bsdtar
 - `tar/format_oldgnu.tar`

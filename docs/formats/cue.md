@@ -22,13 +22,13 @@ The cue names `DEFAULTARCHIVE.BIN` in upper case while the file is defaultArchiv
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `defaultArchives/defaultArchive.bin` | baseline | 139264 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (README.md with CRLF line ends, 455 bytes); hello world.txt (hello world.txt with CRLF line end, 14 bytes) |
+| `defaultArchives/defaultArchive.bin` | baseline | 432128 | verified | standard content |
 | `defaultArchives/defaultArchive.cue` | baseline | 80 | verified | - |
 
 ## Verification evidence
 
 - `defaultArchives/defaultArchive.bin`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKERTESTVOLUME'; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKER'; readers matching standard content: 7z, unar, bsdtar
 - `defaultArchives/defaultArchive.cue`
   - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 46494c4520224445; file: ASCII text, with CRLF line terminators; readers matching standard content: none
   - docs/verification/2026-11-15/manual_checks.txt: text, CRLF line ends: FILE "DEFAULTARCHIVE.BIN" BINARY / TRACK 01 MODE1/2048 / INDEX 01 00:00:00. The referenced name is upper case; the file in the repo is defaultArchive.bin. / defaultArchive.bin is byte-identical to defaultArchive.iso and defaultArchive.img (cmp), sha256 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f

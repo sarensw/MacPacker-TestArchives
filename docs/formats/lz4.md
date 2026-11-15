@@ -22,16 +22,14 @@ legacy-2025-11 content (lz4 -d | tar).
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `defaultArchives/defaultArchive.tar.lz4` | baseline | 53357 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
-| `defaultArchives/defaultArchive.tlz4` | baseline | 53357 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
+| `defaultArchives/defaultArchive.tar.lz4` | baseline | 52981 | verified | standard content |
+| `defaultArchives/defaultArchive.tlz4` | baseline | 52981 | verified | standard content |
 
 ## Verification evidence
 
 - `defaultArchives/defaultArchive.tar.lz4`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 04224d186440a75a; 7z Type=zip Methods=Deflate; file: LZ4 compressed data (v1.4+); readers matching standard content: none
-  - docs/verification/2026-11-15/ubuntu_native_tools.txt: lz4 -dc / tar -x (*** LZ4 command line interface 64-bits v) / fa52ae6c8424ff23  ./folder/NestedArchive.zip / 30322444506aed4d  ./folder/README.md / 03ba204e50d126e4  ./hello world.txt
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 04224d186440a7e2; 7z Type=zip Methods=Deflate; file: LZ4 compressed data (v1.4+); readers matching standard content: bsdtar
 - `defaultArchives/defaultArchive.tlz4`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 04224d186440a75a; 7z Type=zip Methods=Deflate; file: LZ4 compressed data (v1.4+); readers matching standard content: none
-  - docs/verification/2026-11-15/ubuntu_native_tools.txt: lz4 -dc / tar -x (*** LZ4 command line interface 64-bits v) / fa52ae6c8424ff23  ./folder/NestedArchive.zip / 30322444506aed4d  ./folder/README.md / 03ba204e50d126e4  ./hello world.txt
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 04224d186440a7e2; 7z Type=zip Methods=Deflate; file: LZ4 compressed data (v1.4+); readers matching standard content: bsdtar
 
 Creation scripts: see docs/README.md (scripts/ubuntu_v12.sh, scripts/ubuntu_next.sh, scripts/macos_fixtures.sh, or the format directory's own make_*.sh).

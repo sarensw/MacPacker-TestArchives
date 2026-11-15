@@ -23,9 +23,9 @@ tar inside holds legacy-2025-11 content.
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
 | `compressed/hello world.txt.bz2` | variant | 56 | verified | one stream: the bytes of defaultArchiveContent/hello world.txt (sha256 03ba204e…); no file name stored |
-| `defaultArchives/defaultArchive.tar.bz2` | baseline | 53825 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
-| `defaultArchives/defaultArchive.tbz` | baseline | 53825 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
-| `defaultArchives/defaultArchive.tbz2` | baseline | 53825 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
+| `defaultArchives/defaultArchive.tar.bz2` | baseline | 53322 | verified | standard content |
+| `defaultArchives/defaultArchive.tbz` | baseline | 53322 | verified | standard content |
+| `defaultArchives/defaultArchive.tbz2` | baseline | 53322 | verified | standard content |
 
 ## Verification evidence
 
@@ -33,10 +33,10 @@ tar inside holds legacy-2025-11 content.
   - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: none
   - docs/verification/2026-11-15/host_7zz.txt: 7zz -so sha256: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340 (hello world.txt: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340)
 - `defaultArchives/defaultArchive.tar.bz2`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: unar, bsdtar
 - `defaultArchives/defaultArchive.tbz`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: unar, bsdtar
 - `defaultArchives/defaultArchive.tbz2`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 425a683931415926; 7z Type=bzip2; lsar format=Bzip2; file: bzip2 compressed data, block size = 900k; readers matching standard content: unar, bsdtar
 
 Creation scripts: see docs/README.md (scripts/ubuntu_v12.sh, scripts/ubuntu_next.sh, scripts/macos_fixtures.sh, or the format directory's own make_*.sh).

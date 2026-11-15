@@ -22,12 +22,11 @@ ciso decompresses it back to defaultArchive.iso byte for byte.
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `defaultArchives/defaultArchive.cso` | baseline | 55076 | verified | decompresses to defaultArchive.iso (sha256 18eb071a…) |
+| `defaultArchives/defaultArchive.cso` | baseline | 58436 | verified | decompresses to defaultArchive.iso (sha256 18eb071a…) |
 
 ## Verification evidence
 
 - `defaultArchives/defaultArchive.cso`
-  - docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4349534f00000000; 7z Type=zip Methods=Deflate; file: CSO v1 disk image, original size 139264 bytes, datablock size 2048 bytes; readers matching standard content: none
-  - docs/verification/2026-11-15/ubuntu_special.txt: 00000000: 4349 534f 0000 0000 0020 0200 0000 0000  CISO..... ...... / 00000010: 0008 0000 0100 0000                      ........ / decompressed sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f
+  - docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: decompressed sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
 
 Creation scripts: see docs/README.md (scripts/ubuntu_v12.sh, scripts/ubuntu_next.sh, scripts/macos_fixtures.sh, or the format directory's own make_*.sh).

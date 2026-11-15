@@ -24,8 +24,8 @@ ar is flat: it holds `hello world.txt`, `README.md`, `NestedArchive.zip` without
 |---|---|---|---|---|
 | `defaultArchives/defaultArchive.ar` | baseline | 53010 | verified | flat: hello world.txt, README.md, NestedArchive.zip (ar has no folders) |
 | `defaultArchives/defaultarchive-dpkg-zstd.deb` | baseline | 53360 | verified | standard content |
-| `defaultArchives/defaultarchive-dpkg.deb` | baseline | 53892 | verified-other-content | data.tar.x/folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); data.tar.x/folder/README.md (current); data.tar.x/hello world.txt (current) |
-| `defaultArchives/defaultarchive.deb` | baseline | 53972 | verified-other-content | data.tar.gz.x/data.tar.x/folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); data.tar.gz.x/data.tar.x/folder/README.md (current); data.tar.gz.x/data.tar.x/hello world.txt (current); data.tar.gz.x/data.tar.x/usr/share/doc/defaultarchive/changelog.gz (not part of defaultArchiveContent) |
+| `defaultArchives/defaultarchive-dpkg.deb` | baseline | 52912 | verified | folder/NestedArchive.zip (current); folder/README.md (current); hello world.txt (current) |
+| `defaultArchives/defaultarchive.deb` | baseline | 53656 | verified | folder/NestedArchive.zip (current); folder/README.md (current); hello world.txt (current) |
 
 ## Verification evidence
 
@@ -35,10 +35,10 @@ ar is flat: it holds `hello world.txt`, `README.md`, `NestedArchive.zip` without
   - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 213c617263683e0a; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.zst, data compression zst; readers matching standard content: none
   - docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Method = header-open-only: XXH64 single-segments wnd-MAX:60KiB content-size-frame-max:61440 content-size-total:61440; 1 Type = Ar; 1 Type = zstd; / content: MATCH (3 files, sha256)
 - `defaultArchives/defaultarchive-dpkg.deb`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 213c617263683e0a; 7z Type=Ar Methods=LZMA2:23 CRC64; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.xz , data compression xz; readers matching standard content: none
-  - docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = BlockPackSize BlockUnpackSize; 2 Method = LZMA2:23 CRC64; 1 Type = Ar; 1 Type = xz; / content: files: / 30322444506aed4d  ./data.tar.x/folder/README.md / fa52ae6c8424ff23  ./data.tar.x/folder/NestedArchive.zip / 03ba204e50d126e4  ./data.tar.x/hello world.txt
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 213c617263683e0a; 7z Type=Ar; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.zst, data compression zst; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: dpkg-deb -x (Debian 'dpkg-deb' package archive backend version ); usr/share/doc (fpm changelog) not listed / 466ab31d0374b763  ./folder/NestedArchive.zip / 30322444506aed4d  ./folder/README.md / 03ba204e50d126e4  ./hello world.txt
 - `defaultArchives/defaultarchive.deb`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 213c617263683e0a; 7z Type=Ar; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.gz/, data compression gz; readers matching standard content: none
-  - docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Ar; / content: files: / 229dd124547722aa  ./data.tar.gz.x/data.tar.x/usr/share/doc/defaultarchive/changelog.gz / 30322444506aed4d  ./data.tar.gz.x/data.tar.x/folder/README.md / fa52ae6c8424ff23  ./data.tar.gz.x/data.tar.x/folder/NestedArchive.zip / 03ba204e50d126e4  ./data.tar.gz.x/data.tar.x/hello world.txt
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 213c617263683e0a; 7z Type=Ar; lsar format=Ar; file: Debian binary package (format 2.0), with control.tar.gz/, data compression gz; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: dpkg-deb -x (Debian 'dpkg-deb' package archive backend version ); usr/share/doc (fpm changelog) not listed / 466ab31d0374b763  ./folder/NestedArchive.zip / 30322444506aed4d  ./folder/README.md / 03ba204e50d126e4  ./hello world.txt
 
 Creation scripts: see docs/README.md (scripts/ubuntu_v12.sh, scripts/ubuntu_next.sh, scripts/macos_fixtures.sh, or the format directory's own make_*.sh).

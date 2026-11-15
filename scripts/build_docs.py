@@ -62,6 +62,15 @@ def load_logs():
                 cur = m.group(1).strip(); special.setdefault(cur, []).append([src]); continue
             if cur and line.strip():
                 special[cur][-1].append(line.rstrip())
+    # a fixture regenerated later is described only by the newest verification directory that mentions it
+    d = lambda src: src.split('/')[2]
+    newest = {}
+    for store in (runs, special):
+        for p, items in store.items():
+            newest[p] = max([newest.get(p, '')] + [d(i[0]) for i in items])
+    for store in (runs, special):
+        for p in list(store):
+            store[p] = [i for i in store[p] if d(i[0]) == newest[p]]
     return runs, special
 
 def classify(files):

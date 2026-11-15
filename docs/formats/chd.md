@@ -23,8 +23,8 @@ chdman extractcd/extracthd/extractraw reproduce defaultArchive.bin/.fat/.iso byt
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
 | `chd/harddisk_fat.chd` | variant | 53365 | verified | hard disk: defaultArchive.fat (sha256 71277c34…) |
-| `chd/raw_iso.chd` | variant | 54073 | verified | raw: defaultArchive.iso (sha256 18eb071a…) |
-| `defaultArchives/defaultArchive.chd` | baseline | 54088 | verified | CD: one MODE1 track, data = defaultArchive.bin (sha256 18eb071a…) |
+| `chd/raw_iso.chd` | variant | 53964 | verified | raw: defaultArchive.iso (sha256 18eb071a…) |
+| `defaultArchives/defaultArchive.chd` | baseline | 54087 | verified | CD: one MODE1 track, data = defaultArchive.bin (sha256 18eb071a…) |
 
 ## Verification evidence
 
@@ -32,10 +32,8 @@ chdman extractcd/extracthd/extractraw reproduce defaultArchive.bin/.fat/.iso byt
   - docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4d436f6d70724844; 7z Type=zip Methods=Deflate; file: MAME CHD compressed hard disk image, version 5; readers matching standard content: none
   - docs/verification/2026-11-15/ubuntu_special.txt: File Version: 5 / Logical size: 16,777,216 bytes / Compression:  lzma (LZMA), zlib (Deflate), huff (Huffman), flac (FLAC) / Metadata:     Tag='GDDD'  Index=0  Length=33 bytes / Overall SHA1 verification successful!
 - `chd/raw_iso.chd`
-  - docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4d436f6d70724844; 7z Type=zip Methods=Deflate; file: MAME CHD compressed hard disk image, version 5; readers matching standard content: none
-  - docs/verification/2026-11-15/ubuntu_special.txt: File Version: 5 / Logical size: 139,264 bytes / Compression:  lzma (LZMA), zlib (Deflate), huff (Huffman), flac (FLAC) / Overall SHA1 verification successful! / extractcd bin sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f / extracthd sha256: 71277c34db5b49b2fe29249f7ffd40b75c1c2a6650ebeeb9d3862dcc85592f62 / extractraw sha256: 18eb071a7eae653100d31dbedc3283dbddae814d036ac8
+  - docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: extractraw sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
 - `defaultArchives/defaultArchive.chd`
-  - docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4d436f6d70724844; file: MAME CHD compressed hard disk image, version 5; readers matching standard content: none
-  - docs/verification/2026-11-15/ubuntu_special.txt: File Version: 5 / Logical size: 166,464 bytes / Compression:  cdlz (CD LZMA), cdzl (CD Deflate), cdfl (CD FLAC) / Metadata:     Tag='CHT2'  Index=0  Length=85 bytes / Overall SHA1 verification successful!
+  - docs/verification/2026-11-16-regen/ubuntu_native_tools.txt: Overall SHA1 verification successful! / extractcd bin sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 iso: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
 
 Creation scripts: see docs/README.md (scripts/ubuntu_v12.sh, scripts/ubuntu_next.sh, scripts/macos_fixtures.sh, or the format directory's own make_*.sh).

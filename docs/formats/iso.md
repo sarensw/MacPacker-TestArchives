@@ -22,7 +22,7 @@ level1_plain.iso maps names to 8.3 upper case (HELLO_WO.TXT etc.).
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `defaultArchives/defaultArchive.iso` | baseline | 139264 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (README.md with CRLF line ends, 455 bytes); hello world.txt (hello world.txt with CRLF line end, 14 bytes) |
+| `defaultArchives/defaultArchive.iso` | baseline | 432128 | verified | standard content |
 | `iso/joliet.iso` | variant | 432128 | verified | standard content |
 | `iso/level1_plain.iso` | variant | 432128 | verified | standard content |
 | `iso/rockridge.iso` | variant | 432128 | verified | standard content |
@@ -31,7 +31,7 @@ level1_plain.iso maps names to 8.3 upper case (HELLO_WO.TXT etc.).
 ## Verification evidence
 
 - `defaultArchives/defaultArchive.iso`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKERTESTVOLUME'; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKER'; readers matching standard content: 7z, unar, bsdtar
 - `iso/joliet.iso`
   - docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'ISOIMAGE'; readers matching standard content: 7z, unar, bsdtar
 - `iso/level1_plain.iso`

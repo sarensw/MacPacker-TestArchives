@@ -25,7 +25,7 @@ arj stores folder entries with `/` paths; unar shows them flat.
 | `arj/method_m0.arj` | variant | 53076 | verified | standard content |
 | `arj/method_m1.arj` | variant | 52730 | verified | standard content |
 | `arj/method_m4.arj` | variant | 52985 | verified | standard content |
-| `defaultArchives/defaultArchive.arj` | baseline | 53082 | verified-other-content | folder_NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder_README.md (current); hello world.txt (current) |
+| `defaultArchives/defaultArchive.arj` | baseline | 52735 | verified | standard content |
 
 ## Verification evidence
 
@@ -36,6 +36,6 @@ arj stores folder entries with `/` paths; unar shows them flat.
 - `arj/method_m4.arj`
   - docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 60ea3100220b0102; 7z Type=Arj Methods=0,4; lsar format=ARJ; file: ARJ archive data, v11, slash-switched, created 26 jul 1980+53, original name: method_m4.ar; readers matching standard content: 7z, unar
 - `defaultArchives/defaultArchive.arj`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 60ea3600220b0102; 7z Type=Arj Methods=0,1; lsar format=ARJ; file: ARJ archive data, v11, slash-switched, created 11 aug 1980+52, original name: defaultArchi; readers matching standard content: none
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 60ea3600220b0102; 7z Type=Arj Methods=0,1; lsar format=ARJ; file: ARJ archive data, v11, slash-switched, created 26 jul 1980+53, original name: defaultArchi; readers matching standard content: 7z, unar
 
 Creation scripts: see docs/README.md (scripts/ubuntu_v12.sh, scripts/ubuntu_next.sh, scripts/macos_fixtures.sh, or the format directory's own make_*.sh).

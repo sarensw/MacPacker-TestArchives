@@ -22,18 +22,14 @@ legacy-2025-11 content (lzop -d | tar); Ubuntu 7-Zip cannot decode lzop.
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `defaultArchives/defaultArchive.tar.lzo` | baseline | 54457 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
-| `defaultArchives/defaultArchive.tlzo` | baseline | 54457 | verified-other-content | folder/NestedArchive.zip (NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes); folder/README.md (current); hello world.txt (current) |
+| `defaultArchives/defaultArchive.tar.lzo` | baseline | 53533 | verified | standard content |
+| `defaultArchives/defaultArchive.tlzo` | baseline | 53533 | verified | standard content |
 
 ## Verification evidence
 
 - `defaultArchives/defaultArchive.tar.lzo`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 894c5a4f000d0a1a; 7z Type=zip Methods=Deflate; file: lzop compressed data - version 1.040, LZO1X-1, os: Unix; readers matching standard content: none
-  - docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = Local; 1 Characteristics = Local : Descriptor Descriptor_ERROR; 1 Encrypted = -; 1 Method = Deflate; 1 Type = zip; / content: files:
-  - docs/verification/2026-11-15/ubuntu_native_tools.txt: lzop -dc / tar -x (lzop 1.04) / fa52ae6c8424ff23  ./folder/NestedArchive.zip / 30322444506aed4d  ./folder/README.md / 03ba204e50d126e4  ./hello world.txt
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 894c5a4f000d0a1a; 7z Type=zip Methods=Deflate; file: lzop compressed data - version 1.040, LZO1X-1, os: Unix; readers matching standard content: bsdtar
 - `defaultArchives/defaultArchive.tlzo`
-  - docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 894c5a4f000d0a1a; 7z Type=zip Methods=Deflate; file: lzop compressed data - version 1.040, LZO1X-1, os: Unix; readers matching standard content: none
-  - docs/verification/2026-11-15/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = Local; 1 Characteristics = Local : Descriptor Descriptor_ERROR; 1 Encrypted = -; 1 Method = Deflate; 1 Type = zip; / content: files:
-  - docs/verification/2026-11-15/ubuntu_native_tools.txt: lzop -dc / tar -x (lzop 1.04) / fa52ae6c8424ff23  ./folder/NestedArchive.zip / 30322444506aed4d  ./folder/README.md / 03ba204e50d126e4  ./hello world.txt
+  - docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 894c5a4f000d0a1a; 7z Type=zip Methods=Deflate; file: lzop compressed data - version 1.040, LZO1X-1, os: Unix; readers matching standard content: bsdtar
 
 Creation scripts: see docs/README.md (scripts/ubuntu_v12.sh, scripts/ubuntu_next.sh, scripts/macos_fixtures.sh, or the format directory's own make_*.sh).

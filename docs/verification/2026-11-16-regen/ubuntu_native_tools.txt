@@ -1,0 +1,27 @@
+== defaultArchives/defaultArchive.tar.br
+  brotli -dc | tar -x (brotli brotli 1.1.0)
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.tbr
+  brotli -dc | tar -x (brotli brotli 1.1.0)
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultarchive.deb
+  dpkg-deb -x (Debian 'dpkg-deb' package archive backend version ); usr/share/doc (fpm changelog) not listed
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultarchive-dpkg.deb
+  dpkg-deb -x (Debian 'dpkg-deb' package archive backend version ); usr/share/doc (fpm changelog) not listed
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.chd
+  Overall SHA1 verification successful!
+  extractcd bin sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 iso: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
+== chd/raw_iso.chd
+  extractraw sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
+== defaultArchives/defaultArchive.cso
+  decompressed sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
