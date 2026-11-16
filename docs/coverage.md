@@ -101,8 +101,8 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [PSP EBOOT](formats/pbp.md) |  | pbp | `defaultArchive.pbp` | 1/1 | PSPSDK pack-pbp |
 | PARTIAL | [Game data archives](formats/gamedata.md) |  | wad, pak, vpk | `defaultArchive.vpk`, `defaultArchive.wad` | 2/2 | Quake PAK; VPK v2 and multi-chunk (_dir.vpk + _000.vpk); WAD made by a Doom tool (SLADE/DeuTex not packaged) |
 | DONE | [Amiga hard disk file](formats/hdf.md) |  | hdf | `defaultArchive.hdf` | 2/2 | multi-partition RDB, PFS/SFS |
-| TODO | Amiga disk packers |  | - |  | 0/0 | Warp and DImp (Disk Imploder) are in the amiga VM's C:, but need a floppy device (DF0:) with an ADF; not tried yet |
-| TODO | Amiga PowerPacker |  | pp |  | 0/0 | PowerPacker data files (PP20): no packer confirmed on the amiga VM yet |
+| BLOCKED | [Amiga disk packers](formats/amiga-packers.md) |  | - |  | 0/0 | Warp and DImp (Disk Imploder) are in the amiga VM's C:, but need a floppy device (DF0:) with an ADF; not tried yet |
+| BLOCKED | [Amiga PowerPacker](formats/pp.md) |  | pp |  | 0/0 | PowerPacker data files (PP20): no packer confirmed on the amiga VM yet |
 | DONE | [ARC / Zoo](formats/arc-zoo.md) |  | arc, zoo | `defaultArchive.arc`, `defaultArchive.zoo` | 2/2 | FreeArc (.arc too, unrelated format); PKPAK/ARC 6 methods; Zoo high-compression (-h) entries |
 | PARTIAL | [CP/M archives](formats/cpm.md) |  | lbr | `defaultArchive.lbr` | 1/1 | Squeeze (.?Q?) and Crunch (.?Z?) files (need the CP/M tools; not found for Linux/Amiga) |
 | DONE | [NScripter archives](formats/nsa.md) |  | nsa, sar | `defaultArchive.nsa`, `defaultArchive.sar` | 4/4 | NSA with SPB/LZSS/BZip2-compressed entries (nsaarc on Windows) |

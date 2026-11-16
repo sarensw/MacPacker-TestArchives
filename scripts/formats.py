@@ -510,3 +510,8 @@ CUSTOM_EXPECTED.update({
  "defaultArchives/defaultArchive.pbp": "sections: PIC1.PNG = README.md, DATA.PSP = hello world.txt, DATA.PSAR = NestedArchive.zip (+ PARAM.SFO)",
  "gdi/track02.raw": "302 sectors of digital silence",
 })
+for _f in FORMATS:
+    if _f["id"] == "amiga-packers":
+        _f.update(status="BLOCKED", blocked="The Bob HQ amiga VM (AROS) has no floppy device (Info lists DH0:, DH1:, RAM: only) and C:Warp / C:dimp report 'file is not executable'; disk packers need a trackdisk unit with an ADF.")
+    if _f["id"] == "pp":
+        _f.update(status="BLOCKED", blocked="No PowerPacker packer on the amiga VM (C:ppcompress prints nothing; the pp* tools are unpackers/crackers or PowerPC tools). Needs PowerPacker 4 (shareware) from Aminet.")
