@@ -432,3 +432,40 @@ _UPD5 = {
 for _f in FORMATS:
     if _f["id"] in _UPD5:
         _f.update(_UPD5[_f["id"]])
+
+# ---- 2026-11-16 run 3: retro batch 6 ----
+_UPD6 = {
+ "xiso": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.xiso"], magic="`MICROSOFT*XBOX*MEDIA` at 0x10000",
+   covered="XDVDFS image (extract-xiso, XboxDev, commit 3f5b62c, built from source)", outstanding="images with a video partition; redump-style full images",
+   notes="Only extract-xiso read it back (verified-creator-only)."),
+ "zx": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.tap", "defaultArchives/defaultArchive.tzx"], magic="TZX `ZXTape!\\x1A` at 0; TAP none (block length + flag)",
+   covered="TAP written from the documented layout (scripts/write_tap.py): three CODE files hello.txt, readme.md, nested.zip; TZX converted from it by libspectrum's tapeconv (fuse-emulator-utils 1.4.3)",
+   outstanding="TR-DOS .trd and .scl (no Linux writer found)",
+   notes="Tape files have no folders and 10-character names. nested.zip (52334 bytes) is a valid tape block but would not fit a Spectrum's RAM at load address 32768."),
+ "atr": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.atr", "atari8/*.atr"], magic="`96 02` at 0",
+   covered="Atari DOS 2.x single density, flat 8.3 names (baseline); MyDOS double density with a subdirectory FOLDER (dir2atr from AtariSIO, commit bbccb15)",
+   outstanding="SpartaDOS, ATX/XFD/DCM containers, bootable DOS disks",
+   notes="atrcopy 10.1 fails with NumPy 2. The DOS 2 baseline was read back with scripts/read_atr_dos2.py, written from the DOS 2.0S layout (independent of dir2atr); the MyDOS image only by its layout header (verified-creator-only would need a MyDOS reader)."),
+ "cpc": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.dsk", "msx/*.dsk"], magic="EDSK `EXTENDED CPC DSK File` at 0; MSX: FAT12 boot sector",
+   covered="Amstrad CPC data-format EDSK (libdsk 1.5.9 dskform + cpmtools 2.23 cpmcp, CP/M 8.3 names, user 0); MSX-DOS 720K FAT12 disk (mtools, 8.3 names, FOLDER/)",
+   outstanding="old (non-extended) CPC DSK, CPC system format, MSX disk made on an MSX",
+   notes="The CPC image was read back only with cpmtools (verified-creator-only); 7-Zip reads the MSX disk."),
+}
+for _f in FORMATS:
+    if _f["id"] in _UPD6:
+        _f.update(_UPD6[_f["id"]])
+CUSTOM_EXPECTED.update({
+ "defaultArchives/defaultArchive.tap": "three CODE files: hello.txt, readme.md, nested.zip (flat, renamed; same bytes)",
+ "defaultArchives/defaultArchive.tzx": "as defaultArchive.tap",
+ "defaultArchives/defaultArchive.atr": "flat, 8.3: HELLO.TXT, README.MD, NESTED.ZIP",
+ "atari8/*": "8.3 names: HELLO.TXT, FOLDER/README.MD, FOLDER/NESTED.ZIP",
+ "defaultArchives/defaultArchive.dsk": "flat, CP/M user 0: hello.txt, readme.md, nested.zip",
+ "msx/*": "8.3 names: HELLO.TXT, FOLDER/README.MD, FOLDER/NESTED.ZIP",
+ "defaultArchives/defaultArchive.t64": "hello world.txt and readme.md as PRG files (NestedArchive.zip does not fit)",
+ "defaultArchives/defaultArchive.po": "ProDOS names: hello.world.txt, folder/README.md, folder/NestedA..ve.zip",
+ "apple2/*.do": "DOS 3.3, flat, upper case, padded to 256-byte sectors: HELLO WORLD.TXT, README.MD, NESTEDARCHIVE.ZIP",
+ "apple2/*.nib": "as apple2/dos33.do", "apple2/*.d13": "DOS 3.2, as apple2/dos33.do",
+ "apple2/*.2mg": "as defaultArchive.po", "apple2/*.woz": "as defaultArchive.po", "apple2/*.bny": "as defaultArchive.po (upper case)",
+ "defaultArchives/defaultArchive.wad": "lumps HELLO, README, NESTED (same bytes)",
+ "defaultArchives/defaultArchive.cdi": "data track = defaultArchive.iso from sector 16 on (system area replaced by cdi4dc)",
+})

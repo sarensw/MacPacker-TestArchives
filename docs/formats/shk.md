@@ -22,7 +22,7 @@ unar 1.10 did not recognise either file. Binary II stores ProDOS names (HELLO.WO
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `apple2/binary2.bny` | variant | 53376 | verified-creator-only | FOLDER/NESTEDA..VE.ZIP (current); FOLDER/README.MD (current); HELLO.WORLD.TXT (current) |
+| `apple2/binary2.bny` | variant | 53376 | verified-creator-only | as defaultArchive.po (upper case) |
 | `defaultArchives/defaultArchive.shk` | baseline | 53118 | verified-creator-only | folder/NestedArchive.zip (current); folder/README.md (current); hello world.txt (current) |
 
 ## Verification evidence

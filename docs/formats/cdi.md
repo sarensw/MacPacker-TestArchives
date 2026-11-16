@@ -22,7 +22,7 @@ cdi4dc lays the ISO out for Dreamcast (2 MiB file) and replaces its 32 KiB syste
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `defaultArchives/defaultArchive.cdi` | baseline | 2119781 | verified | folder/NestedArchive.zip (current); folder/README.md (current); hello world.txt (current) |
+| `defaultArchives/defaultArchive.cdi` | baseline | 2119781 | verified | data track = defaultArchive.iso from sector 16 on (system area replaced by cdi4dc) |
 
 ## Verification evidence
 

@@ -1,0 +1,33 @@
+== defaultArchives/defaultArchive.atr
+  independent DOS 2 reader (scripts/read_atr_dos2.py, written from the DOS 2.0S layout):
+  HELLO.TXT 13 bytes, 1 sectors
+  NESTED.ZIP 52334 bytes, 419 sectors
+  README.MD 437 bytes, 4 sectors
+  03ba204e50d126e4  ./HELLO.TXT
+  466ab31d0374b763  ./NESTED.ZIP
+  30322444506aed4d  ./README.MD
+== atari8/mydos_dd_subdir.atr
+  UNVERIFIED content: dir2atr -m -d (MyDOS 4.5 layout, double density, subdirectory FOLDER); no MyDOS reader available
+  header 9602 e82c 0001 0000 0000 0000 0000 0000 
+== defaultArchives/defaultArchive.xiso
+  CREATOR-ONLY: extract-xiso -l / -x (no other XDVDFS reader; 7-Zip and unar do not open it); magic  MICROSOFT*XBOX*M
+ EDIA
+  466ab31d0374b763  ./defaultArchive.xiso/folder/NestedArchive.zip
+  30322444506aed4d  ./defaultArchive.xiso/folder/README.md
+  03ba204e50d126e4  ./defaultArchive.xiso/hello world.txt
+== defaultArchives/defaultArchive.tzx
+  tzxlist (fuse-emulator-utils 1.4.3): 6 standard-speed blocks; data blocks parsed from the TZX written by libspectrum:
+  03ba204e50d126e4  ./hello.txt (CODE, 13 bytes)
+  30322444506aed4d  ./readme.md (CODE, 437 bytes)
+  466ab31d0374b763  ./nested.zip (CODE, 52334 bytes)
+== defaultArchives/defaultArchive.tap
+  tapeconv (libspectrum) read this TAP to write the TZX above: the three data blocks are byte-identical to the standard files (hashes in the TZX block)
+== defaultArchives/defaultArchive.dsk
+  CREATOR-ONLY: cpmtools 2.23 cpmls/cpmcp over libdsk (edsk);  EXTENDED CPC DSK  File..Disk-Info
+  0:
+  -rw-rw-rw-      13 Jan 01 1970  hello.txt
+  -rw-rw-rw-   52334 Jan 01 1970  nested.zip
+  -rw-rw-rw-     437 Jan 01 1970  readme.md
+  03ba204e50d126e4  ./hello.txt
+  466ab31d0374b763  ./nested.zip
+  30322444506aed4d  ./readme.md

@@ -89,7 +89,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Commodore 64/128 disks](formats/c64.md) |  | d64, d71, d81, g64 | `defaultArchive.d64` | 5/5 |  |
 | DONE | [Commodore 64 tapes](formats/t64.md) |  | t64 | `defaultArchive.t64` | 1/1 | baseline (tool to research) |
 | DONE | [Atari ST floppy](formats/atari-st.md) |  | st, msa | `defaultArchive.msa`, `defaultArchive.st` | 4/4 |  |
-| TODO | Xbox disc |  | xiso |  | 0/0 | extract-xiso -c (build from source) |
+| DONE | [Xbox disc](formats/xiso.md) |  | xiso | `defaultArchive.xiso` | 1/1 | images with a video partition; redump-style full images |
 | TODO | Dreamcast GD-ROM |  | gdi |  | 0/0 | GDIbuilder |
 | PARTIAL | [PSP ZSO/DAX/CSO v2](formats/zso.md) |  | zso, dax | `defaultArchive.dax`, `defaultArchive.zso` | 3/4 | independent check of DAX: maxcso --decompress writes an empty file for it (DAX unverified) |
 | DONE | [Apple II disks](formats/apple2.md) |  | dsk, do, po, 2mg, woz | `defaultArchive.po` | 6/6 | Pascal and CP/M volumes, copy-protected WOZ, 40-track images |
@@ -112,9 +112,9 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Encrypted DMG](formats/encdmg.md) |  | dmg | `defaultArchive-encrypted.dmg` | 3/3 |  |
 | TODO | GameCube disc |  | gcm, iso, gcz, rvz |  | 0/0 | needs a homebrew disc |
 | PARTIAL | [Android images](formats/android.md) |  | img (sparse, super) | `defaultArchive-android-sparse.img` | 1/1 | super.img (lpmake not packaged) |
-| TODO | ZX Spectrum |  | tap, tzx, trd, scl |  | 0/0 |  |
-| TODO | Amstrad CPC, MSX disks |  | dsk |  | 0/0 |  |
-| TODO | Atari 8-bit |  | atr |  | 0/0 |  |
+| PARTIAL | [ZX Spectrum](formats/zx.md) |  | tap, tzx, trd, scl | `defaultArchive.tap`, `defaultArchive.tzx` | 2/2 | TR-DOS .trd and .scl (no Linux writer found) |
+| PARTIAL | [Amstrad CPC, MSX disks](formats/cpc.md) |  | dsk | `defaultArchive.dsk` | 2/2 | old (non-extended) CPC DSK, CPC system format, MSX disk made on an MSX |
+| DONE | [Atari 8-bit](formats/atr.md) |  | atr | `defaultArchive.atr` | 1/2 | SpartaDOS, ATX/XFD/DCM containers, bootable DOS disks |
 | TODO | PC-98 |  | d88, hdi, fdi |  | 0/0 |  |
 | SKIP | Flash, PDF |  | swf, pdf |  | 0/0 |  |
 | WONTDO | Nintendo Switch, Switch 2 |  | nsp, xci, ... |  | 0/0 |  |

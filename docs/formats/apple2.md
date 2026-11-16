@@ -22,12 +22,12 @@ ProDOS names: hello.world.txt, folder/NestedA..ve.zip (15-character limit). DOS 
 
 | Path | Role | Size | Status | Expected |
 |---|---|---|---|---|
-| `apple2/dos32.d13` | variant | 116480 | verified-creator-only | folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP) (current); folder/README.md (first 437 bytes of README.MD) (current); hello world.txt (first 13 bytes of HELLO WORLD.TXT) (current) |
-| `apple2/dos33.do` | variant | 143360 | verified-creator-only | folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP) (current); folder/README.md (first 437 bytes of README.MD) (current); hello world.txt (first 13 bytes of HELLO WORLD.TXT) (current) |
-| `apple2/dos33.nib` | variant | 232960 | verified-creator-only | folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP) (current); folder/README.md (first 437 bytes of README.MD) (current); hello world.txt (first 13 bytes of HELLO WORLD.TXT) (current) |
-| `apple2/prodos_525.woz` | variant | 234682 | verified-creator-only | folder/NestedA..ve.zip (current); folder/README.md (current); hello.world.txt (current) |
-| `apple2/prodos_800k.2mg` | variant | 819264 | verified-creator-only | folder/NestedA..ve.zip (current); folder/README.md (current); hello.world.txt (current) |
-| `defaultArchives/defaultArchive.po` | baseline | 143360 | verified-creator-only | folder/NestedA..ve.zip (current); folder/README.md (current); hello.world.txt (current) |
+| `apple2/dos32.d13` | variant | 116480 | verified-creator-only | DOS 3.2, as apple2/dos33.do |
+| `apple2/dos33.do` | variant | 143360 | verified-creator-only | DOS 3.3, flat, upper case, padded to 256-byte sectors: HELLO WORLD.TXT, README.MD, NESTEDARCHIVE.ZIP |
+| `apple2/dos33.nib` | variant | 232960 | verified-creator-only | as apple2/dos33.do |
+| `apple2/prodos_525.woz` | variant | 234682 | verified-creator-only | as defaultArchive.po |
+| `apple2/prodos_800k.2mg` | variant | 819264 | verified-creator-only | as defaultArchive.po |
+| `defaultArchives/defaultArchive.po` | baseline | 143360 | verified-creator-only | ProDOS names: hello.world.txt, folder/README.md, folder/NestedA..ve.zip |
 
 ## Verification evidence
 

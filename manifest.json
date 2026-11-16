@@ -336,23 +336,7 @@
    "role": "variant",
    "size": 53376,
    "sha256": "35469cba30fc3af3c85883dfd2a44187bda9aea9ed9d230afe0fba70672597a3",
-   "expected": [
-    {
-     "path": "FOLDER/NESTEDA..VE.ZIP",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "FOLDER/README.MD",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "HELLO.WORLD.TXT",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "expected": "as defaultArchive.po (upper case)",
    "verification": {
     "status": "verified-creator-only",
     "evidence": [
@@ -369,23 +353,7 @@
    "role": "variant",
    "size": 116480,
    "sha256": "0674afd14810f94c0d295e7c59c72e5c64e1c2ca1d67fcfbe08ae5f865121bec",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "folder/README.md (first 437 bytes of README.MD)",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt (first 13 bytes of HELLO WORLD.TXT)",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "expected": "DOS 3.2, as apple2/dos33.do",
    "verification": {
     "status": "verified-creator-only",
     "evidence": [
@@ -402,23 +370,7 @@
    "role": "variant",
    "size": 143360,
    "sha256": "dc65f004e716c314f230836059e65620fb91614cfa5391747ec754bab8e5a7f1",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "folder/README.md (first 437 bytes of README.MD)",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt (first 13 bytes of HELLO WORLD.TXT)",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "expected": "DOS 3.3, flat, upper case, padded to 256-byte sectors: HELLO WORLD.TXT, README.MD, NESTEDARCHIVE.ZIP",
    "verification": {
     "status": "verified-creator-only",
     "evidence": [
@@ -435,23 +387,7 @@
    "role": "variant",
    "size": 232960,
    "sha256": "7159e5a001465d2a8c945b21ebfe087fb89f4ecd7910cb329f5a13af7402d9ae",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "folder/README.md (first 437 bytes of README.MD)",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt (first 13 bytes of HELLO WORLD.TXT)",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "expected": "as apple2/dos33.do",
    "verification": {
     "status": "verified-creator-only",
     "evidence": [
@@ -468,23 +404,7 @@
    "role": "variant",
    "size": 234682,
    "sha256": "874ca6076924f03413f2b29c8607248429715390b59b0fe17d7e1ae63882b1ff",
-   "expected": [
-    {
-     "path": "folder/NestedA..ve.zip",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello.world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "expected": "as defaultArchive.po",
    "verification": {
     "status": "verified-creator-only",
     "evidence": [
@@ -501,23 +421,7 @@
    "role": "variant",
    "size": 819264,
    "sha256": "2b51323c67e3c6ac8f64aec31dce82f577881010d4244f881d9da62ea926a9ee",
-   "expected": [
-    {
-     "path": "folder/NestedA..ve.zip",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello.world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "expected": "as defaultArchive.po",
    "verification": {
     "status": "verified-creator-only",
     "evidence": [
@@ -653,6 +557,23 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 60ea3100220b0102; 7z Type=Arj Methods=0,4; lsar format=ARJ; file: ARJ archive data, v11, slash-switched, created 26 jul 1980+53, original name: method_m4.ar; readers matching standard content: 7z, unar"
+    ]
+   }
+  },
+  {
+   "path": "atari8/mydos_dd_subdir.atr",
+   "formats": [
+    "atr"
+   ],
+   "role": "variant",
+   "size": 183952,
+   "sha256": "d06bedb88570a3295cd2c1374b188897e8eb22eb13c9d5827cc60989448587ae",
+   "expected": "8.3 names: HELLO.TXT, FOLDER/README.MD, FOLDER/NESTED.ZIP",
+   "verification": {
+    "status": "unverified",
+    "evidence": [
+     "docs/verification/2026-11-16-retro/ubuntu_readers.jsonl: magic 9602e82c00010000; 7z Type=zip Methods=Deflate; file: Atari ATR image; readers matching standard content: none",
+     "docs/verification/2026-11-16-retro/format_tools.txt: UNVERIFIED content: dir2atr -m -d (MyDOS 4.5 layout, double density, subdirectory FOLDER); no MyDOS reader available | header 9602 e82c 0001 0000 0000 0000 0000 0000"
     ]
    }
   },
@@ -1588,6 +1509,23 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.atr",
+   "formats": [
+    "atr"
+   ],
+   "role": "baseline",
+   "size": 92176,
+   "sha256": "117431aacbb40013b2f302b2f6f3e64ff4befc4b259b967bbd755a8d444e7b87",
+   "expected": "flat, 8.3: HELLO.TXT, README.MD, NESTED.ZIP",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-retro/ubuntu_readers.jsonl: magic 9602801680000000; 7z Type=zip Methods=Deflate; file: Atari ATR image; readers matching standard content: none",
+     "docs/verification/2026-11-16-retro/format_tools.txt: independent DOS 2 reader (scripts/read_atr_dos2.py, written from the DOS 2.0S layout): | HELLO.TXT 13 bytes, 1 sectors | NESTED.ZIP 52334 bytes, 419 sectors | README.MD 437 bytes, 4 sectors | 03ba204e50d126e4  ./HELLO.TXT | 466ab31d0374b763  ./NESTED.ZIP | 30322444506aed4d  ./README.MD"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.bin",
    "formats": [
     "cue",
@@ -1644,23 +1582,7 @@
    "role": "baseline",
    "size": 2119781,
    "sha256": "f124fc07be6e739edef3e3158d77e088dae5396ee00f726febe4710fdde69b41",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "expected": "data track = defaultArchive.iso from sector 16 on (system area replaced by cdi4dc)",
    "verification": {
     "status": "verified",
     "evidence": [
@@ -1842,6 +1764,23 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 0000000000000000; 7z Type=Dmg Methods=Copy Zero2 CRC; file: DOS/MBR boot sector; partition 1 : ID=0xee, start-CHS (0x3ff,254,63), end-CHS (0x3ff,254,6; readers matching standard content: 7z"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.dsk",
+   "formats": [
+    "cpc"
+   ],
+   "role": "baseline",
+   "size": 194816,
+   "sha256": "f920d2feb5d4ada74d523e5db8538137ba0bcf9a0092cfe44ea3a3647cd8fe12",
+   "expected": "flat, CP/M user 0: hello.txt, readme.md, nested.zip",
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-retro/ubuntu_readers.jsonl: magic 455854454e444544; 7z Type=zip Methods=Deflate; file: Amstrad/Spectrum Extended .DSK data; readers matching standard content: none",
+     "docs/verification/2026-11-16-retro/format_tools.txt: CREATOR-ONLY: cpmtools 2.23 cpmls/cpmcp over libdsk (edsk);  EXTENDED CPC DSK  File..Disk-Info | 0: | -rw-rw-rw-      13 Jan 01 1970  hello.txt | -rw-rw-rw-   52334 Jan 01 1970  nested.zip | -rw-rw-rw-     437 Jan 01 1970  readme.md | 03ba204e50d126e4  ./hello.txt | 466ab31d0374b763  ./nested.zip | 30322444506aed4d  ./readme.md"
     ]
    }
   },
@@ -2325,23 +2264,7 @@
    "role": "baseline",
    "size": 143360,
    "sha256": "3aaf8797506e118fc64b03e98ae84573fb66779500bc0d7483793fd3fbf9e96c",
-   "expected": [
-    {
-     "path": "folder/NestedA..ve.zip",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    },
-    {
-     "path": "hello.world.txt",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    }
-   ],
+   "expected": "ProDOS names: hello.world.txt, folder/README.md, folder/NestedA..ve.zip",
    "verification": {
     "status": "verified-creator-only",
     "evidence": [
@@ -2645,23 +2568,29 @@
    "role": "baseline",
    "size": 574,
    "sha256": "6e7321b85d826b21b0e99125d2a32bec85cb7cded04e338382168629604ea545",
-   "expected": [
-    {
-     "path": "hello world.txt.prg",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    },
-    {
-     "path": "readme.md.prg",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    }
-   ],
+   "expected": "hello world.txt and readme.md as PRG files (NestedArchive.zip does not fit)",
    "verification": {
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 4336342074617065; file: T64 tape Image Version:0x101 Entries:2 Name:MACPACKER; readers matching standard content: none",
      "docs/verification/2026-11-16-batch4/format_tools.txt: cbmconvert 2.1.5 -t -N (independent); NestedArchive.zip is not on the tape (see scripts/write_wad_t64.py); VICE c1541 does not open T64 | 03ba204e50d126e4  ./hello world.txt.prg | 30322444506aed4d  ./readme.md.prg"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.tap",
+   "formats": [
+    "zx"
+   ],
+   "role": "baseline",
+   "size": 52859,
+   "sha256": "cf182cc65d60021cb91970e9c091101536ba1c6a452fa7bd9f8491e1888ea38e",
+   "expected": "three CODE files: hello.txt, readme.md, nested.zip (flat, renamed; same bytes)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-retro/ubuntu_readers.jsonl: magic 1300000368656c6c; 7z Type=zip Methods=Deflate; file: Spectrum .TAP data \"hello.txt \" - memory block, data length 13; readers matching standard content: none",
+     "docs/verification/2026-11-16-retro/format_tools.txt: tapeconv (libspectrum) read this TAP to write the TZX above: the three data blocks are byte-identical to the standard files (hashes in the TZX block)"
     ]
    }
   },
@@ -3170,6 +3099,23 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.tzx",
+   "formats": [
+    "zx"
+   ],
+   "role": "baseline",
+   "size": 52887,
+   "sha256": "ae0d0103080e9771835fc86e4279ee818c8a01a03022e7285bb9198b03f1aa4c",
+   "expected": "as defaultArchive.tap",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-retro/ubuntu_readers.jsonl: magic 5a5854617065211a; 7z Type=zip Methods=Deflate; file: Spectrum .TZX data version 1.20; ID 0x10; readers matching standard content: none",
+     "docs/verification/2026-11-16-retro/format_tools.txt: tzxlist (fuse-emulator-utils 1.4.3): 6 standard-speed blocks; data blocks parsed from the TZX written by libspectrum: | 03ba204e50d126e4  ./hello.txt (CODE, 13 bytes) | 30322444506aed4d  ./readme.md (CODE, 437 bytes) | 466ab31d0374b763  ./nested.zip (CODE, 52334 bytes)"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.udf",
    "formats": [
     "udf"
@@ -3291,23 +3237,7 @@
    "role": "baseline",
    "size": 52844,
    "sha256": "4c15340e1562f8bd237d8413c6ead2b47d4253879bfea397ba75de79750d8e48",
-   "expected": [
-    {
-     "path": "HELLO (lump)",
-     "sha256_prefix": "03ba204e50d126e4",
-     "note": "current"
-    },
-    {
-     "path": "NESTED (lump)",
-     "sha256_prefix": "466ab31d0374b763",
-     "note": "current"
-    },
-    {
-     "path": "README (lump)",
-     "sha256_prefix": "30322444506aed4d",
-     "note": "current"
-    }
-   ],
+   "expected": "lumps HELLO, README, NESTED (same bytes)",
    "verification": {
     "status": "verified",
     "evidence": [
@@ -3362,6 +3292,39 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 78617221001c0001; 7z Type=Xar Methods=zlib; file: xar archive compressed TOC: 991, SHA-1 checksum, contains  zlib compressed data; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.xiso",
+   "formats": [
+    "xiso"
+   ],
+   "role": "baseline",
+   "size": 655360,
+   "sha256": "a52acada96ca285cda36d52a35ce3f60146defe650e8c434766e6207e1cbd825",
+   "expected": [
+    {
+     "path": "defaultArchive.xiso/folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "defaultArchive.xiso/folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "defaultArchive.xiso/hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-retro/ubuntu_readers.jsonl: magic 0000000000000000; 7z Type=Iso; file: ISO 9660 CD-ROM filesystem data; readers matching standard content: none",
+     "docs/verification/2026-11-16-retro/format_tools.txt: CREATOR-ONLY: extract-xiso -l / -x (no other XDVDFS reader; 7-Zip and unar do not open it); magic  MICROSOFT*XBOX*M | EDIA | 466ab31d0374b763  ./defaultArchive.xiso/folder/NestedArchive.zip | 30322444506aed4d  ./defaultArchive.xiso/folder/README.md | 03ba204e50d126e4  ./defaultArchive.xiso/hello world.txt"
     ]
    }
   },
@@ -4884,6 +4847,22 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_apple_fixtures.jsonl: magic 000a666f726b6564; lsar format=MacBinary; file: MacBinary III, Sun Nov 15 22:01:15 2026, modified Sun Nov 15 22:01:15 2026, creator Simple; readers matching standard content: none",
      "docs/verification/2026-11-15/macos_apple_tools.txt: data: 68656c6c6f20776f726c640a0a  rsrc: resource fork of forked.txt  FinderInfo: 5445585474747874"
+    ]
+   }
+  },
+  {
+   "path": "msx/msxdos_720k.dsk",
+   "formats": [
+    "cpc"
+   ],
+   "role": "variant",
+   "size": 737280,
+   "sha256": "72ad1817e1f642aaf711dbfb69d41463653fc055941d1e57996939920081daa8",
+   "expected": "8.3 names: HELLO.TXT, FOLDER/README.MD, FOLDER/NESTED.ZIP",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-retro/ubuntu_readers.jsonl: magic eb3c904d544f4f34; 7z Type=FAT; file: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID \"MTOO4043\", sectors/cluster 2, root entrie; readers matching standard content: 7z"
     ]
    }
   },
