@@ -69,8 +69,8 @@ sha256 with `defaultArchiveContent`:
 | unrar | `ubuntu` VM | UNRAR 7.00 freeware (RARLAB, Ubuntu multiverse) |
 | acefile | `ubuntu` VM | acefile 0.6.14 (pipx) for ACE |
 
-Where only the creating tool could read a fixture (classic HFS, CHD, CSO, C64, MSA, ADF also by unar) the format
-page says so. Evidence for each fixture is in its format page and in `manifest.json`.
+Where only the creating tool could read a fixture the manifest status is `verified-creator-only` (Apple II images, ShrinkIt,
+Binary II, VPK) and the format page says so; `unverified` means no reader confirmed the content (DAX, StuffIt SFX). Evidence for each fixture is in its format page and in `manifest.json`.
 
 Versions of everything used on the Ubuntu VM: `docs/verification/2026-11-15/ubuntu_tool_versions.txt`.
 All tools came from Ubuntu 24.04 archives (main/universe/multiverse), PyPI via pipx (amitools 0.9.0, acefile 0.6.14),
@@ -86,6 +86,9 @@ the macOS tools are part of the OS. No tool needed registration.
 | `scripts/ubuntu_next.sh <repo> <out>` | `ubuntu` VM, sudo | ext2/3/4, HFS+/HFSX/HFS, UDF, WIM/ESD/SWM, NSIS, CHD, TOC, CSO, ADF, WARC, C64, Atari ST, Parallels, Android sparse, MBR/GPT raw, LZFSE |
 | `scripts/macos_fixtures.sh <content> <out>` | `lb_27` VM | pkg, aar, aea, pbzx, AppleSingle/MacBinary/BinHex, DMG variants, sparse images, APFS, APM/GPT raw, xar variants |
 | `scripts/regenerate_linux_baselines.sh <content> <out>` | `ubuntu` VM | the regenerated legacy baselines (2026-11-16) |
+| `scripts/ubuntu_batch3.sh`, `scripts/ubuntu_batch4.sh` (+ `verify_batch4.sh`, `write_wad_t64.py`) | `ubuntu` VM | ARC, ECM, maxcso, HDF; CiderPress II (Apple II, ShrinkIt, DiskCopy), VPK, WAD, T64, NDS, RDB HDF |
+| `scripts/amiga/README.md` | `amiga` VM | LZX, Zoo, HA |
+| `scripts/macos_batch2.sh` | `lb_27` VM | tar.hqx regeneration, unsigned XIP layout, makehybrid UDF |
 | `scripts/windows/` (README there) | `win98`, `winxp` VMs | RAR 2.x/4/5, CAB (makecab), Inno Setup, ZIPX (WinZip), ACE (WinAce), StuffIt 5 .sit, 7-Zip SFX |
 | `<dir>/make_*.sh` | see each | the special-purpose fixtures |
 

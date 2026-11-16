@@ -1,0 +1,70 @@
+== defaultArchives/defaultArchive.po
+  CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Disk image (Unadorned, order=pdos/blk) - 140KB ProDOS "NEWDISK", 166 blocks free
+  466ab31d0374b763  ./folder/NestedA..ve.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello.world.txt
+== apple2/prodos_800k.2mg
+  CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Disk image (2IMG) - 800KB ProDOS "NEWDISK", 1486 blocks free
+  466ab31d0374b763  ./folder/NestedA..ve.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello.world.txt
+== apple2/prodos_525.woz
+  CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Disk image (WOZ, codec=Std 16-sector) - 140KB ProDOS "NEWDISK", 166 blocks free
+  466ab31d0374b763  ./folder/NestedA..ve.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello.world.txt
+== defaultArchives/defaultArchive.dc42
+  CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Disk image (DiskCopy) - 800KB HFS "NEWDISK", 732KB free
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.shk
+  CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Type Auxtyp Modified        Format    Length Size Name                          
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== apple2/binary2.bny
+  CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Type Auxtyp Modified        Format    Length Size Name                          
+  466ab31d0374b763  ./FOLDER/NESTEDA..VE.ZIP
+  30322444506aed4d  ./FOLDER/README.MD
+  03ba204e50d126e4  ./HELLO.WORLD.TXT
+== apple2/dos33.do
+  CREATOR-ONLY: CiderPress II 1.2.0. DOS 3.x stores these as type S files without a length, so each extracts padded with zeros to a 256-byte multiple; checked that the original bytes are the prefix:
+  03ba204e50d126e4  ./hello world.txt (first 13 bytes of HELLO WORLD.TXT)
+  30322444506aed4d  ./folder/README.md (first 437 bytes of README.MD)
+  466ab31d0374b763  ./folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)
+== apple2/dos33.nib
+  CREATOR-ONLY: CiderPress II 1.2.0. DOS 3.x stores these as type S files without a length, so each extracts padded with zeros to a 256-byte multiple; checked that the original bytes are the prefix:
+  03ba204e50d126e4  ./hello world.txt (first 13 bytes of HELLO WORLD.TXT)
+  30322444506aed4d  ./folder/README.md (first 437 bytes of README.MD)
+  466ab31d0374b763  ./folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)
+== apple2/dos32.d13
+  CREATOR-ONLY: CiderPress II 1.2.0. DOS 3.x stores these as type S files without a length, so each extracts padded with zeros to a 256-byte multiple; checked that the original bytes are the prefix:
+  03ba204e50d126e4  ./hello world.txt (first 13 bytes of HELLO WORLD.TXT)
+  30322444506aed4d  ./folder/README.md (first 437 bytes of README.MD)
+  466ab31d0374b763  ./folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)
+== defaultArchives/defaultArchive.dc42
+  hfsutils 3.2.6 on the image without its 84-byte DiskCopy header (independent):
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.t64
+  cbmconvert 2.1.5 -t -N (independent); NestedArchive.zip is not on the tape (see scripts/write_wad_t64.py); VICE c1541 does not open T64
+  03ba204e50d126e4  ./hello world.txt.prg
+  30322444506aed4d  ./readme.md.prg
+== defaultArchives/defaultArchive.wad
+  independent parse of the PWAD directory (header, lump table):
+  PWAD, 3 lumps
+  03ba204e50d126e4  ./HELLO (lump)
+  30322444506aed4d  ./README (lump)
+  466ab31d0374b763  ./NESTED (lump)
+== defaultArchives/defaultArchive.vpk
+  CREATOR-ONLY: python vpk 1.4.0 (no other VPK reader available): hello world.txt folder/README.md folder/NestedArchive.zip 
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== hdf/rdb_ffs.hdf
+  rdbtool/xdftool (amitools 0.9.0): Partition: #0 'DH0'         1      255        8160  4.0Mi   99.61%  DOS1/0x444f5301  auto
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt

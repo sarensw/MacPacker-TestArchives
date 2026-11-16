@@ -381,3 +381,32 @@ for _f in FORMATS:
                   outstanding="UDF 2.50/2.60 (metadata partition): mkudffs refuses for hd media, hdiutil makehybrid ignores -udf-version; next: mkudffs --media-type=bdr or Windows format /FS:UDF")
     if _f["id"] == "binhex":
         _f.update(notes="defaultArchive.tar.hqx regenerated 2026-11-16 (current content; it held an older defaultContent/ layout).")
+
+# ---- 2026-11-16 batch 4 (CiderPress II, vpk, WAD/T64 writer, ndstool, RDB HDF) ----
+_UPD4 = {
+ "apple2": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.po", "apple2/*.2mg", "apple2/*.woz", "apple2/*.do", "apple2/*.nib", "apple2/*.d13"],
+   magic=".po/.do none (sector order); 2MG `2IMG` at 0; WOZ `WOZ2` at 0; .nib raw nibbles", tar="no",
+   covered="ProDOS 140K .po (baseline), ProDOS 800K .2mg, ProDOS 5.25\" .woz (WOZ 2), DOS 3.3 .do and .nib, DOS 3.2 13-sector .d13 (CiderPress II 1.2.0 built from source, commit c3ef135)",
+   outstanding="Pascal and CP/M volumes, copy-protected WOZ, 40-track images",
+   notes="ProDOS names: hello.world.txt, folder/NestedA..ve.zip (15-character limit). DOS 3.x: flat, upper case, stored as type S files padded to 256-byte sectors. Only CiderPress II read them back here (status verified-creator-only)."),
+ "shk": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.shk", "apple2/*.bny"], magic="NuFX `NuFile` (4E F5 46 E9 6C E5) at 0; Binary II `0A 47 4C` at 0",
+   covered="ShrinkIt NuFX (LZW/2) baseline; Binary II (.bny, Squeeze) (CiderPress II 1.2.0)", outstanding=".sdk (ShrinkIt disk archive), .bxy (Binary II-wrapped NuFX)",
+   notes="unar 1.10 did not recognise either file. Binary II stores ProDOS names (HELLO.WORLD.TXT, FOLDER/NESTEDA..VE.ZIP)."),
+ "macdisk": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.dc42", "hfs/classic_hfs.hfs"], magic="DiskCopy 4.2: name length byte + name at 0, `01 00` at 0x52",
+   covered="DiskCopy 4.2 800K HFS image (CiderPress II); raw classic HFS volume (hfsutils)", outstanding="MFS, DART, MOOF, partitioned Mac hard disk images",
+   notes="hfsutils reads the HFS volume inside the .dc42 after its 84-byte header (independent check)."),
+ "gamedata": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.vpk", "defaultArchives/defaultArchive.wad"], magic="VPK `34 12 AA 55` at 0; WAD `PWAD`/`IWAD` at 0",
+   covered="Valve VPK v1 (python vpk 1.4.0); Doom PWAD written from the documented layout (scripts/write_wad_t64.py, lumps HELLO, README, NESTED)",
+   outstanding="Quake PAK; VPK v2 and multi-chunk (_dir.vpk + _000.vpk); WAD made by a Doom tool (SLADE/DeuTex not packaged)"),
+ "nds": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.nds"], magic="Nintendo DS header, game code `MPKR` at 0x0C",
+   covered="ndstool 2.3.1 (devkitPro, built from source): stub ARM9/ARM7 (`b .`), the content in NitroFS", notes="Our own trivial homebrew, no commercial code. unar (XAD) lists the NitroFS files (plus the binaries)."),
+ "t64": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.t64"], magic="`C64 tape image file` at 0",
+   covered="T64 v1.1 written from the documented layout (scripts/write_wad_t64.py): hello world.txt, readme.md as PRG",
+   notes="NestedArchive.zip does not fit in a C64 file (load address 0x4B50 + 52332 bytes > 0xFFFF) and is left out. cbmconvert 2.1.5 reads it (independent); VICE c1541 does not open T64."),
+ "hdf": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.hdf", "hdf/*.hdf"],
+   covered="partition-less FFS hardfile (baseline); hdf/rdb_ffs.hdf: RDB with one FFS partition DH0 (amitools 0.9.0 rdbtool + xdftool open part=DH0)", outstanding="multi-partition RDB, PFS/SFS"),
+ "udf": dict(outstanding="UDF 2.50/2.60 with a metadata partition: mkudffs --media-type=bdr --udfrev=0x0250 formats one, but Linux mounts 2.50 read-only so it cannot be filled; hdiutil ignores -udf-version. Next: Windows format /FS:UDF /R:2.50 (Vista+) or a UDF writer library"),
+}
+for _f in FORMATS:
+    if _f["id"] in _UPD4:
+        _f.update(_UPD4[_f["id"]])

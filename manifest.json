@@ -22,6 +22,7 @@
   "verified": "an independent reader or the format tool extracted content that matches `expected` (sha256)",
   "verified-other-content": "opens and extracts, but holds an older version of the standard content (see docs/existing-fixtures-audit.md); `expected` lists what it holds",
   "part": "a later volume or a member file of a bundle; checked through the first part",
+  "verified-creator-only": "content matches, but only the tool that wrote it could read it back (no independent reader available)",
   "unverified": "made by the stated tool, but no reader could confirm its content (see evidence)",
   "not-checked": "not checked by this work (special-purpose fixture with its own README, or no reader available); see docs/formats"
  },
@@ -324,6 +325,204 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_apple_fixtures.jsonl: magic 4145413101000000; file: data; readers matching standard content: none",
      "docs/verification/2026-11-15/macos_apple_tools.txt: content: MATCH (3 files, sha256)"
+    ]
+   }
+  },
+  {
+   "path": "apple2/binary2.bny",
+   "formats": [
+    "shk"
+   ],
+   "role": "variant",
+   "size": 53376,
+   "sha256": "35469cba30fc3af3c85883dfd2a44187bda9aea9ed9d230afe0fba70672597a3",
+   "expected": [
+    {
+     "path": "FOLDER/NESTEDA..VE.ZIP",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "FOLDER/README.MD",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "HELLO.WORLD.TXT",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 0a474cc300000002; 7z Type=zip Methods=Deflate; file: Binary II (apple ][) data; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Type Auxtyp Modified        Format    Length Size Name | 466ab31d0374b763  ./FOLDER/NESTEDA..VE.ZIP | 30322444506aed4d  ./FOLDER/README.MD | 03ba204e50d126e4  ./HELLO.WORLD.TXT"
+    ]
+   }
+  },
+  {
+   "path": "apple2/dos32.d13",
+   "formats": [
+    "apple2"
+   ],
+   "role": "variant",
+   "size": 116480,
+   "sha256": "0674afd14810f94c0d295e7c59c72e5c64e1c2ca1d67fcfbe08ae5f865121bec",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md (first 437 bytes of README.MD)",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt (first 13 bytes of HELLO WORLD.TXT)",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic f04a99ffff033cad; 7z Type=zip Methods=Deflate; file: data; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0. DOS 3.x stores these as type S files without a length, so each extracts padded with zeros to a 256-byte multiple; checked that the original bytes are the prefix: | 03ba204e50d126e4  ./hello world.txt (first 13 bytes of HELLO WORLD.TXT) | 30322444506aed4d  ./folder/README.md (first 437 bytes of README.MD) | 466ab31d0374b763  ./folder/NestedArchive.zip (first 52334"
+    ]
+   }
+  },
+  {
+   "path": "apple2/dos33.do",
+   "formats": [
+    "apple2"
+   ],
+   "role": "variant",
+   "size": 143360,
+   "sha256": "dc65f004e716c314f230836059e65620fb91614cfa5391747ec754bab8e5a7f1",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md (first 437 bytes of README.MD)",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt (first 13 bytes of HELLO WORLD.TXT)",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 01a527c909d018a5; 7z Type=zip Methods=Deflate; file: Apple DOS 3.3 Image, Volume #254, 35 Tracks, 16 Sectors, 256 bytes per sector; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0. DOS 3.x stores these as type S files without a length, so each extracts padded with zeros to a 256-byte multiple; checked that the original bytes are the prefix: | 03ba204e50d126e4  ./hello world.txt (first 13 bytes of HELLO WORLD.TXT) | 30322444506aed4d  ./folder/README.md (first 437 bytes of README.MD) | 466ab31d0374b763  ./folder/NestedArchive.zip (first 52334"
+    ]
+   }
+  },
+  {
+   "path": "apple2/dos33.nib",
+   "formats": [
+    "apple2"
+   ],
+   "role": "variant",
+   "size": 232960,
+   "sha256": "7159e5a001465d2a8c945b21ebfe087fb89f4ecd7910cb329f5a13af7402d9ae",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip (first 52334 bytes of NESTEDARCHIVE.ZIP)",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md (first 437 bytes of README.MD)",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt (first 13 bytes of HELLO WORLD.TXT)",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic ffffffffffffffff; file: Non-ISO extended-ASCII text, with very long lines (65536), with no line terminators; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0. DOS 3.x stores these as type S files without a length, so each extracts padded with zeros to a 256-byte multiple; checked that the original bytes are the prefix: | 03ba204e50d126e4  ./hello world.txt (first 13 bytes of HELLO WORLD.TXT) | 30322444506aed4d  ./folder/README.md (first 437 bytes of README.MD) | 466ab31d0374b763  ./folder/NestedArchive.zip (first 52334"
+    ]
+   }
+  },
+  {
+   "path": "apple2/prodos_525.woz",
+   "formats": [
+    "apple2"
+   ],
+   "role": "variant",
+   "size": 234682,
+   "sha256": "874ca6076924f03413f2b29c8607248429715390b59b0fe17d7e1ae63882b1ff",
+   "expected": [
+    {
+     "path": "folder/NestedA..ve.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello.world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 574f5a32ff0a0d0a; file: Apple ][ WOZ 2.0 Disk Image, 5.25 inch, CiderPress II v1.2.0; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Disk image (WOZ, codec=Std 16-sector) - 140KB ProDOS \"NEWDISK\", 166 blocks free | 466ab31d0374b763  ./folder/NestedA..ve.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello.world.txt"
+    ]
+   }
+  },
+  {
+   "path": "apple2/prodos_800k.2mg",
+   "formats": [
+    "apple2"
+   ],
+   "role": "variant",
+   "size": 819264,
+   "sha256": "2b51323c67e3c6ac8f64aec31dce82f577881010d4244f881d9da62ea926a9ee",
+   "expected": [
+    {
+     "path": "folder/NestedA..ve.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello.world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 32494d4743504949; 7z Type=zip Methods=Deflate; file: Apple ][ 2IMG Disk Image, Creator tag \"CPII\", ProDOS sector order, Volume /NEWDISK, 1600 B; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Disk image (2IMG) - 800KB ProDOS \"NEWDISK\", 1486 blocks free | 466ab31d0374b763  ./folder/NestedA..ve.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello.world.txt"
     ]
    }
   },
@@ -1489,6 +1688,40 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.dc42",
+   "formats": [
+    "macdisk"
+   ],
+   "role": "baseline",
+   "size": 828884,
+   "sha256": "db1813f974f9450c676ad263b1bbf12a31cc8e9d14315872921f61752a758b47",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 0000000000000000; 7z Type=zip Methods=Deflate; file: Apple DiskCopy 4.2 image , 819200 bytes, 0x2580 tag size, GCR CLV dsdd (800k), 0x22 format; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Disk image (DiskCopy) - 800KB HFS \"NEWDISK\", 732KB free | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: hfsutils 3.2.6 on the image without its 84-byte DiskCopy header (independent): | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.dmg",
    "formats": [
     "dmg"
@@ -1911,6 +2144,22 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.nds",
+   "formats": [
+    "nds"
+   ],
+   "role": "baseline",
+   "size": 87992,
+   "sha256": "c1eab42f21e55d70727fa1b3b3a4815e34d2d261665874c2f30c00eea050c037",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 4d41435041434b45; 7z Type=zip Methods=Deflate; lsar format=NDS; file: Nintendo DS Slot-2 ROM image (PassMe); readers matching standard content: unar"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.nrg",
    "formats": [
     "nrg"
@@ -1973,6 +2222,39 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_apple_fixtures.jsonl: magic 78617221001c0001; 7z Type=Xar Methods=octet-stream; lsar format=XAR; file: xar archive compressed TOC: 675, SHA-1 checksum, contains  zlib compressed data; readers matching standard content: none",
      "docs/verification/2026-11-15/macos_apple_tools.txt: Bom Payload PackageInfo | content: MATCH (3 files, sha256) | Payload magic: 1f8b0800"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.po",
+   "formats": [
+    "apple2"
+   ],
+   "role": "baseline",
+   "size": 143360,
+   "sha256": "3aaf8797506e118fc64b03e98ae84573fb66779500bc0d7483793fd3fbf9e96c",
+   "expected": [
+    {
+     "path": "folder/NestedA..ve.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello.world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 0138b0034c1c0978; 7z Type=zip Methods=Deflate; file: Apple ProDOS Unbootable Image, Volume /NEWDISK, 280 Blocks; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Disk image (Unadorned, order=pdos/blk) - 140KB ProDOS \"NEWDISK\", 166 blocks free | 466ab31d0374b763  ./folder/NestedA..ve.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello.world.txt"
     ]
    }
   },
@@ -2054,6 +2336,39 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic edabeedb03000000; 7z Type=Rpm; lsar format=RPM; file: RPM v3.0 bin; readers matching standard content: bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.shk",
+   "formats": [
+    "shk"
+   ],
+   "role": "baseline",
+   "size": 53118,
+   "sha256": "0fe90b2f9fc93ebe90fb57c3efbdb1bb2722ac1a0edddcf4867ab4345bb28dab",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 4ef546e96ce5db85; 7z Type=zip Methods=Deflate; file: NuFile archive (apple ][) data; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0 extract (unar 1.10, 7-Zip and bsdtar did not open it). Type Auxtyp Modified        Format    Length Size Name | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },
@@ -2227,6 +2542,34 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4d5357494d000000; 7z Type=wim Methods=Copy,Copy:15; file: Windows imaging (SWM 1 of 3) image v1.13, reparse point fixup; readers matching standard content: 7z",
      "docs/verification/2026-11-15/ubuntu_special.txt: Part Number:    1/3 | content: MATCH (3 files, sha256)"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.t64",
+   "formats": [
+    "t64"
+   ],
+   "role": "baseline",
+   "size": 574,
+   "sha256": "6e7321b85d826b21b0e99125d2a32bec85cb7cded04e338382168629604ea545",
+   "expected": [
+    {
+     "path": "hello world.txt.prg",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    },
+    {
+     "path": "readme.md.prg",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 4336342074617065; file: T64 tape Image Version:0x101 Entries:2 Name:MACPACKER; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: cbmconvert 2.1.5 -t -N (independent); NestedArchive.zip is not on the tape (see scripts/write_wad_t64.py); VICE c1541 does not open T64 | 03ba204e50d126e4  ./hello world.txt.prg | 30322444506aed4d  ./readme.md.prg"
     ]
    }
   },
@@ -2812,6 +3155,72 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4b444d5601000000; 7z Type=VMDK Methods=\"monolithicSparse\"; file: VMware4 disk image; readers matching standard content: 7z"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.vpk",
+   "formats": [
+    "gamedata"
+   ],
+   "role": "baseline",
+   "size": 52981,
+   "sha256": "ebcb356c7f51691c62a65f0b11016219fd30c3f2c7d164ef3fd687dbdc11afd5",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 3412aa5502000000; 7z Type=zip Methods=Deflate; file: Valve Pak file, version 2, 121 entries; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: python vpk 1.4.0 (no other VPK reader available): hello world.txt folder/README.md folder/NestedArchive.zip | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.wad",
+   "formats": [
+    "gamedata"
+   ],
+   "role": "baseline",
+   "size": 52844,
+   "sha256": "4c15340e1562f8bd237d8413c6ead2b47d4253879bfea397ba75de79750d8e48",
+   "expected": [
+    {
+     "path": "HELLO (lump)",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    },
+    {
+     "path": "NESTED (lump)",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "README (lump)",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 5057414403000000; 7z Type=zip Methods=Deflate; file: doom patch PWAD data containing 3 lumps; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: independent parse of the PWAD directory (header, lump table): | PWAD, 3 lumps | 03ba204e50d126e4  ./HELLO (lump) | 30322444506aed4d  ./README (lump) | 466ab31d0374b763  ./NESTED (lump)"
     ]
    }
   },
@@ -3703,9 +4112,43 @@
    }
   },
   {
+   "path": "hdf/rdb_ffs.hdf",
+   "formats": [
+    "hdf"
+   ],
+   "role": "variant",
+   "size": 4194304,
+   "sha256": "004ad79202a7ebe4e99de9207eef242ebcc493fb842e84719f1d5aa0ff058664",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic 5244534b00000040; 7z Type=zip Methods=Deflate; file: Rigid Disk Block on RDBTOOL; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch4/format_tools.txt: rdbtool/xdftool (amitools 0.9.0): Partition: #0 'DH0'         1      255        8160  4.0Mi   99.61%  DOS1/0x444f5301  auto | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
    "path": "hfs/classic_hfs.hfs",
    "formats": [
-    "hfs"
+    "hfs",
+    "macdisk"
    ],
    "role": "variant",
    "size": 819200,

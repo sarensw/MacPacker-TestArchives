@@ -131,6 +131,9 @@ def main():
                 content = entries; status = 'verified' if labels == {'current'} else 'verified-other-content'
             if any('UNVERIFIED' in l for l in lines):
                 status = 'unverified'
+            elif any('CREATOR-ONLY' in l for l in lines) and status == 'verified' and not any(
+                    v['result'] in ('exact', 'content', 'superset') for _, r in runs.get(p, []) for v in r['readers'].values()):
+                status = 'verified-creator-only'
             elif status == 'not-checked' and any(re.search(r'data: 68656c6c|sha256: |TOC TYPE|WARC-Target-URI|Overall SHA1 verification successful|simg2img ==|byte-identical', l) for l in lines):
                 status = 'verified'
         cx = next((v for g, v in CUSTOM_EXPECTED.items() if fnmatch.fnmatch(p, g)), None)
@@ -161,6 +164,7 @@ def main():
         statuses={'verified': 'an independent reader or the format tool extracted content that matches `expected` (sha256)',
                   'verified-other-content': 'opens and extracts, but holds an older version of the standard content (see docs/existing-fixtures-audit.md); `expected` lists what it holds',
                   'part': 'a later volume or a member file of a bundle; checked through the first part',
+                  'verified-creator-only': 'content matches, but only the tool that wrote it could read it back (no independent reader available)',
                   'unverified': 'made by the stated tool, but no reader could confirm its content (see evidence)',
                   'not-checked': 'not checked by this work (special-purpose fixture with its own README, or no reader available); see docs/formats'},
         fixtures=manifest), open(os.path.join(ROOT, 'manifest.json'), 'w'), indent=1, ensure_ascii=False)

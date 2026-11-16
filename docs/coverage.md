@@ -70,14 +70,14 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [BinHex 4.0](formats/binhex.md) |  | hqx | `defaultArchive.tar.hqx` | 2/2 |  |
 | DONE | [MacBinary](formats/macbinary.md) |  | bin, macbin | `defaultArchive.tar.bin` | 2/2 | MacBinary I and II explicitly (macOS `macbinary` writes III) |
 | TODO | ALZip |  | alz |  | 0/0 | baseline (ALZip on Windows) |
-| TODO | Nintendo DS |  | nds |  | 0/0 | ndstool with own homebrew |
+| DONE | [Nintendo DS](formats/nds.md) |  | nds | `defaultArchive.nds` | 1/1 | ndstool with own homebrew |
 | DONE | [WARC web archive](formats/warc.md) |  | warc, warc.gz | `defaultArchive.warc` | 2/2 |  |
 | DONE | [Zip-based packages](formats/zip-packages.md) |  | ipa, xpi, epub, whl, ... | `defaultArchive.jar` | 7/38 |  |
 | DONE | [Comic book archives](formats/comic.md) |  | cb7, cbt | `defaultArchive.7z`, `defaultArchive.tar` | 2/2 |  |
 | DONE | [HFS+ / HFSX / HFS images](formats/hfs.md) |  | hfs, hfsx, img | `defaultArchive.hfs` | 3/3 | journaled HFS+ made by macOS |
 | DONE | [APFS image](formats/apfs.md) |  | apfs, img | `defaultArchive.apfs` | 2/2 | encrypted APFS, case-sensitive APFS, snapshots |
 | DONE | [ext2/3/4](formats/ext.md) |  | ext2, ext3, ext4, img | `defaultArchive.ext2`, `defaultArchive.ext3`, `defaultArchive.ext4` | 3/3 | inline data, encryption, large block sizes |
-| DONE | [UDF](formats/udf.md) |  | udf, iso | `defaultArchive.udf` | 4/4 | UDF 2.50/2.60 (metadata partition): mkudffs refuses for hd media, hdiutil makehybrid ignores -udf-version; next: mkudffs --media-type=bdr or |
+| DONE | [UDF](formats/udf.md) |  | udf, iso | `defaultArchive.udf` | 4/4 | UDF 2.50/2.60 with a metadata partition: mkudffs --media-type=bdr --udfrev=0x0250 formats one, but Linux mounts 2.50 read-only so it cannot  |
 | DONE | [Raw disk image (MBR, GPT, APM)](formats/rawdisk.md) |  | img, raw | `defaultArchive.raw` | 5/5 | hybrid MBR, multiple partitions |
 | DONE | [NSIS installer](formats/nsis.md) |  | exe | `defaultArchive-nsis.exe` | 5/5 |  |
 | DONE | [ACE](formats/ace.md) |  | ace, cba | `defaultArchive.ace` | 6/6 | multi-volume ACE (no CLI switch found), recovery record, SFX |
@@ -87,20 +87,20 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [LZFSE](formats/lzfse.md) |  | lzfse | `defaultArchive.tar.lzfse` | 2/2 |  |
 | DONE | [pbzx](formats/pbzx.md) |  | pbzx | `defaultArchive.tar.pbzx` | 2/2 |  |
 | DONE | [Commodore 64/128 disks](formats/c64.md) |  | d64, d71, d81, g64 | `defaultArchive.d64` | 5/5 |  |
-| TODO | Commodore 64 tapes |  | t64 |  | 0/0 | baseline (tool to research) |
+| DONE | [Commodore 64 tapes](formats/t64.md) |  | t64 | `defaultArchive.t64` | 1/1 | baseline (tool to research) |
 | DONE | [Atari ST floppy](formats/atari-st.md) |  | st, msa | `defaultArchive.msa`, `defaultArchive.st` | 4/4 |  |
 | TODO | Xbox disc |  | xiso |  | 0/0 | extract-xiso -c (build from source) |
 | TODO | Dreamcast GD-ROM |  | gdi |  | 0/0 | GDIbuilder |
 | PARTIAL | [PSP ZSO/DAX/CSO v2](formats/zso.md) |  | zso, dax | `defaultArchive.dax`, `defaultArchive.zso` | 3/4 | independent check of DAX: maxcso --decompress writes an empty file for it (DAX unverified) |
-| TODO | Apple II disks |  | dsk, do, po, 2mg, woz |  | 0/0 | CiderPress II cp2 |
-| TODO | ShrinkIt / Binary II |  | shk, sdk, bxy, bny |  | 0/0 | CiderPress II cp2 |
-| PARTIAL | Classic Mac disks |  | image, dc42, img |  | 0/0 | cp2 / hfsutils; classic HFS volume exists as hfs/classic_hfs.hfs |
+| DONE | [Apple II disks](formats/apple2.md) |  | dsk, do, po, 2mg, woz | `defaultArchive.po` | 6/6 | Pascal and CP/M volumes, copy-protected WOZ, 40-track images |
+| DONE | [ShrinkIt / Binary II](formats/shk.md) |  | shk, sdk, bxy, bny | `defaultArchive.shk` | 2/2 | .sdk (ShrinkIt disk archive), .bxy (Binary II-wrapped NuFX) |
+| PARTIAL | [Classic Mac disks](formats/macdisk.md) |  | image, dc42, img | `defaultArchive.dc42` | 2/2 | MFS, DART, MOOF, partitioned Mac hard disk images |
 | TODO | Classic Mac archivers |  | cpt, pit, dd |  | 0/0 | Mini vMac + Compact Pro etc. |
 | DONE | [Sparse disk images](formats/sparse.md) |  | sparseimage, sparsebundle | `defaultArchive.sparseimage` | 1/7 | encrypted sparse bundle |
 | PARTIAL | [Parallels disk](formats/parallels.md) |  | hdd, hds | `defaultArchive.hds` | 1/1 | .hdd bundle (folder with DiskDescriptor.xml); image made by Parallels Desktop |
 | TODO | PSP EBOOT |  | pbp |  | 0/0 | PSPSDK pack-pbp |
-| TODO | Game data archives |  | wad, pak, vpk |  | 0/0 | SLADE / vpk |
-| PARTIAL | [Amiga hard disk file](formats/hdf.md) |  | hdf | `defaultArchive.hdf` | 1/1 | RDB-partitioned HDF (rdbtool create + partition filling) |
+| PARTIAL | [Game data archives](formats/gamedata.md) |  | wad, pak, vpk | `defaultArchive.vpk`, `defaultArchive.wad` | 2/2 | Quake PAK; VPK v2 and multi-chunk (_dir.vpk + _000.vpk); WAD made by a Doom tool (SLADE/DeuTex not packaged) |
+| DONE | [Amiga hard disk file](formats/hdf.md) |  | hdf | `defaultArchive.hdf` | 2/2 | multi-partition RDB, PFS/SFS |
 | TODO | Amiga disk packers |  | - |  | 0/0 | each packer on an emulated Amiga |
 | TODO | Amiga PowerPacker |  | pp |  | 0/0 |  |
 | DONE | [ARC / Zoo](formats/arc-zoo.md) |  | arc, zoo | `defaultArchive.arc`, `defaultArchive.zoo` | 2/2 | FreeArc (.arc too, unrelated format); PKPAK/ARC 6 methods; Zoo high-compression (-h) entries |

@@ -1,0 +1,5 @@
+8.0.134 [/usr/lib/dotnet/sdk]
+cbmconvert	2.1.5-1
+hfsutils	3.2.6-16
+vpk 1.4.0
+c3ef13593eb920a84e7018f7457135464fd2db91
