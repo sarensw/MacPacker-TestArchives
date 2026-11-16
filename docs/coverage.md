@@ -20,7 +20,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [LHA / LZH](formats/lha.md) | 1.2 | lha, lzh | `defaultArchive.lha`, `defaultArchive.lzh` | 9/19 | -lh1- (LHarc), -lzs-/-lz5- (LArc), level 3 headers, Amiga LhA output |
 | DONE | [LZ4](formats/lz4.md) | 1.2 | lz4, tlz4, tar.lz4 | `defaultArchive.tar.lz4`, `defaultArchive.tlz4` | 2/2 | legacy LZ4 frame (`02 21 4C 18`) |
 | DONE | [LZMA (alone)](formats/lzma.md) | 1.2 | lzma, tlzma, tar.lzma | `defaultArchive.tar.lzma`, `defaultArchive.tlzma` | 3/3 |  |
-| PARTIAL | [LZX (Amiga)](formats/lzx-amiga.md) | 1.2 | lzx |  | 0/4 | baseline defaultArchive.lzx: the Amiga VM has LZX in C:, not yet run |
+| DONE | [LZX (Amiga)](formats/lzx-amiga.md) | 1.2 | lzx | `defaultArchive.lzx` | 4/8 | multi-group merges with many files |
 | DONE | [Windows Installer (MSI)](formats/msi.md) | 1.2 | msi | `defaultArchive.msi` | 1/1 | MSI made by Windows Installer tooling (WiX on Windows), external cabinets, merge modules (.msm), patches (.msp) |
 | DONE | [NTFS image](formats/ntfs.md) | 1.2 | ntfs, img | `defaultArchive.ntfs` | 1/1 | compressed files, alternate data streams, sparse files, Windows-formatted volume |
 | DONE | [QCOW2](formats/qcow2.md) | 1.2 | qcow2 | `defaultArchive.qcow2` | 1/1 | compressed clusters, qcow (v1), backing files |
@@ -53,12 +53,12 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | TODO | DAEMON Tools |  | mdx |  | 0/0 | baseline (DAEMON Tools on Windows) |
 | TODO | DiscJuggler |  | cdi |  | 0/0 | baseline (DiscJuggler freeware or cdi4dc) |
 | TODO | Easy CD Creator |  | cif |  | 0/0 | hard to make |
-| TODO | ECM |  | ecm |  | 0/0 | baseline: ecm not packaged for Ubuntu 24.04; build Neill Corlett's ecm from source |
+| DONE | [ECM](formats/ecm.md) |  | ecm | `defaultArchive.bin.ecm` | 1/1 | baseline: ecm not packaged for Ubuntu 24.04; build Neill Corlett's ecm from source |
 | DONE | [MAME CHD](formats/chd.md) |  | chd | `defaultArchive.chd` | 3/3 | CHD v3/v4; DVD (createdvd); GD-ROM |
 | PARTIAL | [Nero](formats/nrg.md) |  | nrg | `defaultArchive.nrg` | 1/1 | regenerate with current content (needs WinIso or Nero on Windows) |
 | TODO | PowerISO / gBurner |  | daa, gbi |  | 0/0 | baseline (PowerISO trial on Windows) |
 | DONE | [PSP compressed ISO](formats/cso.md) |  | cso, ciso | `defaultArchive.cso` | 1/1 | ZSO, DAX, CSO v2 (maxcso) |
-| DONE | [Raw CD image](formats/rawcd.md) |  | bin | `defaultArchive.bin` | 1/1 | 2352-byte raw sectors |
+| DONE | [Raw CD image](formats/rawcd.md) |  | bin | `defaultArchive.bin` | 3/3 | MODE2, audio tracks |
 | DONE | [cdrdao TOC](formats/toc.md) |  | toc | `defaultArchive.toc` | 1/1 |  |
 | TODO | UltraISO |  | isz |  | 0/0 | baseline (UltraISO trial on Windows) |
 | TODO | WinOnCD |  | c2d |  | 0/0 | hard to make |
@@ -91,7 +91,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Atari ST floppy](formats/atari-st.md) |  | st, msa | `defaultArchive.msa`, `defaultArchive.st` | 4/4 |  |
 | TODO | Xbox disc |  | xiso |  | 0/0 | extract-xiso -c (build from source) |
 | TODO | Dreamcast GD-ROM |  | gdi |  | 0/0 | GDIbuilder |
-| TODO | PSP ZSO/DAX/CSO v2 |  | zso, dax |  | 0/0 | maxcso (build from source) |
+| PARTIAL | [PSP ZSO/DAX/CSO v2](formats/zso.md) |  | zso, dax | `defaultArchive.dax`, `defaultArchive.zso` | 3/4 | independent check of DAX: maxcso --decompress writes an empty file for it (DAX unverified) |
 | TODO | Apple II disks |  | dsk, do, po, 2mg, woz |  | 0/0 | CiderPress II cp2 |
 | TODO | ShrinkIt / Binary II |  | shk, sdk, bxy, bny |  | 0/0 | CiderPress II cp2 |
 | PARTIAL | Classic Mac disks |  | image, dc42, img |  | 0/0 | cp2 / hfsutils; classic HFS volume exists as hfs/classic_hfs.hfs |
@@ -100,10 +100,10 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | PARTIAL | [Parallels disk](formats/parallels.md) |  | hdd, hds | `defaultArchive.hds` | 1/1 | .hdd bundle (folder with DiskDescriptor.xml); image made by Parallels Desktop |
 | TODO | PSP EBOOT |  | pbp |  | 0/0 | PSPSDK pack-pbp |
 | TODO | Game data archives |  | wad, pak, vpk |  | 0/0 | SLADE / vpk |
-| TODO | Amiga hard disk file |  | hdf |  | 0/0 | amitools rdbtool (installed in the ubuntu VM run) |
+| PARTIAL | [Amiga hard disk file](formats/hdf.md) |  | hdf | `defaultArchive.hdf` | 1/1 | RDB-partitioned HDF (rdbtool create + partition filling) |
 | TODO | Amiga disk packers |  | - |  | 0/0 | each packer on an emulated Amiga |
 | TODO | Amiga PowerPacker |  | pp |  | 0/0 |  |
-| TODO | ARC / Zoo |  | arc, zoo |  | 0/0 | Ubuntu has `zoo` and `nomarch`/`arc` packages: candidates for next run |
+| DONE | [ARC / Zoo](formats/arc-zoo.md) |  | arc, zoo | `defaultArchive.arc`, `defaultArchive.zoo` | 2/2 | FreeArc (.arc too, unrelated format); PKPAK/ARC 6 methods; Zoo high-compression (-h) entries |
 | TODO | CP/M archives |  | lbr |  | 0/0 |  |
 | TODO | NScripter archives |  | nsa, sar |  | 0/0 |  |
 | TODO | EGG |  | egg |  | 0/0 | ALZip (Windows) |
@@ -122,3 +122,4 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | WONTDO | Wii, Wii U |  | wbfs, wud |  | 0/0 |  |
 | WONTDO | PlayStation 3+, Xbox One+ |  | pkg, xvc |  | 0/0 |  |
 | DONE | [RAR self-extractor](formats/rar-sfx.md) |  | exe |  | 2/2 |  |
+| DONE | [HA](formats/ha.md) |  | ha | `defaultArchive.ha` | 1/1 | HSC method |

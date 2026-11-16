@@ -22,6 +22,7 @@
   "verified": "an independent reader or the format tool extracted content that matches `expected` (sha256)",
   "verified-other-content": "opens and extracts, but holds an older version of the standard content (see docs/existing-fixtures-audit.md); `expected` lists what it holds",
   "part": "a later volume or a member file of a bundle; checked through the first part",
+  "unverified": "made by the stated tool, but no reader could confirm its content (see evidence)",
   "not-checked": "not checked by this work (special-purpose fixture with its own README, or no reader available); see docs/formats"
  },
  "fixtures": [
@@ -918,6 +919,36 @@
    }
   },
   {
+   "path": "cso/maxcso_v1.cso",
+   "formats": [
+    "zso"
+   ],
+   "role": "variant",
+   "size": 57302,
+   "sha256": "7fbbc25949d589c645a9fc007578df31144fc816779aa5c05da7bbd1d194c2a0",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/native_tools.txt: magic 4349534f | maxcso --decompress sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18"
+    ]
+   }
+  },
+  {
+   "path": "cso/maxcso_v2.cso",
+   "formats": [
+    "zso"
+   ],
+   "role": "variant",
+   "size": 57289,
+   "sha256": "2cda8bf8831512c035c0ced0afb07b4395326059854c96d3b0396f722fd22c80",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/native_tools.txt: magic 4349534f | maxcso --decompress sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18"
+    ]
+   }
+  },
+  {
    "path": "damaged/crc.7z",
    "formats": [
     "7z"
@@ -1264,6 +1295,22 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.arc",
+   "formats": [
+    "arc-zoo"
+   ],
+   "role": "baseline",
+   "size": 65584,
+   "sha256": "ac8bbcd419909e7a200085feb1c106705a09a91e3b66cd8e1057b978a0d67ac0",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 1a0248454c4c4f2e; 7z Type=zip Methods=Deflate; lsar format=ARC; file: ARC archive data, uncompressed; readers matching standard content: unar"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.arj",
    "formats": [
     "arj"
@@ -1293,6 +1340,22 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKER'; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.bin.ecm",
+   "formats": [
+    "ecm"
+   ],
+   "role": "baseline",
+   "size": 432776,
+   "sha256": "783605d7c601a5357830aeb7073dde754c0553f27c5dc0f03ddbe0d6118a478e",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 45434d00c9060002; 7z Type=zip Methods=Deflate; lsar format=ISO 9660; file: data; readers matching standard content: unar"
     ]
    }
   },
@@ -1406,6 +1469,22 @@
     "status": "verified",
     "evidence": [
      "byte-identical to c64/defaultArchive.d64 (same sha256)"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.dax",
+   "formats": [
+    "zso"
+   ],
+   "role": "baseline",
+   "size": 54937,
+   "sha256": "eb2cf521c3148957870059a275e7c868dbc2c43a2e54e2fe2032aaf06a89824f",
+   "verification": {
+    "status": "unverified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 4441580000980600; 7z Type=zip Methods=Deflate; file: data; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch3/native_tools.txt: UNVERIFIED: maxcso v1.13.0 --decompress writes an empty file for DAX; no other DAX reader was available | magic 44415800 | maxcso --decompress sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     ]
    }
   },
@@ -1556,6 +1635,72 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.ha",
+   "formats": [
+    "ha"
+   ],
+   "role": "baseline",
+   "size": 52728,
+   "sha256": "0d9b9a6cb238f48da62608d0b151e105e0fbd230655efd05e5716224e60f59e6",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 48410300200d0000; 7z Type=zip Methods=Deflate; file: HA archive data 3 files, first is type CPY; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch3/native_tools.txt: HA 0.999 (Amiga C:ha, amiga VM): ha l lists hello world.txt CPY 13, README.md ASC 437->241, NestedArchive.zip CPY 52334; ha xy extracted, hashed on the host: | 03ba204e50d126e4  ./hello world.txt | 30322444506aed4d  ./folder/README.md | 466ab31d0374b763  ./folder/NestedArchive.zip"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.hdf",
+   "formats": [
+    "hdf"
+   ],
+   "role": "baseline",
+   "size": 1998848,
+   "sha256": "5e7ce9e353b5f3ac9871b2ad8ef4e19325f62b3a6f9809b3299f4802c3ad5ad6",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 444f530100000000; 7z Type=zip Methods=Deflate; file: Amiga FFS disk, probably root block 1952; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch3/native_tools.txt: defaultArchive                                   VOLUME  --------  16.11.2026 00:04:05.00  DOS1:ffs #512 | folder                                            DIR  ----rwed  16.11.2026 00:04:05.00 | NestedArchive.zip                             52334  ----rwed  16.11.2026 00:04:05.00 | README.md                                       437  ----rwed  16.11.2026 00:04:05.00 | hello world.txt            "
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.hds",
    "formats": [
     "parallels"
@@ -1669,6 +1814,22 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.lzx",
+   "formats": [
+    "lzx-amiga"
+   ],
+   "role": "baseline",
+   "size": 52784,
+   "sha256": "f2296e98b968fdcb137e7500fbe6597c6af26e13b19463602ab7f30fc3006629",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 4c5a58000c000a04; 7z Type=zip Methods=Deflate; file: LZX compressed archive (Amiga); readers matching standard content: unar"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.mdf",
    "formats": [
     "mds"
@@ -1709,7 +1870,7 @@
    "size": 486,
    "sha256": "a62a8d67717d2d5453c74309043b7b6eedd73a33f682fe459eecfa33dd6418d9",
    "verification": {
-    "status": "not-checked",
+    "status": "unverified",
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4d45444941204445; file: MED_Song; readers matching standard content: none",
      "docs/verification/2026-11-15/manual_checks.txt: file(1): \"MED_Song\" (misidentified); starts with \"MEDIA DESCRIPTOR\". Pairs with defaultArchive.mdf. lsar 1.10 identifies the .mdf as \"ISO 9660\" but neither unar nor 7-Zip extracted it here: UNVERIFIED."
@@ -2734,6 +2895,38 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-16-windows/ubuntu_windows_fixtures.jsonl: magic 504b03040a000000; 7z Type=zip Methods=Deflate64:v1,LZMA,Store; lsar format=Zip; file: Zip archive data, at least v1.0 to extract, compression method=store; readers matching standard content: 7z, unar"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.zoo",
+   "formats": [
+    "arc-zoo"
+   ],
+   "role": "baseline",
+   "size": 52813,
+   "sha256": "98d48a1589ad2fd3f8b6a86fe214b2a1b3ccc6fa95a9b7198ed75d8b7d6a5e7c",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 5a4f4f20322e3130; lsar format=Zoo; file: Zoo archive data, v2.10, modify: v2.0+, extract: v2.1+, vdata 0x3; at 42 method=lzh, next ; readers matching standard content: unar"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.zso",
+   "formats": [
+    "zso"
+   ],
+   "role": "baseline",
+   "size": 58210,
+   "sha256": "7e12c2d6dc63d306cb56f59a833cafaf240d02aa99fb31012646695dec0c998b",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 5a49534f18000000; 7z Type=zip Methods=Deflate; file: data; readers matching standard content: none",
+     "docs/verification/2026-11-16-batch3/native_tools.txt: magic 5a49534f | maxcso --decompress sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18"
     ]
    }
   },
@@ -4037,6 +4230,54 @@
    }
   },
   {
+   "path": "lzx/lzx_fast.lzx",
+   "formats": [
+    "lzx-amiga"
+   ],
+   "role": "special-purpose",
+   "size": 52784,
+   "sha256": "17fb2ed10e89a3ddf0456f4cddfab9a7553fc968146a48f1f24034d682be2796",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 4c5a58000c000a04; 7z Type=zip Methods=Deflate; file: LZX compressed archive (Amiga); readers matching standard content: unar"
+    ]
+   }
+  },
+  {
+   "path": "lzx/lzx_max.lzx",
+   "formats": [
+    "lzx-amiga"
+   ],
+   "role": "special-purpose",
+   "size": 52784,
+   "sha256": "ecd85143164af8f126dd8c45e0fb97cb98623f8bd4377bca2cbd78055f1c0a3d",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 4c5a58000c000a04; 7z Type=zip Methods=Deflate; file: LZX compressed archive (Amiga); readers matching standard content: unar"
+    ]
+   }
+  },
+  {
+   "path": "lzx/lzx_store.lzx",
+   "formats": [
+    "lzx-amiga"
+   ],
+   "role": "special-purpose",
+   "size": 52942,
+   "sha256": "44685ede28538e4d54fdf950517dd9d5e4548fa9d06dd79270501c47b8f28a8c",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 4c5a58000c000a04; 7z Type=zip Methods=Deflate; file: LZX compressed archive (Amiga); readers matching standard content: unar"
+    ]
+   }
+  },
+  {
    "path": "lzx/lzx_test_attrib_cmt.lzx",
    "formats": [
     "lzx-amiga"
@@ -5170,6 +5411,36 @@
     "status": "part",
     "evidence": [
      "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
+   "path": "rawcd/mode1_2352.bin",
+   "formats": [
+    "rawcd"
+   ],
+   "role": "variant",
+   "size": 496272,
+   "sha256": "1b91ba1003778225f531d67a52174b9029e9468f13ea83256fe126196087c803",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/native_tools.txt: 211 sectors of 2352 bytes; their 2048-byte payloads are byte-identical to defaultArchive.iso: bin2ecm of this file (defaultArchive.bin.ecm) decodes with unar 1.10 to defaultArchive.iso exactly"
+    ]
+   }
+  },
+  {
+   "path": "rawcd/mode1_2352.cue",
+   "formats": [
+    "rawcd"
+   ],
+   "role": "variant",
+   "size": 76,
+   "sha256": "34d2aa27a81ffb9aee8e4c9cbf1f74d05ce321b48d418f6248c271172635183d",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch3/native_tools.txt: text: FILE \"mode1_2352.bin\" BINARY / TRACK 01 MODE1/2352 / INDEX 01 00:00:00 (byte-identical sector data as above)"
     ]
    }
   },

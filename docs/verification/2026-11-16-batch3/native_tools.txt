@@ -1,0 +1,34 @@
+maxcso 80e6e8349814dd5c96e6504140d09afd4ecde1fe
+iso sha256 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
+== defaultArchives/defaultArchive.zso
+  magic 5a49534f
+  maxcso --decompress sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
+== defaultArchives/defaultArchive.dax
+  UNVERIFIED: maxcso v1.13.0 --decompress writes an empty file for DAX; no other DAX reader was available
+  magic 44415800
+  maxcso --decompress sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+== cso/maxcso_v1.cso
+  magic 4349534f
+  maxcso --decompress sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
+== cso/maxcso_v2.cso
+  magic 4349534f
+  maxcso --decompress sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18
+== defaultArchives/defaultArchive.hdf
+  defaultArchive                                   VOLUME  --------  16.11.2026 00:04:05.00  DOS1:ffs #512
+    folder                                            DIR  ----rwed  16.11.2026 00:04:05.00  
+      NestedArchive.zip                             52334  ----rwed  16.11.2026 00:04:05.00  
+      README.md                                       437  ----rwed  16.11.2026 00:04:05.00  
+    hello world.txt                                    13  ----rwed  16.11.2026 00:04:05.00  
+  sum:           111   55Ki         56832
+  30322444506aed4d  ./folder/README.md
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  03ba204e50d126e4  ./hello world.txt
+== rawcd/mode1_2352.bin
+  211 sectors of 2352 bytes; their 2048-byte payloads are byte-identical to defaultArchive.iso: bin2ecm of this file (defaultArchive.bin.ecm) decodes with unar 1.10 to defaultArchive.iso exactly
+== defaultArchives/defaultArchive.ha
+  HA 0.999 (Amiga C:ha, amiga VM): ha l lists hello world.txt CPY 13, README.md ASC 437->241, NestedArchive.zip CPY 52334; ha xy extracted, hashed on the host:
+  03ba204e50d126e4  ./hello world.txt
+  30322444506aed4d  ./folder/README.md
+  466ab31d0374b763  ./folder/NestedArchive.zip
+== rawcd/mode1_2352.cue
+  text: FILE "mode1_2352.bin" BINARY / TRACK 01 MODE1/2352 / INDEX 01 00:00:00 (byte-identical sector data as above)

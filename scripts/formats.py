@@ -342,3 +342,31 @@ for _f in FORMATS:
     if _f["id"] in _UPD:
         _f.update(_UPD[_f["id"]])
 FORMATS.append(dict(id="rar-sfx", name="RAR self-extractor", v12=False, ext="exe", status="DONE", fixtures=["rar/*.exe"], covered="WinRAR 2.71 and 6.02 SFX modules", magic="`MZ` + RAR signature"))
+
+# ---- 2026-11-16 batch 3 (Amiga VM, maxcso, ecm-tools, arc) ----
+_UPD3 = {
+ "lzx-amiga": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.lzx", "lzx/*.lzx"], magic="`LZX` at 0",
+   covered="baseline and lzx/lzx_store, lzx_fast, lzx_max (LZX 1.21 on the amiga VM, paths kept with -x, files merged); four third-party test archives",
+   outstanding="multi-group merges with many files", notes="unar (XAD) extracts them exactly. LZX 1.21 date field shows 1990 for 2026 dates (scripts/amiga/README.md)."),
+ "arc-zoo": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.arc", "defaultArchives/defaultArchive.zoo"], magic="ARC `1A` + method at 0; Zoo `ZOO 2.10 Archive.` text and `DC A7 C4 FD` at 20",
+   covered="ARC (arc 5.21p, Linux; flat, DOS 8.3 names HELLO.TXT, README.MD, NESTED.ZIP); Zoo 2.10 (Amiga C:zoo, with folder paths)",
+   outstanding="FreeArc (.arc too, unrelated format); PKPAK/ARC 6 methods; Zoo high-compression (-h) entries",
+   notes="Zoo is not packaged for Ubuntu 24.04. ARC prompts endlessly for names longer than 8.3, so the content was renamed."),
+ "hdf": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.hdf"], magic="`DOS\\1` at 0 (no RDB)",
+   covered="partition-less hardfile, FFS, 2 MiB (amitools xdftool 0.9.0)", outstanding="RDB-partitioned HDF (rdbtool create + partition filling)",
+   notes="xdftool lists and unpacks it; 7-Zip and unar do not open it."),
+ "ecm": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.bin.ecm"], magic="`ECM\\0` at 0",
+   covered="ECM of a raw MODE1/2352 image of defaultArchive.iso (ecm-tools bin2ecm, commit 2765930)",
+   notes="The 2352-byte image (rawcd/mode1_2352.bin) was built by scripts/ubuntu_batch3.sh with computed EDC/ECC; ECM stripping it back to ~2048 bytes per sector confirms the EDC/ECC. unar 1.10 decodes the ECM to defaultArchive.iso exactly."),
+ "zso": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.zso", "defaultArchives/defaultArchive.dax", "cso/*.cso"], magic="ZSO `ZISO`, DAX `DAX\\0`, CSO `CISO` (v2 in header)",
+   covered="ZSO, DAX, CSO v1 and v2 of defaultArchive.iso (maxcso v1.13.0, commit 80e6e83)",
+   outstanding="independent check of DAX: maxcso --decompress writes an empty file for it (DAX unverified)",
+   notes="ZSO and CSO v1/v2 decompress byte for byte to defaultArchive.iso with maxcso."),
+ "rawcd": dict(fixtures=["defaultArchives/defaultArchive.bin", "rawcd/*"], covered="2048-byte sectors (= defaultArchive.iso); rawcd/mode1_2352.bin + .cue: raw MODE1/2352 sectors with sync, header, EDC/ECC", outstanding="MODE2, audio tracks"),
+ "cso": dict(covered="CSO v1 level 9 (ciso 1.0.0); maxcso CSO v1 and v2 in cso/"),
+}
+for _f in FORMATS:
+    if _f["id"] in _UPD3:
+        _f.update(_UPD3[_f["id"]])
+FORMATS.append(dict(id="ha", name="HA", v12=False, ext="ha", status="DONE", fixtures=["defaultArchives/defaultArchive.ha"], magic="`HA` at 0",
+   covered="HA 0.999 (Amiga C:ha): ASC for README.md, CPY for the others", outstanding="HSC method", notes="Only HA itself read it here (on the amiga VM); unar 1.10 has no HA support. Not on the Confluence list."))
