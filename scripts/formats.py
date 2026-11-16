@@ -370,3 +370,14 @@ for _f in FORMATS:
         _f.update(_UPD3[_f["id"]])
 FORMATS.append(dict(id="ha", name="HA", v12=False, ext="ha", status="DONE", fixtures=["defaultArchives/defaultArchive.ha"], magic="`HA` at 0",
    covered="HA 0.999 (Amiga C:ha): ASC for README.md, CPY for the others", outstanding="HSC method", notes="Only HA itself read it here (on the amiga VM); unar 1.10 has no HA support. Not on the Confluence list."))
+
+# ---- 2026-11-16 macOS batch 2 ----
+for _f in FORMATS:
+    if _f["id"] == "xip":
+        _f.update(fixtures=["xip/*.xip"], covered="xip/unsigned_structure.xip: the XIP layout (xar with Content = pbzx odc cpio, Metadata plist), unsigned (scripts/macos_batch2.sh)",
+                  blocked=_f["blocked"] + " macOS 27.2 xar 1.8dev has no --sign either; a signed XIP needs a xar build with signing (mackyle/xar on Linux) and a test CA, or a real Apple-trusted identity.")
+    if _f["id"] == "udf":
+        _f.update(covered="UDF 2.01 (baseline), 1.02, 1.50 (mkudffs 2.3, hd media); udf/hdiutil_makehybrid_rev0150.udf (macOS hdiutil, UDF 1.50)",
+                  outstanding="UDF 2.50/2.60 (metadata partition): mkudffs refuses for hd media, hdiutil makehybrid ignores -udf-version; next: mkudffs --media-type=bdr or Windows format /FS:UDF")
+    if _f["id"] == "binhex":
+        _f.update(notes="defaultArchive.tar.hqx regenerated 2026-11-16 (current content; it held an older defaultContent/ layout).")

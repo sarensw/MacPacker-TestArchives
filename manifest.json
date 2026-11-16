@@ -2368,31 +2368,29 @@
     "binhex"
    ],
    "role": "baseline",
-   "size": 78122,
-   "sha256": "1cca863ff52f1be4508d6c8865101afc66507dec7d618355f627e753ca21e1ec",
+   "size": 72373,
+   "sha256": "412afaa2f5063cdf83a43fd6b1cfd283d51d9ed54563416b7fe5ad47f8d95e85",
    "expected": [
     {
-     "path": "defaultContent/folder/Archive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
     },
     {
-     "path": "defaultContent/folder/README.md",
+     "path": "folder/README.md",
      "sha256_prefix": "30322444506aed4d",
      "note": "current"
     },
     {
-     "path": "defaultContent/hello world.txt",
+     "path": "hello world.txt",
      "sha256_prefix": "03ba204e50d126e4",
      "note": "current"
     }
    ],
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 2854686973206669; lsar format=BinHex; file: BinHex binary text, version 4.0, ASCII text; readers matching standard content: none",
-     "docs/verification/2026-11-15/macos_apple_tools.txt: ",
-     "docs/verification/2026-11-15/manual_checks.txt: binhex decode (macOS 27.2, lb_27 VM), then tar -x: an older layout under defaultContent/, with folder/Archive.zip instead of folder/NestedArchive.zip | 30322444506aed4dd156964c5926a66eb545990301bdc41a83a2c49c66091eb3  ./defaultContent/folder/README.md | fa52ae6c8424ff23873ce3001c7257cdf6174263502e4d4fecf106a6b45090b1  ./defaultContent/folder/Archive.zip | 03ba204e50d126e4674c005e04d82e84c21366780a"
+     "docs/verification/2026-11-16-macos/macos_tools.txt: regenerated: binhex encode of a tar of defaultArchiveContent; binhex decode + tar -x: | 03ba204e50d126e4  ./hello world.txt | 30322444506aed4d  ./folder/README.md | 466ab31d0374b763  ./folder/NestedArchive.zip"
     ]
    }
   },
@@ -5979,6 +5977,23 @@
    }
   },
   {
+   "path": "udf/hdiutil_makehybrid_rev0150.udf",
+   "formats": [
+    "udf"
+   ],
+   "role": "variant",
+   "size": 1159168,
+   "sha256": "28412f4dd3f2238aa6abac15701cad4b7bc3af038399ef3e1da30befbe716a5b",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-macos/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Udf; | content: MATCH (3 files, sha256)",
+     "docs/verification/2026-11-16-macos/macos_tools.txt: hdiutil makehybrid -udf -udf-version 2.50: the option is ignored, the domain identifier says UDF 1.50 (0x0150, NSR02), no ISO 9660 part. | hdiutil attach: File System Personality UDF; content: MATCH (3 files, sha256)"
+    ]
+   }
+  },
+  {
    "path": "udf/udf_rev0102.udf",
    "formats": [
     "udf"
@@ -6212,6 +6227,39 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_apple_fixtures.jsonl: magic 78617221001c0001; 7z Type=Xar Methods=zlib; lsar format=XAR; file: xar archive compressed TOC: 907, SHA-256 checksum, contains  zlib compressed data; readers matching standard content: 7z, unar",
      "docs/verification/2026-11-15/macos_apple_tools.txt: size:                   28 | Checksum algorithm:     3 (SHA256) | 3 encoding style=\"application/x-gzip\" | content: MATCH (3 files, sha256)"
+    ]
+   }
+  },
+  {
+   "path": "xip/unsigned_structure.xip",
+   "formats": [
+    "xip"
+   ],
+   "role": "variant",
+   "size": 53934,
+   "sha256": "912f763be751143c18e8c2c5730a310d0ce90c0b01cb5e85b4e3560017be3137",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-macos/host_7zz.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = BlockPackSize BlockUnpackSize; 2 Method = LZMA2:23 NoCheck; 1 Method = SHA1; 1 Method = octet-stream sha1 sha1; 1 Type = Xar; 1 Type = file; 1 Type = xz; | content: files: | 38ad0fb5207e5dc7  ./Content~",
+     "docs/verification/2026-11-16-macos/macos_tools.txt: xar TOC: Content, Metadata; Content magic 70627a78 (pbzx); pkgutil --check-signature: \"Status: no signature\" | compression_tool -decode Content | cpio -i: | 03ba204e50d126e4  ./hello world.txt | 30322444506aed4d  ./folder/README.md | 466ab31d0374b763  ./folder/NestedArchive.zip"
     ]
    }
   },

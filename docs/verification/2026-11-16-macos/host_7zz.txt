@@ -1,0 +1,7 @@
+== udf/hdiutil_makehybrid_rev0150.udf
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Udf;
+  content: MATCH (3 files, sha256)
+== xip/unsigned_structure.xip
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Characteristics = BlockPackSize BlockUnpackSize; 2 Method = LZMA2:23 NoCheck; 1 Method = SHA1; 1 Method = octet-stream sha1 sha1; 1 Type = Xar; 1 Type = file; 1 Type = xz;
+  content: files:
+38ad0fb5207e5dc7  ./Content~

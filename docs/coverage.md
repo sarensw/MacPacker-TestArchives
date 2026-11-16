@@ -62,7 +62,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [cdrdao TOC](formats/toc.md) |  | toc | `defaultArchive.toc` | 1/1 |  |
 | TODO | UltraISO |  | isz |  | 0/0 | baseline (UltraISO trial on Windows) |
 | TODO | WinOnCD |  | c2d |  | 0/0 | hard to make |
-| BLOCKED | [Xcode archive (XIP)](formats/xip.md) |  | xip |  | 0/0 | defaultArchive.xip |
+| BLOCKED | [Xcode archive (XIP)](formats/xip.md) |  | xip |  | 1/1 | defaultArchive.xip |
 | DONE | [Zstandard](formats/zstd.md) |  | zst, tzst, tar.zst | `defaultArchive.tar.zst`, `defaultArchive.tzst` | 3/3 |  |
 | DONE | [Amiga Disk File](formats/adf.md) |  | adf | `defaultArchive.adf` | 3/3 | international/dircache modes (DOS2-DOS5), HD floppy |
 | TODO | Amiga DMS |  | dms |  | 0/0 | baseline: amiga VM has xdms (extract only?); DMS packer needed |
@@ -77,7 +77,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [HFS+ / HFSX / HFS images](formats/hfs.md) |  | hfs, hfsx, img | `defaultArchive.hfs` | 3/3 | journaled HFS+ made by macOS |
 | DONE | [APFS image](formats/apfs.md) |  | apfs, img | `defaultArchive.apfs` | 2/2 | encrypted APFS, case-sensitive APFS, snapshots |
 | DONE | [ext2/3/4](formats/ext.md) |  | ext2, ext3, ext4, img | `defaultArchive.ext2`, `defaultArchive.ext3`, `defaultArchive.ext4` | 3/3 | inline data, encryption, large block sizes |
-| DONE | [UDF](formats/udf.md) |  | udf, iso | `defaultArchive.udf` | 3/3 | UDF 2.50/2.60 (metadata partition; mkudffs refuses for hd media), UDF bridge ISO, DVD/BD media layouts |
+| DONE | [UDF](formats/udf.md) |  | udf, iso | `defaultArchive.udf` | 4/4 | UDF 2.50/2.60 (metadata partition): mkudffs refuses for hd media, hdiutil makehybrid ignores -udf-version; next: mkudffs --media-type=bdr or |
 | DONE | [Raw disk image (MBR, GPT, APM)](formats/rawdisk.md) |  | img, raw | `defaultArchive.raw` | 5/5 | hybrid MBR, multiple partitions |
 | DONE | [NSIS installer](formats/nsis.md) |  | exe | `defaultArchive-nsis.exe` | 5/5 |  |
 | DONE | [ACE](formats/ace.md) |  | ace, cba | `defaultArchive.ace` | 6/6 | multi-volume ACE (no CLI switch found), recovery record, SFX |
