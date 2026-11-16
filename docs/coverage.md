@@ -47,12 +47,12 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 2/2 | MDS v2 (DAEMON Tools .mdx is its own row) |
 | DONE | [Apple Archive](formats/aar.md) |  | aar | `defaultArchive-raw.aar`, `defaultArchive.aar` | 6/6 | library.aar named by MacPacker's tests (meaning unknown); compressible content so that chunks are actually compressed |
 | PARTIAL | [Apple Encrypted Archive](formats/aea.md) |  | aea | `defaultArchive.aea` | 3/3 | defaultArchive-expired.aea and signing/testRoot.pem expected by MacPacker's tests; profiles 2-4 (ECDHE/signed) |
-| TODO | BlindWrite |  | b5t, b6t |  | 0/0 | baseline |
+| BLOCKED | [BlindWrite](formats/blindwrite.md) |  | b5t, b6t |  | 0/0 | baseline |
 | DONE | [CD image with cue sheet](formats/cue.md) |  | cue + bin | `defaultArchive.bin`, `defaultArchive.cue` | 2/2 | MODE1/2352, MODE2, audio tracks, multi-bin |
 | DONE | [CloneCD](formats/clonecd.md) |  | ccd + img + sub | `defaultArchive.img` | 3/4 | CloneCD's own output with a .sub subchannel file (CloneCD is commercial; no trial found) |
-| TODO | DAEMON Tools |  | mdx |  | 0/0 | baseline (DAEMON Tools on Windows) |
+| BLOCKED | [DAEMON Tools](formats/mdx.md) |  | mdx |  | 0/0 | baseline (DAEMON Tools on Windows) |
 | DONE | [DiscJuggler](formats/cdi.md) |  | cdi | `defaultArchive.cdi` | 1/1 | CDI made by DiscJuggler itself; multi-session, audio |
-| TODO | Easy CD Creator |  | cif |  | 0/0 | hard to make |
+| BLOCKED | [Easy CD Creator](formats/cif.md) |  | cif |  | 0/0 | hard to make |
 | DONE | [ECM](formats/ecm.md) |  | ecm | `defaultArchive.bin.ecm` | 1/1 | baseline: ecm not packaged for Ubuntu 24.04; build Neill Corlett's ecm from source |
 | DONE | [MAME CHD](formats/chd.md) |  | chd | `defaultArchive.chd` | 3/3 | CHD v3/v4; DVD (createdvd); GD-ROM |
 | DONE | [Nero](formats/nrg.md) |  | nrg | `defaultArchive.nrg` | 1/1 | NER0 (v1) footer; multi-track |
@@ -61,15 +61,15 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Raw CD image](formats/rawcd.md) |  | bin | `defaultArchive.bin` | 3/3 | MODE2, audio tracks |
 | DONE | [cdrdao TOC](formats/toc.md) |  | toc | `defaultArchive.toc` | 1/1 |  |
 | PARTIAL | [UltraISO](formats/isz.md) |  | isz | `defaultArchive.isz` | 0/1 | independent check (no ISZ reader on Linux; next: open it with PowerISO on winxp); split and password ISZ |
-| TODO | WinOnCD |  | c2d |  | 0/0 | hard to make |
+| BLOCKED | [WinOnCD](formats/c2d.md) |  | c2d |  | 0/0 | hard to make |
 | BLOCKED | [Xcode archive (XIP)](formats/xip.md) |  | xip |  | 1/1 | defaultArchive.xip |
 | DONE | [Zstandard](formats/zstd.md) |  | zst, tzst, tar.zst | `defaultArchive.tar.zst`, `defaultArchive.tzst` | 3/3 |  |
 | DONE | [Amiga Disk File](formats/adf.md) |  | adf | `defaultArchive.adf` | 3/3 | international/dircache modes (DOS2-DOS5), HD floppy |
-| TODO | Amiga DMS |  | dms |  | 0/0 | baseline: amiga VM has xdms (extract only?); DMS packer needed |
+| BLOCKED | [Amiga DMS](formats/dms.md) |  | dms |  | 0/0 | baseline: amiga VM has xdms (extract only?); DMS packer needed |
 | DONE | [AppleSingle](formats/applesingle.md) |  | as | `defaultArchive.tar.as` | 2/2 | AppleDouble as a standalone file (covered inside zip/appledouble.zip) |
 | DONE | [BinHex 4.0](formats/binhex.md) |  | hqx | `defaultArchive.tar.hqx` | 2/2 |  |
 | DONE | [MacBinary](formats/macbinary.md) |  | bin, macbin | `defaultArchive.tar.bin` | 2/2 | MacBinary I and II explicitly (macOS `macbinary` writes III) |
-| TODO | ALZip |  | alz |  | 0/0 | baseline (ALZip on Windows) |
+| BLOCKED | [ALZip](formats/alz.md) |  | alz |  | 0/0 | baseline (ALZip on Windows) |
 | DONE | [Nintendo DS](formats/nds.md) |  | nds | `defaultArchive.nds` | 1/1 | ndstool with own homebrew |
 | DONE | [WARC web archive](formats/warc.md) |  | warc, warc.gz | `defaultArchive.warc` | 2/2 |  |
 | DONE | [Zip-based packages](formats/zip-packages.md) |  | ipa, xpi, epub, whl, ... | `defaultArchive.jar` | 7/38 |  |
@@ -90,32 +90,32 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Commodore 64 tapes](formats/t64.md) |  | t64 | `defaultArchive.t64` | 1/1 | baseline (tool to research) |
 | DONE | [Atari ST floppy](formats/atari-st.md) |  | st, msa | `defaultArchive.msa`, `defaultArchive.st` | 4/4 |  |
 | DONE | [Xbox disc](formats/xiso.md) |  | xiso | `defaultArchive.xiso` | 1/1 | images with a video partition; redump-style full images |
-| TODO | Dreamcast GD-ROM |  | gdi |  | 0/0 | GDIbuilder |
+| DONE | [Dreamcast GD-ROM](formats/gdi.md) |  | gdi |  | 4/4 | IP.BIN boot area (left empty on purpose; a bootable one carries Sega's licence text) |
 | PARTIAL | [PSP ZSO/DAX/CSO v2](formats/zso.md) |  | zso, dax | `defaultArchive.dax`, `defaultArchive.zso` | 3/4 | independent check of DAX: maxcso --decompress writes an empty file for it (DAX unverified) |
 | DONE | [Apple II disks](formats/apple2.md) |  | dsk, do, po, 2mg, woz | `defaultArchive.po` | 6/6 | Pascal and CP/M volumes, copy-protected WOZ, 40-track images |
 | DONE | [ShrinkIt / Binary II](formats/shk.md) |  | shk, sdk, bxy, bny | `defaultArchive.shk` | 2/2 | .sdk (ShrinkIt disk archive), .bxy (Binary II-wrapped NuFX) |
 | PARTIAL | [Classic Mac disks](formats/macdisk.md) |  | image, dc42, img | `defaultArchive.dc42` | 2/2 | MFS, DART, MOOF, partitioned Mac hard disk images |
-| TODO | Classic Mac archivers |  | cpt, pit, dd |  | 0/0 | Mini vMac + Compact Pro etc. |
+| BLOCKED | [Classic Mac archivers](formats/cpt.md) |  | cpt, pit, dd |  | 0/0 | Mini vMac + Compact Pro etc. |
 | DONE | [Sparse disk images](formats/sparse.md) |  | sparseimage, sparsebundle | `defaultArchive.sparseimage` | 1/7 | encrypted sparse bundle |
 | PARTIAL | [Parallels disk](formats/parallels.md) |  | hdd, hds | `defaultArchive.hds` | 1/1 | .hdd bundle (folder with DiskDescriptor.xml); image made by Parallels Desktop |
-| TODO | PSP EBOOT |  | pbp |  | 0/0 | PSPSDK pack-pbp |
+| DONE | [PSP EBOOT](formats/pbp.md) |  | pbp | `defaultArchive.pbp` | 1/1 | PSPSDK pack-pbp |
 | PARTIAL | [Game data archives](formats/gamedata.md) |  | wad, pak, vpk | `defaultArchive.vpk`, `defaultArchive.wad` | 2/2 | Quake PAK; VPK v2 and multi-chunk (_dir.vpk + _000.vpk); WAD made by a Doom tool (SLADE/DeuTex not packaged) |
 | DONE | [Amiga hard disk file](formats/hdf.md) |  | hdf | `defaultArchive.hdf` | 2/2 | multi-partition RDB, PFS/SFS |
-| TODO | Amiga disk packers |  | - |  | 0/0 | each packer on an emulated Amiga |
-| TODO | Amiga PowerPacker |  | pp |  | 0/0 |  |
+| TODO | Amiga disk packers |  | - |  | 0/0 | Warp and DImp (Disk Imploder) are in the amiga VM's C:, but need a floppy device (DF0:) with an ADF; not tried yet |
+| TODO | Amiga PowerPacker |  | pp |  | 0/0 | PowerPacker data files (PP20): no packer confirmed on the amiga VM yet |
 | DONE | [ARC / Zoo](formats/arc-zoo.md) |  | arc, zoo | `defaultArchive.arc`, `defaultArchive.zoo` | 2/2 | FreeArc (.arc too, unrelated format); PKPAK/ARC 6 methods; Zoo high-compression (-h) entries |
-| TODO | CP/M archives |  | lbr |  | 0/0 |  |
-| TODO | NScripter archives |  | nsa, sar |  | 0/0 |  |
-| TODO | EGG |  | egg |  | 0/0 | ALZip (Windows) |
+| PARTIAL | [CP/M archives](formats/cpm.md) |  | lbr | `defaultArchive.lbr` | 1/1 | Squeeze (.?Q?) and Crunch (.?Z?) files (need the CP/M tools; not found for Linux/Amiga) |
+| DONE | [NScripter archives](formats/nsa.md) |  | nsa, sar | `defaultArchive.nsa`, `defaultArchive.sar` | 4/4 | NSA with SPB/LZSS/BZip2-compressed entries (nsaarc on Windows) |
+| BLOCKED | [EGG](formats/egg.md) |  | egg |  | 0/0 | ALZip (Windows) |
 | DONE | [Inno Setup](formats/inno.md) |  | exe | `defaultArchive-inno.exe` | 6/6 | Inno Setup 6, encrypted installers |
 | BLOCKED | [InstallShield cabinet](formats/installshield.md) |  | cab, hdr |  | 0/0 | InstallShield is commercial; no free trial without registration known |
 | DONE | [Encrypted DMG](formats/encdmg.md) |  | dmg | `defaultArchive-encrypted.dmg` | 3/3 |  |
-| TODO | GameCube disc |  | gcm, iso, gcz, rvz |  | 0/0 | needs a homebrew disc |
+| BLOCKED | [GameCube disc](formats/gamecube.md) |  | gcm, iso, gcz, rvz |  | 0/0 | needs a homebrew disc |
 | PARTIAL | [Android images](formats/android.md) |  | img (sparse, super) | `defaultArchive-android-sparse.img` | 1/1 | super.img (lpmake not packaged) |
 | PARTIAL | [ZX Spectrum](formats/zx.md) |  | tap, tzx, trd, scl | `defaultArchive.tap`, `defaultArchive.tzx` | 2/2 | TR-DOS .trd and .scl (no Linux writer found) |
 | PARTIAL | [Amstrad CPC, MSX disks](formats/cpc.md) |  | dsk | `defaultArchive.dsk` | 2/2 | old (non-extended) CPC DSK, CPC system format, MSX disk made on an MSX |
 | DONE | [Atari 8-bit](formats/atr.md) |  | atr | `defaultArchive.atr` | 1/2 | SpartaDOS, ATX/XFD/DCM containers, bootable DOS disks |
-| TODO | PC-98 |  | d88, hdi, fdi |  | 0/0 |  |
+| PARTIAL | [PC-98](formats/pc98.md) |  | d88, hdi, fdi | `defaultArchive.d88`, `defaultArchive.fdi` | 2/2 | HDI hard disk image (needs PC-98 IPL and partition table) |
 | SKIP | Flash, PDF |  | swf, pdf |  | 0/0 |  |
 | WONTDO | Nintendo Switch, Switch 2 |  | nsp, xci, ... |  | 0/0 |  |
 | WONTDO | Nintendo 3DS |  | 3ds, cia |  | 0/0 |  |

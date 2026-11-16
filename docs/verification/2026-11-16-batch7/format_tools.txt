@@ -1,0 +1,53 @@
+== nscripter/arc.sar
+  unar 1.10.1 (XAD, independent), format  SAR
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== nscripter/arc.nsa
+  unar 1.10.1 (XAD, independent), format  NSA
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.lbr
+  unar 1.10.1 (XAD, independent), format  LBR
+  03ba204e50d126e4  ./HELLO.TXT
+  466ab31d0374b763  ./NESTED.ZIP
+  30322444506aed4d  ./README.MD
+== defaultArchives/defaultArchive.sar
+  byte-identical to nscripter/arc.sar (cmp: same); XAD recognises the format only under the arc.* name
+== defaultArchives/defaultArchive.nsa
+  byte-identical to nscripter/arc.nsa (cmp: same); XAD recognises the format only under the arc.* name
+== defaultArchives/defaultArchive.fdi
+  4096-byte Anex86 header stripped, FAT12 read by 7-Zip 23.01 (independent):
+  466ab31d0374b763  ./FOLDER/NESTED.ZIP
+  30322444506aed4d  ./FOLDER/README.MD
+  03ba204e50d126e4  ./HELLO.TXT
+== defaultArchives/defaultArchive.d88
+  D88 header parsed: media 0x20 (2HD), 1232 sectors of sector data -> FAT12 read by 7-Zip 23.01:
+  466ab31d0374b763  ./FOLDER/NESTED.ZIP
+  30322444506aed4d  ./FOLDER/README.MD
+  03ba204e50d126e4  ./HELLO.TXT
+== defaultArchives/defaultArchive.pbp
+  independent parse of the PBP header (00 50 42 50, version 0x00010000):
+  d9bf7a53dc5e914e  ./PARAM.SFO (408 bytes)
+  30322444506aed4d  ./PIC1.PNG (437 bytes)
+  03ba204e50d126e4  ./DATA.PSP (13 bytes)
+  466ab31d0374b763  ./DATA.PSAR (52334 bytes)
+== gdi/defaultArchive.gdi
+  text: 3 1 0 4 2352 track01.bin 0 2 450 0 2352 track02.raw 0 3 45000 4 2352 track03.bin 0 
+  track03 (LBA 45000), 2048-byte payloads read with isoinfo -N 45000 -R (genisoimage 1.1.11, independent of xorriso):
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== gdi/track01.bin
+  low-density data track, 2048-byte payloads read by 7-Zip 23.01:
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== gdi/track03.bin
+  see gdi/defaultArchive.gdi
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  30322444506aed4d  ./folder/README.md
+  03ba204e50d126e4  ./hello world.txt
+== gdi/track02.raw
+  302 sectors of digital silence (audio track); byte-identical to /dev/zero

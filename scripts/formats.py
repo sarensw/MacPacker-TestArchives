@@ -469,3 +469,44 @@ CUSTOM_EXPECTED.update({
  "defaultArchives/defaultArchive.wad": "lumps HELLO, README, NESTED (same bytes)",
  "defaultArchives/defaultArchive.cdi": "data track = defaultArchive.iso from sector 16 on (system area replaced by cdi4dc)",
 })
+
+# ---- 2026-11-16 run 3: batch 7 and blocked rows ----
+_UPD7 = {
+ "nsa": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.sar", "defaultArchives/defaultArchive.nsa", "nscripter/*"], magic="none (u16be count + u32be data offset)",
+   covered="SAR and NSA (uncompressed entries) written from the documented layout (scripts/write_containers.py), `\\` path separators; canonical copies nscripter/arc.sar, arc.nsa",
+   outstanding="NSA with SPB/LZSS/BZip2-compressed entries (nsaarc on Windows)",
+   notes="unar (XAD) recognises these only under the names NScripter loads (arc.sar, arc.nsa, arc1.nsa, ...); the defaultArchive.* copies are byte-identical."),
+ "cpm": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.lbr"], magic="LBR: first directory entry status 0, name blank",
+   covered="LBR library written from the documented layout (8.3 names, pad counts set)", outstanding="Squeeze (.?Q?) and Crunch (.?Z?) files (need the CP/M tools; not found for Linux/Amiga)",
+   notes="unar (XAD) extracts it exactly."),
+ "pc98": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.fdi", "defaultArchives/defaultArchive.d88"], magic="D88: 688-byte header, media 0x20 at 27; FDI: 4096-byte header",
+   covered="2HD FAT12 floppy (1024-byte sectors, 8/track, 77 cylinders) as Anex86 FDI and as D88, written around an mtools image (scripts/write_containers.py); 8.3 names",
+   outstanding="HDI hard disk image (needs PC-98 IPL and partition table)", notes="7-Zip reads the FAT12 volume once the header/sector headers are removed."),
+ "pbp": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.pbp"], magic="`\\0PBP` at 0",
+   covered="EBOOT.PBP made with pspsdk mksfo + pack-pbp (commit 78e4d77): PARAM.SFO, PIC1.PNG slot = README.md, DATA.PSP = hello world.txt, DATA.PSAR = NestedArchive.zip",
+   notes="Our own files in the section slots; no executable or encrypted content. A reader lists sections, not paths."),
+ "gdi": dict(status="DONE", fixtures=["gdi/*"], magic="text: track count, then `track lba type sectorsize file offset` lines",
+   covered="3-track GD-ROM layout: track01 data (LBA 0), track02 audio silence (LBA 450), track03 data at LBA 45000 holding an ISO 9660 built for that start (xorriso -C 0,45000), raw 2352-byte sectors (scripts/raw_mode1.py)",
+   outstanding="IP.BIN boot area (left empty on purpose; a bootable one carries Sega's licence text)",
+   notes="isoinfo -N 45000 reads track03; 7-Zip reads track01. No GDIbuilder needed."),
+ "blindwrite": dict(status="BLOCKED", blocked="BlindWrite images are made from a physical disc by BlindWrite (commercial, VSO); no optical drive in the VMs."),
+ "mdx": dict(status="BLOCKED", blocked="DAEMON Tools creates .mdx from files only in versions that need Windows 7 or later; Bob HQ has Windows XP and 98 VMs only."),
+ "cif": dict(status="BLOCKED", blocked="Easy CD Creator is discontinued commercial software and makes .cif from discs; no trial or drive."),
+ "c2d": dict(status="BLOCKED", blocked="WinOnCD is discontinued commercial software; no trial found."),
+ "dms": dict(status="BLOCKED", blocked="No DMS packer on the amiga VM (only xdms, which unpacks) and it would need an ADF mounted as DF0:. Next: DMS 1.11 from Aminet with a DF0: device."),
+ "alz": dict(status="BLOCKED", blocked="ALZip (the only ALZ/EGG writer) needs Windows 7 or later in current versions; no XP-compatible installer verified."),
+ "egg": dict(status="BLOCKED", blocked="as ALZip"),
+ "cpt": dict(status="BLOCKED", blocked="Compact Pro, PackIt and DiskDoubler run on classic Mac OS; an emulator needs an Apple ROM and system software that cannot be obtained legally here."),
+ "amiga-packers": dict(outstanding="Warp and DImp (Disk Imploder) are in the amiga VM's C:, but need a floppy device (DF0:) with an ADF; not tried yet"),
+ "pp": dict(outstanding="PowerPacker data files (PP20): no packer confirmed on the amiga VM yet"),
+ "gamecube": dict(status="BLOCKED", blocked="Needs a GameCube disc layout tool and a homebrew boot.dol/apploader; Dolphin's converter only converts existing discs."),
+}
+for _f in FORMATS:
+    if _f["id"] in _UPD7:
+        _f.update(_UPD7[_f["id"]])
+CUSTOM_EXPECTED.update({
+ "defaultArchives/defaultArchive.lbr": "flat, 8.3: HELLO.TXT, README.MD, NESTED.ZIP",
+ "defaultArchives/defaultArchive.fdi": "8.3 names: HELLO.TXT, FOLDER/README.MD, FOLDER/NESTED.ZIP", "defaultArchives/defaultArchive.d88": "as defaultArchive.fdi",
+ "defaultArchives/defaultArchive.pbp": "sections: PIC1.PNG = README.md, DATA.PSP = hello world.txt, DATA.PSAR = NestedArchive.zip (+ PARAM.SFO)",
+ "gdi/track02.raw": "302 sectors of digital silence",
+})

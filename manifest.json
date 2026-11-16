@@ -1687,6 +1687,22 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.d88",
+   "formats": [
+    "pc98"
+   ],
+   "role": "baseline",
+   "size": 1281968,
+   "sha256": "6c588dfb0dd30a976750a8afd57c600e2d176e40d10c383cf34f2785fffb6a89",
+   "expected": "as defaultArchive.fdi",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: D88 header parsed: media 0x20 (2HD), 1232 sectors of sector data -> FAT12 read by 7-Zip 23.01: | 466ab31d0374b763  ./FOLDER/NESTED.ZIP | 30322444506aed4d  ./FOLDER/README.MD | 03ba204e50d126e4  ./HELLO.TXT"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.daa",
    "formats": [
     "daa"
@@ -1901,6 +1917,22 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.fdi",
+   "formats": [
+    "pc98"
+   ],
+   "role": "baseline",
+   "size": 1265664,
+   "sha256": "935b56936bd3e9ac718f87f1b95eef2920510aeaad4b4e1d9c350ae79de6322e",
+   "expected": "8.3 names: HELLO.TXT, FOLDER/README.MD, FOLDER/NESTED.ZIP",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: 4096-byte Anex86 header stripped, FAT12 read by 7-Zip 23.01 (independent): | 466ab31d0374b763  ./FOLDER/NESTED.ZIP | 30322444506aed4d  ./FOLDER/README.MD | 03ba204e50d126e4  ./HELLO.TXT"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.gtar",
    "formats": [
     "tar"
@@ -2081,6 +2113,22 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.lbr",
+   "formats": [
+    "cpm"
+   ],
+   "role": "baseline",
+   "size": 53120,
+   "sha256": "4c8a1ffb91dab2cd5000a700208d0822b5fcb461f7be4d85cc8efc22ffc4baae",
+   "expected": "flat, 8.3: HELLO.TXT, README.MD, NESTED.ZIP",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: unar 1.10.1 (XAD, independent), format  LBR | 03ba204e50d126e4  ./HELLO.TXT | 466ab31d0374b763  ./NESTED.ZIP | 30322444506aed4d  ./README.MD"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.lha",
    "formats": [
     "lha"
@@ -2223,6 +2271,21 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.nsa",
+   "formats": [
+    "nsa"
+   ],
+   "role": "baseline",
+   "size": 52887,
+   "sha256": "0cf80e5f9958eb2961c050765efb66b109de14e699c3b362a06b6320bb10129d",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: byte-identical to nscripter/arc.nsa (cmp: same); XAD recognises the format only under the arc.* name"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.ntfs",
    "formats": [
     "ntfs"
@@ -2236,6 +2299,22 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic eb52904e54465320; 7z Type=NTFS; file: DOS/MBR boot sector, code offset 0x52+2, OEM-ID \"NTFS    \", sectors/cluster 8, Media descr; readers matching standard content: 7z",
      "docs/verification/2026-11-15/ubuntu_special.txt: Volume Name: defaultArchive | Volume Version: 3.1 | Cluster Size: 4096 | content: MATCH (3 files, sha256)"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.pbp",
+   "formats": [
+    "pbp"
+   ],
+   "role": "baseline",
+   "size": 53232,
+   "sha256": "7802f2b765fbd5b470be17fbc6ddbdb05935437d2e7e1b00b93d121b0fc3195a",
+   "expected": "sections: PIC1.PNG = README.md, DATA.PSP = hello world.txt, DATA.PSAR = NestedArchive.zip (+ PARAM.SFO)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: independent parse of the PBP header (00 50 42 50, version 0x00010000): | d9bf7a53dc5e914e  ./PARAM.SFO (408 bytes) | 30322444506aed4d  ./PIC1.PNG (437 bytes) | 03ba204e50d126e4  ./DATA.PSP (13 bytes) | 466ab31d0374b763  ./DATA.PSAR (52334 bytes)"
     ]
    }
   },
@@ -2351,6 +2430,21 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic edabeedb03000000; 7z Type=Rpm; lsar format=RPM; file: RPM v3.0 bin; readers matching standard content: bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.sar",
+   "formats": [
+    "nsa"
+   ],
+   "role": "baseline",
+   "size": 52872,
+   "sha256": "df26a23de05b7d6b7d8943095db20bde18ccdfb9a15de7fae06b65237cda8db7",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: byte-identical to nscripter/arc.sar (cmp: same); XAD recognises the format only under the arc.* name"
     ]
    }
   },
@@ -4167,6 +4261,118 @@
    }
   },
   {
+   "path": "gdi/defaultArchive.gdi",
+   "formats": [
+    "gdi"
+   ],
+   "role": "variant",
+   "size": 87,
+   "sha256": "396548fe53f9b3641896398be563795ff190f9b0d7cc61c331901bc68f4e5392",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: text: 3 1 0 4 2352 track01.bin 0 2 450 0 2352 track02.raw 0 3 45000 4 2352 track03.bin 0 | track03 (LBA 45000), 2048-byte payloads read with isoinfo -N 45000 -R (genisoimage 1.1.11, independent of xorriso): | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "gdi/track01.bin",
+   "formats": [
+    "gdi"
+   ],
+   "role": "variant",
+   "size": 705600,
+   "sha256": "816f849633226491d60f576e63c3e0573d5f922a42c8bec695a04d53589bc4d1",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: low-density data track, 2048-byte payloads read by 7-Zip 23.01: | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "gdi/track02.raw",
+   "formats": [
+    "gdi"
+   ],
+   "role": "variant",
+   "size": 710304,
+   "sha256": "9c97e0db4fd5cd70156208d1c921beaaa831f6f5ca5672cf6517d68a1e68f744",
+   "expected": "302 sectors of digital silence",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: 302 sectors of digital silence (audio track); byte-identical to /dev/zero"
+    ]
+   }
+  },
+  {
+   "path": "gdi/track03.bin",
+   "formats": [
+    "gdi"
+   ],
+   "role": "variant",
+   "size": 475104,
+   "sha256": "a176f93d3f68463ab2f50f9fe8295b393eb96ac89f931171cd89b99929cbfba7",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: see gdi/defaultArchive.gdi | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
    "path": "hdf/rdb_ffs.hdf",
    "formats": [
     "hdf"
@@ -4921,6 +5127,70 @@
    "verification": {
     "status": "not-checked",
     "evidence": []
+   }
+  },
+  {
+   "path": "nscripter/arc.nsa",
+   "formats": [
+    "nsa"
+   ],
+   "role": "variant",
+   "size": 52887,
+   "sha256": "0cf80e5f9958eb2961c050765efb66b109de14e699c3b362a06b6320bb10129d",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: unar 1.10.1 (XAD, independent), format  NSA | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
+   "path": "nscripter/arc.sar",
+   "formats": [
+    "nsa"
+   ],
+   "role": "variant",
+   "size": 52872,
+   "sha256": "df26a23de05b7d6b7d8943095db20bde18ccdfb9a15de7fae06b65237cda8db7",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-batch7/format_tools.txt: unar 1.10.1 (XAD, independent), format  SAR | 466ab31d0374b763  ./folder/NestedArchive.zip | 30322444506aed4d  ./folder/README.md | 03ba204e50d126e4  ./hello world.txt"
+    ]
    }
   },
   {
