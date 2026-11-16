@@ -44,23 +44,23 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [XZ](formats/xz.md) | 1.2 | xz, txz, tar.xz | `defaultArchive.tar.xz`, `defaultArchive.txz` | 3/3 | multi-block / BCJ filter xz |
 | DONE | [ZIP](formats/zip.md) | 1.2 | zip, jar, aar, apk, cbz | `defaultArchive.jar`, `defaultArchive.zip` | 15/52 | method 93 zstd and 95 xz written by a real tool; PKWARE strong encryption (needs SecureZIP); central-directory encryption |
 | DONE | [ZIPX (WinZip)](formats/zipx.md) | 1.2 | zipx | `defaultArchive.zipx` | 7/7 | WinZip 12+ JPEG (method 96), WavPack (97), xz (95) and zstd (93) entries: need matching input files or a newer WinZip |
-| PARTIAL | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 1/2 | a reader that verifies the mdf content; regenerate with current content (WinIso) |
+| DONE | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 2/2 | MDS v2 (DAEMON Tools .mdx is its own row) |
 | DONE | [Apple Archive](formats/aar.md) |  | aar | `defaultArchive-raw.aar`, `defaultArchive.aar` | 6/6 | library.aar named by MacPacker's tests (meaning unknown); compressible content so that chunks are actually compressed |
 | PARTIAL | [Apple Encrypted Archive](formats/aea.md) |  | aea | `defaultArchive.aea` | 3/3 | defaultArchive-expired.aea and signing/testRoot.pem expected by MacPacker's tests; profiles 2-4 (ECDHE/signed) |
 | TODO | BlindWrite |  | b5t, b6t |  | 0/0 | baseline |
 | DONE | [CD image with cue sheet](formats/cue.md) |  | cue + bin | `defaultArchive.bin`, `defaultArchive.cue` | 2/2 | MODE1/2352, MODE2, audio tracks, multi-bin |
-| TODO | CloneCD |  | ccd + img + sub |  | 0/0 | baseline (repo README lists one, file missing) |
+| DONE | [CloneCD](formats/clonecd.md) |  | ccd + img + sub | `defaultArchive.img` | 3/4 | CloneCD's own output with a .sub subchannel file (CloneCD is commercial; no trial found) |
 | TODO | DAEMON Tools |  | mdx |  | 0/0 | baseline (DAEMON Tools on Windows) |
-| TODO | DiscJuggler |  | cdi |  | 0/0 | baseline (DiscJuggler freeware or cdi4dc) |
+| DONE | [DiscJuggler](formats/cdi.md) |  | cdi | `defaultArchive.cdi` | 1/1 | CDI made by DiscJuggler itself; multi-session, audio |
 | TODO | Easy CD Creator |  | cif |  | 0/0 | hard to make |
 | DONE | [ECM](formats/ecm.md) |  | ecm | `defaultArchive.bin.ecm` | 1/1 | baseline: ecm not packaged for Ubuntu 24.04; build Neill Corlett's ecm from source |
 | DONE | [MAME CHD](formats/chd.md) |  | chd | `defaultArchive.chd` | 3/3 | CHD v3/v4; DVD (createdvd); GD-ROM |
-| PARTIAL | [Nero](formats/nrg.md) |  | nrg | `defaultArchive.nrg` | 1/1 | regenerate with current content (needs WinIso or Nero on Windows) |
-| TODO | PowerISO / gBurner |  | daa, gbi |  | 0/0 | baseline (PowerISO trial on Windows) |
+| DONE | [Nero](formats/nrg.md) |  | nrg | `defaultArchive.nrg` | 1/1 | NER0 (v1) footer; multi-track |
+| DONE | [PowerISO / gBurner](formats/daa.md) |  | daa, gbi | `defaultArchive.daa` | 2/2 | split DAA volumes, password-protected DAA, gBurner .gbi |
 | DONE | [PSP compressed ISO](formats/cso.md) |  | cso, ciso | `defaultArchive.cso` | 1/1 | ZSO, DAX, CSO v2 (maxcso) |
 | DONE | [Raw CD image](formats/rawcd.md) |  | bin | `defaultArchive.bin` | 3/3 | MODE2, audio tracks |
 | DONE | [cdrdao TOC](formats/toc.md) |  | toc | `defaultArchive.toc` | 1/1 |  |
-| TODO | UltraISO |  | isz |  | 0/0 | baseline (UltraISO trial on Windows) |
+| PARTIAL | [UltraISO](formats/isz.md) |  | isz | `defaultArchive.isz` | 0/1 | independent check (no ISZ reader on Linux; next: open it with PowerISO on winxp); split and password ISZ |
 | TODO | WinOnCD |  | c2d |  | 0/0 | hard to make |
 | BLOCKED | [Xcode archive (XIP)](formats/xip.md) |  | xip |  | 1/1 | defaultArchive.xip |
 | DONE | [Zstandard](formats/zstd.md) |  | zst, tzst, tar.zst | `defaultArchive.tar.zst`, `defaultArchive.tzst` | 3/3 |  |

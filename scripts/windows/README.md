@@ -16,3 +16,16 @@ the VMs have no network.
 | StuffIt Standard 7.5 | archive.org `stuff-75-l/Stuff75L.exe`, md5 `90f3312b…`, sha256 `215abffc…` | winxp | installer pre-fills a serial: the field was emptied so it installed in 30-day demo mode. GUI: Options → Compression → StuffIt Archive (.sit), max; Archive → Add Files (`C:\C\hello world.txt`) and Add Folder (`C:\C\folder`); File → Save Archive As `defaultArchive.sit`; Archive → Password Protect (`password`), Save As `stuffit5_password.sit`; Archive → Make Self Extracting (`stuffit5_password.exe`) |
 
 Not used: archive.org StuffIt 9 / Deluxe 2010 items (ship a serial or are pre-registered).
+
+## Disc images (run 3, 2026-11-16, winxp)
+
+Input: `defaultArchives/defaultArchive.iso` copied to `C:\ISO`.
+
+| Tool | Source, sha256 | How it ran | Output |
+|---|---|---|---|
+| PowerISO 9.5 trial (`PowerISO7.exe` URL now serves 9.5; runs on XP) | https://www.poweriso.com/PowerISO7.exe `208c63f5…` | `/S`; `piso convert C:\ISO\defaultArchive.iso -o C:\OUT\defaultArchive.daa -ot daa -y`; `piso create -o C:\OUT\piso_files.daa -add "C:\C\hello world.txt" / -add C:\C\folder /folder -y` | defaultArchive.daa, daa/piso_files.daa |
+| UltraISO Premium 9.x trial | https://www.ultraiso.com/uiso9_pe.exe `5564abf8…` | `/VERYSILENT`; `UltraISO.exe -in C:\ISO\defaultArchive.iso -out C:\OUT\defaultArchive.isz` (no window) | defaultArchive.isz |
+| WinISO 6.4.1.5976 trial (limit: saves over 500 MB) | archive.org `winiso_202011/winiso.exe` md5 `a8589b41…`, sha256 `338c439a…` | `/S`; GUI Convert: source `C:\ISO\defaultArchive.iso`, formats Nero (.nrg), Alcohol 120% (.mds/.mdf), CloneCD (writes .img + .dvd, no .ccd), Cue sheets (.cue/.bin); "Later" on the registration dialog | defaultArchive.nrg, .mds/.mdf, .img/.dvd, .cue/.bin |
+
+Not used: the archive.org DiscJuggler Pro 6 bundle (ships a replacement `pfc.dll`); CDI comes from cdi4dc instead
+(`scripts/ubuntu_batch5.sh`). CloneCD's own `.ccd` is written by `scripts/ubuntu_batch5.sh` over the raw 2352-byte image.

@@ -952,6 +952,36 @@
    }
   },
   {
+   "path": "clonecd/defaultArchive.ccd",
+   "formats": [
+    "clonecd"
+   ],
+   "role": "variant",
+   "size": 767,
+   "sha256": "bd7ecf7fb4f6bb56b34c207b413794668bb1a6938b1b118c465c2a9e7c3565ab",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: text, CloneCD Version=3, 1 session, 4 TOC entries, lead-out at LBA 211 (byte-identical image data above)"
+    ]
+   }
+  },
+  {
+   "path": "clonecd/defaultArchive.img",
+   "formats": [
+    "clonecd"
+   ],
+   "role": "variant",
+   "size": 496272,
+   "sha256": "1b91ba1003778225f531d67a52174b9029e9468f13ea83256fe126196087c803",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: ccd2iso 0.3 -> iso: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)"
+    ]
+   }
+  },
+  {
    "path": "compressed/hello world.txt.Z",
    "formats": [
     "compress"
@@ -1144,6 +1174,38 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-16-batch3/native_tools.txt: magic 4349534f | maxcso --decompress sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18"
+    ]
+   }
+  },
+  {
+   "path": "daa/piso_files.daa",
+   "formats": [
+    "daa"
+   ],
+   "role": "variant",
+   "size": 53213,
+   "sha256": "86f51c9e516ba7430711fa80d3d105bf32cbb859800f7b7a4d6c3b0b1e2f56e1",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: daa2iso -> iso, 7-Zip 23.01 extract: | 30322444506aed4d  ./folder/README.md | 466ab31d0374b763  ./folder/NestedArchive.zip | 03ba204e50d126e4  ./hello world.txt"
     ]
    }
   },
@@ -1575,6 +1637,38 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.cdi",
+   "formats": [
+    "cdi"
+   ],
+   "role": "baseline",
+   "size": 2119781,
+   "sha256": "f124fc07be6e739edef3e3158d77e088dae5396ee00f726febe4710fdde69b41",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: iat 0.1.7 -> 618496 bytes; bytes 32768.. of defaultArchive.iso (volume descriptors and file data) found at offset 32768, byte-identical; cdi4dc replaces the 32 KiB system area | 30322444506aed4d  ./folder/README.md | 466ab31d0374b763  ./folder/NestedArchive.zip | 03ba204e50d126e4  ./hello world.txt"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.chd",
    "formats": [
     "chd"
@@ -1650,8 +1744,7 @@
    "verification": {
     "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 46494c4520224445; file: ASCII text, with CRLF line terminators; readers matching standard content: none",
-     "docs/verification/2026-11-15/manual_checks.txt: text, CRLF line ends: FILE \"DEFAULTARCHIVE.BIN\" BINARY / TRACK 01 MODE1/2048 / INDEX 01 00:00:00. The referenced name is upper case; the file in the repo is defaultArchive.bin. | defaultArchive.bin is byte-identical to defaultArchive.iso and defaultArchive.img (cmp), sha256 18eb071a7eae653100d31dbedc3283dbddae814d036ac8a57024799b3adbf38f"
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: text: FILE \"DEFAULTARCHIVE.BIN\" BINARY   TRACK 01 MODE1/2048     INDEX 01 00:00:00  (WinISO writes the upper-case name; bin data byte-identical)"
     ]
    }
   },
@@ -1668,6 +1761,21 @@
     "status": "verified",
     "evidence": [
      "byte-identical to c64/defaultArchive.d64 (same sha256)"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.daa",
+   "formats": [
+    "daa"
+   ],
+   "role": "baseline",
+   "size": 54034,
+   "sha256": "0ab18c72a179a8c50e5b359ae75a8fed871ef6ee737673d6764a67273073de7e",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: daa2iso 0.1.7e (Luigi Auriemma, GPL, built from source) -> iso: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)"
     ]
    }
   },
@@ -1739,7 +1847,9 @@
   },
   {
    "path": "defaultArchives/defaultArchive.dvd",
-   "formats": [],
+   "formats": [
+    "clonecd"
+   ],
    "role": "special-purpose",
    "size": 18,
    "sha256": "5e9f121623164fd1bc853be812b29c30d19fb82e791b303e65bf0037e3249af4",
@@ -1969,7 +2079,9 @@
   },
   {
    "path": "defaultArchives/defaultArchive.img",
-   "formats": [],
+   "formats": [
+    "clonecd"
+   ],
    "role": "baseline",
    "size": 432128,
    "sha256": "2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18",
@@ -1994,6 +2106,21 @@
     "status": "verified",
     "evidence": [
      "docs/verification/2026-11-16-regen/ubuntu_regenerated_baselines.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKER'; readers matching standard content: 7z, unar, bsdtar"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.isz",
+   "formats": [
+    "isz"
+   ],
+   "role": "baseline",
+   "size": 54060,
+   "sha256": "0b8189d7e95236f5f0c24b230d41005047c3e91b4e07b72eb9f4fdde45205df2",
+   "verification": {
+    "status": "unverified",
+    "evidence": [
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: UNVERIFIED: UltraISO ISZ (magic IsZ!); no ISZ reader on Ubuntu (7-Zip, unar do not open it); cross-check with PowerISO outstanding"
     ]
    }
   },
@@ -2068,29 +2195,12 @@
     "mds"
    ],
    "role": "baseline",
-   "size": 159936,
-   "sha256": "928876df708f9b9e6476b9eed9a4e3051a856d05bb8f55de8ec673eb345ba33d",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 496272,
+   "sha256": "1b91ba1003778225f531d67a52174b9029e9468f13ea83256fe126196087c803",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 0000000000000000; 7z Type=zip Methods=Deflate; lsar format=ISO 9660; file: data; readers matching standard content: none"
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: WinISO 6.4.1 convert ISO->Alcohol 120%; 211 raw 2352-byte MODE1 sectors | mdf2iso 0.3.1 -> iso: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)"
     ]
    }
   },
@@ -2101,12 +2211,11 @@
    ],
    "role": "baseline",
    "size": 486,
-   "sha256": "a62a8d67717d2d5453c74309043b7b6eedd73a33f682fe459eecfa33dd6418d9",
+   "sha256": "f9a4c24b6107556f3acde1cc4972b39b3e0e6b422a4bddde24fc39b7a2ebd5e6",
    "verification": {
-    "status": "unverified",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 4d45444941204445; file: MED_Song; readers matching standard content: none",
-     "docs/verification/2026-11-15/manual_checks.txt: file(1): \"MED_Song\" (misidentified); starts with \"MEDIA DESCRIPTOR\". Pairs with defaultArchive.mdf. lsar 1.10 identifies the .mdf as \"ISO 9660\" but neither unar nor 7-Zip extracted it here: UNVERIFIED."
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: MEDIA DESCRIPTOR v1.3 header (Alcohol), pairs with defaultArchive.mdf; byte-identical mdf data checked above"
     ]
    }
   },
@@ -2165,29 +2274,12 @@
     "nrg"
    ],
    "role": "baseline",
-   "size": 139324,
-   "sha256": "748c7d7eee12ce7b8a555ef1cc4c18c331a8fd59a0d129054d172072ed77f646",
-   "expected": [
-    {
-     "path": "folder/NestedArchive.zip",
-     "sha256_prefix": "fa52ae6c8424ff23",
-     "note": "NestedArchive.zip before 9283a00 (2025-12-09), 53236 bytes"
-    },
-    {
-     "path": "folder/README.md",
-     "sha256_prefix": "11397df50c2d6834",
-     "note": "README.md with CRLF line ends, 455 bytes"
-    },
-    {
-     "path": "hello world.txt",
-     "sha256_prefix": "cfce4e2952591e79",
-     "note": "hello world.txt with CRLF line end, 14 bytes"
-    }
-   ],
+   "size": 432188,
+   "sha256": "7213824cd1d6fb123a90ae9def96b07bcec85320ab4fb7c8a2defe78761f72eb",
    "verification": {
-    "status": "verified-other-content",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 0000000000000000; 7z Type=Iso; lsar format=ISO 9660; file: ISO 9660 CD-ROM filesystem data 'MACPACKERTESTVOLUME'; readers matching standard content: none"
+     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: WinISO 6.4.1 convert ISO->NRG; footer NER5 | iat 0.1.7 -> iso: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)"
     ]
    }
   },

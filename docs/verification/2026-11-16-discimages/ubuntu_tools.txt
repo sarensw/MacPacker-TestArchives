@@ -1,0 +1,32 @@
+== defaultArchives/defaultArchive.nrg
+  WinISO 6.4.1 convert ISO->NRG; footer NER5
+  iat 0.1.7 -> iso: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)
+== defaultArchives/defaultArchive.mdf
+  WinISO 6.4.1 convert ISO->Alcohol 120%; 211 raw 2352-byte MODE1 sectors
+  mdf2iso 0.3.1 -> iso: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)
+== defaultArchives/defaultArchive.mds
+  MEDIA DESCRIPTOR v1.3 header (Alcohol), pairs with defaultArchive.mdf; byte-identical mdf data checked above
+== defaultArchives/defaultArchive.bin
+  WinISO cue/bin output (2048-byte sectors): byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)
+== defaultArchives/defaultArchive.img
+  WinISO CloneCD-option output (2048-byte sectors) with defaultArchive.dvd: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)
+== defaultArchives/defaultArchive.cue
+  text: FILE "DEFAULTARCHIVE.BIN" BINARY   TRACK 01 MODE1/2048     INDEX 01 00:00:00  (WinISO writes the upper-case name; bin data byte-identical)
+== defaultArchives/defaultArchive.daa
+  daa2iso 0.1.7e (Luigi Auriemma, GPL, built from source) -> iso: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)
+== daa/piso_files.daa
+  daa2iso -> iso, 7-Zip 23.01 extract:
+  30322444506aed4d  ./folder/README.md
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  03ba204e50d126e4  ./hello world.txt
+== defaultArchives/defaultArchive.isz
+  UNVERIFIED: UltraISO ISZ (magic IsZ!); no ISZ reader on Ubuntu (7-Zip, unar do not open it); cross-check with PowerISO outstanding
+== defaultArchives/defaultArchive.cdi
+  iat 0.1.7 -> 618496 bytes; bytes 32768.. of defaultArchive.iso (volume descriptors and file data) found at offset 32768, byte-identical; cdi4dc replaces the 32 KiB system area
+  30322444506aed4d  ./folder/README.md
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  03ba204e50d126e4  ./hello world.txt
+== clonecd/defaultArchive.img
+  ccd2iso 0.3 -> iso: byte-identical to defaultArchive.iso (sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18)
+== clonecd/defaultArchive.ccd
+  text, CloneCD Version=3, 1 session, 4 TOC entries, lead-out at LBA 211 (byte-identical image data above)
