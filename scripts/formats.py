@@ -555,3 +555,24 @@ CUSTOM_EXPECTED.update({
  "alz/*": "as defaultArchive.alz", "egg/*": "as defaultArchive.alz", "defaultArchives/defaultArchive.egg": "as defaultArchive.alz",
  "powerpacker/*": "one stream: the bytes of folder/README.md (437 bytes)",
 })
+
+# ---- 2026-11-19 run 5 ----
+_UPD9 = {
+ "gamecube": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.gcm"], magic="0xC2339F3D at 0x1C; game code at 0",
+   covered="GameCube disc (GCM) written from the documented layout (scripts/write_gcm.py): boot.bin, bi2.bin, a stub apploader, our own stub DOL (`b .`), FST with hello world.txt and folder/; no Nintendo code",
+   outstanding="compressed containers (GCZ, RVZ, CISO-Wii) and a disc made by a Nintendo/homebrew build tool; Wii (needs the Wii key, WON'T DO)",
+   notes="Padded to 160 KiB, not to a full disc. pyisotools 2.4.7 extracts it exactly (system files and the three files)."),
+ "gamedata": dict(status="PARTIAL", fixtures=["defaultArchives/defaultArchive.vpk", "defaultArchives/defaultArchive.wad", "defaultArchives/defaultArchive.pak"],
+   covered="Valve VPK v1 (python vpk); Doom PWAD and Quake PAK written from the documented layouts (PAK keeps folder/ paths)",
+   outstanding="VPK v2 / multi-chunk; a WAD or PAK made by a game tool (SLADE, qpakman: qpakman 0.67 is broken on arm64)",
+   notes="The PAK reads back with unpak's C core (independent)."),
+ "parallels": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.hds", "parallels/**"],
+   covered="expanding .hds image (qemu-img); parallels/defaultArchive.hdd: bundle folder with DiskDescriptor.xml and the .hds named by its GUID",
+   outstanding="a bundle made by Parallels Desktop itself (snapshots, split images)",
+   notes="DiskDescriptor.xml follows the layout of Parallels bundles (QEMU docs/interop/parallels.txt); qemu-img compares the .hds byte-identical to defaultArchive.fat. MacPacker would need to open the bundle folder."),
+ "isz": dict(status="DONE", covered="UltraISO 9 trial, ISZ of defaultArchive.iso; PowerISO 9.5 (other vendor) extracts the three files exactly", outstanding="split and password ISZ"),
+}
+for _f in FORMATS:
+    if _f["id"] in _UPD9:
+        _f.update(_UPD9[_f["id"]])
+CUSTOM_EXPECTED.update({"parallels/**": "virtual disk = defaultArchive.fat (FAT16 with the standard content)"})

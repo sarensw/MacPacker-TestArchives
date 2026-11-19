@@ -100,7 +100,7 @@ def main():
                  size=os.path.getsize(os.path.join(ROOT, p)), sha256=sha(os.path.join(ROOT, p)))
         if any(fnmatch.fnmatch(p, g) for g in SPECIAL_PURPOSE):
             e['role'] = 'special-purpose'
-        if re.search(r'\.7z\.00[2-9]$|[2-9]\.swm$|\.z0[1-9]$|\.zip\.00[2-9]$|\.r\d\d$|\.part[2-9]\.rar$|spanned[2-9]\.cab$', p) or '.sparsebundle/' in p:
+        if re.search(r'\.7z\.00[2-9]$|[2-9]\.swm$|\.z0[1-9]$|\.zip\.00[2-9]$|\.r\d\d$|\.part[2-9]\.rar$|spanned[2-9]\.cab$', p) or '.sparsebundle/' in p or '.hdd/' in p:
             e['role'] = 'part'
         ev, status, content = [], 'not-checked', None
         for src, r in runs.get(p, []):

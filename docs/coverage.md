@@ -60,7 +60,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [PSP compressed ISO](formats/cso.md) |  | cso, ciso | `defaultArchive.cso` | 1/1 | ZSO, DAX, CSO v2 (maxcso) |
 | DONE | [Raw CD image](formats/rawcd.md) |  | bin | `defaultArchive.bin` | 3/3 | MODE2, audio tracks |
 | DONE | [cdrdao TOC](formats/toc.md) |  | toc | `defaultArchive.toc` | 1/1 |  |
-| PARTIAL | [UltraISO](formats/isz.md) |  | isz | `defaultArchive.isz` | 0/1 | independent check (no ISZ reader on Linux; next: open it with PowerISO on winxp); split and password ISZ |
+| DONE | [UltraISO](formats/isz.md) |  | isz | `defaultArchive.isz` | 1/1 | split and password ISZ |
 | BLOCKED | [WinOnCD](formats/c2d.md) |  | c2d |  | 0/0 | hard to make |
 | DONE | [Xcode archive (XIP)](formats/xip.md) |  | xip | `defaultArchive.xip` | 2/2 | an XIP that validates against Apple's chain (only Apple can make one) |
 | DONE | [Zstandard](formats/zstd.md) |  | zst, tzst, tar.zst | `defaultArchive.tar.zst`, `defaultArchive.tzst` | 3/3 |  |
@@ -97,9 +97,9 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | PARTIAL | [Classic Mac disks](formats/macdisk.md) |  | image, dc42, img | `defaultArchive.dc42` | 2/2 | MFS, DART, MOOF, partitioned Mac hard disk images |
 | BLOCKED | [Classic Mac archivers](formats/cpt.md) |  | cpt, pit, dd |  | 0/0 | Mini vMac + Compact Pro etc. |
 | DONE | [Sparse disk images](formats/sparse.md) |  | sparseimage, sparsebundle | `defaultArchive.sparseimage` | 1/7 | encrypted sparse bundle |
-| PARTIAL | [Parallels disk](formats/parallels.md) |  | hdd, hds | `defaultArchive.hds` | 1/1 | .hdd bundle (folder with DiskDescriptor.xml); image made by Parallels Desktop |
+| DONE | [Parallels disk](formats/parallels.md) |  | hdd, hds | `defaultArchive.hds` | 2/3 | a bundle made by Parallels Desktop itself (snapshots, split images) |
 | DONE | [PSP EBOOT](formats/pbp.md) |  | pbp | `defaultArchive.pbp` | 1/1 | PSPSDK pack-pbp |
-| PARTIAL | [Game data archives](formats/gamedata.md) |  | wad, pak, vpk | `defaultArchive.vpk`, `defaultArchive.wad` | 2/2 | Quake PAK; VPK v2 and multi-chunk (_dir.vpk + _000.vpk); WAD made by a Doom tool (SLADE/DeuTex not packaged) |
+| PARTIAL | [Game data archives](formats/gamedata.md) |  | wad, pak, vpk | `defaultArchive.pak`, `defaultArchive.vpk`, `defaultArchive.wad` | 3/3 | VPK v2 / multi-chunk; a WAD or PAK made by a game tool (SLADE, qpakman: qpakman 0.67 is broken on arm64) |
 | DONE | [Amiga hard disk file](formats/hdf.md) |  | hdf | `defaultArchive.hdf` | 2/2 | multi-partition RDB, PFS/SFS |
 | BLOCKED | [Amiga disk packers](formats/amiga-packers.md) |  | - |  | 0/0 | Warp and DImp (Disk Imploder) are in the amiga VM's C:, but need a floppy device (DF0:) with an ADF; not tried yet |
 | PARTIAL | [Amiga PowerPacker](formats/pp.md) |  | pp |  | 2/3 | defaultArchive.tar.pp: PowerPacker refuses ('Buffer Overflow') when the result would be larger, which the tar of an already-compressed zip i |
@@ -110,7 +110,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Inno Setup](formats/inno.md) |  | exe | `defaultArchive-inno.exe` | 6/6 | Inno Setup 6, encrypted installers |
 | BLOCKED | [InstallShield cabinet](formats/installshield.md) |  | cab, hdr |  | 0/0 | InstallShield's only source is Revenera's trial, which requires a name/email registration (not allowed for this task). |
 | DONE | [Encrypted DMG](formats/encdmg.md) |  | dmg | `defaultArchive-encrypted.dmg` | 3/3 |  |
-| TODO | GameCube disc |  | gcm, iso, gcz, rvz |  | 0/0 | build a tiny homebrew DOL (devkitPPC/libogc) and a disc layout (boot.bin, bi2.bin, homebrew apploader, FST) with gcit/GCRebuilder; not attem |
+| DONE | [GameCube disc](formats/gamecube.md) |  | gcm, iso, gcz, rvz | `defaultArchive.gcm` | 1/1 | compressed containers (GCZ, RVZ, CISO-Wii) and a disc made by a Nintendo/homebrew build tool; Wii (needs the Wii key, WON'T DO) |
 | PARTIAL | [Android images](formats/android.md) |  | img (sparse, super) | `defaultArchive-android-sparse.img` | 1/1 | super.img (lpmake not packaged) |
 | PARTIAL | [ZX Spectrum](formats/zx.md) |  | tap, tzx, trd, scl | `defaultArchive.tap`, `defaultArchive.tzx` | 2/2 | TR-DOS .trd and .scl (no Linux writer found) |
 | PARTIAL | [Amstrad CPC, MSX disks](formats/cpc.md) |  | dsk | `defaultArchive.dsk` | 2/2 | old (non-extended) CPC DSK, CPC system format, MSX disk made on an MSX |

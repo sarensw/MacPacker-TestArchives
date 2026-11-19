@@ -1,0 +1,22 @@
+# Ubuntu 24.04 arm64 (Bob HQ ubuntu VM), 2026-11-19. Fixtures from scripts/ubuntu_batch8.sh.
+== defaultArchives/defaultArchive.gcm
+  pyisotools 2.4.7 (PyPI, independent GameCube ISO library): GamecubeISO.extract_from -> sys/boot.bin, bi2.bin, apploader.img, main.dol, fst.bin and files/:
+  03ba204e50d126e4  ./hello world.txt
+  30322444506aed4d  ./folder/README.md
+  466ab31d0374b763  ./folder/NestedArchive.zip
+== defaultArchives/defaultArchive.pak
+  unpak (AntoineJT/unpak, commit 9bf007d; its C core cpak/pak.c, based on a public-domain extractor) with a 5-line main:
+  03ba204e50d126e4  ./hello world.txt
+  30322444506aed4d  ./folder/README.md
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  (qpakman 0.67, commit d8a0014, misreads the header on arm64 as big-endian, a portability bug; unar does not read PAK)
+== parallels/defaultArchive.hdd/DiskDescriptor.xml
+  xmllint --noout: well-formed; Storage 0..32768 sectors, image GUID {5fbaabe3-6958-40ff-92a7-860e329aab41}, Type Compressed (expanding)
+== parallels/defaultArchive.hdd/defaultArchive.hdd.0.{5fbaabe3-6958-40ff-92a7-860e329aab41}.hds
+  qemu-img 8.2.2 compare -f parallels -F raw against defaultArchives/defaultArchive.fat: Images are identical (byte-identical virtual disk)
+== defaultArchives/defaultArchive.isz
+  PowerISO 9.5 trial (another vendor than UltraISO) on win7: piso list / extract / convert. Extracted files (certutil SHA256):
+  03ba204e50d126e4  ./hello world.txt
+  30322444506aed4d  ./folder/README.md
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  (piso convert ISZ -> ISO gives sha256 d250c848…, not defaultArchive.iso's 2885bca0…: UltraISO re-masters the image; the files are identical)

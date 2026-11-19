@@ -1982,6 +1982,38 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.gcm",
+   "formats": [
+    "gamecube"
+   ],
+   "role": "baseline",
+   "size": 163840,
+   "sha256": "f5f21e9a2f496ef5a1b9638bcf122e329b0e1a8cf8675d816c6e6470ebe42e7b",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19b/format_tools.txt: pyisotools 2.4.7 (PyPI, independent GameCube ISO library): GamecubeISO.extract_from -> sys/boot.bin, bi2.bin, apploader.img, main.dol, fst.bin and files/: | 03ba204e50d126e4  ./hello world.txt | 30322444506aed4d  ./folder/README.md | 466ab31d0374b763  ./folder/NestedArchive.zip"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.gtar",
    "formats": [
     "tar"
@@ -2137,10 +2169,27 @@
    "role": "baseline",
    "size": 54060,
    "sha256": "0b8189d7e95236f5f0c24b230d41005047c3e91b4e07b72eb9f4fdde45205df2",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
    "verification": {
-    "status": "unverified",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-16-discimages/ubuntu_tools.txt: UNVERIFIED: UltraISO ISZ (magic IsZ!); no ISZ reader on Ubuntu (7-Zip, unar do not open it); cross-check with PowerISO outstanding"
+     "docs/verification/2026-11-19b/format_tools.txt: PowerISO 9.5 trial (another vendor than UltraISO) on win7: piso list / extract / convert. Extracted files (certutil SHA256): | 03ba204e50d126e4  ./hello world.txt | 30322444506aed4d  ./folder/README.md | 466ab31d0374b763  ./folder/NestedArchive.zip | (piso convert ISZ -> ISO gives sha256 d250c848…, not defaultArchive.iso's 2885bca0…: UltraISO re-masters the image; the files are identical)"
     ]
    }
   },
@@ -2348,6 +2397,38 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic eb52904e54465320; 7z Type=NTFS; file: DOS/MBR boot sector, code offset 0x52+2, OEM-ID \"NTFS    \", sectors/cluster 8, Media descr; readers matching standard content: 7z",
      "docs/verification/2026-11-15/ubuntu_special.txt: Volume Name: defaultArchive | Volume Version: 3.1 | Cluster Size: 4096 | content: MATCH (3 files, sha256)"
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.pak",
+   "formats": [
+    "gamedata"
+   ],
+   "role": "baseline",
+   "size": 52988,
+   "sha256": "5d0dc20b62b334de2f0786bcd18c94d26d35f8fb73113e8ac2dcf457de3a7a1f",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19b/format_tools.txt: unpak (AntoineJT/unpak, commit 9bf007d; its C core cpak/pak.c, based on a public-domain extractor) with a 5-line main: | 03ba204e50d126e4  ./hello world.txt | 30322444506aed4d  ./folder/README.md | 466ab31d0374b763  ./folder/NestedArchive.zip | (qpakman 0.67, commit d8a0014, misreads the header on arm64 as big-endian, a portability bug; unar does not read PAK)"
     ]
    }
   },
@@ -5403,6 +5484,38 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 4d5a900003000000; 7z Type=Nsis Methods=Copy,Deflate; lsar format=Self-extracting Zip; file: PE32 executable (GUI) Intel 80386 (stripped to external PDB), for MS Windows, Nullsoft Ins; readers matching standard content: 7z",
      "docs/verification/2026-11-15/ubuntu_special.txt: Type = Nsis | Physical Size = 151924 | Method = Deflate | Solid = - | 2023-11-14 22:13:20 .....           13           13  hello world.txt | 2023-11-14 22:13:20 .....                       256  folder/README.md | 2023-11-14 22:13:20 .....                     52029  folder/NestedArchive.zip"
+    ]
+   }
+  },
+  {
+   "path": "parallels/defaultArchive.hdd/DiskDescriptor.xml",
+   "formats": [
+    "parallels"
+   ],
+   "role": "part",
+   "size": 1333,
+   "sha256": "6ca4b3c983837ef29588f42de66cef2b63f7300ab5ad62e5cfc52dc8137d6eef",
+   "expected": "virtual disk = defaultArchive.fat (FAT16 with the standard content)",
+   "verification": {
+    "status": "part",
+    "evidence": [
+     "part of a multi-file fixture; verified through its first part"
+    ]
+   }
+  },
+  {
+   "path": "parallels/defaultArchive.hdd/defaultArchive.hdd.0.{5fbaabe3-6958-40ff-92a7-860e329aab41}.hds",
+   "formats": [
+    "parallels"
+   ],
+   "role": "part",
+   "size": 2097152,
+   "sha256": "019dd182a8a4fc993f3448b98df3be54852e6160bbe4a06ac777dcab8058b816",
+   "expected": "virtual disk = defaultArchive.fat (FAT16 with the standard content)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19b/format_tools.txt: qemu-img 8.2.2 compare -f parallels -F raw against defaultArchives/defaultArchive.fat: Images are identical (byte-identical virtual disk)"
     ]
    }
   },
