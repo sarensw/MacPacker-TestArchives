@@ -1,0 +1,37 @@
+== defaultArchives/defaultArchive.alz
+  Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files:
+  03ba204e50d126e4  ./defaultArchiveContent/hello world.txt
+  30322444506aed4d  ./defaultArchiveContent/folder/README.md
+  466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip
+== alz/alz_password.alz
+  Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files:
+  03ba204e50d126e4  ./defaultArchiveContent/hello world.txt
+  30322444506aed4d  ./defaultArchiveContent/folder/README.md
+  466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip
+== defaultArchives/defaultArchive.egg
+  Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files:
+  03ba204e50d126e4  ./defaultArchiveContent/hello world.txt
+  30322444506aed4d  ./defaultArchiveContent/folder/README.md
+  466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip
+== egg/egg_solid.egg
+  Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files:
+  03ba204e50d126e4  ./defaultArchiveContent/hello world.txt
+  30322444506aed4d  ./defaultArchiveContent/folder/README.md
+  466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip
+== egg/egg_zipcrypto.egg
+  Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files:
+  03ba204e50d126e4  ./defaultArchiveContent/hello world.txt
+  30322444506aed4d  ./defaultArchiveContent/folder/README.md
+  466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip
+== egg/egg_aes128.egg
+  Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files:
+  03ba204e50d126e4  ./defaultArchiveContent/hello world.txt
+  30322444506aed4d  ./defaultArchiveContent/folder/README.md
+  466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip
+== egg/egg_aes256.egg
+  Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files:
+  03ba204e50d126e4  ./defaultArchiveContent/hello world.txt
+  30322444506aed4d  ./defaultArchiveContent/folder/README.md
+  466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip
+== defaultArchives/defaultArchive.alz
+  also unar 1.10.1 (XAD) on Ubuntu: format ALZip, same three hashes

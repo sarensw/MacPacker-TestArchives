@@ -515,3 +515,43 @@ for _f in FORMATS:
         _f.update(status="BLOCKED", blocked="The Bob HQ amiga VM (AROS) has no floppy device (Info lists DH0:, DH1:, RAM: only) and C:Warp / C:dimp report 'file is not executable'; disk packers need a trackdisk unit with an ADF.")
     if _f["id"] == "pp":
         _f.update(status="BLOCKED", blocked="No PowerPacker packer on the amiga VM (C:ppcompress prints nothing; the pp* tools are unpackers/crackers or PowerPC tools). Needs PowerPacker 4 (shareware) from Aminet.")
+
+# ---- 2026-11-19 (Stephan's questions; win7 image) ----
+_UPD8 = {
+ "udf": dict(fixtures=["defaultArchives/defaultArchive.udf", "udf/*.udf"],
+   covered="UDF 2.01 (baseline), 1.02, 1.50 (mkudffs); 1.50 (hdiutil); udf/udf_rev0250_win7.udf: UDF 2.50 with metadata partition (Windows 7 format fs=udf revision=2.50)",
+   outstanding="UDF 2.60; UDF bridge ISO; DVD/BD layouts"),
+ "alz": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.alz", "alz/*.alz"], magic="`ALZ\\x01` at 0",
+   covered="ALZip 8.51 trial (ALZipCon on win7): baseline; ZipCrypto password (alz/alz_password.alz, password `password`)", outstanding="spanned ALZ (.a00; ALZip's minimum volume is 64 KB, larger than the content)",
+   notes="Entries are under defaultArchiveContent/ (ALZipCon adds the source folder name; the comma-separated file list fails on names with spaces). Verified with Bandizip 6 and unar."),
+ "egg": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.egg", "egg/*.egg"], magic="`EGGA` at 0",
+   covered="ALZip 8.51: baseline, solid (-s), ZipCrypto (-tp0), AES-128 (-tp1), AES-256 (-tp2), password `password`", outstanding="spanned EGG (64 KB minimum volume)",
+   notes="Entries under defaultArchiveContent/. unar 1.10 does not read EGG; Bandizip 6 (bc.exe) extracts all of them exactly."),
+ "pp": dict(status="PARTIAL", fixtures=["powerpacker/*.pp"], magic="`PP20` at 0; encrypted `PX20`",
+   covered="PPack 2.2 (Aminet util/pack/PPack22, freeware) with powerpacker.library on the amiga VM: folder/README.md crunched at efficiency 5 and 1, and encrypted (password `password`)",
+   outstanding="defaultArchive.tar.pp: PowerPacker refuses ('Buffer Overflow') when the result would be larger, which the tar of an already-compressed zip is; hello world.txt (13 bytes) likewise",
+   blocked=None, notes="ppunpack 1.0 (Unix, 1995) and unar read the PP20 files; the PX20 one is unverified."),
+ "xip": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.xip", "xip/*"], magic="`xar!` at 0; TOC with RSA <signature> and 2 X509 certificates",
+   covered="defaultArchive.xip: XIP layout signed with a throwaway test CA (xip/testCA.pem, xip/testInstaller.pem; private keys discarded); xip/unsigned_structure.xip",
+   outstanding="an XIP that validates against Apple's chain (only Apple can make one)", blocked=None,
+   notes="pkgutil --check-signature: signed by untrusted certificate; `xip --expand` refuses it ('does not come from Apple') by design. scripts/xip/ builds it."),
+ "mdx": dict(status="BLOCKED", blocked="DAEMON Tools Lite 4.30 (free, runs on win7) writes .mdx only by imaging a CD/DVD drive. It refuses to image its own virtual drive ('Disc imaging failed' on track 1) and does not list WinCDEmu's drive. Needs: an emulated hardware CD drive in the VM with defaultArchive.iso inserted (Bob HQ/QEMU infra), or DAEMON Tools Pro/Ultra (commercial; trial needs online activation)."),
+ "blindwrite": dict(status="BLOCKED", blocked="BlindWrite only images a disc in a drive (needs the same emulated CD drive as DAEMON Tools). VSO no longer offers a download; the archive.org copies of BlindWrite 6.2 and 7.0 ship a keygen serial or a cracked BW.exe and were not used."),
+ "cif": dict(status="BLOCKED", blocked="Easy CD Creator can save a project as a .cif image without a disc, but only full/OEM versions are on archive.org (no trial); using them needs a licence."),
+ "c2d": dict(status="BLOCKED", blocked="as Easy CD Creator: WinOnCD 3.x-5 only as OEM/full CD images on archive.org, no trial."),
+ "dms": dict(status="BLOCKED", blocked="DMS (DiskMasher) and the other disk packers read a trackdisk unit; the Bob HQ amiga VM has no DF0: (Info lists DH0:, DH1:, RAM:). Packers come from Aminet once a floppy device exists (infra)."),
+ "amiga-packers": dict(status="BLOCKED", blocked="as DMS: needs DF0: in the amiga VM; Warp/DImp/Zoom etc. from Aminet."),
+ "cpt": dict(status="BLOCKED", blocked="Compact Pro, PackIt and DiskDoubler are 68k Mac apps. Mini vMac needs a Mac Plus/SE/II ROM, Basilisk II a Mac II/Quadra ROM: Apple firmware, only legally from a Mac one owns. System 6.0.8/7.5.3 (Apple's free releases) would do. DiskDoubler was commercial."),
+ "gamecube": dict(status="TODO", blocked=None, outstanding="build a tiny homebrew DOL (devkitPPC/libogc) and a disc layout (boot.bin, bi2.bin, homebrew apploader, FST) with gcit/GCRebuilder; not attempted yet"),
+ "sitx": dict(blocked="StuffIt X (.sitx) is written only by StuffIt Deluxe/Standard 8 and later; Smith Micro no longer offers trials and the archive.org copies carry serials, are pre-registered, or are full retail CDs."),
+ "installshield": dict(blocked="InstallShield's only source is Revenera's trial, which requires a name/email registration (not allowed for this task)."),
+}
+for _f in FORMATS:
+    if _f["id"] in _UPD8:
+        _f.update({k: v for k, v in _UPD8[_f["id"]].items()})
+        if _f.get("blocked") is None: _f.pop("blocked", None)
+CUSTOM_EXPECTED.update({
+ "defaultArchives/defaultArchive.alz": "defaultArchiveContent/hello world.txt, defaultArchiveContent/folder/README.md, defaultArchiveContent/folder/NestedArchive.zip",
+ "alz/*": "as defaultArchive.alz", "egg/*": "as defaultArchive.alz", "defaultArchives/defaultArchive.egg": "as defaultArchive.alz",
+ "powerpacker/*": "one stream: the bytes of folder/README.md (437 bytes)",
+})

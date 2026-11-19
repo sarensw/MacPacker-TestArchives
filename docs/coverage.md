@@ -62,14 +62,14 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [cdrdao TOC](formats/toc.md) |  | toc | `defaultArchive.toc` | 1/1 |  |
 | PARTIAL | [UltraISO](formats/isz.md) |  | isz | `defaultArchive.isz` | 0/1 | independent check (no ISZ reader on Linux; next: open it with PowerISO on winxp); split and password ISZ |
 | BLOCKED | [WinOnCD](formats/c2d.md) |  | c2d |  | 0/0 | hard to make |
-| BLOCKED | [Xcode archive (XIP)](formats/xip.md) |  | xip |  | 1/1 | defaultArchive.xip |
+| DONE | [Xcode archive (XIP)](formats/xip.md) |  | xip | `defaultArchive.xip` | 2/2 | an XIP that validates against Apple's chain (only Apple can make one) |
 | DONE | [Zstandard](formats/zstd.md) |  | zst, tzst, tar.zst | `defaultArchive.tar.zst`, `defaultArchive.tzst` | 3/3 |  |
 | DONE | [Amiga Disk File](formats/adf.md) |  | adf | `defaultArchive.adf` | 3/3 | international/dircache modes (DOS2-DOS5), HD floppy |
 | BLOCKED | [Amiga DMS](formats/dms.md) |  | dms |  | 0/0 | baseline: amiga VM has xdms (extract only?); DMS packer needed |
 | DONE | [AppleSingle](formats/applesingle.md) |  | as | `defaultArchive.tar.as` | 2/2 | AppleDouble as a standalone file (covered inside zip/appledouble.zip) |
 | DONE | [BinHex 4.0](formats/binhex.md) |  | hqx | `defaultArchive.tar.hqx` | 2/2 |  |
 | DONE | [MacBinary](formats/macbinary.md) |  | bin, macbin | `defaultArchive.tar.bin` | 2/2 | MacBinary I and II explicitly (macOS `macbinary` writes III) |
-| BLOCKED | [ALZip](formats/alz.md) |  | alz |  | 0/0 | baseline (ALZip on Windows) |
+| DONE | [ALZip](formats/alz.md) |  | alz | `defaultArchive.alz` | 2/2 | spanned ALZ (.a00; ALZip's minimum volume is 64 KB, larger than the content) |
 | DONE | [Nintendo DS](formats/nds.md) |  | nds | `defaultArchive.nds` | 1/1 | ndstool with own homebrew |
 | DONE | [WARC web archive](formats/warc.md) |  | warc, warc.gz | `defaultArchive.warc` | 2/2 |  |
 | DONE | [Zip-based packages](formats/zip-packages.md) |  | ipa, xpi, epub, whl, ... | `defaultArchive.jar` | 7/38 |  |
@@ -77,7 +77,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [HFS+ / HFSX / HFS images](formats/hfs.md) |  | hfs, hfsx, img | `defaultArchive.hfs` | 3/3 | journaled HFS+ made by macOS |
 | DONE | [APFS image](formats/apfs.md) |  | apfs, img | `defaultArchive.apfs` | 2/2 | encrypted APFS, case-sensitive APFS, snapshots |
 | DONE | [ext2/3/4](formats/ext.md) |  | ext2, ext3, ext4, img | `defaultArchive.ext2`, `defaultArchive.ext3`, `defaultArchive.ext4` | 3/3 | inline data, encryption, large block sizes |
-| DONE | [UDF](formats/udf.md) |  | udf, iso | `defaultArchive.udf` | 4/4 | UDF 2.50/2.60 with a metadata partition: mkudffs --media-type=bdr --udfrev=0x0250 formats one, but Linux mounts 2.50 read-only so it cannot  |
+| DONE | [UDF](formats/udf.md) |  | udf, iso | `defaultArchive.udf` | 5/5 | UDF 2.60; UDF bridge ISO; DVD/BD layouts |
 | DONE | [Raw disk image (MBR, GPT, APM)](formats/rawdisk.md) |  | img, raw | `defaultArchive.raw` | 5/5 | hybrid MBR, multiple partitions |
 | DONE | [NSIS installer](formats/nsis.md) |  | exe | `defaultArchive-nsis.exe` | 5/5 |  |
 | DONE | [ACE](formats/ace.md) |  | ace, cba | `defaultArchive.ace` | 6/6 | multi-volume ACE (no CLI switch found), recovery record, SFX |
@@ -102,15 +102,15 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | PARTIAL | [Game data archives](formats/gamedata.md) |  | wad, pak, vpk | `defaultArchive.vpk`, `defaultArchive.wad` | 2/2 | Quake PAK; VPK v2 and multi-chunk (_dir.vpk + _000.vpk); WAD made by a Doom tool (SLADE/DeuTex not packaged) |
 | DONE | [Amiga hard disk file](formats/hdf.md) |  | hdf | `defaultArchive.hdf` | 2/2 | multi-partition RDB, PFS/SFS |
 | BLOCKED | [Amiga disk packers](formats/amiga-packers.md) |  | - |  | 0/0 | Warp and DImp (Disk Imploder) are in the amiga VM's C:, but need a floppy device (DF0:) with an ADF; not tried yet |
-| BLOCKED | [Amiga PowerPacker](formats/pp.md) |  | pp |  | 0/0 | PowerPacker data files (PP20): no packer confirmed on the amiga VM yet |
+| PARTIAL | [Amiga PowerPacker](formats/pp.md) |  | pp |  | 2/3 | defaultArchive.tar.pp: PowerPacker refuses ('Buffer Overflow') when the result would be larger, which the tar of an already-compressed zip i |
 | DONE | [ARC / Zoo](formats/arc-zoo.md) |  | arc, zoo | `defaultArchive.arc`, `defaultArchive.zoo` | 2/2 | FreeArc (.arc too, unrelated format); PKPAK/ARC 6 methods; Zoo high-compression (-h) entries |
 | PARTIAL | [CP/M archives](formats/cpm.md) |  | lbr | `defaultArchive.lbr` | 1/1 | Squeeze (.?Q?) and Crunch (.?Z?) files (need the CP/M tools; not found for Linux/Amiga) |
 | DONE | [NScripter archives](formats/nsa.md) |  | nsa, sar | `defaultArchive.nsa`, `defaultArchive.sar` | 4/4 | NSA with SPB/LZSS/BZip2-compressed entries (nsaarc on Windows) |
-| BLOCKED | [EGG](formats/egg.md) |  | egg |  | 0/0 | ALZip (Windows) |
+| DONE | [EGG](formats/egg.md) |  | egg | `defaultArchive.egg` | 5/5 | spanned EGG (64 KB minimum volume) |
 | DONE | [Inno Setup](formats/inno.md) |  | exe | `defaultArchive-inno.exe` | 6/6 | Inno Setup 6, encrypted installers |
-| BLOCKED | [InstallShield cabinet](formats/installshield.md) |  | cab, hdr |  | 0/0 | InstallShield is commercial; no free trial without registration known |
+| BLOCKED | [InstallShield cabinet](formats/installshield.md) |  | cab, hdr |  | 0/0 | InstallShield's only source is Revenera's trial, which requires a name/email registration (not allowed for this task). |
 | DONE | [Encrypted DMG](formats/encdmg.md) |  | dmg | `defaultArchive-encrypted.dmg` | 3/3 |  |
-| BLOCKED | [GameCube disc](formats/gamecube.md) |  | gcm, iso, gcz, rvz |  | 0/0 | needs a homebrew disc |
+| TODO | GameCube disc |  | gcm, iso, gcz, rvz |  | 0/0 | build a tiny homebrew DOL (devkitPPC/libogc) and a disc layout (boot.bin, bi2.bin, homebrew apploader, FST) with gcit/GCRebuilder; not attem |
 | PARTIAL | [Android images](formats/android.md) |  | img (sparse, super) | `defaultArchive-android-sparse.img` | 1/1 | super.img (lpmake not packaged) |
 | PARTIAL | [ZX Spectrum](formats/zx.md) |  | tap, tzx, trd, scl | `defaultArchive.tap`, `defaultArchive.tzx` | 2/2 | TR-DOS .trd and .scl (no Linux writer found) |
 | PARTIAL | [Amstrad CPC, MSX disks](formats/cpc.md) |  | dsk | `defaultArchive.dsk` | 2/2 | old (non-extended) CPC DSK, CPC system format, MSX disk made on an MSX |

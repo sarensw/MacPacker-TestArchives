@@ -1,0 +1,5 @@
+== udf/udf_rev0250_win7.udf
+  Windows 7 SP1 (win7 VM): diskpart create vdisk 16 MB fixed, create partition primary, format fs=udf revision=2.50 quick, xcopy of the content; partition (start sector 128, 30592 sectors) cut out of the VHD on the host. Domain identifier revision 0x0250, NSR03, "*UDF Metadata Partition" present.
+== udf/udf_rev0250_win7.udf
+  7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Udf;
+  content: MATCH (3 files, sha256)

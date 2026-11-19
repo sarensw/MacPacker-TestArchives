@@ -29,3 +29,15 @@ Input: `defaultArchives/defaultArchive.iso` copied to `C:\ISO`.
 
 Not used: the archive.org DiscJuggler Pro 6 bundle (ships a replacement `pfc.dll`); CDI comes from cdi4dc instead
 (`scripts/ubuntu_batch5.sh`). CloneCD's own `.ccd` is written by `scripts/ubuntu_batch5.sh` over the raw 2352-byte image.
+
+## Windows 7 (2026-11-19, `win7` VM)
+
+| Tool | Source, sha256 | How it ran | Output |
+|---|---|---|---|
+| diskpart / format (Windows 7 SP1) | built in | `create vdisk ... maximum=16 type=fixed`, `create partition primary`, `format fs=udf revision=2.50 quick`, xcopy; the partition (sector 128, 30592 sectors) cut out of the VHD on the host | udf/udf_rev0250_win7.udf |
+| ALZip 8.51 trial (60 days, "Use Trial Version", no registration) | archive.org `alzip-851_202508/ALZip851.exe` md5 `3e9dc327…`, sha256 `72b076ea…` | `/S`; `ALZipCon.exe -a [-s] [-ppassword -tp0/1/2] C:\defaultArchiveContent C:\ALZ2\<name>.{alz,egg}` (a source list with spaces fails; spanning needs ≥ 64 KB volumes) | defaultArchive.alz/.egg, alz/, egg/ |
+| Bandizip 6 (freeware, Bandisoft "old" build for Windows 7) | https://www.bandisoft.com/bandizip/dl.php?old `37d68f27…` | `/S`; `bc.exe x -y -p:password -o:<dir> <archive>`, certutil SHA256 | verification of ALZ/EGG |
+| DAEMON Tools Lite 4.30.4 (free) | archive.org `daemon_tools_lite_4_30_4_0027` md5 `99102a9f…`, sha256 `12f5f431…` | installed (toolbar/search/start page unticked; needs one reboot for SPTD); `daemon.exe -mount 0,C:\ISO\defaultArchive.iso`; Disc imaging of its own drive fails, WinCDEmu's drive is not listed → no MDX | – |
+| WinCDEmu 4.0 portable (LGPL) | https://github.com/sysprogs/WinCDEmu/releases/download/v4.1/PortableWinCDEmu-4.0.exe `c11fd7da…` | mounted the ISO as G: (to give DAEMON Tools a second drive) | – |
+
+Not used: archive.org BlindWrite 6.2 (keygen serial in readme) and 7.0 (cracked BW.exe in a "Fix" folder).

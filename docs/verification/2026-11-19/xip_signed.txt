@@ -1,0 +1,7 @@
+== defaultArchives/defaultArchive.xip
+  Built from xip/unsigned_structure.xip (Content = pbzx odc cpio, Metadata plist), signed with a throwaway test CA (scripts/xip/sign_xip.sh): mackyle xar 1.6.1 (commit 66d451d, `int c` getopt fix for arm64) creates the placeholder signature, scripts/xip/xar_sig.py injects the PKCS#1 v1.5 RSA signature over the SHA-1 DigestInfo of the TOC checksum.
+  Ubuntu: xar_sig.py dump: toc checksum stored == sha1(compressed toc): True, signature style RSA, 2 certificates; openssl verify -CAfile xip/testCA.pem xip/testInstaller.pem: OK; openssl pkeyutl -verifyrecover gives DigestInfo 3021300906052b0e03021a05000414 + the TOC SHA-1.
+  macOS 27.2 (lb_27): xar -tf lists Content, Metadata; pkgutil --check-signature: "Status: signed by untrusted certificate", chain "MacPacker TestArchives Test Installer"; xip --expand: "does not come from Apple ... signing certificate was MacPacker TestArchives Test Installer"; xar -x + compression_tool -decode + cpio -i:
+  30322444506aed4d  ./folder/README.md
+  466ab31d0374b763  ./folder/NestedArchive.zip
+  03ba204e50d126e4  ./hello world.txt

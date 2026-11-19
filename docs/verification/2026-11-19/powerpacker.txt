@@ -1,0 +1,8 @@
+== powerpacker/README.md.pp
+  magic PP20; ppunpack 1.0 (Marc Espie, 1995, built on Ubuntu) and unar 1.10.1 (format PowerPacker) decrunch it:
+  30322444506aed4d  ./README.md
+== powerpacker/README_eff1.md.pp
+  magic PP20, efficiency 1; ppunpack 1.0 and unar 1.10.1:
+  30322444506aed4d  ./README.md
+== powerpacker/README_crypt.md.pp
+  UNVERIFIED: magic PX20 (encrypted, password `password`); unar does not recognise encrypted PowerPacker and ppunpack cannot decrypt; not decrypted here

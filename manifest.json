@@ -329,6 +329,22 @@
    }
   },
   {
+   "path": "alz/alz_password.alz",
+   "formats": [
+    "alz"
+   ],
+   "role": "variant",
+   "size": 52636,
+   "sha256": "2ffe00e2bda164555aca0a70aa8a6000f6fe812c65801b37a4d5f9f823f88a5a",
+   "expected": "as defaultArchive.alz",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/win7_bandizip.txt: Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files: | 03ba204e50d126e4  ./defaultArchiveContent/hello world.txt | 30322444506aed4d  ./defaultArchiveContent/folder/README.md | 466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip"
+    ]
+   }
+  },
+  {
    "path": "apple2/binary2.bny",
    "formats": [
     "shk"
@@ -1444,6 +1460,23 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.alz",
+   "formats": [
+    "alz"
+   ],
+   "role": "baseline",
+   "size": 52600,
+   "sha256": "92127b369ffbcd74a2fd5c50d4f6bb8cf2256ceab5603f25a1fcb06f22bd1615",
+   "expected": "defaultArchiveContent/hello world.txt, defaultArchiveContent/folder/README.md, defaultArchiveContent/folder/NestedArchive.zip",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/win7_bandizip.txt: Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files: | 03ba204e50d126e4  ./defaultArchiveContent/hello world.txt | 30322444506aed4d  ./defaultArchiveContent/folder/README.md | 466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip",
+     "docs/verification/2026-11-19/win7_bandizip.txt: also unar 1.10.1 (XAD) on Ubuntu: format ALZip, same three hashes"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.apfs",
    "formats": [
     "apfs"
@@ -1813,6 +1846,22 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 44454641554c5441; file: ASCII text, with no line terminators; readers matching standard content: none",
      "docs/verification/2026-11-15/manual_checks.txt: ASCII text \"DEFAULTARCHIVE.IMG\" without line end: a DVD layer-break/descriptor text file naming the image (not a disc image itself)."
+    ]
+   }
+  },
+  {
+   "path": "defaultArchives/defaultArchive.egg",
+   "formats": [
+    "egg"
+   ],
+   "role": "baseline",
+   "size": 52984,
+   "sha256": "ac225bbf2e0b0834580273e46797a84e158719af174a58d974ceb672ebf15065",
+   "expected": "as defaultArchive.alz",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/win7_bandizip.txt: Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files: | 03ba204e50d126e4  ./defaultArchiveContent/hello world.txt | 30322444506aed4d  ./defaultArchiveContent/folder/README.md | 466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip"
     ]
    }
   },
@@ -3390,6 +3439,38 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.xip",
+   "formats": [
+    "xip"
+   ],
+   "role": "baseline",
+   "size": 55874,
+   "sha256": "f9b731a8bc427aaf5d9ab3a5e53e4af0b0cca8a6b479850314179a869cdd6ed3",
+   "expected": [
+    {
+     "path": "folder/NestedArchive.zip",
+     "sha256_prefix": "466ab31d0374b763",
+     "note": "current"
+    },
+    {
+     "path": "folder/README.md",
+     "sha256_prefix": "30322444506aed4d",
+     "note": "current"
+    },
+    {
+     "path": "hello world.txt",
+     "sha256_prefix": "03ba204e50d126e4",
+     "note": "current"
+    }
+   ],
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/xip_signed.txt: Built from xip/unsigned_structure.xip (Content = pbzx odc cpio, Metadata plist), signed with a throwaway test CA (scripts/xip/sign_xip.sh): mackyle xar 1.6.1 (commit 66d451d, `int c` getopt fix for arm64) creates the placeholder signature, scripts/xip/xar_sig.py injects the PKCS#1 v1.5 RSA signature over the SHA-1 DigestInfo of the TOC checksum. | Ubuntu: xar_sig.py dump: toc checksum stored == sh"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.xiso",
    "formats": [
     "xiso"
@@ -3807,6 +3888,70 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_apple_fixtures.jsonl: magic 7801636018054338; 7z Type=Dmg Methods=Zero2 ZLIB CRC; file: zlib compressed data; readers matching standard content: 7z",
      "docs/verification/2026-11-15/macos_apple_tools.txt: Format Description: UDIF read-only compressed (zlib) Format: UDZO \tpartition-scheme: fdisk \tEncrypted: false | fs: MS-DOS FAT16 | content: MATCH (3 files, sha256)"
+    ]
+   }
+  },
+  {
+   "path": "egg/egg_aes128.egg",
+   "formats": [
+    "egg"
+   ],
+   "role": "variant",
+   "size": 53068,
+   "sha256": "5b7d6cc068367df9f970365c991f9ccd21e22766fc07d02a9ebe06e0025f1ce1",
+   "expected": "as defaultArchive.alz",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/win7_bandizip.txt: Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files: | 03ba204e50d126e4  ./defaultArchiveContent/hello world.txt | 30322444506aed4d  ./defaultArchiveContent/folder/README.md | 466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip"
+    ]
+   }
+  },
+  {
+   "path": "egg/egg_aes256.egg",
+   "formats": [
+    "egg"
+   ],
+   "role": "variant",
+   "size": 53092,
+   "sha256": "c68a2eff2f22bb7672bdc268936f3e317a9bf2119bdf0e30fe258ca15fd2196d",
+   "expected": "as defaultArchive.alz",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/win7_bandizip.txt: Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files: | 03ba204e50d126e4  ./defaultArchiveContent/hello world.txt | 30322444506aed4d  ./defaultArchiveContent/folder/README.md | 466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip"
+    ]
+   }
+  },
+  {
+   "path": "egg/egg_solid.egg",
+   "formats": [
+    "egg"
+   ],
+   "role": "variant",
+   "size": 52729,
+   "sha256": "6b1bbf848b6718fdec35bd12f6377b22929d32cb6afda21e5c02da8a488d448e",
+   "expected": "as defaultArchive.alz",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/win7_bandizip.txt: Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files: | 03ba204e50d126e4  ./defaultArchiveContent/hello world.txt | 30322444506aed4d  ./defaultArchiveContent/folder/README.md | 466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip"
+    ]
+   }
+  },
+  {
+   "path": "egg/egg_zipcrypto.egg",
+   "formats": [
+    "egg"
+   ],
+   "role": "variant",
+   "size": 53056,
+   "sha256": "25368c5edeb1f551b771670d131e9394a6d8dec7008948543c2b8864b53ee1b5",
+   "expected": "as defaultArchive.alz",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/win7_bandizip.txt: Bandizip 6 bc.exe x -p:password (Bandisoft, independent of ALZip) on win7, certutil SHA256 of the extracted files: | 03ba204e50d126e4  ./defaultArchiveContent/hello world.txt | 30322444506aed4d  ./defaultArchiveContent/folder/README.md | 466ab31d0374b763  ./defaultArchiveContent/folder/NestedArchive.zip"
     ]
    }
   },
@@ -5577,6 +5722,54 @@
    }
   },
   {
+   "path": "powerpacker/README.md.pp",
+   "formats": [
+    "pp"
+   ],
+   "role": "variant",
+   "size": 328,
+   "sha256": "98ab3d53d7c0a73957e3eecac71b15bebc2b57219a6e6adf92b8a2d99b3aab8e",
+   "expected": "one stream: the bytes of folder/README.md (437 bytes)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/powerpacker.txt: magic PP20; ppunpack 1.0 (Marc Espie, 1995, built on Ubuntu) and unar 1.10.1 (format PowerPacker) decrunch it: | 30322444506aed4d  ./README.md"
+    ]
+   }
+  },
+  {
+   "path": "powerpacker/README_crypt.md.pp",
+   "formats": [
+    "pp"
+   ],
+   "role": "variant",
+   "size": 330,
+   "sha256": "75de8c736aa4cf53d808f9f87f990c1dc6c2f46a2ff24d5ec90c904d492afd61",
+   "expected": "one stream: the bytes of folder/README.md (437 bytes)",
+   "verification": {
+    "status": "unverified",
+    "evidence": [
+     "docs/verification/2026-11-19/powerpacker.txt: UNVERIFIED: magic PX20 (encrypted, password `password`); unar does not recognise encrypted PowerPacker and ppunpack cannot decrypt; not decrypted here"
+    ]
+   }
+  },
+  {
+   "path": "powerpacker/README_eff1.md.pp",
+   "formats": [
+    "pp"
+   ],
+   "role": "variant",
+   "size": 324,
+   "sha256": "84a083eb11bc869d6964281f59ff3a7c4a99cc3f4006bba8865cb3598769c95c",
+   "expected": "one stream: the bytes of folder/README.md (437 bytes)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/powerpacker.txt: magic PP20, efficiency 1; ppunpack 1.0 and unar 1.10.1: | 30322444506aed4d  ./README.md"
+    ]
+   }
+  },
+  {
    "path": "rar/rar2_best.rar",
    "formats": [
     "rar"
@@ -6808,6 +7001,23 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_new_fixtures.jsonl: magic 0000000000000000; 7z Type=Udf; file: data; readers matching standard content: 7z",
      "docs/verification/2026-11-15/ubuntu_special.txt: label=defaultArchive | blocksize=2048 | udfrev=1.50"
+    ]
+   }
+  },
+  {
+   "path": "udf/udf_rev0250_win7.udf",
+   "formats": [
+    "udf"
+   ],
+   "role": "variant",
+   "size": 15663104,
+   "sha256": "2e591f6b7f63ce0b17f4dff96ca6a4a5c57689d2e4b3ad153c5bdac57181f976",
+   "expected": "standard",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-19/win7_udf250.txt: Windows 7 SP1 (win7 VM): diskpart create vdisk 16 MB fixed, create partition primary, format fs=udf revision=2.50 quick, xcopy of the content; partition (start sector 128, 30592 sectors) cut out of the VHD on the host. Domain identifier revision 0x0250, NSR03, \"*UDF Metadata Partition\" present.",
+     "docs/verification/2026-11-19/win7_udf250.txt: 7zz: 7-Zip (z) 26.03 (arm64) : Copy;  1 Type = Udf; | content: MATCH (3 files, sha256)"
     ]
    }
   },
