@@ -1,0 +1,20 @@
+== apple2/pascal.po
+  CREATOR-ONLY: CiderPress II 1.2.0: Disk image (Unadorned, order=pdos/blk) - 140KB Pascal "NEWDISK", 169 blocks free
+  03ba204e50d126e4  ./hello world.txt (first 13 of 13 bytes)
+  30322444506aed4d  ./folder/README.md (first 437 of 437 bytes)
+  466ab31d0374b763  ./folder/NestedArchive.zip (first 52334 of 52334 bytes)
+== apple2/cpm.po
+  CREATOR-ONLY: CiderPress II 1.2.0: Disk image (Unadorned, order=pdos/blk) - 140KB CP/M, 72KB free
+  03ba204e50d126e4  ./hello world.txt (first 13 of 13 bytes)
+  30322444506aed4d  ./folder/README.md (first 437 of 437 bytes)
+  466ab31d0374b763  ./folder/NestedArchive.zip (first 52334 of 52334 bytes)
+== cpc/cpcdata_olddsk.dsk
+  CREATOR-ONLY: cpmtools 2.23 over libdsk (dsk, cpcdata); header MV - CPCEMU Disk-File  Disk-Info  
+  03ba204e50d126e4  ./hello.txt
+  466ab31d0374b763  ./nested.zip
+  30322444506aed4d  ./readme.md
+== cpc/cpcsys_edsk.dsk
+  CREATOR-ONLY: cpmtools 2.23 over libdsk (edsk, cpcsys); header EXTENDED CPC DSK File  Disk-Info  
+  03ba204e50d126e4  ./hello.txt
+  466ab31d0374b763  ./nested.zip
+  30322444506aed4d  ./readme.md

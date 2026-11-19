@@ -576,3 +576,20 @@ for _f in FORMATS:
     if _f["id"] in _UPD9:
         _f.update(_UPD9[_f["id"]])
 CUSTOM_EXPECTED.update({"parallels/**": "virtual disk = defaultArchive.fat (FAT16 with the standard content)"})
+
+# ---- 2026-11-19 run 5 (partials) ----
+for _f in FORMATS:
+    if _f["id"] == "zso":
+        _f.update(status="DONE", outstanding="split CSO/ZSO", notes="ZSO and CSO v1/v2 decompress byte for byte to defaultArchive.iso with maxcso. maxcso cannot read its own DAX (it writes most frames as raw deflate and two with a zlib header); scripts/read_dax.py, written from the DAX layout, decodes it byte-identical to defaultArchive.iso.")
+    if _f["id"] == "apple2":
+        _f.update(fixtures=_f["fixtures"] + ["apple2/pascal.po", "apple2/cpm.po"],
+                  covered=_f["covered"] + "; Apple Pascal and Apple II CP/M 140K volumes", outstanding="copy-protected WOZ, 40-track images")
+    if _f["id"] == "cpc":
+        _f.update(fixtures=_f["fixtures"] + ["cpc/*.dsk"], covered=_f["covered"] + "; cpc/: old (non-extended) DSK with the data format, CPC system format (2 reserved tracks) as EDSK",
+                  outstanding="MSX disk made on an MSX; CPC images made by an emulator/real CPC")
+    if _f["id"] == "macdisk":
+        _f.update(outstanding="MFS (400K): no writer available (CiderPress II formats HFS, ProDOS, DOS, Pascal and CP/M only), DART, MOOF, partitioned Mac hard disk images")
+    if _f["id"] == "cpm":
+        _f.update(outstanding="Squeeze (.?Q?) and Crunch (.?Z?): no writer found (the amiga VM's `squeeze` writes another, text-based format)")
+CUSTOM_EXPECTED.update({"apple2/pascal.po": "Apple Pascal, flat: HELLO_WORLD.TXT, README.MD, NESTEDA..VE.ZIP", "apple2/cpm.po": "CP/M, flat 8.3: HELLO.TXT, README.MD, NESTED.ZIP",
+                        "cpc/*": "flat, CP/M user 0: hello.txt, readme.md, nested.zip"})

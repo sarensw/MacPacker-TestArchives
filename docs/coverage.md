@@ -91,10 +91,10 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [Atari ST floppy](formats/atari-st.md) |  | st, msa | `defaultArchive.msa`, `defaultArchive.st` | 4/4 |  |
 | DONE | [Xbox disc](formats/xiso.md) |  | xiso | `defaultArchive.xiso` | 1/1 | images with a video partition; redump-style full images |
 | DONE | [Dreamcast GD-ROM](formats/gdi.md) |  | gdi |  | 4/4 | IP.BIN boot area (left empty on purpose; a bootable one carries Sega's licence text) |
-| PARTIAL | [PSP ZSO/DAX/CSO v2](formats/zso.md) |  | zso, dax | `defaultArchive.dax`, `defaultArchive.zso` | 3/4 | independent check of DAX: maxcso --decompress writes an empty file for it (DAX unverified) |
-| DONE | [Apple II disks](formats/apple2.md) |  | dsk, do, po, 2mg, woz | `defaultArchive.po` | 6/6 | Pascal and CP/M volumes, copy-protected WOZ, 40-track images |
+| DONE | [PSP ZSO/DAX/CSO v2](formats/zso.md) |  | zso, dax | `defaultArchive.dax`, `defaultArchive.zso` | 4/4 | split CSO/ZSO |
+| DONE | [Apple II disks](formats/apple2.md) |  | dsk, do, po, 2mg, woz | `defaultArchive.po` | 8/8 | copy-protected WOZ, 40-track images |
 | DONE | [ShrinkIt / Binary II](formats/shk.md) |  | shk, sdk, bxy, bny | `defaultArchive.shk` | 2/2 | .sdk (ShrinkIt disk archive), .bxy (Binary II-wrapped NuFX) |
-| PARTIAL | [Classic Mac disks](formats/macdisk.md) |  | image, dc42, img | `defaultArchive.dc42` | 2/2 | MFS, DART, MOOF, partitioned Mac hard disk images |
+| PARTIAL | [Classic Mac disks](formats/macdisk.md) |  | image, dc42, img | `defaultArchive.dc42` | 2/2 | MFS (400K): no writer available (CiderPress II formats HFS, ProDOS, DOS, Pascal and CP/M only), DART, MOOF, partitioned Mac hard disk images |
 | BLOCKED | [Classic Mac archivers](formats/cpt.md) |  | cpt, pit, dd |  | 0/0 | Mini vMac + Compact Pro etc. |
 | DONE | [Sparse disk images](formats/sparse.md) |  | sparseimage, sparsebundle | `defaultArchive.sparseimage` | 1/7 | encrypted sparse bundle |
 | DONE | [Parallels disk](formats/parallels.md) |  | hdd, hds | `defaultArchive.hds` | 2/3 | a bundle made by Parallels Desktop itself (snapshots, split images) |
@@ -104,7 +104,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | BLOCKED | [Amiga disk packers](formats/amiga-packers.md) |  | - |  | 0/0 | Warp and DImp (Disk Imploder) are in the amiga VM's C:, but need a floppy device (DF0:) with an ADF; not tried yet |
 | PARTIAL | [Amiga PowerPacker](formats/pp.md) |  | pp |  | 2/3 | defaultArchive.tar.pp: PowerPacker refuses ('Buffer Overflow') when the result would be larger, which the tar of an already-compressed zip i |
 | DONE | [ARC / Zoo](formats/arc-zoo.md) |  | arc, zoo | `defaultArchive.arc`, `defaultArchive.zoo` | 2/2 | FreeArc (.arc too, unrelated format); PKPAK/ARC 6 methods; Zoo high-compression (-h) entries |
-| PARTIAL | [CP/M archives](formats/cpm.md) |  | lbr | `defaultArchive.lbr` | 1/1 | Squeeze (.?Q?) and Crunch (.?Z?) files (need the CP/M tools; not found for Linux/Amiga) |
+| PARTIAL | [CP/M archives](formats/cpm.md) |  | lbr | `defaultArchive.lbr` | 1/1 | Squeeze (.?Q?) and Crunch (.?Z?): no writer found (the amiga VM's `squeeze` writes another, text-based format) |
 | DONE | [NScripter archives](formats/nsa.md) |  | nsa, sar | `defaultArchive.nsa`, `defaultArchive.sar` | 4/4 | NSA with SPB/LZSS/BZip2-compressed entries (nsaarc on Windows) |
 | DONE | [EGG](formats/egg.md) |  | egg | `defaultArchive.egg` | 5/5 | spanned EGG (64 KB minimum volume) |
 | DONE | [Inno Setup](formats/inno.md) |  | exe | `defaultArchive-inno.exe` | 6/6 | Inno Setup 6, encrypted installers |
@@ -113,7 +113,7 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [GameCube disc](formats/gamecube.md) |  | gcm, iso, gcz, rvz | `defaultArchive.gcm` | 1/1 | compressed containers (GCZ, RVZ, CISO-Wii) and a disc made by a Nintendo/homebrew build tool; Wii (needs the Wii key, WON'T DO) |
 | PARTIAL | [Android images](formats/android.md) |  | img (sparse, super) | `defaultArchive-android-sparse.img` | 1/1 | super.img (lpmake not packaged) |
 | PARTIAL | [ZX Spectrum](formats/zx.md) |  | tap, tzx, trd, scl | `defaultArchive.tap`, `defaultArchive.tzx` | 2/2 | TR-DOS .trd and .scl (no Linux writer found) |
-| PARTIAL | [Amstrad CPC, MSX disks](formats/cpc.md) |  | dsk | `defaultArchive.dsk` | 2/2 | old (non-extended) CPC DSK, CPC system format, MSX disk made on an MSX |
+| PARTIAL | [Amstrad CPC, MSX disks](formats/cpc.md) |  | dsk | `defaultArchive.dsk` | 4/4 | MSX disk made on an MSX; CPC images made by an emulator/real CPC |
 | DONE | [Atari 8-bit](formats/atr.md) |  | atr | `defaultArchive.atr` | 1/2 | SpartaDOS, ATX/XFD/DCM containers, bootable DOS disks |
 | PARTIAL | [PC-98](formats/pc98.md) |  | d88, hdi, fdi | `defaultArchive.d88`, `defaultArchive.fdi` | 2/2 | HDI hard disk image (needs PC-98 IPL and partition table) |
 | SKIP | Flash, PDF |  | swf, pdf |  | 0/0 |  |

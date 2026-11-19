@@ -1,0 +1,3 @@
+== defaultArchives/defaultArchive.dax
+  scripts/read_dax.py (written from the DAX layout, independent of maxcso): DAX version 0, 53 frames, 0 uncompressed (NC) frames, 432128 bytes
+  decompressed sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical)

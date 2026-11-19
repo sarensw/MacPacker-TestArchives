@@ -362,6 +362,22 @@
    }
   },
   {
+   "path": "apple2/cpm.po",
+   "formats": [
+    "apple2"
+   ],
+   "role": "variant",
+   "size": 143360,
+   "sha256": "d1f895c692eab6df4ecb8d474837af6ebf23b3ce63bb5e5f6a512151a5214ed4",
+   "expected": "CP/M, flat 8.3: HELLO.TXT, README.MD, NESTED.ZIP",
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-19c/cp2_cpmtools.txt: CREATOR-ONLY: CiderPress II 1.2.0: Disk image (Unadorned, order=pdos/blk) - 140KB CP/M, 72KB free | 03ba204e50d126e4  ./hello world.txt (first 13 of 13 bytes) | 30322444506aed4d  ./folder/README.md (first 437 of 437 bytes) | 466ab31d0374b763  ./folder/NestedArchive.zip (first 52334 of 52334 bytes)"
+    ]
+   }
+  },
+  {
    "path": "apple2/dos32.d13",
    "formats": [
     "apple2"
@@ -409,6 +425,22 @@
     "evidence": [
      "docs/verification/2026-11-16-batch4/ubuntu_readers.jsonl: magic ffffffffffffffff; file: Non-ISO extended-ASCII text, with very long lines (65536), with no line terminators; readers matching standard content: none",
      "docs/verification/2026-11-16-batch4/format_tools.txt: CREATOR-ONLY: CiderPress II 1.2.0. DOS 3.x stores these as type S files without a length, so each extracts padded with zeros to a 256-byte multiple; checked that the original bytes are the prefix: | 03ba204e50d126e4  ./hello world.txt (first 13 bytes of HELLO WORLD.TXT) | 30322444506aed4d  ./folder/README.md (first 437 bytes of README.MD) | 466ab31d0374b763  ./folder/NestedArchive.zip (first 52334"
+    ]
+   }
+  },
+  {
+   "path": "apple2/pascal.po",
+   "formats": [
+    "apple2"
+   ],
+   "role": "variant",
+   "size": 143360,
+   "sha256": "c70e0f59de1ca14837eb18d5327135b0b67435a7ebaccd54d893af00cb03c282",
+   "expected": "Apple Pascal, flat: HELLO_WORLD.TXT, README.MD, NESTEDA..VE.ZIP",
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-19c/cp2_cpmtools.txt: CREATOR-ONLY: CiderPress II 1.2.0: Disk image (Unadorned, order=pdos/blk) - 140KB Pascal \"NEWDISK\", 169 blocks free | 03ba204e50d126e4  ./hello world.txt (first 13 of 13 bytes) | 30322444506aed4d  ./folder/README.md (first 437 of 437 bytes) | 466ab31d0374b763  ./folder/NestedArchive.zip (first 52334 of 52334 bytes)"
     ]
    }
   },
@@ -1017,6 +1049,38 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_existing_fixtures.jsonl: magic 28b52ffd240d6900; file: Zstandard compressed data (v0.8+), Dictionary ID: None; readers matching standard content: none",
      "docs/verification/2026-11-15/host_7zz.txt: 7zz -so sha256: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340 (hello world.txt: 03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340)"
+    ]
+   }
+  },
+  {
+   "path": "cpc/cpcdata_olddsk.dsk",
+   "formats": [
+    "cpc"
+   ],
+   "role": "variant",
+   "size": 194816,
+   "sha256": "2152839507944d008a2649194c80891d2bdb82a6ee3d43299fff92ac5cb78b2e",
+   "expected": "flat, CP/M user 0: hello.txt, readme.md, nested.zip",
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-19c/cp2_cpmtools.txt: CREATOR-ONLY: cpmtools 2.23 over libdsk (dsk, cpcdata); header MV - CPCEMU Disk-File  Disk-Info | 03ba204e50d126e4  ./hello.txt | 466ab31d0374b763  ./nested.zip | 30322444506aed4d  ./readme.md"
+    ]
+   }
+  },
+  {
+   "path": "cpc/cpcsys_edsk.dsk",
+   "formats": [
+    "cpc"
+   ],
+   "role": "variant",
+   "size": 194816,
+   "sha256": "3c776100e4883294232119b9a54d1b0b1d273e58ff89e596cfdf97100537133c",
+   "expected": "flat, CP/M user 0: hello.txt, readme.md, nested.zip",
+   "verification": {
+    "status": "verified-creator-only",
+    "evidence": [
+     "docs/verification/2026-11-19c/cp2_cpmtools.txt: CREATOR-ONLY: cpmtools 2.23 over libdsk (edsk, cpcsys); header EXTENDED CPC DSK File  Disk-Info | 03ba204e50d126e4  ./hello.txt | 466ab31d0374b763  ./nested.zip | 30322444506aed4d  ./readme.md"
     ]
    }
   },
@@ -1759,10 +1823,9 @@
    "size": 54937,
    "sha256": "eb2cf521c3148957870059a275e7c868dbc2c43a2e54e2fe2032aaf06a89824f",
    "verification": {
-    "status": "unverified",
+    "status": "verified",
     "evidence": [
-     "docs/verification/2026-11-16-batch3/ubuntu_readers.jsonl: magic 4441580000980600; 7z Type=zip Methods=Deflate; file: data; readers matching standard content: none",
-     "docs/verification/2026-11-16-batch3/native_tools.txt: UNVERIFIED: maxcso v1.13.0 --decompress writes an empty file for DAX; no other DAX reader was available | magic 44415800 | maxcso --decompress sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+     "docs/verification/2026-11-19c/dax.txt: scripts/read_dax.py (written from the DAX layout, independent of maxcso): DAX version 0, 53 frames, 0 uncompressed (NC) frames, 432128 bytes | decompressed sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical)"
     ]
    }
   },
