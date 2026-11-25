@@ -593,3 +593,22 @@ for _f in FORMATS:
         _f.update(outstanding="Squeeze (.?Q?) and Crunch (.?Z?): no writer found (the amiga VM's `squeeze` writes another, text-based format)")
 CUSTOM_EXPECTED.update({"apple2/pascal.po": "Apple Pascal, flat: HELLO_WORLD.TXT, README.MD, NESTEDA..VE.ZIP", "apple2/cpm.po": "CP/M, flat 8.3: HELLO.TXT, README.MD, NESTED.ZIP",
                         "cpc/*": "flat, CP/M user 0: hello.txt, readme.md, nested.zip"})
+
+# ---- 2026-11-25 run (new win7 CD drive, amiga DF0:) ----
+_UPD10 = {
+ "mdx": dict(status="DONE", mime="-", uti="-", magic="`MEDIA DESCRIPTOR` at 0, version bytes 02 01, 0xFFFFFFFF at 0x2C, descriptor offset/length at 0x30/0x38", tar="no",
+   fixtures=["defaultArchives/defaultArchive.mdx", "mdx/compressed.mdx", "mdx/password.mdx"],
+   covered="MDX v2.1 written by DAEMON Tools Lite 5.0.1 (free license, win7): plain, compressed, password-protected (password `password`)",
+   outstanding="MDX from DAEMON Tools Pro/Ultra, multi-session or audio discs",
+   notes="Imaged from a DT virtual drive holding defaultArchive.iso. libmirage 3.3.3 (CDEmu, built from source) reads all three back to defaultArchive.iso byte for byte (after the 150-sector pregap); a wrong password is rejected. Imaging the QEMU CD drive instead gave a corrupt image (garbled ISO9660 sectors, also when mounted in DT itself), so that image was discarded."),
+ "mds": dict(status="DONE", fixtures=["defaultArchives/defaultArchive.mds", "defaultArchives/defaultArchive.mdf", "mds/v2_daemontools.mds", "mds/v2_daemontools.mdf"],
+   covered="MDS v1.3 + MDF with 2352-byte raw MODE1 sectors (WinISO 6.4.1); MDS v2.1 (encrypted descriptor) + 2048-byte MDF (DAEMON Tools Lite 5.0.1)",
+   outstanding="MDS made by Alcohol 120% itself; multi-track/audio MDS",
+   notes="mdf2iso 0.3.1 converts the v1.3 mdf back to defaultArchive.iso byte for byte. The v2 mdf is byte-identical to defaultArchive.iso; libmirage 3.3.3 parses the v2 descriptor and returns the same data."),
+ "dms": dict(status="BLOCKED", blocked="The amiga VM now has DF0: (bob media). DMS 2.04 (shareware disk from archive.org TOSEC, unregistered part only) installs and loads its English texts, but on first start it opens a 'DMS Prefs' window that needs a mouse click; the Bob HQ amiga VM accepts no mouse/keyboard events. PackDisk 1.1 (Aminet) is GUI-only. Needs: input (click) support for the amiga VM (infra) or a CLI-only packer such as DMS 1.x from a clean source."),
+ "amiga-packers": dict(status="BLOCKED", blocked="DF0: exists now, but the packers tried (DMS 2.04, PackDisk 1.1) need GUI input that the amiga VM cannot receive. Needs click support for the amiga VM (infra)."),
+}
+for _f in FORMATS:
+    if _f["id"] in _UPD10:
+        _f.update(_UPD10[_f["id"]])
+CUSTOM_EXPECTED.update({"mdx/*": "disc image = defaultArchive.iso (ISO9660 + Joliet with the standard content)", "mds/*": "disc image = defaultArchive.iso (ISO9660 + Joliet with the standard content)"})

@@ -2368,6 +2368,21 @@
    }
   },
   {
+   "path": "defaultArchives/defaultArchive.mdx",
+   "formats": [
+    "mdx"
+   ],
+   "role": "baseline",
+   "size": 432816,
+   "sha256": "84b41cbf668540f049d150f80d0bc3fde7bad919303e314cb56f1970ad28e25f",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-25/daemontools.txt: header: \"MEDIA DESCRIPTOR\" 02 01 (v2.1), \"(c) 2000-2015 Disc Soft Ltd.\" | libmirage data track sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical) | mounted in DT 5.0.1 (I:): serial CC27-5CDD as the source; hello world.txt 03ba204e..., folder/README.md 30322444..., folder/NestedArchive.zip 466ab31d... (all == defaultArchiveContent)"
+    ]
+   }
+  },
+  {
    "path": "defaultArchives/defaultArchive.msa",
    "formats": [
     "atari-st"
@@ -5342,6 +5357,70 @@
     "evidence": [
      "docs/verification/2026-11-15/ubuntu_apple_fixtures.jsonl: magic 000a666f726b6564; lsar format=MacBinary; file: MacBinary III, Sun Nov 15 22:01:15 2026, modified Sun Nov 15 22:01:15 2026, creator Simple; readers matching standard content: none",
      "docs/verification/2026-11-15/macos_apple_tools.txt: data: 68656c6c6f20776f726c640a0a  rsrc: resource fork of forked.txt  FinderInfo: 5445585474747874"
+    ]
+   }
+  },
+  {
+   "path": "mds/v2_daemontools.mdf",
+   "formats": [
+    "mds"
+   ],
+   "role": "variant",
+   "size": 432128,
+   "sha256": "2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18",
+   "expected": "disc image = defaultArchive.iso (ISO9660 + Joliet with the standard content)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-25/daemontools.txt: 2048-byte sectors, cmp == defaultArchive.iso (byte-identical) | Amiga DMS / disk packers (amiga VM with DF0: via bob media), not created: | DMS 2.04 shareware ADF (archive.org TOSEC, md5 ec44f2d9...): DMStranslate English installed; DMS stops at a first-run \"DMS Prefs\" window | that needs a mouse click (the amiga VM takes no input). The disk's registered/ folder holds someone else's keyfile: not u"
+    ]
+   }
+  },
+  {
+   "path": "mds/v2_daemontools.mds",
+   "formats": [
+    "mds"
+   ],
+   "role": "variant",
+   "size": 672,
+   "sha256": "e407f96f543c5c3000dfdd55433e34517139d43b9e0f4b7e0d24bde7063e1d02",
+   "expected": "disc image = defaultArchive.iso (ISO9660 + Joliet with the standard content)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-25/daemontools.txt: header: \"MEDIA DESCRIPTOR\" 02 01 (v2.1), encrypted descriptor; data in mds/v2_daemontools.mdf | libmirage data track sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical)"
+    ]
+   }
+  },
+  {
+   "path": "mdx/compressed.mdx",
+   "formats": [
+    "mdx"
+   ],
+   "role": "variant",
+   "size": 54219,
+   "sha256": "1259fbe6899552d9fc34dd381ea844b0ab5bb749da8bf6d2e6625728696f928b",
+   "expected": "disc image = defaultArchive.iso (ISO9660 + Joliet with the standard content)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-25/daemontools.txt: libmirage data track sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical) | mounted in DT 5.0.1 (J:): the three file sha256 == defaultArchiveContent"
+    ]
+   }
+  },
+  {
+   "path": "mdx/password.mdx",
+   "formats": [
+    "mdx"
+   ],
+   "role": "variant",
+   "size": 433360,
+   "sha256": "3ca661ad0c3f89458a4f6ad2a08ab2a82a682ea53687d686ddadb4ceb58e1a07",
+   "expected": "disc image = defaultArchive.iso (ISO9660 + Joliet with the standard content)",
+   "verification": {
+    "status": "verified",
+    "evidence": [
+     "docs/verification/2026-11-25/daemontools.txt: password: password | libmirage with password: data track sha256 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical) | libmirage with password \"wrong\": \"Failed to decipher encryption header for image data! Incorrect password?\" | mounted in DT 5.0.1 (G:) after entering the password: the three file sha256 == defaultArchiveContent"
     ]
    }
   },

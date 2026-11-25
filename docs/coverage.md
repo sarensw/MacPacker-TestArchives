@@ -44,13 +44,13 @@ DONE = baseline (or substitute) exists and verified · PARTIAL = listed variants
 | DONE | [XZ](formats/xz.md) | 1.2 | xz, txz, tar.xz | `defaultArchive.tar.xz`, `defaultArchive.txz` | 3/3 | multi-block / BCJ filter xz |
 | DONE | [ZIP](formats/zip.md) | 1.2 | zip, jar, aar, apk, cbz | `defaultArchive.jar`, `defaultArchive.zip` | 15/52 | method 93 zstd and 95 xz written by a real tool; PKWARE strong encryption (needs SecureZIP); central-directory encryption |
 | DONE | [ZIPX (WinZip)](formats/zipx.md) | 1.2 | zipx | `defaultArchive.zipx` | 7/7 | WinZip 12+ JPEG (method 96), WavPack (97), xz (95) and zstd (93) entries: need matching input files or a newer WinZip |
-| DONE | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 2/2 | MDS v2 (DAEMON Tools .mdx is its own row) |
+| DONE | [Alcohol 120% (MDS/MDF)](formats/mds.md) |  | mds + mdf | `defaultArchive.mdf`, `defaultArchive.mds` | 4/4 | MDS made by Alcohol 120% itself; multi-track/audio MDS |
 | DONE | [Apple Archive](formats/aar.md) |  | aar | `defaultArchive-raw.aar`, `defaultArchive.aar` | 6/6 | library.aar named by MacPacker's tests (meaning unknown); compressible content so that chunks are actually compressed |
 | PARTIAL | [Apple Encrypted Archive](formats/aea.md) |  | aea | `defaultArchive.aea` | 3/3 | defaultArchive-expired.aea and signing/testRoot.pem expected by MacPacker's tests; profiles 2-4 (ECDHE/signed) |
 | BLOCKED | [BlindWrite](formats/blindwrite.md) |  | b5t, b6t |  | 0/0 | baseline |
 | DONE | [CD image with cue sheet](formats/cue.md) |  | cue + bin | `defaultArchive.bin`, `defaultArchive.cue` | 2/2 | MODE1/2352, MODE2, audio tracks, multi-bin |
 | DONE | [CloneCD](formats/clonecd.md) |  | ccd + img + sub | `defaultArchive.img` | 3/4 | CloneCD's own output with a .sub subchannel file (CloneCD is commercial; no trial found) |
-| BLOCKED | [DAEMON Tools](formats/mdx.md) |  | mdx |  | 0/0 | baseline (DAEMON Tools on Windows) |
+| DONE | [DAEMON Tools](formats/mdx.md) |  | mdx | `defaultArchive.mdx` | 3/3 | MDX from DAEMON Tools Pro/Ultra, multi-session or audio discs |
 | DONE | [DiscJuggler](formats/cdi.md) |  | cdi | `defaultArchive.cdi` | 1/1 | CDI made by DiscJuggler itself; multi-session, audio |
 | BLOCKED | [Easy CD Creator](formats/cif.md) |  | cif |  | 0/0 | hard to make |
 | DONE | [ECM](formats/ecm.md) |  | ecm | `defaultArchive.bin.ecm` | 1/1 | baseline: ecm not packaged for Ubuntu 24.04; build Neill Corlett's ecm from source |

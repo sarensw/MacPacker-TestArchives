@@ -1,0 +1,34 @@
+DAEMON Tools Lite 5.0.1 fixtures (Windows 7 VM, Bob HQ image win7, 2026-11-25)
+Installer: archive.org item with "Daemon Tools Lite 5.0.1" zip, sha256 03bf02e0b129fcc1c260d3558de45409c00c6815472269224f949a9b3e70853a;
+ inside daemon-tools-lite-5-0-1.exe sha256 62006d99b95bdcc95adba2635347a6168446ec91f12f4a1437642d8724a67c2e.
+ Installed with "Proceed with free license"; gadget and usage statistics unchecked; no account, no registration.
+Steps: `bob media <vm> defaultArchive.iso` (QEMU CD drive F:), DT: mount defaultArchive.iso (read from F: with DT "Standard ISO", byte-identical
+ to the source) in a DT virtual drive, then Make Image of that virtual drive: .mdx plain, .mdx "Compress image data", .mdx "Protect image with
+ password" (password), .mds (no compression).
+Rejected: an .mdx imaged directly from the QEMU CD drive F: has 705 garbled bytes in sectors 16-60 (ISO9660 metadata); DT itself mounts it
+ with mangled names and "disk structure is corrupted". The DT 4.30 MDS images from 2026-11-24 were made that way too and were not committed.
+Independent reader: libmirage 3.3.3 (CDEmu, git 3b3bb8ca, built with libgcrypt on Ubuntu 24.04 arm64), scripts/read_mirage.py.
+ Each image: CD, 1 session, 1 track, MODE1, 361 sectors = 150-sector pregap (zero) + 211 data sectors.
+
+== defaultArchives/defaultArchive.mdx
+  header: "MEDIA DESCRIPTOR" 02 01 (v2.1), "(c) 2000-2015 Disc Soft Ltd."
+  libmirage data track sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical)
+  mounted in DT 5.0.1 (I:): serial CC27-5CDD as the source; hello world.txt 03ba204e..., folder/README.md 30322444..., folder/NestedArchive.zip 466ab31d... (all == defaultArchiveContent)
+== mdx/compressed.mdx
+  libmirage data track sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical)
+  mounted in DT 5.0.1 (J:): the three file sha256 == defaultArchiveContent
+== mdx/password.mdx
+  password: password
+  libmirage with password: data track sha256 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical)
+  libmirage with password "wrong": "Failed to decipher encryption header for image data! Incorrect password?"
+  mounted in DT 5.0.1 (G:) after entering the password: the three file sha256 == defaultArchiveContent
+== mds/v2_daemontools.mds
+  header: "MEDIA DESCRIPTOR" 02 01 (v2.1), encrypted descriptor; data in mds/v2_daemontools.mdf
+  libmirage data track sha256: 2885bca0f58b27504abc85e2144bb918b2b2a3346c29bb187f696639f2fc2a18 == defaultArchive.iso (byte-identical)
+== mds/v2_daemontools.mdf
+  2048-byte sectors, cmp == defaultArchive.iso (byte-identical)
+
+Amiga DMS / disk packers (amiga VM with DF0: via bob media), not created:
+  DMS 2.04 shareware ADF (archive.org TOSEC, md5 ec44f2d9...): DMStranslate English installed; DMS stops at a first-run "DMS Prefs" window
+  that needs a mouse click (the amiga VM takes no input). The disk's registered/ folder holds someone else's keyfile: not used.
+  PackDisk 1.1 (Aminet): GUI only, same problem.
